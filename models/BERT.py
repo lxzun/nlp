@@ -1,7 +1,5 @@
 from transformers.models.bert.modeling_bert import *
 from transformers import BertModel as Bert_model
-import torch.multiprocessing as mp
-import queue
 
 class BERT_sentence(Bert_model):
     def __init__(self, config):
@@ -9,7 +7,6 @@ class BERT_sentence(Bert_model):
         self.config = config
         self.embeddings = BertEmbeddings(config)
         self.encoder = BertEncoder(config)
-
         self.init_weights()
 
 
@@ -43,7 +40,6 @@ class BERT_sentence(Bert_model):
             raise ValueError("You have to specify either input_ids or inputs_embeds")
 
         device = input_ids.device if input_ids is not None else inputs_embeds.device
-
 
         if attention_mask is None:
             attention_mask = torch.ones(((batch_size, seq_length)), device=device)
