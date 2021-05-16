@@ -9,13 +9,13 @@ class Myattention(nn.Module):
         self.q = nn.Conv2d(m, out_dim, k, padding=(k-1)//2)
         self.k = nn.Conv2d(m, out_dim, k, padding=(k-1)//2)
         self.v = nn.Conv2d(m, out_dim, k, padding=(k-1)//2)
-        self.softmax = nn.Softmax()
+        self.softmax = nn.Softmax(dim=0)
         self.gelu = nn.GELU()
         self.batchnorm = nn.BatchNorm2d(m)
         self.dropout = nn.Dropout(drop_rate)
         self.conv = nn.Conv2d(out_dim, m, 3, padding=1)
 
-    def foward(self, x):
+    def forward(self, x):
         input_shape = x.size() # b x m x seq_length x n
         m, seq_length, n = input_shape[1:]
 
@@ -26,12 +26,12 @@ class Myattention(nn.Module):
         out_dim = q.size()[1]
 
         q = q.view(-1, seq_length, out_dim * n)
-        k = k.view(-1, seq_length, out_dim * n)
+        k = k.view(-1, out_dim * n, seq_length)
         v = v.view(-1, seq_length, out_dim * n)
 
-        score = self.softmax(torch.matmul(q, k.T))   # b x seq_length
-        out = v * score                              # b x seq_length x out_dim*n
-        out = out.view(-1, out_dim, seq_length, n)   # b x out_dim x seq_length x n
+        score = self.softmax(torch.matmul(q, k))       # b x seq_length x seq_length
+        out = torch.matmul(score, v)                   # b x seq_length x out_dim*n
+        out = out.view(-1, out_dim, seq_length, n)     # b x out_dim x seq_length x n
         out = self.dropout(self.gelu(self.conv(out)))
 
         out = out + x

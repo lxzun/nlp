@@ -1,12 +1,14 @@
 from torch import optim, nn
 from torch.utils.data import DataLoader
 import torch
+import numpy as np
 from datetime import datetime
 import os
 import argparse
 from tensorboardX import SummaryWriter
 from dataset import Mydataset
 from models.Mymodel import Mymodelforpretrain
+from torch.utils.data.sampler import SubsetRandomSampler
 
 
 def train(model, trainloader, criterion, optimizer, epoch_idx, args, device):
@@ -15,9 +17,9 @@ def train(model, trainloader, criterion, optimizer, epoch_idx, args, device):
 
     for batch_idx, (data, labels) in enumerate(trainloader, 1):
 
-        imgs, labels = data.to(device), labels.to(device)
+        data, labels = data.to(device), labels.to(device)
         logit = model(data)
-        loss = criterion(logit, labels)
+        loss = criterion(logit, labels.view(-1))
         loss.backward()
 
         avg_loss += loss / num_batchs
@@ -60,19 +62,20 @@ if __name__ == '__main__':
     parser.add_argument('--description', type=str, default='pretrain')
 
     parser.add_argument('--num_epochs', type=int, default=2000)
-    parser.add_argument('--batch_size', type=int, default=128)
-    parser.add_argument('--step_batch', type=int, default=1000)
-    parser.add_argument('--eval_batch_size', type=int, default=128)
+    parser.add_argument('--batch_size', type=int, default=16)
+    parser.add_argument('--step_batch', type=int, default=100)
+    parser.add_argument('--eval_batch_size', type=int, default=16)
 
     parser.add_argument('--lr', type=float, default=5e-05)
     parser.add_argument('--seed', type=int, default=42)
-    parser.add_argument('--drop_rate', type=float, default=0)
+    parser.add_argument('--drop_rate', type=float, default=0.)
 
     parser.add_argument('--hidden_size', type=int, default=768)
     parser.add_argument('--m', type=int, default=24)
-    parser.add_argument('--out_dim', type=int, default=128)
+    parser.add_argument('--out_dim', type=int, default=64)
     parser.add_argument('--k', type=int, default=3)
     parser.add_argument('--n_layer', type=int, default=12)
+    parser.add_argument('--max_seq_length', type=int, default=512)
     parser.add_argument('--task', type=str, default='pretrain')
 
     parser.add_argument('--save_vocab', type=bool, default=True)
@@ -99,6 +102,7 @@ if __name__ == '__main__':
     device = args.use_cuda if torch.cuda.is_available() else 'cpu'
 
     torch.manual_seed(args.seed)
+    np.random.seed(args.seed)
     if device == 'cuda':
         torch.cuda.manual_seed_all(args.seed)
 
@@ -106,20 +110,29 @@ if __name__ == '__main__':
         log('{}: {}'.format(k, v))
     log('Real used device: {}'.format(device))
 
-    trainset = Mydataset(task=args.task)
-    testset = Mydataset(task=args.task, split='test')
-    trainloader = DataLoader(trainset, args.batch_size, num_workers=2, shuffle=True)
-    testloader = DataLoader(testset, args.batch_size, num_workers=2, shuffle=True)
+    dataset = Mydataset(task=args.task, max_length=args.max_seq_length)
+    dataset_size = len(dataset)
+    validation_split = .002
+    indices = list(range(dataset_size))
+    split = int(np.floor(validation_split * dataset_size))
+    train_indices, val_indices = indices[split:], indices[:split]
+
+    train_sampler = SubsetRandomSampler(train_indices)
+    valid_sampler = SubsetRandomSampler(val_indices)
+    trainloader = DataLoader(dataset, args.batch_size, num_workers=2, sampler=train_sampler)
+    testloader = DataLoader(dataset, args.batch_size, num_workers=2, sampler=valid_sampler)
 
     num_batchs = len(trainloader)
     log('\n---- dataset info ----')
     log('\n* train data *')
-    log('- num : {}'.format(len(trainloader.dataset)))
+    log('- num : {}'.format(len(train_indices)))
     log('\n* eval data *')
-    log('- num : {}'.format(len(testloader.dataset)))
+    log('- num : {}'.format(len(val_indices)))
     log('----------------------\n')
 
-    model = Mymodelforpretrain(args.m, args.out_dim, args.hidden_size, trainset.vocab_size, args.n_layer, trainset.pad_ids)
+    model = Mymodelforpretrain(args.m, args.out_dim, args.hidden_size, dataset.vocab_size, args.n_layer, dataset.pad_ids)
+    if device == 'cuda':
+        model.to(device)
 
     if args.multi_gpu and torch.cuda.device_count() > 1:
         model = nn.DataParallel(model)
@@ -143,6 +156,7 @@ if __name__ == '__main__':
         if best_loss > eval_loss:
             best_loss = eval_loss
             best_epoch = epoch_idx
+            model.save(vocab_save, model_save)
             writer.add_text('best loss', '{}e_{:.4f}%'.format(best_epoch, best_loss), epoch_idx)
 
     writer.close()
