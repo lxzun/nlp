@@ -66,7 +66,7 @@ if __name__ == '__main__':
     parser.add_argument('--step_batch', type=int, default=100)
     parser.add_argument('--eval_batch_size', type=int, default=16)
 
-    parser.add_argument('--lr', type=float, default=5e-05)
+    parser.add_argument('--lr', type=float, default=1e-04)
     parser.add_argument('--seed', type=int, default=42)
     parser.add_argument('--drop_rate', type=float, default=0.)
 
