@@ -25,13 +25,19 @@ class Myattention(nn.Module):
 
         out_dim = q.size()[1]
 
+        q = torch.transpose(q, 1, 2)
         q = q.view(-1, seq_length, out_dim * n)
+
+        k = torch.transpose(k, 2, 3)
         k = k.view(-1, out_dim * n, seq_length)
+
+        v = torch.transpose(v, 1, 2)
         v = v.view(-1, seq_length, out_dim * n)
 
         score = self.softmax(torch.matmul(q, k))       # b x seq_length x seq_length
         out = torch.matmul(score, v)                   # b x seq_length x out_dim*n
-        out = out.view(-1, out_dim, seq_length, n)     # b x out_dim x seq_length x n
+        out = out.view(-1, seq_length, out_dim, n)     # b x seq_length x out_dim x n
+        out = torch.transpose(out, 1, 2)               # b x out_dim x seq_length x n
         out = self.dropout(self.gelu(self.conv(out)))
 
         out = out + x
@@ -60,7 +66,8 @@ class Mymodel(nn.Module):
         input_shape = x.size()  # b, seq_length, hidden_size
         seq_length, hidden_size = input_shape[1:]
 
-        x = x.view(-1, self.m, seq_length, hidden_size//self.m)  # b x m x seq_length x n
+        x = x.view(-1, seq_length, self.m, hidden_size//self.m)  # b x seq_length x m x n
+        x = torch.transpose(x, 1, 2)                             # b x m x seq_length x n
 
         all_outputs = ()
         for i, layer in enumerate(self.model):
@@ -91,6 +98,7 @@ class Mymodelforpretrain(nn.Module):
         outputs = self.model(x)
 
         hidden = outputs[0]                                      # b x m x seq_length x n
+        hidden = torch.transpose(hidden, 1, 2)                   # b x seq_length x m x n
         hidden = hidden.view(-1, x.size()[1], self.hidden_size)  # b x seq_length x hidden_size
 
         out = self.linear(hidden)                                # b x seq_length x vocab_size
