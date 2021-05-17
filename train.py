@@ -11,11 +11,12 @@ from models.Mymodel import Mymodelforpretrain
 from torch.utils.data.sampler import SubsetRandomSampler
 
 
-def train(model, trainloader, criterion, optimizer, epoch_idx, testloaader, args, device):
+def train(model, trainloader, criterion, optimizer, epoch_idx, testloader, args, device):
     global best_loss
+    num_batchs = len(trainloader)
     avg_loss = 0
 
-    for batch_idx, (data, labels) in enumerate(trainloader, 0):
+    for batch_idx, (data, labels) in enumerate(trainloader, 1):
         model.train()
 
         data, labels = data.to(device), labels.to(device)
@@ -36,7 +37,7 @@ def train(model, trainloader, criterion, optimizer, epoch_idx, testloaader, args
         if batch_idx % (args.step_batch*10) == 0:
             total_batch = int((epoch_idx-1) * len(trainloader) + batch_idx)
             eval_loss = evaluation(model, testloader, criterion, device)
-            log('\n >> epoch: {:2d}\t|\ttotal_batch: {:2d}\t|\teval_loss: {:.5f}\n'.format(
+            log(' >> epoch: {:2d}\t|\ttotal_batch: {:2d}\t|\teval_loss: {:.5f}'.format(
                 epoch_idx, total_batch, eval_loss))
 
             writer.add_scalars('loss', {'train loss': loss.item(), 'eval loss': eval_loss}, total_batch)
@@ -51,6 +52,7 @@ def train(model, trainloader, criterion, optimizer, epoch_idx, testloaader, args
 
 def evaluation(model, testloader, criterion, device):
     avg_loss = 0
+    num_batchs = len(testloader)
     model.eval()
     with torch.no_grad():
         for batch_idx, (data, labels) in enumerate(testloader, 1):
@@ -137,7 +139,7 @@ if __name__ == '__main__':
     trainloader = DataLoader(dataset, args.batch_size, num_workers=2, sampler=train_sampler)
     testloader = DataLoader(dataset, args.batch_size, num_workers=2, sampler=valid_sampler)
 
-    num_batchs = len(trainloader)
+
     log('\n---- dataset info ----')
     log('\n* train data *')
     log('- num : {}'.format(len(train_indices)))
@@ -157,7 +159,6 @@ if __name__ == '__main__':
     optimizer.zero_grad()
 
     best_loss = 9999
-    best_epoch = 0
 
     for epoch_idx in range(1, args.num_epochs + 1):
         log('\n\n----------------------- {} epoch start! -----------------------'.format(epoch_idx))
