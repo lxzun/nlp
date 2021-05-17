@@ -7,7 +7,7 @@ class Mydataset(nn.Module):
         super(Mydataset, self).__init__()
         self.return_attention_maks = return_attention_mask
         self.return_token_type_ids = return_token_type_ids
-        self.max_length = max_length-1
+        self.max_length = max_length+1
         self.tokenizer = AutoTokenizer.from_pretrained('bert-base-uncased')
         self.vocab_size = self.tokenizer.vocab_size
         self.pad_ids = self.tokenizer.pad_token_id
