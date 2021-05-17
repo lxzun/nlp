@@ -11,11 +11,12 @@ from models.Mymodel import Mymodelforpretrain
 from torch.utils.data.sampler import SubsetRandomSampler
 
 
-def train(model, trainloader, criterion, optimizer, epoch_idx, args, device):
+def train(model, trainloader, criterion, optimizer, epoch_idx, testloaader, args, device):
+    global best_loss
     avg_loss = 0
-    model.train()
 
-    for batch_idx, (data, labels) in enumerate(trainloader, 1):
+    for batch_idx, (data, labels) in enumerate(trainloader, 0):
+        model.train()
 
         data, labels = data.to(device), labels.to(device)
         logit = model(data)
@@ -27,21 +28,35 @@ def train(model, trainloader, criterion, optimizer, epoch_idx, args, device):
         optimizer.zero_grad()
 
         if batch_idx % args.step_batch == 0:
-            log('epoch: {:2d}/{}  |  batch: {:2d}/{}  |  loss: {:.4f}'.format(
+            log('epoch: {:2d}/{}\t|\tbatch: {:2d}/{}\t|\tloss: {:.5f}'.format(
                 epoch_idx, args.num_epochs,
                 batch_idx, num_batchs,
                 loss.item()))
+
+        if batch_idx % (args.step_batch*10) == 0:
+            total_batch = int((epoch_idx-1) * len(trainloader) + batch_idx)
+            eval_loss = evaluation(model, testloader, criterion, device)
+            log('\n >> epoch: {:2d}\t|\ttotal_batch: {:2d}\t|\teval_loss: {:.5f}\n'.format(
+                epoch_idx, total_batch, eval_loss))
+
+            writer.add_scalars('loss', {'train loss': loss.item(), 'eval loss': eval_loss}, total_batch)
+
+            if best_loss > eval_loss:
+                best_loss = eval_loss
+                model.module.save(vocab_save + '/embedding_weight', model_save+'/model_weight')
+                writer.add_text('best loss', '{}b_{:.5f}%'.format(total_batch, best_loss), total_batch)
+
     return avg_loss
 
 
 def evaluation(model, testloader, criterion, device):
     avg_loss = 0
-    model.test()
-    with torch.no_grad:
+    model.eval()
+    with torch.no_grad():
         for batch_idx, (data, labels) in enumerate(testloader, 1):
             imgs, labels = data.to(device), labels.to(device)
             logit = model(data)
-            loss = criterion(logit, labels)
+            loss = criterion(logit, labels.view(-1))
             avg_loss += loss / num_batchs
     return avg_loss
 
@@ -62,9 +77,9 @@ if __name__ == '__main__':
     parser.add_argument('--description', type=str, default='pretrain')
 
     parser.add_argument('--num_epochs', type=int, default=2000)
-    parser.add_argument('--batch_size', type=int, default=16)
+    parser.add_argument('--batch_size', type=int, default=22)
     parser.add_argument('--step_batch', type=int, default=100)
-    parser.add_argument('--eval_batch_size', type=int, default=16)
+    parser.add_argument('--eval_batch_size', type=int, default=22)
 
     parser.add_argument('--lr', type=float, default=1e-04)
     parser.add_argument('--seed', type=int, default=42)
@@ -112,7 +127,7 @@ if __name__ == '__main__':
 
     dataset = Mydataset(task=args.task, max_length=args.max_seq_length)
     dataset_size = len(dataset)
-    validation_split = .002
+    validation_split = .00125
     indices = list(range(dataset_size))
     split = int(np.floor(validation_split * dataset_size))
     train_indices, val_indices = indices[split:], indices[:split]
@@ -146,17 +161,6 @@ if __name__ == '__main__':
 
     for epoch_idx in range(1, args.num_epochs + 1):
         log('\n\n----------------------- {} epoch start! -----------------------'.format(epoch_idx))
-        avg_loss = train(model, trainloader, criterion, optimizer, epoch_idx, args, device)
-        eval_loss, eval_acc = evaluation(model, testloader, criterion, device)
-        log(' >> epoch: {:2d}\t|\tavg_loss: {:.4f}\t|\teval_loss: {:.4f}\t'.format(
-            epoch_idx, avg_loss, eval_loss))
-
-        writer.add_scalars('loss', {'train loss': avg_loss, 'eval loss': eval_loss}, epoch_idx)
-
-        if best_loss > eval_loss:
-            best_loss = eval_loss
-            best_epoch = epoch_idx
-            model.save(vocab_save, model_save)
-            writer.add_text('best loss', '{}e_{:.4f}%'.format(best_epoch, best_loss), epoch_idx)
+        avg_loss = train(model, trainloader, criterion, optimizer, epoch_idx, testloader, args, device)
 
     writer.close()
