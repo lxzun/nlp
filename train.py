@@ -56,7 +56,7 @@ def evaluation(model, testloader, criterion, device):
     model.eval()
     with torch.no_grad():
         for batch_idx, (data, labels) in enumerate(testloader, 1):
-            imgs, labels = data.to(device), labels.to(device)
+            data, labels = data.to(device), labels.to(device)
             logit = model(data)
             loss = criterion(logit, labels.view(-1))
             avg_loss += loss / num_batchs
