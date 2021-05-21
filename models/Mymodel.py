@@ -65,8 +65,8 @@ class Mymodel(nn.Module):
 
         self.m = m
         self.embed = MyEmbedding(vocab_size, hidden_size, pad_ids, drop_rate)
-        self.model = nn.ModuleList([Myattention(m, out_dim, hidden_size, k, drop_rate) for _ in range(n_layer)])
-
+        # self.model = nn.ModuleList([Myattention(m, out_dim, hidden_size, k, drop_rate) for _ in range(n_layer)])
+        self.model = Myattention(m, out_dim, hidden_size, k, drop_rate)
     def forward(self, x):
         # b, seq_length
         x = self.embed(x)                                                     # b x seq_length x hidden_size
@@ -78,9 +78,11 @@ class Mymodel(nn.Module):
         x = torch.transpose(x, 1, 2).contiguous()                             # b x m x seq_length x n
 
         all_outputs = ()
-        for i, layer in enumerate(self.model):
-            all_outputs = all_outputs + (x,)
-            x = layer(x)
+        # for i, layer in enumerate(self.model):
+        #     all_outputs = all_outputs + (x,)
+        #     x = layer(x)
+        for _ in range(12):
+            x = self.model(x)
 
         return (x,) + all_outputs
 
