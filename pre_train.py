@@ -7,7 +7,7 @@ import os
 import argparse
 from tensorboardX import SummaryWriter
 from dataset import Mydataset
-from models.Mymodel import Mymodelforpretrain, Mysharemodelforpretrain
+from models.Mymodel import MymodelForPretrain, MysharemodelForPretrain
 from torch.utils.data.sampler import SubsetRandomSampler
 
 
@@ -15,6 +15,7 @@ def train(model, trainloader, criterion, optimizer, epoch_idx, testloader, args,
     global best_loss
     num_batchs = len(trainloader)
     avg_loss = 0
+    train_loss = 0
 
     for batch_idx, (data, labels) in enumerate(trainloader, 1):
         model.train()
@@ -24,15 +25,16 @@ def train(model, trainloader, criterion, optimizer, epoch_idx, testloader, args,
         loss = criterion(logit, labels.view(-1))
         loss.backward()
 
-        avg_loss += loss / num_batchs
         optimizer.step()
         optimizer.zero_grad()
+        avg_loss += loss / num_batchs
+        train_loss += loss.item()
 
         if batch_idx % args.step_batch == 0:
             log('epoch: {:2d}/{}\t|\tbatch: {:2d}/{}\t|\tloss: {:.5f}'.format(
                 epoch_idx, args.num_epochs,
                 batch_idx, num_batchs,
-                loss.item()))
+                train_loss/batch_idx))
 
         if batch_idx % (args.step_batch*10) == 0:
             total_batch = int((epoch_idx-1) * len(trainloader) + batch_idx)
@@ -40,7 +42,7 @@ def train(model, trainloader, criterion, optimizer, epoch_idx, testloader, args,
             log(' >> epoch: {:2d}\t|\ttotal_batch: {:2d}\t|\teval_loss: {:.8f}'.format(
                 epoch_idx, total_batch, eval_loss))
 
-            writer.add_scalars('loss', {'train loss': loss.item(), 'eval loss': eval_loss}, total_batch)
+            writer.add_scalars('loss', {'train loss': train_loss/batch_idx, 'eval loss': eval_loss}, total_batch)
 
             if best_loss > eval_loss:
                 best_loss = eval_loss
@@ -149,9 +151,9 @@ if __name__ == '__main__':
     log('----------------------\n')
 
     if args.share:
-        model = Mysharemodelforpretrain(args.m, args.out_dim, args.hidden_size, dataset.vocab_size, args.n_layer, dataset.pad_ids)
+        model = MysharemodelForPretrain(args.m, args.out_dim, args.hidden_size, dataset.vocab_size, args.n_layer, dataset.pad_ids)
     else:
-        model = Mymodelforpretrain(args.m, args.out_dim, args.hidden_size, dataset.vocab_size, args.n_layer, dataset.pad_ids)
+        model = MymodelForPretrain(args.m, args.out_dim, args.hidden_size, dataset.vocab_size, args.n_layer, dataset.pad_ids)
     if device == 'cuda':
         model.to(device)
 

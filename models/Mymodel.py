@@ -79,10 +79,9 @@ class Mymodel(nn.Module):
 
         all_outputs = ()
 
-        if not self.share:
-            for i, layer in enumerate(self.model):
-                all_outputs = all_outputs + (x,)
-                x = layer(x)
+        for i, layer in enumerate(self.model):
+            all_outputs = all_outputs + (x,)
+            x = layer(x)
 
         return (x,) + all_outputs
 
@@ -93,34 +92,6 @@ class Mymodel(nn.Module):
     def load(self, vocab_path=None, model_path=None):
         if vocab_path: self.embed.load_state_dict(torch.load(vocab_path))
         if model_path: self.model.load_state_dict(torch.load(model_path))
-
-class Mymodelforpretrain(nn.Module):
-    def __init__(self, m, out_dim, hidden_size, vocab_size, n_layer, pad_ids, k=3, drop_rate=0):
-        super(Mymodelforpretrain, self).__init__()
-        self.vocab_size = vocab_size
-        self.hidden_size = hidden_size
-        self.model = Mymodel(m, out_dim, hidden_size, vocab_size, n_layer, pad_ids, k, drop_rate)
-        self.linear = nn.Linear(hidden_size, vocab_size)
-
-    def forward(self, x):
-        # b x seq_length
-
-        outputs = self.model(x)
-
-        hidden = outputs[0]                                      # b x m x seq_length x n
-        hidden = torch.transpose(hidden, 1, 2).contiguous()      # b x seq_length x m x n
-        hidden = hidden.view(-1, x.size()[1], self.hidden_size)  # b x seq_length x hidden_size
-
-        out = self.linear(hidden)                                # b x seq_length x vocab_size
-        out = out.view(-1, self.vocab_size)                      # b*seq_length x vocab_size
-
-        return out
-
-    def save(self, vocab_path, model_path):
-        self.model.save(vocab_path, model_path)
-
-    def load(self, vocab_path, model_path):
-        self.model.load(vocab_path, model_path)
 
 class Mysharemodel(nn.Module):
     def __init__(self, m, out_dim, hidden_size, vocab_size, n_layer, pad_ids, k=3, drop_rate=0):
@@ -157,9 +128,37 @@ class Mysharemodel(nn.Module):
         if vocab_path: self.embed.load_state_dict(torch.load(vocab_path))
         if model_path: self.model.load_state_dict(torch.load(model_path))
 
-class Mysharemodelforpretrain(nn.Module):
+class MymodelForPretrain(nn.Module):
     def __init__(self, m, out_dim, hidden_size, vocab_size, n_layer, pad_ids, k=3, drop_rate=0):
-        super(Mysharemodelforpretrain, self).__init__()
+        super(MymodelForPretrain, self).__init__()
+        self.vocab_size = vocab_size
+        self.hidden_size = hidden_size
+        self.model = Mymodel(m, out_dim, hidden_size, vocab_size, n_layer, pad_ids, k, drop_rate)
+        self.linear = nn.Linear(hidden_size, vocab_size)
+
+    def forward(self, x):
+        # b x seq_length
+
+        outputs = self.model(x)
+
+        hidden = outputs[0]                                      # b x m x seq_length x n
+        hidden = torch.transpose(hidden, 1, 2).contiguous()      # b x seq_length x m x n
+        hidden = hidden.view(-1, x.size()[1], self.hidden_size)  # b x seq_length x hidden_size
+
+        out = self.linear(hidden)                                # b x seq_length x vocab_size
+        out = out.view(-1, self.vocab_size)                      # b*seq_length x vocab_size
+
+        return out
+
+    def save(self, vocab_path, model_path):
+        self.model.save(vocab_path, model_path)
+
+    def load(self, vocab_path, model_path):
+        self.model.load(vocab_path, model_path)
+
+class MysharemodelForPretrain(nn.Module):
+    def __init__(self, m, out_dim, hidden_size, vocab_size, n_layer, pad_ids, k=3, drop_rate=0):
+        super(MysharemodelForPretrain, self).__init__()
         self.vocab_size = vocab_size
         self.hidden_size = hidden_size
         self.model = Mysharemodel(m, out_dim, hidden_size, vocab_size, n_layer, pad_ids, k, drop_rate)
@@ -185,18 +184,56 @@ class Mysharemodelforpretrain(nn.Module):
     def load(self, vocab_path, model_path):
         self.model.load(vocab_path, model_path)
 
-# class Mymodelforclassification(nn.Module):
-#     def __init__(self, m, out_dim, hidden_size, vocab_size, n_layer, pad_ids, num_class, k=3, drop_rate=0):
-#         super(Mymodelforclassification, self).__init__()
-#         self.vocab_size = vocab_size
-#         self.hidden_size = hidden_size
-#         self.model = Mymodel(m, out_dim, hidden_size, vocab_size, n_layer, pad_ids, k, drop_rate)
-#         self.linear = nn.Linear(hidden_size, vocab_size)
+class MymodelForSequenceClassification(nn.Module):
+    def __init__(self, m, out_dim, hidden_size, vocab_size, n_layer, pad_ids, num_classes, k=3, drop_rate=0):
+        super(MymodelForSequenceClassification, self).__init__()
+        self.vocab_size = vocab_size
+        self.hidden_size = hidden_size
+        self.model = Mymodel(m, out_dim, hidden_size, vocab_size, n_layer, pad_ids, k, drop_rate)
+        self.linear = nn.Linear(hidden_size, num_classes)
 
-# class Mymodelforclassification(nn.Module):
-#     def __init__(self, m, out_dim, hidden_size, vocab_size, n_layer, pad_ids, num_class, k=3, drop_rate=0):
-#         super(Mymodelforclassification, self).__init__()
-#         self.vocab_size = vocab_size
-#         self.hidden_size = hidden_size
-#         self.model = Mymodel(m, out_dim, hidden_size, vocab_size, n_layer, pad_ids, k, drop_rate)
-#         self.linear = nn.Linear(hidden_size, vocab_size)
+    def forward(self, x):
+        # b x seq_length
+
+        outputs = self.model(x)
+
+        hidden = outputs[0]                                      # b x m x seq_length x n
+        hidden = torch.transpose(hidden, 1, 2).contiguous()      # b x seq_length x m x n
+        hidden = hidden.view(-1, x.size()[1], self.hidden_size)  # b x seq_length x hidden_size
+        hidden = torch.mean(hidden, dim=1)                       # b x hidden_size
+        out = self.linear(hidden)                                # b x num_classes
+
+        return out
+
+    def save(self, vocab_path, model_path):
+        self.model.save(vocab_path, model_path)
+
+    def load(self, vocab_path, model_path):
+        self.model.load(vocab_path, model_path)
+
+class MysharemodelForSequenceClassification(nn.Module):
+    def __init__(self, m, out_dim, hidden_size, vocab_size, n_layer, pad_ids, num_classes, k=3, drop_rate=0):
+        super(MysharemodelForSequenceClassification, self).__init__()
+        self.vocab_size = vocab_size
+        self.hidden_size = hidden_size
+        self.model = Mysharemodel(m, out_dim, hidden_size, vocab_size, n_layer, pad_ids, k, drop_rate)
+        self.linear = nn.Linear(hidden_size, num_classes)
+
+    def forward(self, x):
+        # b x seq_length
+
+        outputs = self.model(x)
+
+        hidden = outputs[0]                                      # b x m x seq_length x n
+        hidden = torch.transpose(hidden, 1, 2).contiguous()      # b x seq_length x m x n
+        hidden = hidden.view(-1, x.size()[1], self.hidden_size)  # b x seq_length x hidden_size
+        hidden = torch.mean(hidden, dim=1)                       # b x hidden_size
+        out = self.linear(hidden)                                # b x num_classes
+
+        return out
+
+    def save(self, vocab_path, model_path):
+        self.model.save(vocab_path, model_path)
+
+    def load(self, vocab_path, model_path):
+        self.model.load(vocab_path, model_path)

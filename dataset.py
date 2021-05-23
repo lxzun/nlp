@@ -2,6 +2,7 @@ from datasets import load_dataset
 from transformers import AutoTokenizer
 from torch import nn
 import random as rd
+import torch
 
 class Mydataset(nn.Module):
     def __init__(self, task='pretrain', max_length=512, split='train', return_attention_mask=False, return_token_type_ids=False):
@@ -37,21 +38,20 @@ class Mydataset(nn.Module):
             return data, label
 
         if self.task == 'qqp':
-            data = self.tokenizer(self.data[item]["text"], return_tensors='pt', return_attention_mask=self.return_attention_maks,
-                                  return_token_type_ids=self.return_token_type_ids)['input_ids']
-            label = data[:, 1:].flatten()
-            data = label.clone()
-            indices = list(range(len(data)))
-            indices = rd.sample(indices, k=int(len(data)*0.15))
-            data[indices] = self.mask_ids
+            data = self.tokenizer(self.data[item]["question1"], text_pair=self.data[item]["question2"],
+                                  truncation=True, max_length=self.max_length,
+                                  return_tensors='pt', return_attention_mask=self.return_attention_maks,
+                                  return_token_type_ids=self.return_token_type_ids)['input_ids'][:, 1:].flatten()
+            label = self.data[item]['label']
             return data, label
 
     def make_batch(self, samples):
         data = [i[0] for i in samples]
         label = [i[1] for i in samples]
         data = nn.utils.rnn.pad_sequence(data, True, self.pad_ids)
-        label = nn.utils.rnn.pad_sequence(label, True, self.pad_ids)
-        return data, label
+        if self.task == 'pretrain':
+            label = nn.utils.rnn.pad_sequence(label, True, self.pad_ids)
+        return data, torch.LongTensor(label)
 
 
 if __name__=='__main__':
