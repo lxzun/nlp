@@ -36,13 +36,14 @@ def train(model, trainloader, criterion, optimizer, epoch_idx, testloader, args,
                 batch_idx, num_batchs,
                 train_loss/batch_idx))
 
-        if batch_idx % (args.step_batch*10) == 0:
+        if batch_idx % (args.step_batch*100) == 0:
             total_batch = int((epoch_idx-1) * len(trainloader) + batch_idx)
             eval_loss = evaluation(model, testloader, criterion, device)
             log(' >> epoch: {:2d}\t|\ttotal_batch: {:2d}\t|\teval_loss: {:.8f}'.format(
                 epoch_idx, total_batch, eval_loss))
 
             writer.add_scalars('loss', {'train loss': train_loss/batch_idx, 'eval loss': eval_loss}, total_batch)
+            train_loss = 0
 
             if best_loss > eval_loss:
                 best_loss = eval_loss
@@ -78,12 +79,12 @@ def log(string):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='')
-    parser.add_argument('--description', type=str, default='pretrain')
+    parser.add_argument('--description', type=str, default='H128-M8-L12-pretrain')
 
     parser.add_argument('--num_epochs', type=int, default=2000)
     parser.add_argument('--batch_size', type=int, default=30)
-    parser.add_argument('--step_batch', type=int, default=100)
-    parser.add_argument('--eval_batch_size', type=int, default=22)
+    parser.add_argument('--step_batch', type=int, default=10)
+    parser.add_argument('--eval_batch_size', type=int, default=30)
 
     parser.add_argument('--lr', type=float, default=1e-04)
     parser.add_argument('--seed', type=int, default=42)
@@ -94,7 +95,7 @@ if __name__ == '__main__':
     parser.add_argument('--out_dim', type=int, default=64)
     parser.add_argument('--k', type=int, default=3)
     parser.add_argument('--n_layer', type=int, default=12)
-    parser.add_argument('--share', type=bool, default=True)
+    parser.add_argument('--share', type=bool, default=False)
     parser.add_argument('--max_seq_length', type=int, default=512)
     parser.add_argument('--task', type=str, default='pretrain')
 
