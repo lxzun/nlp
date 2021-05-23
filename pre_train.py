@@ -34,21 +34,22 @@ def train(model, trainloader, criterion, optimizer, epoch_idx, testloader, args,
             log('epoch: {:2d}/{}\t|\tbatch: {:2d}/{}\t|\tloss: {:.5f}'.format(
                 epoch_idx, args.num_epochs,
                 batch_idx, num_batchs,
-                train_loss/batch_idx))
+                train_loss/args.step_batch))
 
-        if batch_idx % (args.step_batch*100) == 0:
-            total_batch = int((epoch_idx-1) * len(trainloader) + batch_idx)
-            eval_loss = evaluation(model, testloader, criterion, device)
-            log(' >> epoch: {:2d}\t|\ttotal_batch: {:2d}\t|\teval_loss: {:.8f}'.format(
-                epoch_idx, total_batch, eval_loss))
+            if batch_idx % (args.step_batch*100) == 0:
+                total_batch = int((epoch_idx-1) * len(trainloader) + batch_idx)
+                eval_loss = evaluation(model, testloader, criterion, device)
+                log(' >> epoch: {:2d}\t|\ttotal_batch: {:2d}\t|\teval_loss: {:.8f}'.format(
+                    epoch_idx, total_batch, eval_loss))
 
-            writer.add_scalars('loss', {'train loss': train_loss/batch_idx, 'eval loss': eval_loss}, total_batch)
+                writer.add_scalars('loss', {'train loss': train_loss/args.step_batch, 'eval loss': eval_loss}, total_batch)
+
+                if best_loss > eval_loss:
+                    best_loss = eval_loss
+                    model.module.save(vocab_save + '/embedding_weight', model_save+'/model_weight')
+                    writer.add_text('best loss', '{}b_{}'.format(total_batch, best_loss), total_batch)
+
             train_loss = 0
-
-            if best_loss > eval_loss:
-                best_loss = eval_loss
-                model.module.save(vocab_save + '/embedding_weight', model_save+'/model_weight')
-                writer.add_text('best loss', '{}b_{}'.format(total_batch, best_loss), total_batch)
 
     return avg_loss
 
