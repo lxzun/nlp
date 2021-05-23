@@ -92,7 +92,8 @@ if __name__ == '__main__':
     parser.add_argument('--out_dim', type=int, default=64)
     parser.add_argument('--k', type=int, default=3)
     parser.add_argument('--n_layer', type=int, default=12)
-    parser.add_argument('--task', type=str, default='qqp')
+    parser.add_argument('--max_seq_length', type=int, default=512)
+    parser.add_argument('--task', type=str, default='pretrain')
 
     parser.add_argument('--save_vocab', type=bool, default=True)
     parser.add_argument('--pretrained_vocab_path', type=str, default='', help='load pretrained vocab path')
@@ -113,7 +114,7 @@ if __name__ == '__main__':
     log_file = os.path.join(log_dir, 'log.txt')
     model_save = mk_dir(os.path.join(log_dir, 'model_save')) if args.save_model else None
     vocab_save = mk_dir(os.path.join(log_dir, 'vocab_save')) if args.save_vocab else None
-    writer = SummaryWriter(os.path.join(log_dir, args.description))
+    writer = SummaryWriter(os.path.join(log_dir, 'tb'))
 
     device = args.use_cuda if torch.cuda.is_available() else 'cpu'
 
@@ -126,9 +127,15 @@ if __name__ == '__main__':
         log('{}: {}'.format(k, v))
     log('Real used device: {}'.format(device))
 
-    trainset = Mydataset(task=args.task, split='train')
+    dataset = Mydataset(task=args.task)
+    dataset_size = len(dataset)
+    validation_split = .00125
+    indices = list(range(dataset_size))
+    split = int(np.floor(validation_split * dataset_size))
+    train_indices, val_indices = indices[split:], indices[:split]
 
-
+    train_sampler = SubsetRandomSampler(train_indices)
+    valid_sampler = SubsetRandomSampler(val_indices)
     trainloader = DataLoader(dataset, args.batch_size, num_workers=2, sampler=train_sampler, collate_fn=dataset.make_batch)
     testloader = DataLoader(dataset, args.batch_size, num_workers=2, sampler=valid_sampler, collate_fn=dataset.make_batch)
 
