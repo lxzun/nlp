@@ -4,10 +4,11 @@ from torch import nn
 import random as rd
 
 class Mydataset(nn.Module):
-    def __init__(self, task='pretrain', split='train', return_attention_mask=False, return_token_type_ids=False):
+    def __init__(self, task='pretrain', max_length=512, split='train', return_attention_mask=False, return_token_type_ids=False):
         super(Mydataset, self).__init__()
         self.return_attention_maks = return_attention_mask
         self.return_token_type_ids = return_token_type_ids
+        self.max_length = max_length
         self.tokenizer = AutoTokenizer.from_pretrained('bert-base-uncased')
         self.vocab_size = self.tokenizer.vocab_size
         self.mask_ids = self.tokenizer.mask_token_id
@@ -26,14 +27,15 @@ class Mydataset(nn.Module):
 
     def __getitem__(self, item):
         if self.task == 'pretrain':
-            data = self.tokenizer(self.data[item]["text"], return_tensors='pt', return_attention_mask=False,
-                                  return_token_type_ids=False)['input_ids']
+            data = self.tokenizer(self.data[item]["text"], return_tensors='pt', truncation=True, max_length=self.max_length,
+                                  return_attention_mask=False, return_token_type_ids=False)['input_ids']
             label = data[:, 1:].flatten()
             data = label.clone()
             indices = list(range(len(data)))
             indices = rd.sample(indices, k=int(len(data) * 0.15))
             data[indices] = self.mask_ids
             return data, label
+
         if self.task == 'qqp':
             data = self.tokenizer(self.data[item]["text"], return_tensors='pt', return_attention_mask=self.return_attention_maks,
                                   return_token_type_ids=self.return_token_type_ids)['input_ids']

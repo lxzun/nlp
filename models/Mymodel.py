@@ -62,11 +62,11 @@ class Mymodel(nn.Module):
     def __init__(self, m, out_dim, hidden_size, vocab_size, n_layer, pad_ids, k=3, drop_rate=0):
         super(Mymodel, self).__init__()
         assert (hidden_size % m == 0), f"hidden_size: {hidden_size}, m: {m} ==> Must be hidden_size % m == 0!"
-
+        self.n_layer = n_layer
         self.m = m
         self.embed = MyEmbedding(vocab_size, hidden_size, pad_ids, drop_rate)
-        # self.model = nn.ModuleList([Myattention(m, out_dim, hidden_size, k, drop_rate) for _ in range(n_layer)])
-        self.model = Myattention(m, out_dim, hidden_size, k, drop_rate)
+        self.model = nn.ModuleList([Myattention(m, out_dim, hidden_size, k, drop_rate) for _ in range(n_layer)])
+
     def forward(self, x):
         # b, seq_length
         x = self.embed(x)                                                     # b x seq_length x hidden_size
@@ -78,11 +78,11 @@ class Mymodel(nn.Module):
         x = torch.transpose(x, 1, 2).contiguous()                             # b x m x seq_length x n
 
         all_outputs = ()
-        # for i, layer in enumerate(self.model):
-        #     all_outputs = all_outputs + (x,)
-        #     x = layer(x)
-        for _ in range(12):
-            x = self.model(x)
+
+        if not self.share:
+            for i, layer in enumerate(self.model):
+                all_outputs = all_outputs + (x,)
+                x = layer(x)
 
         return (x,) + all_outputs
 
@@ -121,6 +121,77 @@ class Mymodelforpretrain(nn.Module):
 
     def load(self, vocab_path, model_path):
         self.model.load(vocab_path, model_path)
+
+class Mysharemodel(nn.Module):
+    def __init__(self, m, out_dim, hidden_size, vocab_size, n_layer, pad_ids, k=3, drop_rate=0):
+        super(Mysharemodel, self).__init__()
+        assert (hidden_size % m == 0), f"hidden_size: {hidden_size}, m: {m} ==> Must be hidden_size % m == 0!"
+        self.n_layer = n_layer
+        self.m = m
+        self.embed = MyEmbedding(vocab_size, hidden_size, pad_ids, drop_rate)
+        self.model = Myattention(m, out_dim, hidden_size, k, drop_rate)
+
+    def forward(self, x):
+        # b, seq_length
+        x = self.embed(x)                                                     # b x seq_length x hidden_size
+
+        input_shape = x.size()
+        seq_length, hidden_size = input_shape[1:]
+
+        x = x.view(-1, seq_length, self.m, hidden_size//self.m)               # b x seq_length x m x n
+        x = torch.transpose(x, 1, 2).contiguous()                             # b x m x seq_length x n
+
+        all_outputs = ()
+
+        for _ in range(self.n_layer):
+            all_outputs = all_outputs + (x,)
+            x = self.model(x)
+
+        return (x,) + all_outputs
+
+    def save(self, vocab_path=None, model_path=None):
+        if vocab_path: torch.save(self.embed.state_dict(), vocab_path)
+        if model_path: torch.save(self.model.state_dict(), model_path)
+
+    def load(self, vocab_path=None, model_path=None):
+        if vocab_path: self.embed.load_state_dict(torch.load(vocab_path))
+        if model_path: self.model.load_state_dict(torch.load(model_path))
+
+class Mysharemodelforpretrain(nn.Module):
+    def __init__(self, m, out_dim, hidden_size, vocab_size, n_layer, pad_ids, k=3, drop_rate=0):
+        super(Mysharemodelforpretrain, self).__init__()
+        self.vocab_size = vocab_size
+        self.hidden_size = hidden_size
+        self.model = Mysharemodel(m, out_dim, hidden_size, vocab_size, n_layer, pad_ids, k, drop_rate)
+        self.linear = nn.Linear(hidden_size, vocab_size)
+
+    def forward(self, x):
+        # b x seq_length
+
+        outputs = self.model(x)
+
+        hidden = outputs[0]                                      # b x m x seq_length x n
+        hidden = torch.transpose(hidden, 1, 2).contiguous()      # b x seq_length x m x n
+        hidden = hidden.view(-1, x.size()[1], self.hidden_size)  # b x seq_length x hidden_size
+
+        out = self.linear(hidden)                                # b x seq_length x vocab_size
+        out = out.view(-1, self.vocab_size)                      # b*seq_length x vocab_size
+
+        return out
+
+    def save(self, vocab_path, model_path):
+        self.model.save(vocab_path, model_path)
+
+    def load(self, vocab_path, model_path):
+        self.model.load(vocab_path, model_path)
+
+# class Mymodelforclassification(nn.Module):
+#     def __init__(self, m, out_dim, hidden_size, vocab_size, n_layer, pad_ids, num_class, k=3, drop_rate=0):
+#         super(Mymodelforclassification, self).__init__()
+#         self.vocab_size = vocab_size
+#         self.hidden_size = hidden_size
+#         self.model = Mymodel(m, out_dim, hidden_size, vocab_size, n_layer, pad_ids, k, drop_rate)
+#         self.linear = nn.Linear(hidden_size, vocab_size)
 
 # class Mymodelforclassification(nn.Module):
 #     def __init__(self, m, out_dim, hidden_size, vocab_size, n_layer, pad_ids, num_class, k=3, drop_rate=0):

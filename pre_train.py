@@ -7,7 +7,7 @@ import os
 import argparse
 from tensorboardX import SummaryWriter
 from dataset import Mydataset
-from models.Mymodel import Mymodelforpretrain
+from models.Mymodel import Mymodelforpretrain, Mysharemodelforpretrain
 from torch.utils.data.sampler import SubsetRandomSampler
 
 
@@ -37,7 +37,7 @@ def train(model, trainloader, criterion, optimizer, epoch_idx, testloader, args,
         if batch_idx % (args.step_batch*10) == 0:
             total_batch = int((epoch_idx-1) * len(trainloader) + batch_idx)
             eval_loss = evaluation(model, testloader, criterion, device)
-            log(' >> epoch: {:2d}\t|\ttotal_batch: {:2d}\t|\teval_loss: {:.5f}'.format(
+            log(' >> epoch: {:2d}\t|\ttotal_batch: {:2d}\t|\teval_loss: {:.8f}'.format(
                 epoch_idx, total_batch, eval_loss))
 
             writer.add_scalars('loss', {'train loss': loss.item(), 'eval loss': eval_loss}, total_batch)
@@ -45,7 +45,7 @@ def train(model, trainloader, criterion, optimizer, epoch_idx, testloader, args,
             if best_loss > eval_loss:
                 best_loss = eval_loss
                 model.module.save(vocab_save + '/embedding_weight', model_save+'/model_weight')
-                writer.add_text('best loss', '{}b_{:.5f}%'.format(total_batch, best_loss), total_batch)
+                writer.add_text('best loss', '{}b_{}'.format(total_batch, best_loss), total_batch)
 
     return avg_loss
 
@@ -79,7 +79,7 @@ if __name__ == '__main__':
     parser.add_argument('--description', type=str, default='pretrain')
 
     parser.add_argument('--num_epochs', type=int, default=2000)
-    parser.add_argument('--batch_size', type=int, default=22)
+    parser.add_argument('--batch_size', type=int, default=30)
     parser.add_argument('--step_batch', type=int, default=100)
     parser.add_argument('--eval_batch_size', type=int, default=22)
 
@@ -87,11 +87,12 @@ if __name__ == '__main__':
     parser.add_argument('--seed', type=int, default=42)
     parser.add_argument('--drop_rate', type=float, default=0.)
 
-    parser.add_argument('--hidden_size', type=int, default=768)
-    parser.add_argument('--m', type=int, default=24)
+    parser.add_argument('--hidden_size', type=int, default=128)
+    parser.add_argument('--m', type=int, default=8)
     parser.add_argument('--out_dim', type=int, default=64)
     parser.add_argument('--k', type=int, default=3)
     parser.add_argument('--n_layer', type=int, default=12)
+    parser.add_argument('--share', type=bool, default=True)
     parser.add_argument('--max_seq_length', type=int, default=512)
     parser.add_argument('--task', type=str, default='pretrain')
 
@@ -114,7 +115,7 @@ if __name__ == '__main__':
     log_file = os.path.join(log_dir, 'log.txt')
     model_save = mk_dir(os.path.join(log_dir, 'model_save')) if args.save_model else None
     vocab_save = mk_dir(os.path.join(log_dir, 'vocab_save')) if args.save_vocab else None
-    writer = SummaryWriter(os.path.join(log_dir, 'tb'))
+    writer = SummaryWriter(os.path.join(log_dir, args.description))
 
     device = args.use_cuda if torch.cuda.is_available() else 'cpu'
 
@@ -127,7 +128,7 @@ if __name__ == '__main__':
         log('{}: {}'.format(k, v))
     log('Real used device: {}'.format(device))
 
-    dataset = Mydataset(task=args.task)
+    dataset = Mydataset(task=args.task, max_length=args.max_seq_length)
     dataset_size = len(dataset)
     validation_split = .00125
     indices = list(range(dataset_size))
@@ -147,7 +148,10 @@ if __name__ == '__main__':
     log('- num : {}'.format(len(val_indices)))
     log('----------------------\n')
 
-    model = Mymodelforpretrain(args.m, args.out_dim, args.hidden_size, dataset.vocab_size, args.n_layer, dataset.pad_ids)
+    if args.share:
+        model = Mysharemodelforpretrain(args.m, args.out_dim, args.hidden_size, dataset.vocab_size, args.n_layer, dataset.pad_ids)
+    else:
+        model = Mymodelforpretrain(args.m, args.out_dim, args.hidden_size, dataset.vocab_size, args.n_layer, dataset.pad_ids)
     if device == 'cuda':
         model.to(device)
 
