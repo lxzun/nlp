@@ -7,7 +7,7 @@ import os
 import argparse
 from tensorboardX import SummaryWriter
 from dataset import Mydataset
-from models.Mymodel import MymodelForPretrain, MysharemodelForPretrain
+from models.Mymodel import MymodelForPretrain
 from torch.utils.data.sampler import SubsetRandomSampler
 
 
@@ -46,7 +46,7 @@ def train(model, trainloader, criterion, optimizer, epoch_idx, testloader, args,
 
                 if best_loss > eval_loss:
                     best_loss = eval_loss
-                    model.module.save(vocab_save + '/embedding_weight', model_save+'/model_weight')
+                    model.module.save(vocab_save, model_save)
                     writer.add_text('best loss', '{}b_{}'.format(total_batch, best_loss), total_batch)
 
             train_loss = 0
@@ -91,12 +91,12 @@ if __name__ == '__main__':
     parser.add_argument('--seed', type=int, default=42)
     parser.add_argument('--drop_rate', type=float, default=0.)
 
-    parser.add_argument('--hidden_size', type=int, default=128)
-    parser.add_argument('--m', type=int, default=8)
+    parser.add_argument('--embedding_size', type=int, default=128)
+    parser.add_argument('--hidden_size', type=int, default=768)
+    parser.add_argument('--m', type=int, default=24)
     parser.add_argument('--out_dim', type=int, default=64)
     parser.add_argument('--k', type=int, default=3)
     parser.add_argument('--n_layer', type=int, default=12)
-    parser.add_argument('--share', type=bool, default=False)
     parser.add_argument('--max_seq_length', type=int, default=512)
     parser.add_argument('--task', type=str, default='pretrain')
 
@@ -118,7 +118,9 @@ if __name__ == '__main__':
     log_dir = mk_dir(os.path.join(log_root, 'log_{}'.format(today)))
     log_file = os.path.join(log_dir, 'log.txt')
     model_save = mk_dir(os.path.join(log_dir, 'model_save')) if args.save_model else None
+    model_save = model_save + '/model_weight' if model_save else None
     vocab_save = mk_dir(os.path.join(log_dir, 'vocab_save')) if args.save_vocab else None
+    vocab_save = vocab_save + '/embedding_weight' if vocab_save else None
     writer = SummaryWriter(os.path.join(log_dir, args.description))
 
     device = args.use_cuda if torch.cuda.is_available() else 'cpu'
@@ -152,10 +154,12 @@ if __name__ == '__main__':
     log('- num : {}'.format(len(val_indices)))
     log('----------------------\n')
 
-    if args.share:
-        model = MysharemodelForPretrain(args.m, args.out_dim, args.hidden_size, dataset.vocab_size, args.n_layer, dataset.pad_ids)
-    else:
-        model = MymodelForPretrain(args.m, args.out_dim, args.hidden_size, dataset.vocab_size, args.n_layer, dataset.pad_ids)
+    model = MymodelForPretrain(vocab_size=dataset.vocab_size,
+                               embedding_size=args.embedding_size,
+                               hidden_size=args.hidden_size,
+                               m=args.m, out_dim=args.out_dim,
+                               n_layer=args.n_layer,
+                               pad_ids=dataset.pad_id)
     if device == 'cuda':
         model.to(device)
 
