@@ -98,12 +98,12 @@ def log(string):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='')
-    parser.add_argument('--description', type=str, default='H128-M8-O64-12layer-pretrained-QQP')
+    parser.add_argument('--description', type=str, default='E128-H768-M24-O128-L12-pretrained-QQP')
 
     parser.add_argument('--num_epochs', type=int, default=2000)
-    parser.add_argument('--batch_size', type=int, default=48)
-    parser.add_argument('--step_batch', type=int, default=25)
-    parser.add_argument('--eval_batch_size', type=int, default=64)
+    parser.add_argument('--batch_size', type=int, default=8)
+    parser.add_argument('--step_batch', type=int, default=1000)
+    parser.add_argument('--eval_batch_size', type=int, default=10000)
 
     parser.add_argument('--lr', type=float, default=5e-05)
     parser.add_argument('--seed', type=int, default=42)
@@ -112,18 +112,18 @@ if __name__ == '__main__':
     parser.add_argument('--embedding_size', type=int, default=128)
     parser.add_argument('--hidden_size', type=int, default=768)
     parser.add_argument('--m', type=int, default=24)
-    parser.add_argument('--out_dim', type=int, default=64)
+    parser.add_argument('--out_dim', type=int, default=128)
     parser.add_argument('--k', type=int, default=3)
     parser.add_argument('--n_layer', type=int, default=12)
     parser.add_argument('--max_seq_length', type=int, default=512)
     parser.add_argument('--task', type=str, default='qqp')
 
     parser.add_argument('--save_vocab', type=bool, default=True)
-    parser.add_argument('--pretrained_vocab_path', type=str, default='/media/lxzun/HJ/Workdir/project_ing/EMNLP/model_save/H128-M8-O64-pretrain/vocab_save/embedding_weight', help='load pretrained vocab path')
+    parser.add_argument('--pretrained_vocab_path', type=str, default='/media/lxzun/HJ/Workdir/project_ing/EMNLP/log/train/log_21-05-24_23-03-41/vocab_save/embedding_weight', help='load pretrained vocab path')
     parser.add_argument('--pretrained_vocab', type=bool, default=True, help='load pretrained vocab')
 
     parser.add_argument('--save_model', type=bool, default=True)
-    parser.add_argument('--pretrained_model_path', type=str, default='/media/lxzun/HJ/Workdir/project_ing/EMNLP/model_save/H128-M8-O64-pretrain/model_save/model_weight', help='load pretrained model path')
+    parser.add_argument('--pretrained_model_path', type=str, default='/media/lxzun/HJ/Workdir/project_ing/EMNLP/log/train/log_21-05-24_23-03-41/model_save/model_weight', help='load pretrained model path')
     parser.add_argument('--pretrained_model', type=bool, default=True, help='load pretrained model')
 
     parser.add_argument('--use_cuda', type=str, default='cuda')

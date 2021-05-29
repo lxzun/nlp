@@ -46,15 +46,15 @@ class Myattention(nn.Module):
         return out
 
 class MyEmbedding(nn.Module):
-    def __init__(self, vocab_size, embedding_size, pad_ids, drop_rate=0):
+    def __init__(self, vocab_size, embedding_size, hidden_size, pad_ids, drop_rate=0):
         super(MyEmbedding, self).__init__()
         self.embedding = nn.Embedding(vocab_size, embedding_size, padding_idx=pad_ids)
+        self.linear = nn.Linear(embedding_size, hidden_size)
         self.layernorm = nn.LayerNorm(embedding_size)
         self.dropout = nn.Dropout(drop_rate)
-
     def forward(self, x):
         # b, seq_length
-        x = self.embedding(x)
+        x = self.linear(self.embedding(x))
         x = self.dropout(self.layernorm(x))                                  # b x seq_length x hidden_size
         return x
 
@@ -63,16 +63,12 @@ class Mymodel(nn.Module):
         super(Mymodel, self).__init__()
         assert (hidden_size % m == 0), f"hidden_size: {hidden_size}, m: {m} ==> Must be hidden_size % m == 0!"
         self.m = m
-        self.embed = MyEmbedding(vocab_size, embedding_size, pad_ids, drop_rate)
-        self.linear = nn.Linear(embedding_size, hidden_size)
-        self.layernorm = nn.LayerNorm(hidden_size)
-        self.dropout = nn.Dropout(drop_rate)
+        self.embed = MyEmbedding(vocab_size, embedding_size, hidden_size, pad_ids, drop_rate)
         self.model = nn.ModuleList([Myattention(m, out_dim, hidden_size, k, drop_rate) for _ in range(n_layer)])
 
     def forward(self, x):
         # b, seq_length
-        x = self.embed(x)                                                     # b x seq_length x embedding_size
-        x = self.dropout(self.layernorm(self.linear(x)))                      # b x seq_length x hidden_size
+        x = self.embed(x)                                                     # b x seq_length x hidden_size
 
         input_shape = x.size()
         seq_length, hidden_size = input_shape[1:]
@@ -144,6 +140,7 @@ class MymodelForSequenceClassification(nn.Module):
         hidden = torch.transpose(hidden, 1, 2).contiguous()      # b x seq_length x m x n
         hidden = hidden.view(-1, x.size()[1], self.hidden_size)  # b x seq_length x hidden_size
         hidden = torch.mean(hidden, dim=1)                       # b x hidden_size
+        # hidden = hidden[:,0,:]                                   # b x hidden_size
         out = self.linear(hidden)                                # b x num_classes
 
         return out
