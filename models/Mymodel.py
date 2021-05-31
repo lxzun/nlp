@@ -50,7 +50,7 @@ class MyEmbedding(nn.Module):
         super(MyEmbedding, self).__init__()
         self.embedding = nn.Embedding(vocab_size, embedding_size, padding_idx=pad_ids)
         self.linear = nn.Linear(embedding_size, hidden_size)
-        self.layernorm = nn.LayerNorm(embedding_size)
+        self.layernorm = nn.LayerNorm(hidden_size)
         self.dropout = nn.Dropout(drop_rate)
     def forward(self, x):
         # b, seq_length

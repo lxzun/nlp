@@ -36,7 +36,7 @@ def train(model, trainloader, criterion, optimizer, epoch_idx, testloader, args,
                 batch_idx, num_batchs,
                 train_loss/args.step_batch))
 
-            if batch_idx % (args.step_batch*100) == 0:
+            if batch_idx % (args.step_batch*10) == 0:
                 total_batch = int((epoch_idx-1) * len(trainloader) + batch_idx)
                 eval_loss = evaluation(model, testloader, criterion, device)
                 log(' >> epoch: {:2d}\t|\ttotal_batch: {:2d}\t|\teval_loss: {:.8f}'.format(
@@ -80,21 +80,21 @@ def log(string):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='')
-    parser.add_argument('--description', type=str, default='E128-H768-M24-L12-pretrain')
+    parser.add_argument('--description', type=str, default='E128-H768-M32-O64-L12-pretrain')
 
     parser.add_argument('--num_epochs', type=int, default=2000)
-    parser.add_argument('--batch_size', type=int, default=16)
-    parser.add_argument('--step_batch', type=int, default=10)
+    parser.add_argument('--batch_size', type=int, default=24)
+    parser.add_argument('--step_batch', type=int, default=500)
     parser.add_argument('--eval_batch_size', type=int, default=256)
 
-    parser.add_argument('--lr', type=float, default=1e-04)
+    parser.add_argument('--lr', type=float, default=2e-04)
     parser.add_argument('--seed', type=int, default=42)
     parser.add_argument('--drop_rate', type=float, default=0.)
 
     parser.add_argument('--embedding_size', type=int, default=128)
     parser.add_argument('--hidden_size', type=int, default=768)
-    parser.add_argument('--m', type=int, default=24)
-    parser.add_argument('--out_dim', type=int, default=128)
+    parser.add_argument('--m', type=int, default=32)
+    parser.add_argument('--out_dim', type=int, default=64)
     parser.add_argument('--k', type=int, default=3)
     parser.add_argument('--n_layer', type=int, default=12)
     parser.add_argument('--max_seq_length', type=int, default=512)
