@@ -80,10 +80,10 @@ def log(string):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='')
-    parser.add_argument('--description', type=str, default='E128-H768-M32-O64-L12-pretrain')
+    parser.add_argument('--description', type=str, default='E128-H768-M32-O64-L4-pretrain')
 
     parser.add_argument('--num_epochs', type=int, default=2000)
-    parser.add_argument('--batch_size', type=int, default=24)
+    parser.add_argument('--batch_size', type=int, default=32)
     parser.add_argument('--step_batch', type=int, default=500)
     parser.add_argument('--eval_batch_size', type=int, default=256)
 
@@ -96,7 +96,7 @@ if __name__ == '__main__':
     parser.add_argument('--m', type=int, default=32)
     parser.add_argument('--out_dim', type=int, default=64)
     parser.add_argument('--k', type=int, default=3)
-    parser.add_argument('--n_layer', type=int, default=12)
+    parser.add_argument('--n_layer', type=int, default=4)
     parser.add_argument('--max_seq_length', type=int, default=512)
     parser.add_argument('--task', type=str, default='pretrain')
 

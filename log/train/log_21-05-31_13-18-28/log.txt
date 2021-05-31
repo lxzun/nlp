@@ -1,0 +1,146 @@
+description: E128-H768-M32-O64-L4-pretrain
+num_epochs: 2000
+batch_size: 32
+step_batch: 500
+eval_batch_size: 256
+lr: 0.0002
+seed: 42
+drop_rate: 0.0
+embedding_size: 128
+hidden_size: 768
+m: 32
+out_dim: 64
+k: 3
+n_layer: 4
+max_seq_length: 512
+task: pretrain
+save_vocab: True
+pretrained_vocab_path: 
+pretrained_vocab: False
+save_model: True
+pretrained_model_path: 
+pretrained_model: False
+use_cuda: cuda
+multi_gpu: True
+Real used device: cuda
+
+---- dataset info ----
+
+* train data *
+- num : 8003752
+
+* eval data *
+- num : 10017
+----------------------
+
+
+
+----------------------- 1 epoch start! -----------------------
+epoch:  1/2000	|	batch: 500/250118	|	loss: 3.37928
+epoch:  1/2000	|	batch: 1000/250118	|	loss: 1.13910
+epoch:  1/2000	|	batch: 1500/250118	|	loss: 0.93894
+epoch:  1/2000	|	batch: 2000/250118	|	loss: 0.88316
+epoch:  1/2000	|	batch: 2500/250118	|	loss: 0.83987
+epoch:  1/2000	|	batch: 3000/250118	|	loss: 0.79475
+epoch:  1/2000	|	batch: 3500/250118	|	loss: 0.76906
+epoch:  1/2000	|	batch: 4000/250118	|	loss: 0.75285
+epoch:  1/2000	|	batch: 4500/250118	|	loss: 0.74032
+epoch:  1/2000	|	batch: 5000/250118	|	loss: 0.72623
+ >> epoch:  1	|	total_batch: 5000	|	eval_loss: 0.72238272
+epoch:  1/2000	|	batch: 5500/250118	|	loss: 0.71737
+epoch:  1/2000	|	batch: 6000/250118	|	loss: 0.71023
+epoch:  1/2000	|	batch: 6500/250118	|	loss: 0.70487
+epoch:  1/2000	|	batch: 7000/250118	|	loss: 0.69526
+epoch:  1/2000	|	batch: 7500/250118	|	loss: 0.68760
+epoch:  1/2000	|	batch: 8000/250118	|	loss: 0.68423
+epoch:  1/2000	|	batch: 8500/250118	|	loss: 0.68067
+epoch:  1/2000	|	batch: 9000/250118	|	loss: 0.66965
+epoch:  1/2000	|	batch: 9500/250118	|	loss: 0.66764
+epoch:  1/2000	|	batch: 10000/250118	|	loss: 0.66081
+ >> epoch:  1	|	total_batch: 10000	|	eval_loss: 0.66065878
+epoch:  1/2000	|	batch: 10500/250118	|	loss: 0.65800
+epoch:  1/2000	|	batch: 11000/250118	|	loss: 0.65364
+epoch:  1/2000	|	batch: 11500/250118	|	loss: 0.65139
+epoch:  1/2000	|	batch: 12000/250118	|	loss: 0.64541
+epoch:  1/2000	|	batch: 12500/250118	|	loss: 0.64457
+epoch:  1/2000	|	batch: 13000/250118	|	loss: 0.63881
+epoch:  1/2000	|	batch: 13500/250118	|	loss: 0.63715
+epoch:  1/2000	|	batch: 14000/250118	|	loss: 0.63347
+epoch:  1/2000	|	batch: 14500/250118	|	loss: 0.63145
+epoch:  1/2000	|	batch: 15000/250118	|	loss: 0.62740
+ >> epoch:  1	|	total_batch: 15000	|	eval_loss: 0.62849611
+epoch:  1/2000	|	batch: 15500/250118	|	loss: 0.62612
+epoch:  1/2000	|	batch: 16000/250118	|	loss: 0.62388
+epoch:  1/2000	|	batch: 16500/250118	|	loss: 0.62159
+epoch:  1/2000	|	batch: 17000/250118	|	loss: 0.61929
+epoch:  1/2000	|	batch: 17500/250118	|	loss: 0.61647
+epoch:  1/2000	|	batch: 18000/250118	|	loss: 0.61498
+epoch:  1/2000	|	batch: 18500/250118	|	loss: 0.61337
+epoch:  1/2000	|	batch: 19000/250118	|	loss: 0.61297
+epoch:  1/2000	|	batch: 19500/250118	|	loss: 0.61017
+epoch:  1/2000	|	batch: 20000/250118	|	loss: 0.60635
+ >> epoch:  1	|	total_batch: 20000	|	eval_loss: 0.60533637
+epoch:  1/2000	|	batch: 20500/250118	|	loss: 0.60553
+epoch:  1/2000	|	batch: 21000/250118	|	loss: 0.59989
+epoch:  1/2000	|	batch: 21500/250118	|	loss: 0.60274
+epoch:  1/2000	|	batch: 22000/250118	|	loss: 0.60061
+epoch:  1/2000	|	batch: 22500/250118	|	loss: 0.59803
+epoch:  1/2000	|	batch: 23000/250118	|	loss: 0.59488
+epoch:  1/2000	|	batch: 23500/250118	|	loss: 0.59555
+epoch:  1/2000	|	batch: 24000/250118	|	loss: 0.59241
+epoch:  1/2000	|	batch: 24500/250118	|	loss: 0.59110
+epoch:  1/2000	|	batch: 25000/250118	|	loss: 0.58957
+ >> epoch:  1	|	total_batch: 25000	|	eval_loss: 0.59000707
+epoch:  1/2000	|	batch: 25500/250118	|	loss: 0.58692
+epoch:  1/2000	|	batch: 26000/250118	|	loss: 0.58768
+epoch:  1/2000	|	batch: 26500/250118	|	loss: 0.58702
+epoch:  1/2000	|	batch: 27000/250118	|	loss: 0.58460
+epoch:  1/2000	|	batch: 27500/250118	|	loss: 0.58309
+epoch:  1/2000	|	batch: 28000/250118	|	loss: 0.58215
+epoch:  1/2000	|	batch: 28500/250118	|	loss: 0.58131
+epoch:  1/2000	|	batch: 29000/250118	|	loss: 0.58014
+epoch:  1/2000	|	batch: 29500/250118	|	loss: 0.57695
+epoch:  1/2000	|	batch: 30000/250118	|	loss: 0.57775
+ >> epoch:  1	|	total_batch: 30000	|	eval_loss: 0.57698601
+epoch:  1/2000	|	batch: 30500/250118	|	loss: 0.57676
+epoch:  1/2000	|	batch: 31000/250118	|	loss: 0.57482
+epoch:  1/2000	|	batch: 31500/250118	|	loss: 0.57442
+epoch:  1/2000	|	batch: 32000/250118	|	loss: 0.57372
+epoch:  1/2000	|	batch: 32500/250118	|	loss: 0.57291
+epoch:  1/2000	|	batch: 33000/250118	|	loss: 0.57020
+epoch:  1/2000	|	batch: 33500/250118	|	loss: 0.57080
+epoch:  1/2000	|	batch: 34000/250118	|	loss: 0.56909
+epoch:  1/2000	|	batch: 34500/250118	|	loss: 0.56952
+epoch:  1/2000	|	batch: 35000/250118	|	loss: 0.56714
+ >> epoch:  1	|	total_batch: 35000	|	eval_loss: 0.56810611
+epoch:  1/2000	|	batch: 35500/250118	|	loss: 0.56512
+epoch:  1/2000	|	batch: 36000/250118	|	loss: 0.56394
+epoch:  1/2000	|	batch: 36500/250118	|	loss: 0.56380
+epoch:  1/2000	|	batch: 37000/250118	|	loss: 0.56503
+epoch:  1/2000	|	batch: 37500/250118	|	loss: 0.56439
+epoch:  1/2000	|	batch: 38000/250118	|	loss: 0.56071
+epoch:  1/2000	|	batch: 38500/250118	|	loss: 0.56050
+epoch:  1/2000	|	batch: 39000/250118	|	loss: 0.55999
+epoch:  1/2000	|	batch: 39500/250118	|	loss: 0.55896
+epoch:  1/2000	|	batch: 40000/250118	|	loss: 0.55937
+ >> epoch:  1	|	total_batch: 40000	|	eval_loss: 0.55856508
+epoch:  1/2000	|	batch: 40500/250118	|	loss: 0.55556
+epoch:  1/2000	|	batch: 41000/250118	|	loss: 0.55776
+epoch:  1/2000	|	batch: 41500/250118	|	loss: 0.55794
+epoch:  1/2000	|	batch: 42000/250118	|	loss: 0.55595
+epoch:  1/2000	|	batch: 42500/250118	|	loss: 0.55233
+epoch:  1/2000	|	batch: 43000/250118	|	loss: 0.55389
+epoch:  1/2000	|	batch: 43500/250118	|	loss: 0.55221
+epoch:  1/2000	|	batch: 44000/250118	|	loss: 0.55187
+epoch:  1/2000	|	batch: 44500/250118	|	loss: 0.55074
+epoch:  1/2000	|	batch: 45000/250118	|	loss: 0.55206
+ >> epoch:  1	|	total_batch: 45000	|	eval_loss: 0.55161679
+epoch:  1/2000	|	batch: 45500/250118	|	loss: 0.54859
+epoch:  1/2000	|	batch: 46000/250118	|	loss: 0.54787
+epoch:  1/2000	|	batch: 46500/250118	|	loss: 0.54903
+epoch:  1/2000	|	batch: 47000/250118	|	loss: 0.54834
+epoch:  1/2000	|	batch: 47500/250118	|	loss: 0.54767
+epoch:  1/2000	|	batch: 48000/250118	|	loss: 0.54784
+epoch:  1/2000	|	batch: 48500/250118	|	loss: 0.54768
+epoch:  1/2000	|	batch: 49000/250118	|	loss: 0.54565
+epoch:  1/2000	|	batch: 49500/250118	|	loss: 0.54435
