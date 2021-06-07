@@ -45,6 +45,55 @@ class Myattention(nn.Module):
 
         return out
 
+class Myattention2(nn.Module):
+    def __init__(self, m, out_dim, hidden_size, k=3, drop_rate=0):
+        super(Myattention2, self).__init__()
+        assert (k % 2 != 0), 'K must be Odd'
+        self.q = nn.Conv2d(m, out_dim, k, padding=(k-1)//2)
+        self.k = nn.Conv2d(m, out_dim, k, padding=(k-1)//2)
+        self.v = nn.Conv2d(m, out_dim, k, padding=(k-1)//2)
+        self.softmax = nn.Softmax(dim=0)
+        self.gelu = nn.GELU()
+        self.layernorm = nn.LayerNorm(out_dim * hidden_size // m)
+        self.dropout = nn.Dropout(drop_rate)
+        self.conv = nn.Conv2d(out_dim, 1, 1)
+        self.linear = nn.Linear(hidden_size // m, hidden_size)
+
+    def forward(self, x):
+        input_shape = x.size() # b x m x seq_length x n
+        m, seq_length, n = input_shape[1:]
+
+        q = self.dropout(self.gelu(self.q(x)))          # b x out_dim x seq_length x n
+        k = self.dropout(self.gelu(self.k(x)))
+        v = self.dropout(self.gelu(self.v(x)))
+
+        out_dim = q.size()[1]
+
+        q = torch.transpose(q, 1, 2).contiguous()                    # b x seq_length x out_dim x n
+        q = q.view(-1, seq_length, out_dim * n)                      # b x seq_length x out_dim*n
+
+        k = torch.transpose(k, 2, 3).contiguous()                    # b x out_dim x n x seq_length
+        k = k.view(-1, out_dim * n, seq_length)                      # b x out_dim*n x seq_length
+
+        v = torch.transpose(v, 1, 2).contiguous()
+        v = v.view(-1, seq_length, out_dim * n)
+
+        score = self.softmax(torch.matmul(q, k))                     # b x seq_length x seq_length
+        out = torch.matmul(score, v)                                 # b x seq_length x out_dim*n
+        out = self.layernorm(out)
+        out = out.view(-1, seq_length, out_dim, n)                   # b x seq_length x out_dim x n
+        out = torch.transpose(out, 1, 2).contiguous()                # b x out_dim x seq_length x n
+        out = self.conv(out)                                         # b x 1 x seq_length x n
+        out = torch.transpose(out, 1, 2).contiguous()                # b x seq_length x 1 x n
+        out = self.linear(out.view(-1, seq_length, int(m*n)))        # b x seq_length x hidden_size
+        out = self.dropout(self.gelu(out))
+        out = out.view(-1, seq_length, m, n)                         # b x seq_length x m x n
+        out = torch.transpose(out, 1, 2).contiguous()                # b x m x seq_length x n
+
+        out = out + x
+
+        return out
+
 class MyEmbedding(nn.Module):
     def __init__(self, vocab_size, embedding_size, hidden_size, pad_ids, drop_rate=0):
         super(MyEmbedding, self).__init__()

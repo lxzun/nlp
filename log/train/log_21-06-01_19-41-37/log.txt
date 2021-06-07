@@ -1,0 +1,615 @@
+description: E128-H768-M32-O64-L4-pretrained-QQP
+num_epochs: 2000
+batch_size: 80
+step_batch: 200
+eval_batch_size: 10000
+lr: 5e-05
+seed: 42
+drop_rate: 0.0
+embedding_size: 128
+hidden_size: 768
+m: 32
+out_dim: 64
+k: 3
+n_layer: 4
+max_seq_length: 512
+task: qqp
+save_vocab: True
+pretrained_vocab_path: /media/lxzun/HJ/Workdir/project_ing/EMNLP/log/train/log_21-05-31_13-18-28/vocab_save/embedding_weight
+pretrained_vocab: True
+save_model: True
+pretrained_model_path: /media/lxzun/HJ/Workdir/project_ing/EMNLP/log/train/log_21-05-31_13-18-28/model_save/model_weight
+pretrained_model: True
+use_cuda: cuda
+multi_gpu: True
+Real used device: cuda
+
+---- dataset info ----
+
+* train data *
+- num : 363846
+
+* eval data *
+- num : 40430
+----------------------
+
+
+
+----------------------- 1 epoch start! -----------------------
+epoch:  1/2000	|	batch: 200/4549	|	loss: 0.60660	|	acc: 66.66%
+epoch:  1/2000	|	batch: 400/4549	|	loss: 0.54106	|	acc: 71.78%
+epoch:  1/2000	|	batch: 600/4549	|	loss: 0.52015	|	acc: 73.02%
+epoch:  1/2000	|	batch: 800/4549	|	loss: 0.49826	|	acc: 74.84%
+epoch:  1/2000	|	batch: 1000/4549	|	loss: 0.48339	|	acc: 75.81%
+ >> epoch:  1	|	total_batch: 1000	|	eval_loss: 0.47374	|	eval_acc: 76.38
+epoch:  1/2000	|	batch: 1200/4549	|	loss: 0.45938	|	acc: 77.29%
+epoch:  1/2000	|	batch: 1400/4549	|	loss: 0.46406	|	acc: 76.94%
+epoch:  1/2000	|	batch: 1600/4549	|	loss: 0.45091	|	acc: 77.84%
+epoch:  1/2000	|	batch: 1800/4549	|	loss: 0.43626	|	acc: 78.81%
+epoch:  1/2000	|	batch: 2000/4549	|	loss: 0.43839	|	acc: 78.66%
+ >> epoch:  1	|	total_batch: 2000	|	eval_loss: 0.44037	|	eval_acc: 78.58
+epoch:  1/2000	|	batch: 2200/4549	|	loss: 0.44025	|	acc: 78.33%
+epoch:  1/2000	|	batch: 2400/4549	|	loss: 0.43363	|	acc: 78.86%
+epoch:  1/2000	|	batch: 2600/4549	|	loss: 0.42100	|	acc: 79.60%
+epoch:  1/2000	|	batch: 2800/4549	|	loss: 0.42149	|	acc: 79.17%
+epoch:  1/2000	|	batch: 3000/4549	|	loss: 0.41406	|	acc: 79.64%
+ >> epoch:  1	|	total_batch: 3000	|	eval_loss: 0.42531	|	eval_acc: 79.50
+epoch:  1/2000	|	batch: 3200/4549	|	loss: 0.41969	|	acc: 79.67%
+epoch:  1/2000	|	batch: 3400/4549	|	loss: 0.41687	|	acc: 79.97%
+epoch:  1/2000	|	batch: 3600/4549	|	loss: 0.40938	|	acc: 80.27%
+epoch:  1/2000	|	batch: 3800/4549	|	loss: 0.41705	|	acc: 79.78%
+epoch:  1/2000	|	batch: 4000/4549	|	loss: 0.40525	|	acc: 80.42%
+ >> epoch:  1	|	total_batch: 4000	|	eval_loss: 0.41326	|	eval_acc: 80.27
+epoch:  1/2000	|	batch: 4200/4549	|	loss: 0.40814	|	acc: 80.51%
+epoch:  1/2000	|	batch: 4400/4549	|	loss: 0.40354	|	acc: 80.62%
+
+
+----------------------- 2 epoch start! -----------------------
+epoch:  2/2000	|	batch: 200/4549	|	loss: 0.38396	|	acc: 81.70%
+epoch:  2/2000	|	batch: 400/4549	|	loss: 0.37692	|	acc: 82.16%
+epoch:  2/2000	|	batch: 600/4549	|	loss: 0.37948	|	acc: 82.09%
+epoch:  2/2000	|	batch: 800/4549	|	loss: 0.37710	|	acc: 82.23%
+epoch:  2/2000	|	batch: 1000/4549	|	loss: 0.37496	|	acc: 82.30%
+ >> epoch:  2	|	total_batch: 5549	|	eval_loss: 0.39351	|	eval_acc: 81.24
+epoch:  2/2000	|	batch: 1200/4549	|	loss: 0.37759	|	acc: 81.92%
+epoch:  2/2000	|	batch: 1400/4549	|	loss: 0.37302	|	acc: 82.61%
+epoch:  2/2000	|	batch: 1600/4549	|	loss: 0.36780	|	acc: 82.64%
+epoch:  2/2000	|	batch: 1800/4549	|	loss: 0.37291	|	acc: 82.53%
+epoch:  2/2000	|	batch: 2000/4549	|	loss: 0.36926	|	acc: 82.80%
+ >> epoch:  2	|	total_batch: 6549	|	eval_loss: 0.38503	|	eval_acc: 81.90
+epoch:  2/2000	|	batch: 2200/4549	|	loss: 0.36768	|	acc: 82.66%
+epoch:  2/2000	|	batch: 2400/4549	|	loss: 0.36334	|	acc: 82.88%
+epoch:  2/2000	|	batch: 2600/4549	|	loss: 0.36239	|	acc: 83.01%
+epoch:  2/2000	|	batch: 2800/4549	|	loss: 0.37025	|	acc: 82.66%
+epoch:  2/2000	|	batch: 3000/4549	|	loss: 0.35991	|	acc: 83.38%
+ >> epoch:  2	|	total_batch: 7549	|	eval_loss: 0.37963	|	eval_acc: 82.05
+epoch:  2/2000	|	batch: 3200/4549	|	loss: 0.36376	|	acc: 83.06%
+epoch:  2/2000	|	batch: 3400/4549	|	loss: 0.36202	|	acc: 83.14%
+epoch:  2/2000	|	batch: 3600/4549	|	loss: 0.36629	|	acc: 82.98%
+epoch:  2/2000	|	batch: 3800/4549	|	loss: 0.36080	|	acc: 83.22%
+epoch:  2/2000	|	batch: 4000/4549	|	loss: 0.36088	|	acc: 83.28%
+ >> epoch:  2	|	total_batch: 8549	|	eval_loss: 0.36684	|	eval_acc: 82.84
+epoch:  2/2000	|	batch: 4200/4549	|	loss: 0.35731	|	acc: 83.21%
+epoch:  2/2000	|	batch: 4400/4549	|	loss: 0.36027	|	acc: 83.29%
+
+
+----------------------- 3 epoch start! -----------------------
+epoch:  3/2000	|	batch: 200/4549	|	loss: 0.33566	|	acc: 84.61%
+epoch:  3/2000	|	batch: 400/4549	|	loss: 0.33741	|	acc: 84.28%
+epoch:  3/2000	|	batch: 600/4549	|	loss: 0.32953	|	acc: 84.84%
+epoch:  3/2000	|	batch: 800/4549	|	loss: 0.34164	|	acc: 84.05%
+epoch:  3/2000	|	batch: 1000/4549	|	loss: 0.32253	|	acc: 85.11%
+ >> epoch:  3	|	total_batch: 10098	|	eval_loss: 0.36498	|	eval_acc: 83.03
+epoch:  3/2000	|	batch: 1200/4549	|	loss: 0.32877	|	acc: 84.74%
+epoch:  3/2000	|	batch: 1400/4549	|	loss: 0.33248	|	acc: 84.58%
+epoch:  3/2000	|	batch: 1600/4549	|	loss: 0.32900	|	acc: 84.80%
+epoch:  3/2000	|	batch: 1800/4549	|	loss: 0.33240	|	acc: 84.66%
+epoch:  3/2000	|	batch: 2000/4549	|	loss: 0.33152	|	acc: 84.53%
+ >> epoch:  3	|	total_batch: 11098	|	eval_loss: 0.35703	|	eval_acc: 83.40
+epoch:  3/2000	|	batch: 2200/4549	|	loss: 0.32625	|	acc: 84.79%
+epoch:  3/2000	|	batch: 2400/4549	|	loss: 0.32319	|	acc: 85.27%
+epoch:  3/2000	|	batch: 2600/4549	|	loss: 0.32504	|	acc: 85.17%
+epoch:  3/2000	|	batch: 2800/4549	|	loss: 0.32917	|	acc: 84.76%
+epoch:  3/2000	|	batch: 3000/4549	|	loss: 0.33372	|	acc: 84.72%
+ >> epoch:  3	|	total_batch: 12098	|	eval_loss: 0.35390	|	eval_acc: 83.60
+epoch:  3/2000	|	batch: 3200/4549	|	loss: 0.32880	|	acc: 85.06%
+epoch:  3/2000	|	batch: 3400/4549	|	loss: 0.32444	|	acc: 85.06%
+epoch:  3/2000	|	batch: 3600/4549	|	loss: 0.32688	|	acc: 84.85%
+epoch:  3/2000	|	batch: 3800/4549	|	loss: 0.32706	|	acc: 84.69%
+epoch:  3/2000	|	batch: 4000/4549	|	loss: 0.32367	|	acc: 85.14%
+ >> epoch:  3	|	total_batch: 13098	|	eval_loss: 0.35481	|	eval_acc: 83.58
+epoch:  3/2000	|	batch: 4200/4549	|	loss: 0.32123	|	acc: 85.20%
+epoch:  3/2000	|	batch: 4400/4549	|	loss: 0.32379	|	acc: 85.41%
+
+
+----------------------- 4 epoch start! -----------------------
+epoch:  4/2000	|	batch: 200/4549	|	loss: 0.29702	|	acc: 86.76%
+epoch:  4/2000	|	batch: 400/4549	|	loss: 0.29136	|	acc: 86.67%
+epoch:  4/2000	|	batch: 600/4549	|	loss: 0.29814	|	acc: 86.26%
+epoch:  4/2000	|	batch: 800/4549	|	loss: 0.29957	|	acc: 86.31%
+epoch:  4/2000	|	batch: 1000/4549	|	loss: 0.29675	|	acc: 86.74%
+ >> epoch:  4	|	total_batch: 14647	|	eval_loss: 0.35228	|	eval_acc: 83.92
+epoch:  4/2000	|	batch: 1200/4549	|	loss: 0.29920	|	acc: 86.51%
+epoch:  4/2000	|	batch: 1400/4549	|	loss: 0.30356	|	acc: 86.37%
+epoch:  4/2000	|	batch: 1600/4549	|	loss: 0.30289	|	acc: 86.41%
+epoch:  4/2000	|	batch: 1800/4549	|	loss: 0.29945	|	acc: 86.39%
+epoch:  4/2000	|	batch: 2000/4549	|	loss: 0.28816	|	acc: 87.22%
+ >> epoch:  4	|	total_batch: 15647	|	eval_loss: 0.35354	|	eval_acc: 83.95
+epoch:  4/2000	|	batch: 2200/4549	|	loss: 0.29455	|	acc: 86.51%
+epoch:  4/2000	|	batch: 2400/4549	|	loss: 0.29464	|	acc: 86.92%
+epoch:  4/2000	|	batch: 2600/4549	|	loss: 0.29759	|	acc: 86.29%
+epoch:  4/2000	|	batch: 2800/4549	|	loss: 0.29863	|	acc: 86.61%
+epoch:  4/2000	|	batch: 3000/4549	|	loss: 0.30074	|	acc: 86.36%
+ >> epoch:  4	|	total_batch: 16647	|	eval_loss: 0.34723	|	eval_acc: 84.04
+epoch:  4/2000	|	batch: 3200/4549	|	loss: 0.29351	|	acc: 86.91%
+epoch:  4/2000	|	batch: 3400/4549	|	loss: 0.28948	|	acc: 87.03%
+epoch:  4/2000	|	batch: 3600/4549	|	loss: 0.29532	|	acc: 86.65%
+epoch:  4/2000	|	batch: 3800/4549	|	loss: 0.30045	|	acc: 86.56%
+epoch:  4/2000	|	batch: 4000/4549	|	loss: 0.29583	|	acc: 86.71%
+ >> epoch:  4	|	total_batch: 17647	|	eval_loss: 0.35535	|	eval_acc: 83.72
+epoch:  4/2000	|	batch: 4200/4549	|	loss: 0.29511	|	acc: 86.67%
+epoch:  4/2000	|	batch: 4400/4549	|	loss: 0.30024	|	acc: 86.52%
+
+
+----------------------- 5 epoch start! -----------------------
+epoch:  5/2000	|	batch: 200/4549	|	loss: 0.26683	|	acc: 87.99%
+epoch:  5/2000	|	batch: 400/4549	|	loss: 0.26401	|	acc: 88.61%
+epoch:  5/2000	|	batch: 600/4549	|	loss: 0.26347	|	acc: 88.77%
+epoch:  5/2000	|	batch: 800/4549	|	loss: 0.27061	|	acc: 88.15%
+epoch:  5/2000	|	batch: 1000/4549	|	loss: 0.26285	|	acc: 88.49%
+ >> epoch:  5	|	total_batch: 19196	|	eval_loss: 0.35140	|	eval_acc: 84.19
+epoch:  5/2000	|	batch: 1200/4549	|	loss: 0.26591	|	acc: 88.20%
+epoch:  5/2000	|	batch: 1400/4549	|	loss: 0.26912	|	acc: 88.14%
+epoch:  5/2000	|	batch: 1600/4549	|	loss: 0.27145	|	acc: 88.08%
+epoch:  5/2000	|	batch: 1800/4549	|	loss: 0.26491	|	acc: 88.49%
+epoch:  5/2000	|	batch: 2000/4549	|	loss: 0.26021	|	acc: 88.39%
+ >> epoch:  5	|	total_batch: 20196	|	eval_loss: 0.36148	|	eval_acc: 84.47
+epoch:  5/2000	|	batch: 2200/4549	|	loss: 0.27517	|	acc: 87.99%
+epoch:  5/2000	|	batch: 2400/4549	|	loss: 0.27139	|	acc: 87.98%
+epoch:  5/2000	|	batch: 2600/4549	|	loss: 0.26857	|	acc: 88.36%
+epoch:  5/2000	|	batch: 2800/4549	|	loss: 0.27755	|	acc: 87.83%
+epoch:  5/2000	|	batch: 3000/4549	|	loss: 0.27130	|	acc: 87.98%
+ >> epoch:  5	|	total_batch: 21196	|	eval_loss: 0.34614	|	eval_acc: 84.48
+epoch:  5/2000	|	batch: 3200/4549	|	loss: 0.27021	|	acc: 88.22%
+epoch:  5/2000	|	batch: 3400/4549	|	loss: 0.27393	|	acc: 87.81%
+epoch:  5/2000	|	batch: 3600/4549	|	loss: 0.27339	|	acc: 87.71%
+epoch:  5/2000	|	batch: 3800/4549	|	loss: 0.27629	|	acc: 87.67%
+epoch:  5/2000	|	batch: 4000/4549	|	loss: 0.27273	|	acc: 87.94%
+ >> epoch:  5	|	total_batch: 22196	|	eval_loss: 0.34860	|	eval_acc: 84.66
+epoch:  5/2000	|	batch: 4200/4549	|	loss: 0.27227	|	acc: 87.93%
+epoch:  5/2000	|	batch: 4400/4549	|	loss: 0.27333	|	acc: 88.02%
+
+
+----------------------- 6 epoch start! -----------------------
+epoch:  6/2000	|	batch: 200/4549	|	loss: 0.23574	|	acc: 89.69%
+epoch:  6/2000	|	batch: 400/4549	|	loss: 0.23880	|	acc: 89.58%
+epoch:  6/2000	|	batch: 600/4549	|	loss: 0.24392	|	acc: 89.69%
+epoch:  6/2000	|	batch: 800/4549	|	loss: 0.23930	|	acc: 89.67%
+epoch:  6/2000	|	batch: 1000/4549	|	loss: 0.23448	|	acc: 89.81%
+ >> epoch:  6	|	total_batch: 23745	|	eval_loss: 0.36228	|	eval_acc: 84.45
+epoch:  6/2000	|	batch: 1200/4549	|	loss: 0.24242	|	acc: 89.53%
+epoch:  6/2000	|	batch: 1400/4549	|	loss: 0.23661	|	acc: 89.71%
+epoch:  6/2000	|	batch: 1600/4549	|	loss: 0.24892	|	acc: 89.26%
+epoch:  6/2000	|	batch: 1800/4549	|	loss: 0.24691	|	acc: 89.30%
+epoch:  6/2000	|	batch: 2000/4549	|	loss: 0.23766	|	acc: 89.88%
+ >> epoch:  6	|	total_batch: 24745	|	eval_loss: 0.35338	|	eval_acc: 84.59
+epoch:  6/2000	|	batch: 2200/4549	|	loss: 0.23990	|	acc: 89.58%
+epoch:  6/2000	|	batch: 2400/4549	|	loss: 0.24642	|	acc: 89.22%
+epoch:  6/2000	|	batch: 2600/4549	|	loss: 0.24201	|	acc: 89.62%
+epoch:  6/2000	|	batch: 2800/4549	|	loss: 0.24540	|	acc: 89.45%
+epoch:  6/2000	|	batch: 3000/4549	|	loss: 0.24519	|	acc: 89.41%
+ >> epoch:  6	|	total_batch: 25745	|	eval_loss: 0.35510	|	eval_acc: 84.51
+epoch:  6/2000	|	batch: 3200/4549	|	loss: 0.24555	|	acc: 89.31%
+epoch:  6/2000	|	batch: 3400/4549	|	loss: 0.24997	|	acc: 89.11%
+epoch:  6/2000	|	batch: 3600/4549	|	loss: 0.25016	|	acc: 89.01%
+epoch:  6/2000	|	batch: 3800/4549	|	loss: 0.24085	|	acc: 89.74%
+epoch:  6/2000	|	batch: 4000/4549	|	loss: 0.24979	|	acc: 89.01%
+ >> epoch:  6	|	total_batch: 26745	|	eval_loss: 0.35683	|	eval_acc: 84.75
+epoch:  6/2000	|	batch: 4200/4549	|	loss: 0.24915	|	acc: 88.92%
+epoch:  6/2000	|	batch: 4400/4549	|	loss: 0.24921	|	acc: 88.81%
+
+
+----------------------- 7 epoch start! -----------------------
+epoch:  7/2000	|	batch: 200/4549	|	loss: 0.21899	|	acc: 90.75%
+epoch:  7/2000	|	batch: 400/4549	|	loss: 0.20610	|	acc: 91.15%
+epoch:  7/2000	|	batch: 600/4549	|	loss: 0.21684	|	acc: 90.55%
+epoch:  7/2000	|	batch: 800/4549	|	loss: 0.21054	|	acc: 91.19%
+epoch:  7/2000	|	batch: 1000/4549	|	loss: 0.21861	|	acc: 90.53%
+ >> epoch:  7	|	total_batch: 28294	|	eval_loss: 0.36434	|	eval_acc: 84.64
+epoch:  7/2000	|	batch: 1200/4549	|	loss: 0.21520	|	acc: 91.12%
+epoch:  7/2000	|	batch: 1400/4549	|	loss: 0.22403	|	acc: 90.31%
+epoch:  7/2000	|	batch: 1600/4549	|	loss: 0.22238	|	acc: 90.66%
+epoch:  7/2000	|	batch: 1800/4549	|	loss: 0.21099	|	acc: 91.15%
+epoch:  7/2000	|	batch: 2000/4549	|	loss: 0.22071	|	acc: 90.58%
+ >> epoch:  7	|	total_batch: 29294	|	eval_loss: 0.37300	|	eval_acc: 84.69
+epoch:  7/2000	|	batch: 2200/4549	|	loss: 0.21647	|	acc: 90.54%
+epoch:  7/2000	|	batch: 2400/4549	|	loss: 0.22185	|	acc: 90.36%
+epoch:  7/2000	|	batch: 2600/4549	|	loss: 0.22067	|	acc: 90.44%
+epoch:  7/2000	|	batch: 2800/4549	|	loss: 0.21716	|	acc: 90.57%
+epoch:  7/2000	|	batch: 3000/4549	|	loss: 0.22295	|	acc: 90.41%
+ >> epoch:  7	|	total_batch: 30294	|	eval_loss: 0.36062	|	eval_acc: 84.87
+epoch:  7/2000	|	batch: 3200/4549	|	loss: 0.21764	|	acc: 90.88%
+epoch:  7/2000	|	batch: 3400/4549	|	loss: 0.22368	|	acc: 90.46%
+epoch:  7/2000	|	batch: 3600/4549	|	loss: 0.22149	|	acc: 90.62%
+epoch:  7/2000	|	batch: 3800/4549	|	loss: 0.21996	|	acc: 90.60%
+epoch:  7/2000	|	batch: 4000/4549	|	loss: 0.22258	|	acc: 90.37%
+ >> epoch:  7	|	total_batch: 31294	|	eval_loss: 0.35704	|	eval_acc: 84.86
+epoch:  7/2000	|	batch: 4200/4549	|	loss: 0.22849	|	acc: 89.92%
+epoch:  7/2000	|	batch: 4400/4549	|	loss: 0.22800	|	acc: 90.12%
+
+
+----------------------- 8 epoch start! -----------------------
+epoch:  8/2000	|	batch: 200/4549	|	loss: 0.19450	|	acc: 92.07%
+epoch:  8/2000	|	batch: 400/4549	|	loss: 0.18348	|	acc: 92.42%
+epoch:  8/2000	|	batch: 600/4549	|	loss: 0.19269	|	acc: 91.83%
+epoch:  8/2000	|	batch: 800/4549	|	loss: 0.19343	|	acc: 91.69%
+epoch:  8/2000	|	batch: 1000/4549	|	loss: 0.18636	|	acc: 92.03%
+ >> epoch:  8	|	total_batch: 32843	|	eval_loss: 0.40138	|	eval_acc: 84.50
+epoch:  8/2000	|	batch: 1200/4549	|	loss: 0.19774	|	acc: 91.89%
+epoch:  8/2000	|	batch: 1400/4549	|	loss: 0.18896	|	acc: 92.01%
+epoch:  8/2000	|	batch: 1600/4549	|	loss: 0.20300	|	acc: 91.46%
+epoch:  8/2000	|	batch: 1800/4549	|	loss: 0.19739	|	acc: 91.83%
+epoch:  8/2000	|	batch: 2000/4549	|	loss: 0.19808	|	acc: 91.70%
+ >> epoch:  8	|	total_batch: 33843	|	eval_loss: 0.37477	|	eval_acc: 84.70
+epoch:  8/2000	|	batch: 2200/4549	|	loss: 0.20193	|	acc: 91.34%
+epoch:  8/2000	|	batch: 2400/4549	|	loss: 0.19851	|	acc: 91.74%
+epoch:  8/2000	|	batch: 2600/4549	|	loss: 0.19782	|	acc: 91.66%
+epoch:  8/2000	|	batch: 2800/4549	|	loss: 0.19660	|	acc: 91.83%
+epoch:  8/2000	|	batch: 3000/4549	|	loss: 0.20105	|	acc: 91.56%
+ >> epoch:  8	|	total_batch: 34843	|	eval_loss: 0.37745	|	eval_acc: 84.43
+epoch:  8/2000	|	batch: 3200/4549	|	loss: 0.20305	|	acc: 91.44%
+epoch:  8/2000	|	batch: 3400/4549	|	loss: 0.19236	|	acc: 91.99%
+epoch:  8/2000	|	batch: 3600/4549	|	loss: 0.20024	|	acc: 91.57%
+epoch:  8/2000	|	batch: 3800/4549	|	loss: 0.20285	|	acc: 91.41%
+epoch:  8/2000	|	batch: 4000/4549	|	loss: 0.20415	|	acc: 91.32%
+ >> epoch:  8	|	total_batch: 35843	|	eval_loss: 0.38019	|	eval_acc: 84.20
+epoch:  8/2000	|	batch: 4200/4549	|	loss: 0.20723	|	acc: 91.14%
+epoch:  8/2000	|	batch: 4400/4549	|	loss: 0.20061	|	acc: 91.49%
+
+
+----------------------- 9 epoch start! -----------------------
+epoch:  9/2000	|	batch: 200/4549	|	loss: 0.17285	|	acc: 93.17%
+epoch:  9/2000	|	batch: 400/4549	|	loss: 0.16406	|	acc: 93.16%
+epoch:  9/2000	|	batch: 600/4549	|	loss: 0.15707	|	acc: 93.59%
+epoch:  9/2000	|	batch: 800/4549	|	loss: 0.17134	|	acc: 93.12%
+epoch:  9/2000	|	batch: 1000/4549	|	loss: 0.16955	|	acc: 92.96%
+ >> epoch:  9	|	total_batch: 37392	|	eval_loss: 0.39769	|	eval_acc: 84.85
+epoch:  9/2000	|	batch: 1200/4549	|	loss: 0.17605	|	acc: 92.68%
+epoch:  9/2000	|	batch: 1400/4549	|	loss: 0.17012	|	acc: 93.00%
+epoch:  9/2000	|	batch: 1600/4549	|	loss: 0.17650	|	acc: 92.77%
+epoch:  9/2000	|	batch: 1800/4549	|	loss: 0.18209	|	acc: 92.36%
+epoch:  9/2000	|	batch: 2000/4549	|	loss: 0.17639	|	acc: 92.69%
+ >> epoch:  9	|	total_batch: 38392	|	eval_loss: 0.41330	|	eval_acc: 84.55
+epoch:  9/2000	|	batch: 2200/4549	|	loss: 0.18184	|	acc: 92.51%
+epoch:  9/2000	|	batch: 2400/4549	|	loss: 0.17727	|	acc: 92.80%
+epoch:  9/2000	|	batch: 2600/4549	|	loss: 0.17431	|	acc: 92.89%
+epoch:  9/2000	|	batch: 2800/4549	|	loss: 0.17878	|	acc: 92.42%
+epoch:  9/2000	|	batch: 3000/4549	|	loss: 0.18260	|	acc: 92.39%
+ >> epoch:  9	|	total_batch: 39392	|	eval_loss: 0.40176	|	eval_acc: 84.82
+epoch:  9/2000	|	batch: 3200/4549	|	loss: 0.17883	|	acc: 92.56%
+epoch:  9/2000	|	batch: 3400/4549	|	loss: 0.18723	|	acc: 92.08%
+epoch:  9/2000	|	batch: 3600/4549	|	loss: 0.18308	|	acc: 92.46%
+epoch:  9/2000	|	batch: 3800/4549	|	loss: 0.18003	|	acc: 92.47%
+epoch:  9/2000	|	batch: 4000/4549	|	loss: 0.18004	|	acc: 92.54%
+ >> epoch:  9	|	total_batch: 40392	|	eval_loss: 0.39980	|	eval_acc: 84.92
+epoch:  9/2000	|	batch: 4200/4549	|	loss: 0.18555	|	acc: 92.26%
+epoch:  9/2000	|	batch: 4400/4549	|	loss: 0.18267	|	acc: 92.16%
+
+
+----------------------- 10 epoch start! -----------------------
+epoch: 10/2000	|	batch: 200/4549	|	loss: 0.14328	|	acc: 94.27%
+epoch: 10/2000	|	batch: 400/4549	|	loss: 0.14184	|	acc: 94.23%
+epoch: 10/2000	|	batch: 600/4549	|	loss: 0.14765	|	acc: 94.01%
+epoch: 10/2000	|	batch: 800/4549	|	loss: 0.14802	|	acc: 93.99%
+epoch: 10/2000	|	batch: 1000/4549	|	loss: 0.14728	|	acc: 94.13%
+ >> epoch: 10	|	total_batch: 41941	|	eval_loss: 0.44312	|	eval_acc: 84.85
+epoch: 10/2000	|	batch: 1200/4549	|	loss: 0.15700	|	acc: 93.50%
+epoch: 10/2000	|	batch: 1400/4549	|	loss: 0.15921	|	acc: 93.30%
+epoch: 10/2000	|	batch: 1600/4549	|	loss: 0.15575	|	acc: 93.74%
+epoch: 10/2000	|	batch: 1800/4549	|	loss: 0.15100	|	acc: 93.98%
+epoch: 10/2000	|	batch: 2000/4549	|	loss: 0.15599	|	acc: 93.53%
+ >> epoch: 10	|	total_batch: 42941	|	eval_loss: 0.41368	|	eval_acc: 84.70
+epoch: 10/2000	|	batch: 2200/4549	|	loss: 0.15674	|	acc: 93.61%
+epoch: 10/2000	|	batch: 2400/4549	|	loss: 0.16211	|	acc: 93.42%
+epoch: 10/2000	|	batch: 2600/4549	|	loss: 0.16348	|	acc: 93.26%
+epoch: 10/2000	|	batch: 2800/4549	|	loss: 0.16111	|	acc: 93.41%
+epoch: 10/2000	|	batch: 3000/4549	|	loss: 0.15849	|	acc: 93.55%
+ >> epoch: 10	|	total_batch: 43941	|	eval_loss: 0.43703	|	eval_acc: 84.94
+epoch: 10/2000	|	batch: 3200/4549	|	loss: 0.16855	|	acc: 92.91%
+epoch: 10/2000	|	batch: 3400/4549	|	loss: 0.16245	|	acc: 93.44%
+epoch: 10/2000	|	batch: 3600/4549	|	loss: 0.16993	|	acc: 93.11%
+epoch: 10/2000	|	batch: 3800/4549	|	loss: 0.16261	|	acc: 93.30%
+epoch: 10/2000	|	batch: 4000/4549	|	loss: 0.16445	|	acc: 93.09%
+ >> epoch: 10	|	total_batch: 44941	|	eval_loss: 0.41539	|	eval_acc: 85.01
+epoch: 10/2000	|	batch: 4200/4549	|	loss: 0.16180	|	acc: 93.37%
+epoch: 10/2000	|	batch: 4400/4549	|	loss: 0.17583	|	acc: 92.81%
+
+
+----------------------- 11 epoch start! -----------------------
+epoch: 11/2000	|	batch: 200/4549	|	loss: 0.12931	|	acc: 95.05%
+epoch: 11/2000	|	batch: 400/4549	|	loss: 0.12524	|	acc: 95.08%
+epoch: 11/2000	|	batch: 600/4549	|	loss: 0.12946	|	acc: 94.60%
+epoch: 11/2000	|	batch: 800/4549	|	loss: 0.13755	|	acc: 94.50%
+epoch: 11/2000	|	batch: 1000/4549	|	loss: 0.13650	|	acc: 94.51%
+ >> epoch: 11	|	total_batch: 46490	|	eval_loss: 0.44405	|	eval_acc: 84.71
+epoch: 11/2000	|	batch: 1200/4549	|	loss: 0.13802	|	acc: 94.50%
+epoch: 11/2000	|	batch: 1400/4549	|	loss: 0.13374	|	acc: 94.70%
+epoch: 11/2000	|	batch: 1600/4549	|	loss: 0.13802	|	acc: 94.53%
+epoch: 11/2000	|	batch: 1800/4549	|	loss: 0.14116	|	acc: 94.38%
+epoch: 11/2000	|	batch: 2000/4549	|	loss: 0.14512	|	acc: 94.12%
+ >> epoch: 11	|	total_batch: 47490	|	eval_loss: 0.47813	|	eval_acc: 84.84
+epoch: 11/2000	|	batch: 2200/4549	|	loss: 0.14335	|	acc: 94.11%
+epoch: 11/2000	|	batch: 2400/4549	|	loss: 0.14285	|	acc: 94.44%
+epoch: 11/2000	|	batch: 2600/4549	|	loss: 0.14496	|	acc: 94.12%
+epoch: 11/2000	|	batch: 2800/4549	|	loss: 0.14355	|	acc: 94.03%
+epoch: 11/2000	|	batch: 3000/4549	|	loss: 0.14742	|	acc: 93.95%
+ >> epoch: 11	|	total_batch: 48490	|	eval_loss: 0.46098	|	eval_acc: 84.73
+epoch: 11/2000	|	batch: 3200/4549	|	loss: 0.14516	|	acc: 94.11%
+epoch: 11/2000	|	batch: 3400/4549	|	loss: 0.15444	|	acc: 93.39%
+epoch: 11/2000	|	batch: 3600/4549	|	loss: 0.15078	|	acc: 93.86%
+epoch: 11/2000	|	batch: 3800/4549	|	loss: 0.14361	|	acc: 94.27%
+epoch: 11/2000	|	batch: 4000/4549	|	loss: 0.14619	|	acc: 94.03%
+ >> epoch: 11	|	total_batch: 49490	|	eval_loss: 0.44827	|	eval_acc: 84.80
+epoch: 11/2000	|	batch: 4200/4549	|	loss: 0.14831	|	acc: 94.06%
+epoch: 11/2000	|	batch: 4400/4549	|	loss: 0.15137	|	acc: 93.99%
+
+
+----------------------- 12 epoch start! -----------------------
+epoch: 12/2000	|	batch: 200/4549	|	loss: 0.12754	|	acc: 95.04%
+epoch: 12/2000	|	batch: 400/4549	|	loss: 0.11358	|	acc: 95.58%
+epoch: 12/2000	|	batch: 600/4549	|	loss: 0.11038	|	acc: 95.65%
+epoch: 12/2000	|	batch: 800/4549	|	loss: 0.12492	|	acc: 95.03%
+epoch: 12/2000	|	batch: 1000/4549	|	loss: 0.12080	|	acc: 94.98%
+ >> epoch: 12	|	total_batch: 51039	|	eval_loss: 0.48733	|	eval_acc: 84.88
+epoch: 12/2000	|	batch: 1200/4549	|	loss: 0.12082	|	acc: 95.26%
+epoch: 12/2000	|	batch: 1400/4549	|	loss: 0.11895	|	acc: 95.25%
+epoch: 12/2000	|	batch: 1600/4549	|	loss: 0.12785	|	acc: 94.99%
+epoch: 12/2000	|	batch: 1800/4549	|	loss: 0.12257	|	acc: 95.11%
+epoch: 12/2000	|	batch: 2000/4549	|	loss: 0.12754	|	acc: 94.74%
+ >> epoch: 12	|	total_batch: 52039	|	eval_loss: 0.47825	|	eval_acc: 84.71
+epoch: 12/2000	|	batch: 2200/4549	|	loss: 0.13233	|	acc: 94.56%
+epoch: 12/2000	|	batch: 2400/4549	|	loss: 0.12819	|	acc: 94.81%
+epoch: 12/2000	|	batch: 2600/4549	|	loss: 0.12770	|	acc: 94.88%
+epoch: 12/2000	|	batch: 2800/4549	|	loss: 0.13312	|	acc: 94.69%
+epoch: 12/2000	|	batch: 3000/4549	|	loss: 0.13370	|	acc: 94.76%
+ >> epoch: 12	|	total_batch: 53039	|	eval_loss: 0.46135	|	eval_acc: 84.95
+epoch: 12/2000	|	batch: 3200/4549	|	loss: 0.12630	|	acc: 94.99%
+epoch: 12/2000	|	batch: 3400/4549	|	loss: 0.13577	|	acc: 94.65%
+epoch: 12/2000	|	batch: 3600/4549	|	loss: 0.13438	|	acc: 94.55%
+epoch: 12/2000	|	batch: 3800/4549	|	loss: 0.13391	|	acc: 94.54%
+epoch: 12/2000	|	batch: 4000/4549	|	loss: 0.13568	|	acc: 94.44%
+ >> epoch: 12	|	total_batch: 54039	|	eval_loss: 0.46731	|	eval_acc: 84.98
+epoch: 12/2000	|	batch: 4200/4549	|	loss: 0.13531	|	acc: 94.49%
+epoch: 12/2000	|	batch: 4400/4549	|	loss: 0.13608	|	acc: 94.54%
+
+
+----------------------- 13 epoch start! -----------------------
+epoch: 13/2000	|	batch: 200/4549	|	loss: 0.10445	|	acc: 96.02%
+epoch: 13/2000	|	batch: 400/4549	|	loss: 0.10562	|	acc: 95.78%
+epoch: 13/2000	|	batch: 600/4549	|	loss: 0.10683	|	acc: 95.88%
+epoch: 13/2000	|	batch: 800/4549	|	loss: 0.10377	|	acc: 95.76%
+epoch: 13/2000	|	batch: 1000/4549	|	loss: 0.10387	|	acc: 95.94%
+ >> epoch: 13	|	total_batch: 55588	|	eval_loss: 0.53206	|	eval_acc: 84.92
+epoch: 13/2000	|	batch: 1200/4549	|	loss: 0.10865	|	acc: 95.92%
+epoch: 13/2000	|	batch: 1400/4549	|	loss: 0.11277	|	acc: 95.46%
+epoch: 13/2000	|	batch: 1600/4549	|	loss: 0.10704	|	acc: 95.73%
+epoch: 13/2000	|	batch: 1800/4549	|	loss: 0.11049	|	acc: 95.63%
+epoch: 13/2000	|	batch: 2000/4549	|	loss: 0.11509	|	acc: 95.33%
+ >> epoch: 13	|	total_batch: 56588	|	eval_loss: 0.53950	|	eval_acc: 84.81
+epoch: 13/2000	|	batch: 2200/4549	|	loss: 0.11937	|	acc: 95.21%
+epoch: 13/2000	|	batch: 2400/4549	|	loss: 0.11130	|	acc: 95.58%
+epoch: 13/2000	|	batch: 2600/4549	|	loss: 0.11406	|	acc: 95.61%
+epoch: 13/2000	|	batch: 2800/4549	|	loss: 0.11519	|	acc: 95.20%
+epoch: 13/2000	|	batch: 3000/4549	|	loss: 0.12051	|	acc: 95.21%
+ >> epoch: 13	|	total_batch: 57588	|	eval_loss: 0.52514	|	eval_acc: 85.20
+epoch: 13/2000	|	batch: 3200/4549	|	loss: 0.12247	|	acc: 94.93%
+epoch: 13/2000	|	batch: 3400/4549	|	loss: 0.12178	|	acc: 95.17%
+epoch: 13/2000	|	batch: 3600/4549	|	loss: 0.12177	|	acc: 95.08%
+epoch: 13/2000	|	batch: 3800/4549	|	loss: 0.12503	|	acc: 94.98%
+epoch: 13/2000	|	batch: 4000/4549	|	loss: 0.12371	|	acc: 94.90%
+ >> epoch: 13	|	total_batch: 58588	|	eval_loss: 0.50348	|	eval_acc: 84.90
+epoch: 13/2000	|	batch: 4200/4549	|	loss: 0.12418	|	acc: 95.03%
+epoch: 13/2000	|	batch: 4400/4549	|	loss: 0.12128	|	acc: 95.12%
+
+
+----------------------- 14 epoch start! -----------------------
+epoch: 14/2000	|	batch: 200/4549	|	loss: 0.09050	|	acc: 96.59%
+epoch: 14/2000	|	batch: 400/4549	|	loss: 0.09322	|	acc: 96.42%
+epoch: 14/2000	|	batch: 600/4549	|	loss: 0.09261	|	acc: 96.43%
+epoch: 14/2000	|	batch: 800/4549	|	loss: 0.08990	|	acc: 96.73%
+epoch: 14/2000	|	batch: 1000/4549	|	loss: 0.09666	|	acc: 96.11%
+ >> epoch: 14	|	total_batch: 60137	|	eval_loss: 0.54792	|	eval_acc: 85.01
+epoch: 14/2000	|	batch: 1200/4549	|	loss: 0.09400	|	acc: 96.22%
+epoch: 14/2000	|	batch: 1400/4549	|	loss: 0.10292	|	acc: 95.93%
+epoch: 14/2000	|	batch: 1600/4549	|	loss: 0.09294	|	acc: 96.47%
+epoch: 14/2000	|	batch: 1800/4549	|	loss: 0.10109	|	acc: 95.94%
+epoch: 14/2000	|	batch: 2000/4549	|	loss: 0.10945	|	acc: 95.53%
+ >> epoch: 14	|	total_batch: 61137	|	eval_loss: 0.54738	|	eval_acc: 84.65
+epoch: 14/2000	|	batch: 2200/4549	|	loss: 0.10038	|	acc: 95.93%
+epoch: 14/2000	|	batch: 2400/4549	|	loss: 0.10439	|	acc: 95.86%
+epoch: 14/2000	|	batch: 2600/4549	|	loss: 0.10224	|	acc: 95.80%
+epoch: 14/2000	|	batch: 2800/4549	|	loss: 0.10682	|	acc: 95.76%
+epoch: 14/2000	|	batch: 3000/4549	|	loss: 0.10872	|	acc: 95.74%
+ >> epoch: 14	|	total_batch: 62137	|	eval_loss: 0.54364	|	eval_acc: 85.04
+epoch: 14/2000	|	batch: 3200/4549	|	loss: 0.10870	|	acc: 95.64%
+epoch: 14/2000	|	batch: 3400/4549	|	loss: 0.11202	|	acc: 95.43%
+epoch: 14/2000	|	batch: 3600/4549	|	loss: 0.11078	|	acc: 95.56%
+epoch: 14/2000	|	batch: 3800/4549	|	loss: 0.11037	|	acc: 95.59%
+epoch: 14/2000	|	batch: 4000/4549	|	loss: 0.11490	|	acc: 95.31%
+ >> epoch: 14	|	total_batch: 63137	|	eval_loss: 0.50605	|	eval_acc: 85.00
+epoch: 14/2000	|	batch: 4200/4549	|	loss: 0.10959	|	acc: 95.60%
+epoch: 14/2000	|	batch: 4400/4549	|	loss: 0.11410	|	acc: 95.61%
+
+
+----------------------- 15 epoch start! -----------------------
+epoch: 15/2000	|	batch: 200/4549	|	loss: 0.08470	|	acc: 96.84%
+epoch: 15/2000	|	batch: 400/4549	|	loss: 0.08858	|	acc: 96.67%
+epoch: 15/2000	|	batch: 600/4549	|	loss: 0.08175	|	acc: 96.97%
+epoch: 15/2000	|	batch: 800/4549	|	loss: 0.09312	|	acc: 96.31%
+epoch: 15/2000	|	batch: 1000/4549	|	loss: 0.09148	|	acc: 96.43%
+ >> epoch: 15	|	total_batch: 64686	|	eval_loss: 0.54829	|	eval_acc: 84.88
+epoch: 15/2000	|	batch: 1200/4549	|	loss: 0.08526	|	acc: 96.68%
+epoch: 15/2000	|	batch: 1400/4549	|	loss: 0.09324	|	acc: 96.35%
+epoch: 15/2000	|	batch: 1600/4549	|	loss: 0.08822	|	acc: 96.44%
+epoch: 15/2000	|	batch: 1800/4549	|	loss: 0.08346	|	acc: 96.76%
+epoch: 15/2000	|	batch: 2000/4549	|	loss: 0.09156	|	acc: 96.29%
+ >> epoch: 15	|	total_batch: 65686	|	eval_loss: 0.55086	|	eval_acc: 85.09
+epoch: 15/2000	|	batch: 2200/4549	|	loss: 0.09617	|	acc: 96.25%
+epoch: 15/2000	|	batch: 2400/4549	|	loss: 0.09386	|	acc: 96.57%
+epoch: 15/2000	|	batch: 2600/4549	|	loss: 0.09718	|	acc: 96.34%
+epoch: 15/2000	|	batch: 2800/4549	|	loss: 0.09493	|	acc: 96.23%
+epoch: 15/2000	|	batch: 3000/4549	|	loss: 0.09486	|	acc: 96.28%
+ >> epoch: 15	|	total_batch: 66686	|	eval_loss: 0.53949	|	eval_acc: 84.72
+epoch: 15/2000	|	batch: 3200/4549	|	loss: 0.09544	|	acc: 96.19%
+epoch: 15/2000	|	batch: 3400/4549	|	loss: 0.09934	|	acc: 96.19%
+epoch: 15/2000	|	batch: 3600/4549	|	loss: 0.10618	|	acc: 95.86%
+epoch: 15/2000	|	batch: 3800/4549	|	loss: 0.10111	|	acc: 95.97%
+epoch: 15/2000	|	batch: 4000/4549	|	loss: 0.10120	|	acc: 96.06%
+ >> epoch: 15	|	total_batch: 67686	|	eval_loss: 0.53115	|	eval_acc: 85.19
+epoch: 15/2000	|	batch: 4200/4549	|	loss: 0.10119	|	acc: 95.88%
+epoch: 15/2000	|	batch: 4400/4549	|	loss: 0.10248	|	acc: 95.86%
+
+
+----------------------- 16 epoch start! -----------------------
+epoch: 16/2000	|	batch: 200/4549	|	loss: 0.07519	|	acc: 97.12%
+epoch: 16/2000	|	batch: 400/4549	|	loss: 0.07436	|	acc: 97.19%
+epoch: 16/2000	|	batch: 600/4549	|	loss: 0.07757	|	acc: 96.99%
+epoch: 16/2000	|	batch: 800/4549	|	loss: 0.07244	|	acc: 97.19%
+epoch: 16/2000	|	batch: 1000/4549	|	loss: 0.07719	|	acc: 96.99%
+ >> epoch: 16	|	total_batch: 69235	|	eval_loss: 0.62154	|	eval_acc: 84.46
+epoch: 16/2000	|	batch: 1200/4549	|	loss: 0.08660	|	acc: 96.69%
+epoch: 16/2000	|	batch: 1400/4549	|	loss: 0.08519	|	acc: 96.90%
+epoch: 16/2000	|	batch: 1600/4549	|	loss: 0.08391	|	acc: 96.76%
+epoch: 16/2000	|	batch: 1800/4549	|	loss: 0.08606	|	acc: 96.71%
+epoch: 16/2000	|	batch: 2000/4549	|	loss: 0.08307	|	acc: 96.88%
+ >> epoch: 16	|	total_batch: 70235	|	eval_loss: 0.60874	|	eval_acc: 84.95
+epoch: 16/2000	|	batch: 2200/4549	|	loss: 0.07982	|	acc: 96.95%
+epoch: 16/2000	|	batch: 2400/4549	|	loss: 0.09100	|	acc: 96.49%
+epoch: 16/2000	|	batch: 2600/4549	|	loss: 0.08921	|	acc: 96.64%
+epoch: 16/2000	|	batch: 2800/4549	|	loss: 0.08697	|	acc: 96.78%
+epoch: 16/2000	|	batch: 3000/4549	|	loss: 0.08896	|	acc: 96.53%
+ >> epoch: 16	|	total_batch: 71235	|	eval_loss: 0.59631	|	eval_acc: 84.97
+epoch: 16/2000	|	batch: 3200/4549	|	loss: 0.09010	|	acc: 96.59%
+epoch: 16/2000	|	batch: 3400/4549	|	loss: 0.09652	|	acc: 96.23%
+epoch: 16/2000	|	batch: 3600/4549	|	loss: 0.09346	|	acc: 96.25%
+epoch: 16/2000	|	batch: 3800/4549	|	loss: 0.08997	|	acc: 96.48%
+epoch: 16/2000	|	batch: 4000/4549	|	loss: 0.08855	|	acc: 96.58%
+ >> epoch: 16	|	total_batch: 72235	|	eval_loss: 0.55565	|	eval_acc: 85.17
+epoch: 16/2000	|	batch: 4200/4549	|	loss: 0.09245	|	acc: 96.38%
+epoch: 16/2000	|	batch: 4400/4549	|	loss: 0.09706	|	acc: 96.15%
+
+
+----------------------- 17 epoch start! -----------------------
+epoch: 17/2000	|	batch: 200/4549	|	loss: 0.09533	|	acc: 96.28%
+epoch: 17/2000	|	batch: 400/4549	|	loss: 0.06793	|	acc: 97.36%
+epoch: 17/2000	|	batch: 600/4549	|	loss: 0.07301	|	acc: 97.16%
+epoch: 17/2000	|	batch: 800/4549	|	loss: 0.06724	|	acc: 97.38%
+epoch: 17/2000	|	batch: 1000/4549	|	loss: 0.06989	|	acc: 97.46%
+ >> epoch: 17	|	total_batch: 73784	|	eval_loss: 0.61852	|	eval_acc: 85.03
+epoch: 17/2000	|	batch: 1200/4549	|	loss: 0.07434	|	acc: 97.16%
+epoch: 17/2000	|	batch: 1400/4549	|	loss: 0.07594	|	acc: 97.12%
+epoch: 17/2000	|	batch: 1600/4549	|	loss: 0.07503	|	acc: 97.01%
+epoch: 17/2000	|	batch: 1800/4549	|	loss: 0.07520	|	acc: 97.19%
+epoch: 17/2000	|	batch: 2000/4549	|	loss: 0.07444	|	acc: 97.18%
+ >> epoch: 17	|	total_batch: 74784	|	eval_loss: 0.62912	|	eval_acc: 85.01
+epoch: 17/2000	|	batch: 2200/4549	|	loss: 0.07927	|	acc: 96.87%
+epoch: 17/2000	|	batch: 2400/4549	|	loss: 0.07467	|	acc: 97.11%
+epoch: 17/2000	|	batch: 2600/4549	|	loss: 0.08254	|	acc: 96.74%
+epoch: 17/2000	|	batch: 2800/4549	|	loss: 0.08064	|	acc: 96.84%
+epoch: 17/2000	|	batch: 3000/4549	|	loss: 0.07671	|	acc: 97.09%
+ >> epoch: 17	|	total_batch: 75784	|	eval_loss: 0.60429	|	eval_acc: 84.97
+epoch: 17/2000	|	batch: 3200/4549	|	loss: 0.07728	|	acc: 96.92%
+epoch: 17/2000	|	batch: 3400/4549	|	loss: 0.08578	|	acc: 96.73%
+epoch: 17/2000	|	batch: 3600/4549	|	loss: 0.08960	|	acc: 96.55%
+epoch: 17/2000	|	batch: 3800/4549	|	loss: 0.08548	|	acc: 96.67%
+epoch: 17/2000	|	batch: 4000/4549	|	loss: 0.08526	|	acc: 96.61%
+ >> epoch: 17	|	total_batch: 76784	|	eval_loss: 0.61610	|	eval_acc: 84.84
+epoch: 17/2000	|	batch: 4200/4549	|	loss: 0.08768	|	acc: 96.61%
+epoch: 17/2000	|	batch: 4400/4549	|	loss: 0.09057	|	acc: 96.38%
+
+
+----------------------- 18 epoch start! -----------------------
+epoch: 18/2000	|	batch: 200/4549	|	loss: 0.06226	|	acc: 97.72%
+epoch: 18/2000	|	batch: 400/4549	|	loss: 0.06148	|	acc: 97.77%
+epoch: 18/2000	|	batch: 600/4549	|	loss: 0.05904	|	acc: 97.84%
+epoch: 18/2000	|	batch: 800/4549	|	loss: 0.06332	|	acc: 97.57%
+epoch: 18/2000	|	batch: 1000/4549	|	loss: 0.06658	|	acc: 97.56%
+ >> epoch: 18	|	total_batch: 78333	|	eval_loss: 0.65021	|	eval_acc: 85.07
+epoch: 18/2000	|	batch: 1200/4549	|	loss: 0.06721	|	acc: 97.45%
+epoch: 18/2000	|	batch: 1400/4549	|	loss: 0.06978	|	acc: 97.37%
+epoch: 18/2000	|	batch: 1600/4549	|	loss: 0.06491	|	acc: 97.67%
+epoch: 18/2000	|	batch: 1800/4549	|	loss: 0.07018	|	acc: 97.22%
+epoch: 18/2000	|	batch: 2000/4549	|	loss: 0.07557	|	acc: 97.10%
+ >> epoch: 18	|	total_batch: 79333	|	eval_loss: 0.65323	|	eval_acc: 84.84
+epoch: 18/2000	|	batch: 2200/4549	|	loss: 0.08249	|	acc: 96.80%
+epoch: 18/2000	|	batch: 2400/4549	|	loss: 0.07254	|	acc: 97.15%
+epoch: 18/2000	|	batch: 2600/4549	|	loss: 0.08048	|	acc: 96.81%
+epoch: 18/2000	|	batch: 2800/4549	|	loss: 0.07348	|	acc: 97.17%
+epoch: 18/2000	|	batch: 3000/4549	|	loss: 0.07173	|	acc: 97.28%
+ >> epoch: 18	|	total_batch: 80333	|	eval_loss: 0.63774	|	eval_acc: 84.47
+epoch: 18/2000	|	batch: 3200/4549	|	loss: 0.07599	|	acc: 97.11%
+epoch: 18/2000	|	batch: 3400/4549	|	loss: 0.07650	|	acc: 96.92%
+epoch: 18/2000	|	batch: 3600/4549	|	loss: 0.08034	|	acc: 96.79%
+epoch: 18/2000	|	batch: 3800/4549	|	loss: 0.07672	|	acc: 97.08%
+epoch: 18/2000	|	batch: 4000/4549	|	loss: 0.07833	|	acc: 96.89%
+ >> epoch: 18	|	total_batch: 81333	|	eval_loss: 0.62637	|	eval_acc: 85.17
+epoch: 18/2000	|	batch: 4200/4549	|	loss: 0.08366	|	acc: 96.78%
+epoch: 18/2000	|	batch: 4400/4549	|	loss: 0.08473	|	acc: 96.72%
+
+
+----------------------- 19 epoch start! -----------------------
+epoch: 19/2000	|	batch: 200/4549	|	loss: 0.05565	|	acc: 97.99%
+epoch: 19/2000	|	batch: 400/4549	|	loss: 0.05999	|	acc: 97.69%
+epoch: 19/2000	|	batch: 600/4549	|	loss: 0.06078	|	acc: 97.71%
+epoch: 19/2000	|	batch: 800/4549	|	loss: 0.05600	|	acc: 97.96%
+epoch: 19/2000	|	batch: 1000/4549	|	loss: 0.05982	|	acc: 97.78%
+ >> epoch: 19	|	total_batch: 82882	|	eval_loss: 0.67056	|	eval_acc: 84.97
+epoch: 19/2000	|	batch: 1200/4549	|	loss: 0.06308	|	acc: 97.48%
+epoch: 19/2000	|	batch: 1400/4549	|	loss: 0.06132	|	acc: 97.73%
+epoch: 19/2000	|	batch: 1600/4549	|	loss: 0.06286	|	acc: 97.58%
+epoch: 19/2000	|	batch: 1800/4549	|	loss: 0.06715	|	acc: 97.47%
+epoch: 19/2000	|	batch: 2000/4549	|	loss: 0.06797	|	acc: 97.38%
+ >> epoch: 19	|	total_batch: 83882	|	eval_loss: 0.66338	|	eval_acc: 85.09
+epoch: 19/2000	|	batch: 2200/4549	|	loss: 0.07279	|	acc: 97.21%
+epoch: 19/2000	|	batch: 2400/4549	|	loss: 0.07403	|	acc: 97.06%
+epoch: 19/2000	|	batch: 2600/4549	|	loss: 0.07557	|	acc: 97.15%
+epoch: 19/2000	|	batch: 2800/4549	|	loss: 0.07019	|	acc: 97.51%
+epoch: 19/2000	|	batch: 3000/4549	|	loss: 0.06960	|	acc: 97.33%
+ >> epoch: 19	|	total_batch: 84882	|	eval_loss: 0.64264	|	eval_acc: 85.12
+epoch: 19/2000	|	batch: 3200/4549	|	loss: 0.06781	|	acc: 97.44%
+epoch: 19/2000	|	batch: 3400/4549	|	loss: 0.07341	|	acc: 97.14%
+epoch: 19/2000	|	batch: 3600/4549	|	loss: 0.07996	|	acc: 96.96%
+epoch: 19/2000	|	batch: 3800/4549	|	loss: 0.07627	|	acc: 97.06%
+epoch: 19/2000	|	batch: 4000/4549	|	loss: 0.07468	|	acc: 97.13%
+ >> epoch: 19	|	total_batch: 85882	|	eval_loss: 0.60652	|	eval_acc: 84.88
+epoch: 19/2000	|	batch: 4200/4549	|	loss: 0.07018	|	acc: 97.21%
+epoch: 19/2000	|	batch: 4400/4549	|	loss: 0.07360	|	acc: 97.17%
+
+
+----------------------- 20 epoch start! -----------------------
+epoch: 20/2000	|	batch: 200/4549	|	loss: 0.05673	|	acc: 98.01%
+epoch: 20/2000	|	batch: 400/4549	|	loss: 0.05124	|	acc: 98.09%
+epoch: 20/2000	|	batch: 600/4549	|	loss: 0.05260	|	acc: 97.97%
+epoch: 20/2000	|	batch: 800/4549	|	loss: 0.05381	|	acc: 97.92%
+epoch: 20/2000	|	batch: 1000/4549	|	loss: 0.05606	|	acc: 97.81%
+ >> epoch: 20	|	total_batch: 87431	|	eval_loss: 0.66537	|	eval_acc: 84.89
+epoch: 20/2000	|	batch: 1200/4549	|	loss: 0.05990	|	acc: 97.79%
+epoch: 20/2000	|	batch: 1400/4549	|	loss: 0.06229	|	acc: 97.64%
+epoch: 20/2000	|	batch: 1600/4549	|	loss: 0.05843	|	acc: 97.68%
+epoch: 20/2000	|	batch: 1800/4549	|	loss: 0.07022	|	acc: 97.42%
+epoch: 20/2000	|	batch: 2000/4549	|	loss: 0.06517	|	acc: 97.54%
+ >> epoch: 20	|	total_batch: 88431	|	eval_loss: 0.65425	|	eval_acc: 84.72
+epoch: 20/2000	|	batch: 2200/4549	|	loss: 0.05829	|	acc: 97.77%
+epoch: 20/2000	|	batch: 2400/4549	|	loss: 0.06291	|	acc: 97.67%
+epoch: 20/2000	|	batch: 2600/4549	|	loss: 0.06404	|	acc: 97.56%
+epoch: 20/2000	|	batch: 2800/4549	|	loss: 0.06381	|	acc: 97.56%
+epoch: 20/2000	|	batch: 3000/4549	|	loss: 0.06266	|	acc: 97.56%
+ >> epoch: 20	|	total_batch: 89431	|	eval_loss: 0.65871	|	eval_acc: 85.09
+epoch: 20/2000	|	batch: 3200/4549	|	loss: 0.06606	|	acc: 97.51%
+epoch: 20/2000	|	batch: 3400/4549	|	loss: 0.06789	|	acc: 97.38%
+epoch: 20/2000	|	batch: 3600/4549	|	loss: 0.07218	|	acc: 97.24%
+epoch: 20/2000	|	batch: 3800/4549	|	loss: 0.06867	|	acc: 97.56%
+epoch: 20/2000	|	batch: 4000/4549	|	loss: 0.06984	|	acc: 97.26%
+ >> epoch: 20	|	total_batch: 90431	|	eval_loss: 0.63194	|	eval_acc: 84.75
+epoch: 20/2000	|	batch: 4200/4549	|	loss: 0.06834	|	acc: 97.33%
+epoch: 20/2000	|	batch: 4400/4549	|	loss: 0.06544	|	acc: 97.32%

@@ -6,12 +6,12 @@ from datetime import datetime
 import os
 import argparse
 from tensorboardX import SummaryWriter
-from dataset import Mydataset
+from dataset import Mydataset, Mydataset_spm
 from models.Mymodel import MymodelForPretrain
 from torch.utils.data.sampler import SubsetRandomSampler
 
 
-def train(model, trainloader, criterion, optimizer, epoch_idx, testloader, args, device):
+def train(model, trainloader, criterion, optimizer, scheduler, epoch_idx, testloader, args, device):
     global best_loss
     num_batchs = len(trainloader)
     avg_loss = 0
@@ -29,14 +29,15 @@ def train(model, trainloader, criterion, optimizer, epoch_idx, testloader, args,
         optimizer.zero_grad()
         avg_loss += loss / num_batchs
         train_loss += loss.item()
+        scheduler.step()
 
         if batch_idx % args.step_batch == 0:
-            log('epoch: {:2d}/{}\t|\tbatch: {:2d}/{}\t|\tloss: {:.5f}'.format(
+            log('epoch: {:2d}/{}\t|\tbatch: {:2d}/{}\t|\tloss: {:.5f}\t|\t{:.8f}'.format(
                 epoch_idx, args.num_epochs,
                 batch_idx, num_batchs,
-                train_loss/args.step_batch))
+                train_loss/args.step_batch, scheduler.get_lr()[0]))
 
-            if batch_idx % (args.step_batch*10) == 0:
+            if batch_idx % (args.step_batch*5) == 0:
                 total_batch = int((epoch_idx-1) * len(trainloader) + batch_idx)
                 eval_loss = evaluation(model, testloader, criterion, device)
                 log(' >> epoch: {:2d}\t|\ttotal_batch: {:2d}\t|\teval_loss: {:.8f}'.format(
@@ -46,7 +47,9 @@ def train(model, trainloader, criterion, optimizer, epoch_idx, testloader, args,
 
                 if best_loss > eval_loss:
                     best_loss = eval_loss
-                    model.module.save(vocab_save, model_save)
+                    if args.multi_gpu and torch.cuda.device_count() > 1:
+                        model.module.save(vocab_save, model_save)
+                    else: model.save(vocab_save, model_save)
                     writer.add_text('best loss', '{}b_{}'.format(total_batch, best_loss), total_batch)
 
             train_loss = 0
@@ -79,25 +82,25 @@ def log(string):
         f.write('\n')
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='')
-    parser.add_argument('--description', type=str, default='E128-H768-M32-O64-L4-pretrain')
+    parser = argparse.ArgumentParser()
 
     parser.add_argument('--num_epochs', type=int, default=2000)
-    parser.add_argument('--batch_size', type=int, default=32)
-    parser.add_argument('--step_batch', type=int, default=500)
+    parser.add_argument('--batch_size', type=int, default=24)
+    parser.add_argument('--step_batch', type=int, default=200)
     parser.add_argument('--eval_batch_size', type=int, default=256)
 
-    parser.add_argument('--lr', type=float, default=2e-04)
+    parser.add_argument('--lr', type=float, default=5e-04)
     parser.add_argument('--seed', type=int, default=42)
     parser.add_argument('--drop_rate', type=float, default=0.)
 
+    parser.add_argument('--new_vocab', type=bool, default=True)
     parser.add_argument('--embedding_size', type=int, default=128)
     parser.add_argument('--hidden_size', type=int, default=768)
     parser.add_argument('--m', type=int, default=32)
     parser.add_argument('--out_dim', type=int, default=64)
     parser.add_argument('--k', type=int, default=3)
     parser.add_argument('--n_layer', type=int, default=4)
-    parser.add_argument('--max_seq_length', type=int, default=512)
+    parser.add_argument('--max_seq_length', type=int, default=512*2)
     parser.add_argument('--task', type=str, default='pretrain')
 
     parser.add_argument('--save_vocab', type=bool, default=True)
@@ -121,7 +124,7 @@ if __name__ == '__main__':
     model_save = model_save + '/model_weight' if model_save else None
     vocab_save = mk_dir(os.path.join(log_dir, 'vocab_save')) if args.save_vocab else None
     vocab_save = vocab_save + '/embedding_weight' if vocab_save else None
-    writer = SummaryWriter(os.path.join(log_dir, args.description))
+    writer = SummaryWriter(os.path.join(log_dir, f'V{int(args.new_vocab)}_E{args.embedding_size}_H{args.hidden_size}_M{args.m}_O{args.out_dim}_L{args.n_layer}_{args.task}'))
 
     device = args.use_cuda if torch.cuda.is_available() else 'cpu'
 
@@ -134,7 +137,9 @@ if __name__ == '__main__':
         log('{}: {}'.format(k, v))
     log('Real used device: {}'.format(device))
 
-    dataset = Mydataset(task=args.task, max_length=args.max_seq_length)
+    if args.new_vocab: dataset = Mydataset_spm(task=args.task, max_length=args.max_seq_length)
+    else: dataset = Mydataset(task=args.task, max_length=args.max_seq_length)
+
     dataset_size = len(dataset)
     validation_split = .00125
     indices = list(range(dataset_size))
@@ -168,12 +173,13 @@ if __name__ == '__main__':
 
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(model.parameters(), lr=args.lr)
+    scheduler = optim.lr_scheduler.CyclicLR(optimizer, base_lr=1e-5, step_size_up=50, step_size_down=1000, max_lr=1e-3, mode='triangular', cycle_momentum=False)
     optimizer.zero_grad()
 
     best_loss = 9999
 
     for epoch_idx in range(1, args.num_epochs + 1):
         log('\n\n----------------------- {} epoch start! -----------------------'.format(epoch_idx))
-        avg_loss = train(model, trainloader, criterion, optimizer, epoch_idx, testloader, args, device)
+        avg_loss = train(model, trainloader, criterion, optimizer, scheduler, epoch_idx, testloader, args, device)
 
     writer.close()

@@ -1,0 +1,38 @@
+description: E128-H768-M32-O64-L4-pretrain
+num_epochs: 2000
+batch_size: 32
+step_batch: 500
+eval_batch_size: 256
+lr: 0.0002
+seed: 42
+drop_rate: 0.0
+embedding_size: 128
+hidden_size: 768
+m: 32
+out_dim: 64
+k: 3
+n_layer: 4
+max_seq_length: 512
+task: pretrain
+save_vocab: True
+pretrained_vocab_path: 
+pretrained_vocab: False
+save_model: True
+pretrained_model_path: 
+pretrained_model: False
+use_cuda: cuda
+multi_gpu: True
+Real used device: cuda
+
+---- dataset info ----
+
+* train data *
+- num : 8003752
+
+* eval data *
+- num : 10017
+----------------------
+
+
+
+----------------------- 1 epoch start! -----------------------
