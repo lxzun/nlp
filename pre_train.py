@@ -84,8 +84,8 @@ def log(string):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
-    parser.add_argument('--num_epochs', type=int, default=2000)
-    parser.add_argument('--batch_size', type=int, default=24)
+    parser.add_argument('--num_epochs', type=int, default=4)
+    parser.add_argument('--batch_size', type=int, default=64)
     parser.add_argument('--step_batch', type=int, default=200)
     parser.add_argument('--eval_batch_size', type=int, default=256)
 
@@ -100,6 +100,7 @@ if __name__ == '__main__':
     parser.add_argument('--out_dim', type=int, default=64)
     parser.add_argument('--k', type=int, default=3)
     parser.add_argument('--n_layer', type=int, default=4)
+    parser.add_argument('--attd_mode', type=int, default=2)
     parser.add_argument('--max_seq_length', type=int, default=512*2)
     parser.add_argument('--task', type=str, default='pretrain')
 
@@ -124,7 +125,7 @@ if __name__ == '__main__':
     model_save = model_save + '/model_weight' if model_save else None
     vocab_save = mk_dir(os.path.join(log_dir, 'vocab_save')) if args.save_vocab else None
     vocab_save = vocab_save + '/embedding_weight' if vocab_save else None
-    writer = SummaryWriter(os.path.join(log_dir, f'V{int(args.new_vocab)}_E{args.embedding_size}_H{args.hidden_size}_M{args.m}_O{args.out_dim}_L{args.n_layer}_{args.task}'))
+    writer = SummaryWriter(os.path.join(log_dir, f'A{args.attd_mode}_V{int(args.new_vocab)}_E{args.embedding_size}_H{args.hidden_size}_M{args.m}_O{args.out_dim}_L{args.n_layer}_{args.task}'))
 
     device = args.use_cuda if torch.cuda.is_available() else 'cpu'
 
@@ -164,7 +165,9 @@ if __name__ == '__main__':
                                hidden_size=args.hidden_size,
                                m=args.m, out_dim=args.out_dim,
                                n_layer=args.n_layer,
-                               pad_ids=dataset.pad_ids)
+                               pad_ids=dataset.pad_ids,
+                               attd_mode=args.attd_mode,
+                               drop_rate=args.drop_rate)
     if device == 'cuda':
         model.to(device)
 

@@ -39,7 +39,7 @@ class Myattention(nn.Module):
         out = self.layernorm(out)
         out = out.view(-1, seq_length, out_dim, n)                   # b x seq_length x out_dim x n
         out = torch.transpose(out, 1, 2).contiguous()                # b x out_dim x seq_length x n
-        out = self.dropout(self.gelu(self.conv(out)))
+        out = self.dropout(self.gelu(self.conv(out)))                # b x m x seq_length x n
 
         out = out + x
 
@@ -56,8 +56,8 @@ class Myattention2(nn.Module):
         self.gelu = nn.GELU()
         self.layernorm = nn.LayerNorm(out_dim * hidden_size // m)
         self.dropout = nn.Dropout(drop_rate)
-        self.conv = nn.Conv2d(out_dim, 1, 1)
-        self.linear = nn.Linear(hidden_size // m, hidden_size)
+        self.conv = nn.Conv2d(out_dim, m, 3, padding=1)
+        self.linear = nn.Linear(hidden_size , hidden_size)
 
     def forward(self, x):
         input_shape = x.size() # b x m x seq_length x n
@@ -83,9 +83,9 @@ class Myattention2(nn.Module):
         out = self.layernorm(out)
         out = out.view(-1, seq_length, out_dim, n)                   # b x seq_length x out_dim x n
         out = torch.transpose(out, 1, 2).contiguous()                # b x out_dim x seq_length x n
-        out = self.conv(out)                                         # b x 1 x seq_length x n
-        out = torch.transpose(out, 1, 2).contiguous()                # b x seq_length x 1 x n
-        out = self.linear(out.view(-1, seq_length, int(m*n)))        # b x seq_length x hidden_size
+        out = self.dropout(self.gelu(self.conv(out)))                # b x m x seq_length x n
+        out = torch.transpose(out, 1, 2).contiguous()                # b x seq_length x m x n
+        out = self.linear(out.view(-1, seq_length, m * n))           # b x seq_length x hidden_size
         out = self.dropout(self.gelu(out))
         out = out.view(-1, seq_length, m, n)                         # b x seq_length x m x n
         out = torch.transpose(out, 1, 2).contiguous()                # b x m x seq_length x n
@@ -101,6 +101,7 @@ class MyEmbedding(nn.Module):
         self.linear = nn.Linear(embedding_size, hidden_size)
         self.layernorm = nn.LayerNorm(hidden_size)
         self.dropout = nn.Dropout(drop_rate)
+
     def forward(self, x):
         # b, seq_length
         x = self.linear(self.embedding(x))
@@ -108,12 +109,15 @@ class MyEmbedding(nn.Module):
         return x
 
 class Mymodel(nn.Module):
-    def __init__(self, vocab_size, embedding_size, hidden_size, m, out_dim, n_layer, pad_ids, k=3, drop_rate=0):
+    def __init__(self, vocab_size, embedding_size, hidden_size, m, out_dim, n_layer, pad_ids, k=3, attd_mode=1, drop_rate=0):
         super(Mymodel, self).__init__()
         assert (hidden_size % m == 0), f"hidden_size: {hidden_size}, m: {m} ==> Must be hidden_size % m == 0!"
         self.m = m
         self.embed = MyEmbedding(vocab_size, embedding_size, hidden_size, pad_ids, drop_rate)
-        self.model = nn.ModuleList([Myattention(m, out_dim, hidden_size, k, drop_rate) for _ in range(n_layer)])
+        if attd_mode == 1:
+            self.model = nn.ModuleList([Myattention(m, out_dim, hidden_size, k, drop_rate) for _ in range(n_layer)])
+        elif attd_mode == 2:
+            self.model = nn.ModuleList([Myattention2(m, out_dim, hidden_size, k, drop_rate) for _ in range(n_layer)])
 
     def forward(self, x):
         # b, seq_length
@@ -142,11 +146,11 @@ class Mymodel(nn.Module):
         if model_path: self.model.load_state_dict(torch.load(model_path))
 
 class MymodelForPretrain(nn.Module):
-    def __init__(self, vocab_size, embedding_size, hidden_size, m, out_dim, n_layer, pad_ids, k=3, drop_rate=0):
+    def __init__(self, vocab_size, embedding_size, hidden_size, m, out_dim, n_layer, pad_ids, k=3, attd_mode=1, drop_rate=0):
         super(MymodelForPretrain, self).__init__()
         self.vocab_size = vocab_size
         self.hidden_size = hidden_size
-        self.model = Mymodel(vocab_size, embedding_size, hidden_size, m, out_dim, n_layer, pad_ids, k, drop_rate)
+        self.model = Mymodel(vocab_size, embedding_size, hidden_size, m, out_dim, n_layer, pad_ids, k, attd_mode, drop_rate)
         self.linear = nn.Linear(hidden_size, embedding_size)
         self.linear2 = nn.Linear(embedding_size, vocab_size)
 
@@ -173,11 +177,11 @@ class MymodelForPretrain(nn.Module):
 
 
 class MymodelForSequenceClassification(nn.Module):
-    def __init__(self, vocab_size, embedding_size, hidden_size, m, out_dim, n_layer, pad_ids, num_classes, k=3, drop_rate=0):
+    def __init__(self, vocab_size, embedding_size, hidden_size, m, out_dim, n_layer, pad_ids, num_classes, k=3, attd_mode=1, drop_rate=0):
         super(MymodelForSequenceClassification, self).__init__()
         self.vocab_size = vocab_size
         self.hidden_size = hidden_size
-        self.model = Mymodel(vocab_size, embedding_size, hidden_size, m, out_dim, n_layer, pad_ids, k, drop_rate)
+        self.model = Mymodel(vocab_size, embedding_size, hidden_size, m, out_dim, n_layer, pad_ids, k, attd_mode, drop_rate)
         self.linear = nn.Linear(hidden_size, num_classes)
 
     def forward(self, x):
