@@ -61,11 +61,11 @@ class Mydataset(nn.Module):
         return data, torch.LongTensor(label)
 
 class Mydataset_spm(nn.Module):
-    def __init__(self, task='pretrain', max_length=512, split='train', seq_mask=False):
+    def __init__(self, task='pretrain', vocab=None, max_length=512, split='train', seq_mask=False):
         super(Mydataset_spm, self).__init__()
         self.max_length = max_length
         self.tokenizer = spm.SentencePieceProcessor()
-        self.tokenizer.load('vocab.model')
+        self.tokenizer.load(vocab)
         self.vocab_size = self.tokenizer.vocab_size()
         self.mask_ids = self.tokenizer.piece_to_id('[MASK]')
         self.sep_ids = self.tokenizer.piece_to_id('[SEP]')
