@@ -75,8 +75,8 @@ class Mydataset_spm(nn.Module):
         if task == 'pretrain':
             self.data = load_dataset('openwebtext', split='train')
             self.length = self.data.num_rows
-        if task == 'qqp':
-            self.data = load_dataset('glue', 'qqp', split=split)
+        else:
+            self.data = load_dataset('glue', self.task, split=split)
             self.length = self.data.num_rows
         print('load Done!')
 
@@ -99,9 +99,40 @@ class Mydataset_spm(nn.Module):
             data[indices] = self.mask_ids
             return torch.LongTensor(data), torch.LongTensor(label)
 
-        if self.task == 'qqp':
+        elif self.task == 'qqp':
             data1 = self.tokenizer.encode_as_ids(self.data[item]["question1"])
             data2 = self.tokenizer.encode_as_ids(self.data[item]["question2"])
+            data = data1 + [self.sep_ids] + data2
+            if len(data) > self.max_length:
+                data = data[:self.max_length]
+            data = np.array(data, dtype=int)
+
+            label = self.data[item]['label']
+            return torch.LongTensor(data), label
+
+        elif self.task in ['mrpc', 'rte', 'qnli']:
+            data1 = self.tokenizer.encode_as_ids(self.data[item]["sentence1"])
+            data2 = self.tokenizer.encode_as_ids(self.data[item]["sentence2"])
+            data = data1 + [self.sep_ids] + data2
+            if len(data) > self.max_length:
+                data = data[:self.max_length]
+            data = np.array(data, dtype=int)
+
+            label = self.data[item]['label']
+            return torch.LongTensor(data), label
+
+        elif self.task == 'sst2':
+            data = self.tokenizer.encode_as_ids(self.data[item]["sentence"])
+            if len(data) > self.max_length:
+                data = data[:self.max_length]
+            data = np.array(data, dtype=int)
+
+            label = self.data[item]['label']
+            return torch.LongTensor(data), label
+
+        elif self.task == 'mnli':
+            data1 = self.tokenizer.encode_as_ids(self.data[item]["premise"])
+            data2 = self.tokenizer.encode_as_ids(self.data[item]["hypothesis"])
             data = data1 + [self.sep_ids] + data2
             if len(data) > self.max_length:
                 data = data[:self.max_length]

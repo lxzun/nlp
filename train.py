@@ -6,11 +6,12 @@ from datetime import datetime
 import os
 import argparse
 from tensorboardX import SummaryWriter
-from dataset import Mydataset
+from dataset import Mydataset, Mydataset_spm
 from models.Mymodel import MymodelForSequenceClassification
+from sklearn.metrics import classification_report as cr
 
 
-def train(model, trainloader, criterion, optimizer, epoch_idx, testloader, args, device):
+def train(model, trainloader, criterion, optimizer, scheduler, epoch_idx, testloader, args, device):
     global best_acc
     num_batchs = len(trainloader)
     avg_loss = 0
@@ -33,6 +34,7 @@ def train(model, trainloader, criterion, optimizer, epoch_idx, testloader, args,
         train_cor += acc(logit, labels)
         train_n += len(labels)
         train_loss += loss.item()
+        scheduler.step()
 
         if batch_idx % args.step_batch == 0:
             train_acc = int(train_cor)/train_n
@@ -43,9 +45,10 @@ def train(model, trainloader, criterion, optimizer, epoch_idx, testloader, args,
 
             if batch_idx % (args.step_batch*5) == 0:
                 total_batch = int((epoch_idx-1) * len(trainloader) + batch_idx)
-                eval_loss, eval_acc = evaluation(model, testloader, criterion, device)
-                log(' >> epoch: {:2d}\t|\ttotal_batch: {:2d}\t|\teval_loss: {:.5f}\t|\teval_acc: {:.2f}'.format(
+                eval_loss, eval_acc, report = evaluation(model, testloader, criterion, device)
+                log(' >> epoch: {:2d}\t|\ttotal_batch: {:2d}\t|\teval_loss: {:.5f}\t|\teval_acc: {:.2f}\n'.format(
                     epoch_idx, total_batch, eval_loss, eval_acc * 100))
+                log(report)
 
                 writer.add_scalars('loss', {'train loss': train_loss/args.step_batch, 'eval loss': eval_loss}, total_batch)
                 writer.add_scalars('acc', {'train acc': train_acc, 'eval acc': eval_acc}, total_batch)
@@ -56,7 +59,7 @@ def train(model, trainloader, criterion, optimizer, epoch_idx, testloader, args,
                         model.module.save(vocab_save, model_save)
                     else:
                         model.save(vocab_save, model_save)
-                    writer.add_text('best acc', '{}b_{:.3f}%'.format(total_batch, best_acc * 100), total_batch)
+                    writer.add_text('best acc', report, total_batch)
 
             train_loss = 0
             train_cor = 0
@@ -70,6 +73,8 @@ def evaluation(model, testloader, criterion, device):
     avg_loss = 0
     cor = 0
     n = 0
+    pred_metric = []
+    labels_metric = []
     num_batchs = len(testloader)
     model.eval()
     with torch.no_grad():
@@ -77,13 +82,19 @@ def evaluation(model, testloader, criterion, device):
             data, labels = data.to(device), labels.to(device)
             logit = model(data)
             loss = criterion(logit, labels)
+            pred_metric.append(np.array(logit.argmax(1).to('cpu')))
+            labels_metric.append(np.array(labels.to('cpu')))
             cor += acc(logit, labels)
             n += len(labels)
             avg_loss += loss / num_batchs
-    return avg_loss, int(cor) / n
+    report = reports(np.hstack(pred_metric), np.hstack(labels_metric))
+    return avg_loss, int(cor)/n, report
 
 def acc(logit, labels):
     return torch.sum(logit.argmax(1).eq(labels))
+
+def reports(pred, labels):
+    return cr(labels, pred, zero_division=0)
 
 def mk_dir(path_: str):
     os.makedirs(path_) if not os.path.isdir(path_) else None
@@ -97,33 +108,34 @@ def log(string):
         f.write('\n')
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='')
-    parser.add_argument('--description', type=str, default='E128-H768-M32-O64-L4-pretrained-QQP')
+    parser = argparse.ArgumentParser()
 
-    parser.add_argument('--num_epochs', type=int, default=2000)
-    parser.add_argument('--batch_size', type=int, default=80)
-    parser.add_argument('--step_batch', type=int, default=200)
-    parser.add_argument('--eval_batch_size', type=int, default=10000)
+    parser.add_argument('--num_epochs', type=int, default=10)
+    parser.add_argument('--batch_size', type=int, default=48)
+    parser.add_argument('--step_batch', type=int, default=100)
+    parser.add_argument('--eval_batch_size', type=int, default=120)
 
     parser.add_argument('--lr', type=float, default=5e-05)
     parser.add_argument('--seed', type=int, default=42)
     parser.add_argument('--drop_rate', type=float, default=0.)
 
+    parser.add_argument('--new_vocab', type=bool, default=True)
     parser.add_argument('--embedding_size', type=int, default=128)
     parser.add_argument('--hidden_size', type=int, default=768)
     parser.add_argument('--m', type=int, default=32)
     parser.add_argument('--out_dim', type=int, default=64)
     parser.add_argument('--k', type=int, default=3)
     parser.add_argument('--n_layer', type=int, default=4)
-    parser.add_argument('--max_seq_length', type=int, default=512)
-    parser.add_argument('--task', type=str, default='qqp')
+    parser.add_argument('--attd_mode', type=int, default=2)
+    parser.add_argument('--max_seq_length', type=int, default=512*2)
+    parser.add_argument('--task', type=str, default='mnli', help='qqp, mrpc, sst2, rte, qnli, mnli')
 
     parser.add_argument('--save_vocab', type=bool, default=True)
-    parser.add_argument('--pretrained_vocab_path', type=str, default='/media/lxzun/HJ/Workdir/project_ing/EMNLP/log/train/log_21-05-31_13-18-28/vocab_save/embedding_weight', help='load pretrained vocab path')
+    parser.add_argument('--pretrained_vocab_path', type=str, default='/media/lxzun/HJ/Workdir/project_ing/EMNLP/log/train/log_21-06-11_23-15-50/vocab_save/embedding_weight', help='load pretrained vocab path')
     parser.add_argument('--pretrained_vocab', type=bool, default=True, help='load pretrained vocab')
 
     parser.add_argument('--save_model', type=bool, default=True)
-    parser.add_argument('--pretrained_model_path', type=str, default='/media/lxzun/HJ/Workdir/project_ing/EMNLP/log/train/log_21-05-31_13-18-28/model_save/model_weight', help='load pretrained model path')
+    parser.add_argument('--pretrained_model_path', type=str, default='/media/lxzun/HJ/Workdir/project_ing/EMNLP/log/train/log_21-06-11_23-15-50/model_save/model_weight', help='load pretrained model path')
     parser.add_argument('--pretrained_model', type=bool, default=True, help='load pretrained model')
 
     parser.add_argument('--use_cuda', type=str, default='cuda')
@@ -139,7 +151,7 @@ if __name__ == '__main__':
     model_save = model_save + '/model_weight' if model_save else None
     vocab_save = mk_dir(os.path.join(log_dir, 'vocab_save')) if args.save_vocab else None
     vocab_save = vocab_save + '/embedding_weight' if vocab_save else None
-    writer = SummaryWriter(os.path.join(log_dir, args.description))
+    writer = SummaryWriter(os.path.join(log_dir, f'A{args.attd_mode}_V{int(args.new_vocab)}_E{args.embedding_size}_H{args.hidden_size}_M{args.m}_O{args.out_dim}_L{args.n_layer}_{args.task}'))
 
     device = args.use_cuda if torch.cuda.is_available() else 'cpu'
 
@@ -152,12 +164,17 @@ if __name__ == '__main__':
         log('{}: {}'.format(k, v))
     log('Real used device: {}'.format(device))
 
-    trainset = Mydataset(task=args.task, max_length=args.max_seq_length, split='train')
-    testset = Mydataset(task=args.task, max_length=args.max_seq_length, split='validation')
+    if args.new_vocab:
+        trainset = Mydataset_spm(task=args.task, max_length=args.max_seq_length, split='train')
+        testset = Mydataset_spm(task=args.task, max_length=args.max_seq_length, split='validation')
+
+    else:
+        trainset = Mydataset(task=args.task, max_length=args.max_seq_length, split='train')
+        testset = Mydataset(task=args.task, max_length=args.max_seq_length, split='validation')
 
 
     trainloader = DataLoader(trainset, args.batch_size, num_workers=2, shuffle=True, collate_fn=trainset.make_batch)
-    testloader = DataLoader(testset, args.batch_size, num_workers=2, shuffle=False, collate_fn=testset.make_batch)
+    testloader = DataLoader(testset, args.eval_batch_size, num_workers=2, shuffle=False, collate_fn=testset.make_batch)
 
 
     log('\n---- dataset info ----')
@@ -167,7 +184,7 @@ if __name__ == '__main__':
     log('- num : {}'.format(len(testset)))
     log('----------------------\n')
     num_classes = 0
-    if args.task in ['qqp']:
+    if args.task in ['qqp', 'mrpc', 'sst2', 'rte', 'qnli']:
         num_classes=2
         model = MymodelForSequenceClassification(vocab_size=trainset.vocab_size,
                                                  embedding_size=args.embedding_size,
@@ -175,7 +192,19 @@ if __name__ == '__main__':
                                                  m=args.m, out_dim=args.out_dim,
                                                  n_layer=args.n_layer,
                                                  pad_ids=trainset.pad_ids,
-                                                 num_classes=num_classes)
+                                                 num_classes=num_classes,
+                                                 attd_mode=args.attd_mode)
+
+    if args.task in ['mnli']:
+        num_classes=3
+        model = MymodelForSequenceClassification(vocab_size=trainset.vocab_size,
+                                                 embedding_size=args.embedding_size,
+                                                 hidden_size=args.hidden_size,
+                                                 m=args.m, out_dim=args.out_dim,
+                                                 n_layer=args.n_layer,
+                                                 pad_ids=trainset.pad_ids,
+                                                 num_classes=num_classes,
+                                                 attd_mode=args.attd_mode)
 
     if args.pretrained_vocab:
         model.load(vocab_path=args.pretrained_vocab_path)
@@ -190,12 +219,13 @@ if __name__ == '__main__':
 
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(model.parameters(), lr=args.lr)
+    scheduler = optim.lr_scheduler.CyclicLR(optimizer, base_lr=5e-5, step_size_up=1000, step_size_down=1000, max_lr=5e-4, mode='triangular', cycle_momentum=False)
     optimizer.zero_grad()
 
     best_acc = 0
 
     for epoch_idx in range(1, args.num_epochs + 1):
         log('\n\n----------------------- {} epoch start! -----------------------'.format(epoch_idx))
-        avg_loss = train(model, trainloader, criterion, optimizer, epoch_idx, testloader, args, device)
+        avg_loss = train(model, trainloader, criterion, optimizer, scheduler, epoch_idx, testloader, args, device)
 
     writer.close()

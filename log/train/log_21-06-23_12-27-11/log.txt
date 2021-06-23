@@ -1,0 +1,2466 @@
+num_epochs: 10
+batch_size: 48
+step_batch: 100
+eval_batch_size: 120
+lr: 5e-05
+seed: 42
+drop_rate: 0.0
+new_vocab: True
+embedding_size: 128
+hidden_size: 768
+m: 32
+out_dim: 64
+k: 3
+n_layer: 4
+attd_mode: 2
+max_seq_length: 1024
+task: qqp
+save_vocab: True
+pretrained_vocab_path: /media/lxzun/HJ/Workdir/project_ing/EMNLP/log/train/log_21-06-11_23-15-50/vocab_save/embedding_weight
+pretrained_vocab: True
+save_model: True
+pretrained_model_path: /media/lxzun/HJ/Workdir/project_ing/EMNLP/log/train/log_21-06-11_23-15-50/model_save/model_weight
+pretrained_model: True
+use_cuda: cuda
+multi_gpu: True
+Real used device: cuda
+
+---- dataset info ----
+
+* train data *
+- num : 363846
+
+* eval data *
+- num : 40430
+----------------------
+
+
+
+----------------------- 1 epoch start! -----------------------
+epoch:  1/10	|	batch: 100/7581	|	loss: 0.61248	|	acc: 64.52%
+epoch:  1/10	|	batch: 200/7581	|	loss: 0.56426	|	acc: 70.50%
+epoch:  1/10	|	batch: 300/7581	|	loss: 0.54330	|	acc: 70.79%
+epoch:  1/10	|	batch: 400/7581	|	loss: 0.50858	|	acc: 72.83%
+epoch:  1/10	|	batch: 500/7581	|	loss: 0.50957	|	acc: 73.54%
+ >> epoch:  1	|	total_batch: 500	|	eval_loss: 0.50018	|	eval_acc: 74.31
+
+              precision    recall  f1-score   support
+
+           0       0.78      0.82      0.80     25545
+           1       0.66      0.61      0.64     14885
+
+    accuracy                           0.74     40430
+   macro avg       0.72      0.72      0.72     40430
+weighted avg       0.74      0.74      0.74     40430
+
+epoch:  1/10	|	batch: 600/7581	|	loss: 0.49667	|	acc: 74.44%
+epoch:  1/10	|	batch: 700/7581	|	loss: 0.50031	|	acc: 74.65%
+epoch:  1/10	|	batch: 800/7581	|	loss: 0.47376	|	acc: 76.19%
+epoch:  1/10	|	batch: 900/7581	|	loss: 0.50887	|	acc: 73.79%
+epoch:  1/10	|	batch: 1000/7581	|	loss: 0.48951	|	acc: 75.46%
+ >> epoch:  1	|	total_batch: 1000	|	eval_loss: 0.48056	|	eval_acc: 75.42
+
+              precision    recall  f1-score   support
+
+           0       0.77      0.87      0.82     25545
+           1       0.72      0.55      0.62     14885
+
+    accuracy                           0.75     40430
+   macro avg       0.74      0.71      0.72     40430
+weighted avg       0.75      0.75      0.75     40430
+
+epoch:  1/10	|	batch: 1100/7581	|	loss: 0.48217	|	acc: 76.23%
+epoch:  1/10	|	batch: 1200/7581	|	loss: 0.48341	|	acc: 75.58%
+epoch:  1/10	|	batch: 1300/7581	|	loss: 0.47313	|	acc: 76.71%
+epoch:  1/10	|	batch: 1400/7581	|	loss: 0.43959	|	acc: 78.81%
+epoch:  1/10	|	batch: 1500/7581	|	loss: 0.44292	|	acc: 78.00%
+ >> epoch:  1	|	total_batch: 1500	|	eval_loss: 0.44618	|	eval_acc: 77.88
+
+              precision    recall  f1-score   support
+
+           0       0.80      0.86      0.83     25545
+           1       0.73      0.64      0.68     14885
+
+    accuracy                           0.78     40430
+   macro avg       0.77      0.75      0.76     40430
+weighted avg       0.78      0.78      0.78     40430
+
+epoch:  1/10	|	batch: 1600/7581	|	loss: 0.44275	|	acc: 77.98%
+epoch:  1/10	|	batch: 1700/7581	|	loss: 0.45241	|	acc: 77.40%
+epoch:  1/10	|	batch: 1800/7581	|	loss: 0.43095	|	acc: 77.98%
+epoch:  1/10	|	batch: 1900/7581	|	loss: 0.42928	|	acc: 79.15%
+epoch:  1/10	|	batch: 2000/7581	|	loss: 0.42775	|	acc: 78.92%
+ >> epoch:  1	|	total_batch: 2000	|	eval_loss: 0.42084	|	eval_acc: 79.46
+
+              precision    recall  f1-score   support
+
+           0       0.85      0.82      0.83     25545
+           1       0.71      0.76      0.73     14885
+
+    accuracy                           0.79     40430
+   macro avg       0.78      0.79      0.78     40430
+weighted avg       0.80      0.79      0.80     40430
+
+epoch:  1/10	|	batch: 2100/7581	|	loss: 0.42109	|	acc: 79.65%
+epoch:  1/10	|	batch: 2200/7581	|	loss: 0.40798	|	acc: 79.46%
+epoch:  1/10	|	batch: 2300/7581	|	loss: 0.43211	|	acc: 78.69%
+epoch:  1/10	|	batch: 2400/7581	|	loss: 0.41243	|	acc: 80.04%
+epoch:  1/10	|	batch: 2500/7581	|	loss: 0.42163	|	acc: 79.88%
+ >> epoch:  1	|	total_batch: 2500	|	eval_loss: 0.43760	|	eval_acc: 78.40
+
+              precision    recall  f1-score   support
+
+           0       0.80      0.88      0.84     25545
+           1       0.75      0.62      0.68     14885
+
+    accuracy                           0.78     40430
+   macro avg       0.78      0.75      0.76     40430
+weighted avg       0.78      0.78      0.78     40430
+
+epoch:  1/10	|	batch: 2600/7581	|	loss: 0.42185	|	acc: 79.65%
+epoch:  1/10	|	batch: 2700/7581	|	loss: 0.42500	|	acc: 79.19%
+epoch:  1/10	|	batch: 2800/7581	|	loss: 0.43185	|	acc: 78.65%
+epoch:  1/10	|	batch: 2900/7581	|	loss: 0.44426	|	acc: 78.40%
+epoch:  1/10	|	batch: 3000/7581	|	loss: 0.43547	|	acc: 78.54%
+ >> epoch:  1	|	total_batch: 3000	|	eval_loss: 0.43074	|	eval_acc: 78.97
+
+              precision    recall  f1-score   support
+
+           0       0.85      0.82      0.83     25545
+           1       0.70      0.74      0.72     14885
+
+    accuracy                           0.79     40430
+   macro avg       0.77      0.78      0.78     40430
+weighted avg       0.79      0.79      0.79     40430
+
+epoch:  1/10	|	batch: 3100/7581	|	loss: 0.42542	|	acc: 79.17%
+epoch:  1/10	|	batch: 3200/7581	|	loss: 0.42888	|	acc: 78.71%
+epoch:  1/10	|	batch: 3300/7581	|	loss: 0.42587	|	acc: 79.46%
+epoch:  1/10	|	batch: 3400/7581	|	loss: 0.43015	|	acc: 78.92%
+epoch:  1/10	|	batch: 3500/7581	|	loss: 0.41263	|	acc: 80.00%
+ >> epoch:  1	|	total_batch: 3500	|	eval_loss: 0.42127	|	eval_acc: 79.05
+
+              precision    recall  f1-score   support
+
+           0       0.88      0.77      0.82     25545
+           1       0.68      0.82      0.74     14885
+
+    accuracy                           0.79     40430
+   macro avg       0.78      0.80      0.78     40430
+weighted avg       0.81      0.79      0.79     40430
+
+epoch:  1/10	|	batch: 3600/7581	|	loss: 0.41260	|	acc: 80.04%
+epoch:  1/10	|	batch: 3700/7581	|	loss: 0.39179	|	acc: 81.10%
+epoch:  1/10	|	batch: 3800/7581	|	loss: 0.41865	|	acc: 79.21%
+epoch:  1/10	|	batch: 3900/7581	|	loss: 0.39997	|	acc: 81.23%
+epoch:  1/10	|	batch: 4000/7581	|	loss: 0.40946	|	acc: 80.17%
+ >> epoch:  1	|	total_batch: 4000	|	eval_loss: 0.39397	|	eval_acc: 81.03
+
+              precision    recall  f1-score   support
+
+           0       0.86      0.84      0.85     25545
+           1       0.74      0.75      0.75     14885
+
+    accuracy                           0.81     40430
+   macro avg       0.80      0.80      0.80     40430
+weighted avg       0.81      0.81      0.81     40430
+
+epoch:  1/10	|	batch: 4100/7581	|	loss: 0.38467	|	acc: 81.40%
+epoch:  1/10	|	batch: 4200/7581	|	loss: 0.40581	|	acc: 80.62%
+epoch:  1/10	|	batch: 4300/7581	|	loss: 0.36735	|	acc: 82.69%
+epoch:  1/10	|	batch: 4400/7581	|	loss: 0.39903	|	acc: 80.50%
+epoch:  1/10	|	batch: 4500/7581	|	loss: 0.37493	|	acc: 82.38%
+ >> epoch:  1	|	total_batch: 4500	|	eval_loss: 0.39634	|	eval_acc: 80.82
+
+              precision    recall  f1-score   support
+
+           0       0.84      0.86      0.85     25545
+           1       0.75      0.72      0.74     14885
+
+    accuracy                           0.81     40430
+   macro avg       0.79      0.79      0.79     40430
+weighted avg       0.81      0.81      0.81     40430
+
+epoch:  1/10	|	batch: 4600/7581	|	loss: 0.39857	|	acc: 81.33%
+epoch:  1/10	|	batch: 4700/7581	|	loss: 0.40072	|	acc: 81.44%
+epoch:  1/10	|	batch: 4800/7581	|	loss: 0.39979	|	acc: 80.75%
+epoch:  1/10	|	batch: 4900/7581	|	loss: 0.41644	|	acc: 79.83%
+epoch:  1/10	|	batch: 5000/7581	|	loss: 0.40699	|	acc: 80.02%
+ >> epoch:  1	|	total_batch: 5000	|	eval_loss: 0.42329	|	eval_acc: 79.15
+
+              precision    recall  f1-score   support
+
+           0       0.81      0.87      0.84     25545
+           1       0.74      0.66      0.70     14885
+
+    accuracy                           0.79     40430
+   macro avg       0.78      0.76      0.77     40430
+weighted avg       0.79      0.79      0.79     40430
+
+epoch:  1/10	|	batch: 5100/7581	|	loss: 0.41876	|	acc: 80.21%
+epoch:  1/10	|	batch: 5200/7581	|	loss: 0.40315	|	acc: 80.42%
+epoch:  1/10	|	batch: 5300/7581	|	loss: 0.41727	|	acc: 80.33%
+epoch:  1/10	|	batch: 5400/7581	|	loss: 0.40212	|	acc: 80.52%
+epoch:  1/10	|	batch: 5500/7581	|	loss: 0.37558	|	acc: 82.17%
+ >> epoch:  1	|	total_batch: 5500	|	eval_loss: 0.39962	|	eval_acc: 80.81
+
+              precision    recall  f1-score   support
+
+           0       0.84      0.86      0.85     25545
+           1       0.75      0.72      0.73     14885
+
+    accuracy                           0.81     40430
+   macro avg       0.79      0.79      0.79     40430
+weighted avg       0.81      0.81      0.81     40430
+
+epoch:  1/10	|	batch: 5600/7581	|	loss: 0.40814	|	acc: 80.02%
+epoch:  1/10	|	batch: 5700/7581	|	loss: 0.38691	|	acc: 81.52%
+epoch:  1/10	|	batch: 5800/7581	|	loss: 0.38863	|	acc: 81.75%
+epoch:  1/10	|	batch: 5900/7581	|	loss: 0.38069	|	acc: 82.00%
+epoch:  1/10	|	batch: 6000/7581	|	loss: 0.37155	|	acc: 82.38%
+ >> epoch:  1	|	total_batch: 6000	|	eval_loss: 0.38259	|	eval_acc: 81.54
+
+              precision    recall  f1-score   support
+
+           0       0.85      0.86      0.85     25545
+           1       0.75      0.75      0.75     14885
+
+    accuracy                           0.82     40430
+   macro avg       0.80      0.80      0.80     40430
+weighted avg       0.82      0.82      0.82     40430
+
+epoch:  1/10	|	batch: 6100/7581	|	loss: 0.37734	|	acc: 82.31%
+epoch:  1/10	|	batch: 6200/7581	|	loss: 0.38417	|	acc: 81.73%
+epoch:  1/10	|	batch: 6300/7581	|	loss: 0.38774	|	acc: 81.52%
+epoch:  1/10	|	batch: 6400/7581	|	loss: 0.38148	|	acc: 81.73%
+epoch:  1/10	|	batch: 6500/7581	|	loss: 0.38494	|	acc: 82.00%
+ >> epoch:  1	|	total_batch: 6500	|	eval_loss: 0.39149	|	eval_acc: 81.15
+
+              precision    recall  f1-score   support
+
+           0       0.85      0.85      0.85     25545
+           1       0.74      0.75      0.75     14885
+
+    accuracy                           0.81     40430
+   macro avg       0.80      0.80      0.80     40430
+weighted avg       0.81      0.81      0.81     40430
+
+epoch:  1/10	|	batch: 6600/7581	|	loss: 0.38536	|	acc: 81.79%
+epoch:  1/10	|	batch: 6700/7581	|	loss: 0.38874	|	acc: 81.19%
+epoch:  1/10	|	batch: 6800/7581	|	loss: 0.39069	|	acc: 81.85%
+epoch:  1/10	|	batch: 6900/7581	|	loss: 0.38990	|	acc: 80.92%
+epoch:  1/10	|	batch: 7000/7581	|	loss: 0.42117	|	acc: 80.29%
+ >> epoch:  1	|	total_batch: 7000	|	eval_loss: 0.40701	|	eval_acc: 80.26
+
+              precision    recall  f1-score   support
+
+           0       0.82      0.87      0.85     25545
+           1       0.76      0.68      0.72     14885
+
+    accuracy                           0.80     40430
+   macro avg       0.79      0.78      0.78     40430
+weighted avg       0.80      0.80      0.80     40430
+
+epoch:  1/10	|	batch: 7100/7581	|	loss: 0.41456	|	acc: 80.67%
+epoch:  1/10	|	batch: 7200/7581	|	loss: 0.39837	|	acc: 80.98%
+epoch:  1/10	|	batch: 7300/7581	|	loss: 0.40806	|	acc: 79.98%
+epoch:  1/10	|	batch: 7400/7581	|	loss: 0.38966	|	acc: 81.46%
+epoch:  1/10	|	batch: 7500/7581	|	loss: 0.39601	|	acc: 81.58%
+ >> epoch:  1	|	total_batch: 7500	|	eval_loss: 0.39830	|	eval_acc: 80.70
+
+              precision    recall  f1-score   support
+
+           0       0.82      0.89      0.85     25545
+           1       0.78      0.67      0.72     14885
+
+    accuracy                           0.81     40430
+   macro avg       0.80      0.78      0.79     40430
+weighted avg       0.80      0.81      0.80     40430
+
+
+
+----------------------- 2 epoch start! -----------------------
+epoch:  2/10	|	batch: 100/7581	|	loss: 0.36406	|	acc: 82.85%
+epoch:  2/10	|	batch: 200/7581	|	loss: 0.36107	|	acc: 82.90%
+epoch:  2/10	|	batch: 300/7581	|	loss: 0.35946	|	acc: 83.35%
+epoch:  2/10	|	batch: 400/7581	|	loss: 0.34422	|	acc: 84.48%
+epoch:  2/10	|	batch: 500/7581	|	loss: 0.34935	|	acc: 83.71%
+ >> epoch:  2	|	total_batch: 8081	|	eval_loss: 0.37395	|	eval_acc: 82.14
+
+              precision    recall  f1-score   support
+
+           0       0.85      0.87      0.86     25545
+           1       0.77      0.73      0.75     14885
+
+    accuracy                           0.82     40430
+   macro avg       0.81      0.80      0.81     40430
+weighted avg       0.82      0.82      0.82     40430
+
+epoch:  2/10	|	batch: 600/7581	|	loss: 0.35588	|	acc: 83.15%
+epoch:  2/10	|	batch: 700/7581	|	loss: 0.36037	|	acc: 83.08%
+epoch:  2/10	|	batch: 800/7581	|	loss: 0.35775	|	acc: 84.02%
+epoch:  2/10	|	batch: 900/7581	|	loss: 0.35085	|	acc: 83.69%
+epoch:  2/10	|	batch: 1000/7581	|	loss: 0.36358	|	acc: 83.48%
+ >> epoch:  2	|	total_batch: 8581	|	eval_loss: 0.37899	|	eval_acc: 81.94
+
+              precision    recall  f1-score   support
+
+           0       0.86      0.85      0.86     25545
+           1       0.75      0.76      0.76     14885
+
+    accuracy                           0.82     40430
+   macro avg       0.81      0.81      0.81     40430
+weighted avg       0.82      0.82      0.82     40430
+
+epoch:  2/10	|	batch: 1100/7581	|	loss: 0.36648	|	acc: 82.46%
+epoch:  2/10	|	batch: 1200/7581	|	loss: 0.37071	|	acc: 82.54%
+epoch:  2/10	|	batch: 1300/7581	|	loss: 0.37312	|	acc: 81.90%
+epoch:  2/10	|	batch: 1400/7581	|	loss: 0.36792	|	acc: 82.29%
+epoch:  2/10	|	batch: 1500/7581	|	loss: 0.37164	|	acc: 82.48%
+ >> epoch:  2	|	total_batch: 9081	|	eval_loss: 0.39065	|	eval_acc: 81.54
+
+              precision    recall  f1-score   support
+
+           0       0.88      0.82      0.85     25545
+           1       0.72      0.81      0.76     14885
+
+    accuracy                           0.82     40430
+   macro avg       0.80      0.81      0.81     40430
+weighted avg       0.82      0.82      0.82     40430
+
+epoch:  2/10	|	batch: 1600/7581	|	loss: 0.37427	|	acc: 82.56%
+epoch:  2/10	|	batch: 1700/7581	|	loss: 0.36939	|	acc: 82.35%
+epoch:  2/10	|	batch: 1800/7581	|	loss: 0.36916	|	acc: 82.90%
+epoch:  2/10	|	batch: 1900/7581	|	loss: 0.37948	|	acc: 81.52%
+epoch:  2/10	|	batch: 2000/7581	|	loss: 0.36449	|	acc: 81.96%
+ >> epoch:  2	|	total_batch: 9581	|	eval_loss: 0.38567	|	eval_acc: 81.34
+
+              precision    recall  f1-score   support
+
+           0       0.89      0.80      0.84     25545
+           1       0.71      0.83      0.77     14885
+
+    accuracy                           0.81     40430
+   macro avg       0.80      0.82      0.81     40430
+weighted avg       0.82      0.81      0.82     40430
+
+epoch:  2/10	|	batch: 2100/7581	|	loss: 0.36796	|	acc: 82.54%
+epoch:  2/10	|	batch: 2200/7581	|	loss: 0.36682	|	acc: 82.42%
+epoch:  2/10	|	batch: 2300/7581	|	loss: 0.36005	|	acc: 83.35%
+epoch:  2/10	|	batch: 2400/7581	|	loss: 0.33481	|	acc: 84.29%
+epoch:  2/10	|	batch: 2500/7581	|	loss: 0.34695	|	acc: 83.81%
+ >> epoch:  2	|	total_batch: 10081	|	eval_loss: 0.36363	|	eval_acc: 82.67
+
+              precision    recall  f1-score   support
+
+           0       0.86      0.87      0.86     25545
+           1       0.77      0.75      0.76     14885
+
+    accuracy                           0.83     40430
+   macro avg       0.81      0.81      0.81     40430
+weighted avg       0.83      0.83      0.83     40430
+
+epoch:  2/10	|	batch: 2600/7581	|	loss: 0.34825	|	acc: 83.92%
+epoch:  2/10	|	batch: 2700/7581	|	loss: 0.35362	|	acc: 83.73%
+epoch:  2/10	|	batch: 2800/7581	|	loss: 0.34975	|	acc: 83.65%
+epoch:  2/10	|	batch: 2900/7581	|	loss: 0.36794	|	acc: 83.17%
+epoch:  2/10	|	batch: 3000/7581	|	loss: 0.36401	|	acc: 82.85%
+ >> epoch:  2	|	total_batch: 10581	|	eval_loss: 0.37969	|	eval_acc: 81.87
+
+              precision    recall  f1-score   support
+
+           0       0.83      0.90      0.86     25545
+           1       0.80      0.68      0.73     14885
+
+    accuracy                           0.82     40430
+   macro avg       0.81      0.79      0.80     40430
+weighted avg       0.82      0.82      0.81     40430
+
+epoch:  2/10	|	batch: 3100/7581	|	loss: 0.36328	|	acc: 82.67%
+epoch:  2/10	|	batch: 3200/7581	|	loss: 0.36715	|	acc: 82.65%
+epoch:  2/10	|	batch: 3300/7581	|	loss: 0.37484	|	acc: 82.27%
+epoch:  2/10	|	batch: 3400/7581	|	loss: 0.36835	|	acc: 82.48%
+epoch:  2/10	|	batch: 3500/7581	|	loss: 0.36661	|	acc: 82.50%
+ >> epoch:  2	|	total_batch: 11081	|	eval_loss: 0.37808	|	eval_acc: 82.08
+
+              precision    recall  f1-score   support
+
+           0       0.86      0.86      0.86     25545
+           1       0.76      0.75      0.76     14885
+
+    accuracy                           0.82     40430
+   macro avg       0.81      0.81      0.81     40430
+weighted avg       0.82      0.82      0.82     40430
+
+epoch:  2/10	|	batch: 3600/7581	|	loss: 0.36292	|	acc: 83.46%
+epoch:  2/10	|	batch: 3700/7581	|	loss: 0.37032	|	acc: 82.88%
+epoch:  2/10	|	batch: 3800/7581	|	loss: 0.36336	|	acc: 83.40%
+epoch:  2/10	|	batch: 3900/7581	|	loss: 0.34722	|	acc: 83.90%
+epoch:  2/10	|	batch: 4000/7581	|	loss: 0.35185	|	acc: 83.77%
+ >> epoch:  2	|	total_batch: 11581	|	eval_loss: 0.37169	|	eval_acc: 82.55
+
+              precision    recall  f1-score   support
+
+           0       0.87      0.85      0.86     25545
+           1       0.75      0.78      0.77     14885
+
+    accuracy                           0.83     40430
+   macro avg       0.81      0.82      0.81     40430
+weighted avg       0.83      0.83      0.83     40430
+
+epoch:  2/10	|	batch: 4100/7581	|	loss: 0.35719	|	acc: 83.21%
+epoch:  2/10	|	batch: 4200/7581	|	loss: 0.35937	|	acc: 83.02%
+epoch:  2/10	|	batch: 4300/7581	|	loss: 0.34470	|	acc: 83.75%
+epoch:  2/10	|	batch: 4400/7581	|	loss: 0.34712	|	acc: 84.48%
+epoch:  2/10	|	batch: 4500/7581	|	loss: 0.34608	|	acc: 84.00%
+ >> epoch:  2	|	total_batch: 12081	|	eval_loss: 0.35924	|	eval_acc: 83.21
+
+              precision    recall  f1-score   support
+
+           0       0.88      0.86      0.87     25545
+           1       0.76      0.79      0.78     14885
+
+    accuracy                           0.83     40430
+   macro avg       0.82      0.82      0.82     40430
+weighted avg       0.83      0.83      0.83     40430
+
+epoch:  2/10	|	batch: 4600/7581	|	loss: 0.35513	|	acc: 83.40%
+epoch:  2/10	|	batch: 4700/7581	|	loss: 0.34580	|	acc: 84.15%
+epoch:  2/10	|	batch: 4800/7581	|	loss: 0.34302	|	acc: 83.71%
+epoch:  2/10	|	batch: 4900/7581	|	loss: 0.34601	|	acc: 84.08%
+epoch:  2/10	|	batch: 5000/7581	|	loss: 0.35492	|	acc: 83.48%
+ >> epoch:  2	|	total_batch: 12581	|	eval_loss: 0.37760	|	eval_acc: 82.25
+
+              precision    recall  f1-score   support
+
+           0       0.89      0.82      0.85     25545
+           1       0.73      0.83      0.77     14885
+
+    accuracy                           0.82     40430
+   macro avg       0.81      0.82      0.81     40430
+weighted avg       0.83      0.82      0.82     40430
+
+epoch:  2/10	|	batch: 5100/7581	|	loss: 0.34881	|	acc: 84.23%
+epoch:  2/10	|	batch: 5200/7581	|	loss: 0.36879	|	acc: 82.50%
+epoch:  2/10	|	batch: 5300/7581	|	loss: 0.35817	|	acc: 82.62%
+epoch:  2/10	|	batch: 5400/7581	|	loss: 0.34650	|	acc: 83.85%
+epoch:  2/10	|	batch: 5500/7581	|	loss: 0.37691	|	acc: 81.73%
+ >> epoch:  2	|	total_batch: 13081	|	eval_loss: 0.38737	|	eval_acc: 81.89
+
+              precision    recall  f1-score   support
+
+           0       0.89      0.81      0.85     25545
+           1       0.72      0.83      0.77     14885
+
+    accuracy                           0.82     40430
+   macro avg       0.81      0.82      0.81     40430
+weighted avg       0.83      0.82      0.82     40430
+
+epoch:  2/10	|	batch: 5600/7581	|	loss: 0.36417	|	acc: 82.90%
+epoch:  2/10	|	batch: 5700/7581	|	loss: 0.37479	|	acc: 82.35%
+epoch:  2/10	|	batch: 5800/7581	|	loss: 0.35075	|	acc: 83.75%
+epoch:  2/10	|	batch: 5900/7581	|	loss: 0.34904	|	acc: 84.08%
+epoch:  2/10	|	batch: 6000/7581	|	loss: 0.34991	|	acc: 83.77%
+ >> epoch:  2	|	total_batch: 13581	|	eval_loss: 0.35798	|	eval_acc: 83.27
+
+              precision    recall  f1-score   support
+
+           0       0.86      0.87      0.87     25545
+           1       0.78      0.76      0.77     14885
+
+    accuracy                           0.83     40430
+   macro avg       0.82      0.82      0.82     40430
+weighted avg       0.83      0.83      0.83     40430
+
+epoch:  2/10	|	batch: 6100/7581	|	loss: 0.34570	|	acc: 84.31%
+epoch:  2/10	|	batch: 6200/7581	|	loss: 0.34014	|	acc: 84.42%
+epoch:  2/10	|	batch: 6300/7581	|	loss: 0.33930	|	acc: 83.98%
+epoch:  2/10	|	batch: 6400/7581	|	loss: 0.34378	|	acc: 84.38%
+epoch:  2/10	|	batch: 6500/7581	|	loss: 0.33652	|	acc: 84.85%
+ >> epoch:  2	|	total_batch: 14081	|	eval_loss: 0.35296	|	eval_acc: 83.52
+
+              precision    recall  f1-score   support
+
+           0       0.88      0.85      0.87     25545
+           1       0.76      0.80      0.78     14885
+
+    accuracy                           0.84     40430
+   macro avg       0.82      0.83      0.82     40430
+weighted avg       0.84      0.84      0.84     40430
+
+epoch:  2/10	|	batch: 6600/7581	|	loss: 0.35020	|	acc: 83.73%
+epoch:  2/10	|	batch: 6700/7581	|	loss: 0.33932	|	acc: 84.33%
+epoch:  2/10	|	batch: 6800/7581	|	loss: 0.34487	|	acc: 83.65%
+epoch:  2/10	|	batch: 6900/7581	|	loss: 0.33638	|	acc: 84.81%
+epoch:  2/10	|	batch: 7000/7581	|	loss: 0.35952	|	acc: 83.15%
+ >> epoch:  2	|	total_batch: 14581	|	eval_loss: 0.34925	|	eval_acc: 83.67
+
+              precision    recall  f1-score   support
+
+           0       0.86      0.88      0.87     25545
+           1       0.79      0.76      0.77     14885
+
+    accuracy                           0.84     40430
+   macro avg       0.83      0.82      0.82     40430
+weighted avg       0.84      0.84      0.84     40430
+
+epoch:  2/10	|	batch: 7100/7581	|	loss: 0.34928	|	acc: 83.62%
+epoch:  2/10	|	batch: 7200/7581	|	loss: 0.33330	|	acc: 84.46%
+epoch:  2/10	|	batch: 7300/7581	|	loss: 0.36234	|	acc: 83.46%
+epoch:  2/10	|	batch: 7400/7581	|	loss: 0.36705	|	acc: 82.62%
+epoch:  2/10	|	batch: 7500/7581	|	loss: 0.36720	|	acc: 82.23%
+ >> epoch:  2	|	total_batch: 15081	|	eval_loss: 0.36353	|	eval_acc: 82.91
+
+              precision    recall  f1-score   support
+
+           0       0.87      0.85      0.86     25545
+           1       0.76      0.79      0.77     14885
+
+    accuracy                           0.83     40430
+   macro avg       0.82      0.82      0.82     40430
+weighted avg       0.83      0.83      0.83     40430
+
+
+
+----------------------- 3 epoch start! -----------------------
+epoch:  3/10	|	batch: 100/7581	|	loss: 0.33563	|	acc: 84.79%
+epoch:  3/10	|	batch: 200/7581	|	loss: 0.32606	|	acc: 85.33%
+epoch:  3/10	|	batch: 300/7581	|	loss: 0.31929	|	acc: 85.81%
+epoch:  3/10	|	batch: 400/7581	|	loss: 0.32966	|	acc: 84.88%
+epoch:  3/10	|	batch: 500/7581	|	loss: 0.31741	|	acc: 85.50%
+ >> epoch:  3	|	total_batch: 15662	|	eval_loss: 0.34860	|	eval_acc: 83.50
+
+              precision    recall  f1-score   support
+
+           0       0.88      0.86      0.87     25545
+           1       0.77      0.80      0.78     14885
+
+    accuracy                           0.84     40430
+   macro avg       0.82      0.83      0.82     40430
+weighted avg       0.84      0.84      0.84     40430
+
+epoch:  3/10	|	batch: 600/7581	|	loss: 0.30598	|	acc: 86.81%
+epoch:  3/10	|	batch: 700/7581	|	loss: 0.32960	|	acc: 85.17%
+epoch:  3/10	|	batch: 800/7581	|	loss: 0.30637	|	acc: 86.38%
+epoch:  3/10	|	batch: 900/7581	|	loss: 0.31033	|	acc: 86.00%
+epoch:  3/10	|	batch: 1000/7581	|	loss: 0.32099	|	acc: 85.17%
+ >> epoch:  3	|	total_batch: 16162	|	eval_loss: 0.34747	|	eval_acc: 83.72
+
+              precision    recall  f1-score   support
+
+           0       0.86      0.88      0.87     25545
+           1       0.79      0.76      0.78     14885
+
+    accuracy                           0.84     40430
+   macro avg       0.83      0.82      0.82     40430
+weighted avg       0.84      0.84      0.84     40430
+
+epoch:  3/10	|	batch: 1100/7581	|	loss: 0.30772	|	acc: 86.08%
+epoch:  3/10	|	batch: 1200/7581	|	loss: 0.32070	|	acc: 85.42%
+epoch:  3/10	|	batch: 1300/7581	|	loss: 0.33529	|	acc: 84.19%
+epoch:  3/10	|	batch: 1400/7581	|	loss: 0.31811	|	acc: 85.88%
+epoch:  3/10	|	batch: 1500/7581	|	loss: 0.32114	|	acc: 85.46%
+ >> epoch:  3	|	total_batch: 16662	|	eval_loss: 0.35797	|	eval_acc: 83.34
+
+              precision    recall  f1-score   support
+
+           0       0.89      0.84      0.86     25545
+           1       0.75      0.82      0.78     14885
+
+    accuracy                           0.83     40430
+   macro avg       0.82      0.83      0.82     40430
+weighted avg       0.84      0.83      0.83     40430
+
+epoch:  3/10	|	batch: 1600/7581	|	loss: 0.34437	|	acc: 83.79%
+epoch:  3/10	|	batch: 1700/7581	|	loss: 0.32964	|	acc: 85.50%
+epoch:  3/10	|	batch: 1800/7581	|	loss: 0.33484	|	acc: 84.48%
+epoch:  3/10	|	batch: 1900/7581	|	loss: 0.34666	|	acc: 83.94%
+epoch:  3/10	|	batch: 2000/7581	|	loss: 0.33987	|	acc: 84.12%
+ >> epoch:  3	|	total_batch: 17162	|	eval_loss: 0.36290	|	eval_acc: 83.18
+
+              precision    recall  f1-score   support
+
+           0       0.86      0.88      0.87     25545
+           1       0.79      0.74      0.77     14885
+
+    accuracy                           0.83     40430
+   macro avg       0.82      0.81      0.82     40430
+weighted avg       0.83      0.83      0.83     40430
+
+epoch:  3/10	|	batch: 2100/7581	|	loss: 0.34228	|	acc: 84.04%
+epoch:  3/10	|	batch: 2200/7581	|	loss: 0.32573	|	acc: 85.42%
+epoch:  3/10	|	batch: 2300/7581	|	loss: 0.32615	|	acc: 85.12%
+epoch:  3/10	|	batch: 2400/7581	|	loss: 0.33314	|	acc: 84.62%
+epoch:  3/10	|	batch: 2500/7581	|	loss: 0.31568	|	acc: 85.85%
+ >> epoch:  3	|	total_batch: 17662	|	eval_loss: 0.35032	|	eval_acc: 83.48
+
+              precision    recall  f1-score   support
+
+           0       0.87      0.87      0.87     25545
+           1       0.78      0.77      0.78     14885
+
+    accuracy                           0.83     40430
+   macro avg       0.82      0.82      0.82     40430
+weighted avg       0.83      0.83      0.83     40430
+
+epoch:  3/10	|	batch: 2600/7581	|	loss: 0.32992	|	acc: 84.88%
+epoch:  3/10	|	batch: 2700/7581	|	loss: 0.31602	|	acc: 85.65%
+epoch:  3/10	|	batch: 2800/7581	|	loss: 0.32242	|	acc: 85.21%
+epoch:  3/10	|	batch: 2900/7581	|	loss: 0.31899	|	acc: 84.90%
+epoch:  3/10	|	batch: 3000/7581	|	loss: 0.32108	|	acc: 85.00%
+ >> epoch:  3	|	total_batch: 18162	|	eval_loss: 0.34357	|	eval_acc: 83.75
+
+              precision    recall  f1-score   support
+
+           0       0.86      0.89      0.87     25545
+           1       0.80      0.75      0.77     14885
+
+    accuracy                           0.84     40430
+   macro avg       0.83      0.82      0.82     40430
+weighted avg       0.84      0.84      0.84     40430
+
+epoch:  3/10	|	batch: 3100/7581	|	loss: 0.30385	|	acc: 86.29%
+epoch:  3/10	|	batch: 3200/7581	|	loss: 0.31690	|	acc: 85.90%
+epoch:  3/10	|	batch: 3300/7581	|	loss: 0.31814	|	acc: 85.15%
+epoch:  3/10	|	batch: 3400/7581	|	loss: 0.32908	|	acc: 85.02%
+epoch:  3/10	|	batch: 3500/7581	|	loss: 0.34405	|	acc: 84.31%
+ >> epoch:  3	|	total_batch: 18662	|	eval_loss: 0.34618	|	eval_acc: 84.08
+
+              precision    recall  f1-score   support
+
+           0       0.90      0.84      0.87     25545
+           1       0.75      0.85      0.80     14885
+
+    accuracy                           0.84     40430
+   macro avg       0.83      0.84      0.83     40430
+weighted avg       0.85      0.84      0.84     40430
+
+epoch:  3/10	|	batch: 3600/7581	|	loss: 0.31745	|	acc: 84.83%
+epoch:  3/10	|	batch: 3700/7581	|	loss: 0.33033	|	acc: 85.04%
+epoch:  3/10	|	batch: 3800/7581	|	loss: 0.33350	|	acc: 84.73%
+epoch:  3/10	|	batch: 3900/7581	|	loss: 0.32633	|	acc: 85.52%
+epoch:  3/10	|	batch: 4000/7581	|	loss: 0.36280	|	acc: 83.23%
+ >> epoch:  3	|	total_batch: 19162	|	eval_loss: 0.35755	|	eval_acc: 83.18
+
+              precision    recall  f1-score   support
+
+           0       0.87      0.87      0.87     25545
+           1       0.77      0.77      0.77     14885
+
+    accuracy                           0.83     40430
+   macro avg       0.82      0.82      0.82     40430
+weighted avg       0.83      0.83      0.83     40430
+
+epoch:  3/10	|	batch: 4100/7581	|	loss: 0.32592	|	acc: 86.10%
+epoch:  3/10	|	batch: 4200/7581	|	loss: 0.33786	|	acc: 84.60%
+epoch:  3/10	|	batch: 4300/7581	|	loss: 0.33565	|	acc: 84.48%
+epoch:  3/10	|	batch: 4400/7581	|	loss: 0.32999	|	acc: 84.69%
+epoch:  3/10	|	batch: 4500/7581	|	loss: 0.33197	|	acc: 84.33%
+ >> epoch:  3	|	total_batch: 19662	|	eval_loss: 0.34874	|	eval_acc: 83.77
+
+              precision    recall  f1-score   support
+
+           0       0.90      0.84      0.87     25545
+           1       0.75      0.84      0.79     14885
+
+    accuracy                           0.84     40430
+   macro avg       0.82      0.84      0.83     40430
+weighted avg       0.84      0.84      0.84     40430
+
+epoch:  3/10	|	batch: 4600/7581	|	loss: 0.30026	|	acc: 86.83%
+epoch:  3/10	|	batch: 4700/7581	|	loss: 0.31821	|	acc: 85.12%
+epoch:  3/10	|	batch: 4800/7581	|	loss: 0.32472	|	acc: 85.15%
+epoch:  3/10	|	batch: 4900/7581	|	loss: 0.31337	|	acc: 86.04%
+epoch:  3/10	|	batch: 5000/7581	|	loss: 0.32121	|	acc: 85.10%
+ >> epoch:  3	|	total_batch: 20162	|	eval_loss: 0.33790	|	eval_acc: 84.21
+
+              precision    recall  f1-score   support
+
+           0       0.87      0.88      0.88     25545
+           1       0.79      0.78      0.78     14885
+
+    accuracy                           0.84     40430
+   macro avg       0.83      0.83      0.83     40430
+weighted avg       0.84      0.84      0.84     40430
+
+epoch:  3/10	|	batch: 5100/7581	|	loss: 0.31230	|	acc: 86.02%
+epoch:  3/10	|	batch: 5200/7581	|	loss: 0.30895	|	acc: 85.44%
+epoch:  3/10	|	batch: 5300/7581	|	loss: 0.31609	|	acc: 85.33%
+epoch:  3/10	|	batch: 5400/7581	|	loss: 0.32005	|	acc: 85.25%
+epoch:  3/10	|	batch: 5500/7581	|	loss: 0.32579	|	acc: 85.19%
+ >> epoch:  3	|	total_batch: 20662	|	eval_loss: 0.35746	|	eval_acc: 83.15
+
+              precision    recall  f1-score   support
+
+           0       0.85      0.90      0.87     25545
+           1       0.80      0.72      0.76     14885
+
+    accuracy                           0.83     40430
+   macro avg       0.82      0.81      0.81     40430
+weighted avg       0.83      0.83      0.83     40430
+
+epoch:  3/10	|	batch: 5600/7581	|	loss: 0.31808	|	acc: 85.38%
+epoch:  3/10	|	batch: 5700/7581	|	loss: 0.35400	|	acc: 83.88%
+epoch:  3/10	|	batch: 5800/7581	|	loss: 0.32324	|	acc: 84.98%
+epoch:  3/10	|	batch: 5900/7581	|	loss: 0.32521	|	acc: 85.17%
+epoch:  3/10	|	batch: 6000/7581	|	loss: 0.34007	|	acc: 84.12%
+ >> epoch:  3	|	total_batch: 21162	|	eval_loss: 0.36715	|	eval_acc: 82.83
+
+              precision    recall  f1-score   support
+
+           0       0.84      0.89      0.87     25545
+           1       0.80      0.72      0.75     14885
+
+    accuracy                           0.83     40430
+   macro avg       0.82      0.81      0.81     40430
+weighted avg       0.83      0.83      0.83     40430
+
+epoch:  3/10	|	batch: 6100/7581	|	loss: 0.35643	|	acc: 83.17%
+epoch:  3/10	|	batch: 6200/7581	|	loss: 0.33615	|	acc: 84.60%
+epoch:  3/10	|	batch: 6300/7581	|	loss: 0.32172	|	acc: 85.60%
+epoch:  3/10	|	batch: 6400/7581	|	loss: 0.32600	|	acc: 84.56%
+epoch:  3/10	|	batch: 6500/7581	|	loss: 0.32774	|	acc: 84.54%
+ >> epoch:  3	|	total_batch: 21662	|	eval_loss: 0.34544	|	eval_acc: 83.82
+
+              precision    recall  f1-score   support
+
+           0       0.88      0.86      0.87     25545
+           1       0.77      0.80      0.78     14885
+
+    accuracy                           0.84     40430
+   macro avg       0.83      0.83      0.83     40430
+weighted avg       0.84      0.84      0.84     40430
+
+epoch:  3/10	|	batch: 6600/7581	|	loss: 0.32313	|	acc: 85.10%
+epoch:  3/10	|	batch: 6700/7581	|	loss: 0.32045	|	acc: 85.35%
+epoch:  3/10	|	batch: 6800/7581	|	loss: 0.31695	|	acc: 85.02%
+epoch:  3/10	|	batch: 6900/7581	|	loss: 0.32920	|	acc: 85.19%
+epoch:  3/10	|	batch: 7000/7581	|	loss: 0.31302	|	acc: 85.73%
+ >> epoch:  3	|	total_batch: 22162	|	eval_loss: 0.33760	|	eval_acc: 84.26
+
+              precision    recall  f1-score   support
+
+           0       0.88      0.87      0.87     25545
+           1       0.78      0.80      0.79     14885
+
+    accuracy                           0.84     40430
+   macro avg       0.83      0.83      0.83     40430
+weighted avg       0.84      0.84      0.84     40430
+
+epoch:  3/10	|	batch: 7100/7581	|	loss: 0.31019	|	acc: 86.23%
+epoch:  3/10	|	batch: 7200/7581	|	loss: 0.30338	|	acc: 85.56%
+epoch:  3/10	|	batch: 7300/7581	|	loss: 0.31735	|	acc: 85.83%
+epoch:  3/10	|	batch: 7400/7581	|	loss: 0.31205	|	acc: 85.56%
+epoch:  3/10	|	batch: 7500/7581	|	loss: 0.32062	|	acc: 85.08%
+ >> epoch:  3	|	total_batch: 22662	|	eval_loss: 0.34289	|	eval_acc: 84.10
+
+              precision    recall  f1-score   support
+
+           0       0.87      0.88      0.87     25545
+           1       0.79      0.77      0.78     14885
+
+    accuracy                           0.84     40430
+   macro avg       0.83      0.83      0.83     40430
+weighted avg       0.84      0.84      0.84     40430
+
+
+
+----------------------- 4 epoch start! -----------------------
+epoch:  4/10	|	batch: 100/7581	|	loss: 0.30737	|	acc: 86.06%
+epoch:  4/10	|	batch: 200/7581	|	loss: 0.30267	|	acc: 86.25%
+epoch:  4/10	|	batch: 300/7581	|	loss: 0.32359	|	acc: 84.96%
+epoch:  4/10	|	batch: 400/7581	|	loss: 0.30307	|	acc: 86.77%
+epoch:  4/10	|	batch: 500/7581	|	loss: 0.29484	|	acc: 86.54%
+ >> epoch:  4	|	total_batch: 23243	|	eval_loss: 0.36746	|	eval_acc: 82.90
+
+              precision    recall  f1-score   support
+
+           0       0.90      0.82      0.86     25545
+           1       0.73      0.84      0.78     14885
+
+    accuracy                           0.83     40430
+   macro avg       0.82      0.83      0.82     40430
+weighted avg       0.84      0.83      0.83     40430
+
+epoch:  4/10	|	batch: 600/7581	|	loss: 0.30625	|	acc: 86.40%
+epoch:  4/10	|	batch: 700/7581	|	loss: 0.29989	|	acc: 86.25%
+epoch:  4/10	|	batch: 800/7581	|	loss: 0.31019	|	acc: 85.85%
+epoch:  4/10	|	batch: 900/7581	|	loss: 0.30046	|	acc: 86.38%
+epoch:  4/10	|	batch: 1000/7581	|	loss: 0.29790	|	acc: 86.27%
+ >> epoch:  4	|	total_batch: 23743	|	eval_loss: 0.34030	|	eval_acc: 84.15
+
+              precision    recall  f1-score   support
+
+           0       0.86      0.89      0.88     25545
+           1       0.80      0.76      0.78     14885
+
+    accuracy                           0.84     40430
+   macro avg       0.83      0.82      0.83     40430
+weighted avg       0.84      0.84      0.84     40430
+
+epoch:  4/10	|	batch: 1100/7581	|	loss: 0.29934	|	acc: 86.65%
+epoch:  4/10	|	batch: 1200/7581	|	loss: 0.28754	|	acc: 87.67%
+epoch:  4/10	|	batch: 1300/7581	|	loss: 0.28329	|	acc: 87.10%
+epoch:  4/10	|	batch: 1400/7581	|	loss: 0.28044	|	acc: 87.08%
+epoch:  4/10	|	batch: 1500/7581	|	loss: 0.29493	|	acc: 86.85%
+ >> epoch:  4	|	total_batch: 24243	|	eval_loss: 0.33611	|	eval_acc: 84.40
+
+              precision    recall  f1-score   support
+
+           0       0.87      0.89      0.88     25545
+           1       0.80      0.77      0.78     14885
+
+    accuracy                           0.84     40430
+   macro avg       0.83      0.83      0.83     40430
+weighted avg       0.84      0.84      0.84     40430
+
+epoch:  4/10	|	batch: 1600/7581	|	loss: 0.29333	|	acc: 87.23%
+epoch:  4/10	|	batch: 1700/7581	|	loss: 0.30415	|	acc: 86.33%
+epoch:  4/10	|	batch: 1800/7581	|	loss: 0.29032	|	acc: 86.96%
+epoch:  4/10	|	batch: 1900/7581	|	loss: 0.28741	|	acc: 87.29%
+epoch:  4/10	|	batch: 2000/7581	|	loss: 0.31794	|	acc: 85.58%
+ >> epoch:  4	|	total_batch: 24743	|	eval_loss: 0.34589	|	eval_acc: 83.89
+
+              precision    recall  f1-score   support
+
+           0       0.91      0.83      0.87     25545
+           1       0.75      0.85      0.80     14885
+
+    accuracy                           0.84     40430
+   macro avg       0.83      0.84      0.83     40430
+weighted avg       0.85      0.84      0.84     40430
+
+epoch:  4/10	|	batch: 2100/7581	|	loss: 0.30895	|	acc: 85.90%
+epoch:  4/10	|	batch: 2200/7581	|	loss: 0.31712	|	acc: 85.81%
+epoch:  4/10	|	batch: 2300/7581	|	loss: 0.32047	|	acc: 85.15%
+epoch:  4/10	|	batch: 2400/7581	|	loss: 0.30160	|	acc: 86.10%
+epoch:  4/10	|	batch: 2500/7581	|	loss: 0.30958	|	acc: 85.75%
+ >> epoch:  4	|	total_batch: 25243	|	eval_loss: 0.34605	|	eval_acc: 83.93
+
+              precision    recall  f1-score   support
+
+           0       0.88      0.86      0.87     25545
+           1       0.77      0.80      0.79     14885
+
+    accuracy                           0.84     40430
+   macro avg       0.83      0.83      0.83     40430
+weighted avg       0.84      0.84      0.84     40430
+
+epoch:  4/10	|	batch: 2600/7581	|	loss: 0.30659	|	acc: 86.19%
+epoch:  4/10	|	batch: 2700/7581	|	loss: 0.30704	|	acc: 86.54%
+epoch:  4/10	|	batch: 2800/7581	|	loss: 0.29809	|	acc: 86.88%
+epoch:  4/10	|	batch: 2900/7581	|	loss: 0.30193	|	acc: 86.69%
+epoch:  4/10	|	batch: 3000/7581	|	loss: 0.31069	|	acc: 85.85%
+ >> epoch:  4	|	total_batch: 25743	|	eval_loss: 0.33339	|	eval_acc: 84.54
+
+              precision    recall  f1-score   support
+
+           0       0.89      0.87      0.88     25545
+           1       0.78      0.81      0.79     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.83      0.84      0.84     40430
+weighted avg       0.85      0.85      0.85     40430
+
+epoch:  4/10	|	batch: 3100/7581	|	loss: 0.30509	|	acc: 86.40%
+epoch:  4/10	|	batch: 3200/7581	|	loss: 0.28950	|	acc: 87.19%
+epoch:  4/10	|	batch: 3300/7581	|	loss: 0.29311	|	acc: 86.98%
+epoch:  4/10	|	batch: 3400/7581	|	loss: 0.28737	|	acc: 87.04%
+epoch:  4/10	|	batch: 3500/7581	|	loss: 0.28148	|	acc: 87.54%
+ >> epoch:  4	|	total_batch: 26243	|	eval_loss: 0.33376	|	eval_acc: 84.68
+
+              precision    recall  f1-score   support
+
+           0       0.88      0.87      0.88     25545
+           1       0.79      0.80      0.79     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.83      0.84      0.84     40430
+weighted avg       0.85      0.85      0.85     40430
+
+epoch:  4/10	|	batch: 3600/7581	|	loss: 0.28588	|	acc: 86.94%
+epoch:  4/10	|	batch: 3700/7581	|	loss: 0.30143	|	acc: 86.38%
+epoch:  4/10	|	batch: 3800/7581	|	loss: 0.29709	|	acc: 87.02%
+epoch:  4/10	|	batch: 3900/7581	|	loss: 0.30539	|	acc: 85.92%
+epoch:  4/10	|	batch: 4000/7581	|	loss: 0.29850	|	acc: 86.60%
+ >> epoch:  4	|	total_batch: 26743	|	eval_loss: 0.34542	|	eval_acc: 83.88
+
+              precision    recall  f1-score   support
+
+           0       0.91      0.83      0.87     25545
+           1       0.74      0.86      0.80     14885
+
+    accuracy                           0.84     40430
+   macro avg       0.83      0.84      0.83     40430
+weighted avg       0.85      0.84      0.84     40430
+
+epoch:  4/10	|	batch: 4100/7581	|	loss: 0.31051	|	acc: 86.17%
+epoch:  4/10	|	batch: 4200/7581	|	loss: 0.32090	|	acc: 85.38%
+epoch:  4/10	|	batch: 4300/7581	|	loss: 0.33003	|	acc: 84.60%
+epoch:  4/10	|	batch: 4400/7581	|	loss: 0.31649	|	acc: 86.02%
+epoch:  4/10	|	batch: 4500/7581	|	loss: 0.30375	|	acc: 86.29%
+ >> epoch:  4	|	total_batch: 27243	|	eval_loss: 0.34915	|	eval_acc: 83.88
+
+              precision    recall  f1-score   support
+
+           0       0.85      0.90      0.88     25545
+           1       0.81      0.73      0.77     14885
+
+    accuracy                           0.84     40430
+   macro avg       0.83      0.82      0.82     40430
+weighted avg       0.84      0.84      0.84     40430
+
+epoch:  4/10	|	batch: 4600/7581	|	loss: 0.29701	|	acc: 87.21%
+epoch:  4/10	|	batch: 4700/7581	|	loss: 0.31444	|	acc: 85.46%
+epoch:  4/10	|	batch: 4800/7581	|	loss: 0.30442	|	acc: 86.35%
+epoch:  4/10	|	batch: 4900/7581	|	loss: 0.30114	|	acc: 86.42%
+epoch:  4/10	|	batch: 5000/7581	|	loss: 0.29995	|	acc: 86.27%
+ >> epoch:  4	|	total_batch: 27743	|	eval_loss: 0.33472	|	eval_acc: 84.70
+
+              precision    recall  f1-score   support
+
+           0       0.87      0.89      0.88     25545
+           1       0.80      0.78      0.79     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.84      0.83      0.83     40430
+weighted avg       0.85      0.85      0.85     40430
+
+epoch:  4/10	|	batch: 5100/7581	|	loss: 0.29602	|	acc: 87.40%
+epoch:  4/10	|	batch: 5200/7581	|	loss: 0.30049	|	acc: 86.35%
+epoch:  4/10	|	batch: 5300/7581	|	loss: 0.28513	|	acc: 87.44%
+epoch:  4/10	|	batch: 5400/7581	|	loss: 0.28409	|	acc: 87.44%
+epoch:  4/10	|	batch: 5500/7581	|	loss: 0.28942	|	acc: 87.04%
+ >> epoch:  4	|	total_batch: 28243	|	eval_loss: 0.34066	|	eval_acc: 84.39
+
+              precision    recall  f1-score   support
+
+           0       0.85      0.91      0.88     25545
+           1       0.82      0.73      0.78     14885
+
+    accuracy                           0.84     40430
+   macro avg       0.84      0.82      0.83     40430
+weighted avg       0.84      0.84      0.84     40430
+
+epoch:  4/10	|	batch: 5600/7581	|	loss: 0.28172	|	acc: 87.58%
+epoch:  4/10	|	batch: 5700/7581	|	loss: 0.29937	|	acc: 86.21%
+epoch:  4/10	|	batch: 5800/7581	|	loss: 0.29103	|	acc: 86.96%
+epoch:  4/10	|	batch: 5900/7581	|	loss: 0.29760	|	acc: 87.00%
+epoch:  4/10	|	batch: 6000/7581	|	loss: 0.30452	|	acc: 86.35%
+ >> epoch:  4	|	total_batch: 28743	|	eval_loss: 0.33728	|	eval_acc: 84.38
+
+              precision    recall  f1-score   support
+
+           0       0.86      0.89      0.88     25545
+           1       0.81      0.76      0.78     14885
+
+    accuracy                           0.84     40430
+   macro avg       0.83      0.83      0.83     40430
+weighted avg       0.84      0.84      0.84     40430
+
+epoch:  4/10	|	batch: 6100/7581	|	loss: 0.30965	|	acc: 85.85%
+epoch:  4/10	|	batch: 6200/7581	|	loss: 0.30346	|	acc: 86.25%
+epoch:  4/10	|	batch: 6300/7581	|	loss: 0.30849	|	acc: 86.44%
+epoch:  4/10	|	batch: 6400/7581	|	loss: 0.31929	|	acc: 85.46%
+epoch:  4/10	|	batch: 6500/7581	|	loss: 0.31078	|	acc: 86.29%
+ >> epoch:  4	|	total_batch: 29243	|	eval_loss: 0.34045	|	eval_acc: 84.29
+
+              precision    recall  f1-score   support
+
+           0       0.89      0.85      0.87     25545
+           1       0.77      0.83      0.79     14885
+
+    accuracy                           0.84     40430
+   macro avg       0.83      0.84      0.83     40430
+weighted avg       0.85      0.84      0.84     40430
+
+epoch:  4/10	|	batch: 6600/7581	|	loss: 0.31487	|	acc: 85.54%
+epoch:  4/10	|	batch: 6700/7581	|	loss: 0.30855	|	acc: 86.31%
+epoch:  4/10	|	batch: 6800/7581	|	loss: 0.29308	|	acc: 86.79%
+epoch:  4/10	|	batch: 6900/7581	|	loss: 0.31433	|	acc: 85.85%
+epoch:  4/10	|	batch: 7000/7581	|	loss: 0.31223	|	acc: 85.75%
+ >> epoch:  4	|	total_batch: 29743	|	eval_loss: 0.32930	|	eval_acc: 84.88
+
+              precision    recall  f1-score   support
+
+           0       0.88      0.88      0.88     25545
+           1       0.79      0.80      0.80     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.84      0.84      0.84     40430
+weighted avg       0.85      0.85      0.85     40430
+
+epoch:  4/10	|	batch: 7100/7581	|	loss: 0.28625	|	acc: 86.83%
+epoch:  4/10	|	batch: 7200/7581	|	loss: 0.28926	|	acc: 86.96%
+epoch:  4/10	|	batch: 7300/7581	|	loss: 0.29217	|	acc: 87.12%
+epoch:  4/10	|	batch: 7400/7581	|	loss: 0.28168	|	acc: 87.46%
+epoch:  4/10	|	batch: 7500/7581	|	loss: 0.29255	|	acc: 86.92%
+ >> epoch:  4	|	total_batch: 30243	|	eval_loss: 0.32516	|	eval_acc: 84.98
+
+              precision    recall  f1-score   support
+
+           0       0.87      0.89      0.88     25545
+           1       0.81      0.78      0.79     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.84      0.83      0.84     40430
+weighted avg       0.85      0.85      0.85     40430
+
+
+
+----------------------- 5 epoch start! -----------------------
+epoch:  5/10	|	batch: 100/7581	|	loss: 0.25756	|	acc: 88.42%
+epoch:  5/10	|	batch: 200/7581	|	loss: 0.26672	|	acc: 87.85%
+epoch:  5/10	|	batch: 300/7581	|	loss: 0.26190	|	acc: 88.71%
+epoch:  5/10	|	batch: 400/7581	|	loss: 0.27442	|	acc: 87.56%
+epoch:  5/10	|	batch: 500/7581	|	loss: 0.28617	|	acc: 87.27%
+ >> epoch:  5	|	total_batch: 30824	|	eval_loss: 0.34287	|	eval_acc: 84.51
+
+              precision    recall  f1-score   support
+
+           0       0.86      0.90      0.88     25545
+           1       0.81      0.76      0.78     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.84      0.83      0.83     40430
+weighted avg       0.84      0.85      0.84     40430
+
+epoch:  5/10	|	batch: 600/7581	|	loss: 0.28556	|	acc: 87.08%
+epoch:  5/10	|	batch: 700/7581	|	loss: 0.27562	|	acc: 87.40%
+epoch:  5/10	|	batch: 800/7581	|	loss: 0.27634	|	acc: 87.67%
+epoch:  5/10	|	batch: 900/7581	|	loss: 0.29350	|	acc: 86.83%
+epoch:  5/10	|	batch: 1000/7581	|	loss: 0.29800	|	acc: 86.00%
+ >> epoch:  5	|	total_batch: 31324	|	eval_loss: 0.34233	|	eval_acc: 84.57
+
+              precision    recall  f1-score   support
+
+           0       0.88      0.88      0.88     25545
+           1       0.79      0.79      0.79     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.83      0.83      0.83     40430
+weighted avg       0.85      0.85      0.85     40430
+
+epoch:  5/10	|	batch: 1100/7581	|	loss: 0.27487	|	acc: 87.35%
+epoch:  5/10	|	batch: 1200/7581	|	loss: 0.28928	|	acc: 86.92%
+epoch:  5/10	|	batch: 1300/7581	|	loss: 0.28049	|	acc: 88.00%
+epoch:  5/10	|	batch: 1400/7581	|	loss: 0.28907	|	acc: 87.29%
+epoch:  5/10	|	batch: 1500/7581	|	loss: 0.27112	|	acc: 88.27%
+ >> epoch:  5	|	total_batch: 31824	|	eval_loss: 0.33232	|	eval_acc: 84.85
+
+              precision    recall  f1-score   support
+
+           0       0.88      0.88      0.88     25545
+           1       0.79      0.80      0.80     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.84      0.84      0.84     40430
+weighted avg       0.85      0.85      0.85     40430
+
+epoch:  5/10	|	batch: 1600/7581	|	loss: 0.27045	|	acc: 88.50%
+epoch:  5/10	|	batch: 1700/7581	|	loss: 0.25189	|	acc: 88.81%
+epoch:  5/10	|	batch: 1800/7581	|	loss: 0.27535	|	acc: 87.29%
+epoch:  5/10	|	batch: 1900/7581	|	loss: 0.25799	|	acc: 88.71%
+epoch:  5/10	|	batch: 2000/7581	|	loss: 0.26492	|	acc: 88.33%
+ >> epoch:  5	|	total_batch: 32324	|	eval_loss: 0.33152	|	eval_acc: 85.13
+
+              precision    recall  f1-score   support
+
+           0       0.88      0.88      0.88     25545
+           1       0.80      0.79      0.80     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.84      0.84      0.84     40430
+weighted avg       0.85      0.85      0.85     40430
+
+epoch:  5/10	|	batch: 2100/7581	|	loss: 0.26583	|	acc: 88.02%
+epoch:  5/10	|	batch: 2200/7581	|	loss: 0.26831	|	acc: 88.00%
+epoch:  5/10	|	batch: 2300/7581	|	loss: 0.27367	|	acc: 87.15%
+epoch:  5/10	|	batch: 2400/7581	|	loss: 0.28762	|	acc: 87.23%
+epoch:  5/10	|	batch: 2500/7581	|	loss: 0.29506	|	acc: 86.67%
+ >> epoch:  5	|	total_batch: 32824	|	eval_loss: 0.35870	|	eval_acc: 84.27
+
+              precision    recall  f1-score   support
+
+           0       0.85      0.91      0.88     25545
+           1       0.82      0.73      0.77     14885
+
+    accuracy                           0.84     40430
+   macro avg       0.84      0.82      0.83     40430
+weighted avg       0.84      0.84      0.84     40430
+
+epoch:  5/10	|	batch: 2600/7581	|	loss: 0.28446	|	acc: 87.12%
+epoch:  5/10	|	batch: 2700/7581	|	loss: 0.30391	|	acc: 86.21%
+epoch:  5/10	|	batch: 2800/7581	|	loss: 0.29929	|	acc: 86.60%
+epoch:  5/10	|	batch: 2900/7581	|	loss: 0.29798	|	acc: 86.65%
+epoch:  5/10	|	batch: 3000/7581	|	loss: 0.27647	|	acc: 88.12%
+ >> epoch:  5	|	total_batch: 33324	|	eval_loss: 0.34556	|	eval_acc: 84.56
+
+              precision    recall  f1-score   support
+
+           0       0.87      0.89      0.88     25545
+           1       0.81      0.76      0.78     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.84      0.83      0.83     40430
+weighted avg       0.84      0.85      0.84     40430
+
+epoch:  5/10	|	batch: 3100/7581	|	loss: 0.29410	|	acc: 87.04%
+epoch:  5/10	|	batch: 3200/7581	|	loss: 0.27113	|	acc: 88.08%
+epoch:  5/10	|	batch: 3300/7581	|	loss: 0.28033	|	acc: 87.19%
+epoch:  5/10	|	batch: 3400/7581	|	loss: 0.27986	|	acc: 87.62%
+epoch:  5/10	|	batch: 3500/7581	|	loss: 0.28033	|	acc: 87.46%
+ >> epoch:  5	|	total_batch: 33824	|	eval_loss: 0.33229	|	eval_acc: 84.97
+
+              precision    recall  f1-score   support
+
+           0       0.88      0.88      0.88     25545
+           1       0.80      0.79      0.79     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.84      0.84      0.84     40430
+weighted avg       0.85      0.85      0.85     40430
+
+epoch:  5/10	|	batch: 3600/7581	|	loss: 0.27375	|	acc: 88.17%
+epoch:  5/10	|	batch: 3700/7581	|	loss: 0.27006	|	acc: 88.33%
+epoch:  5/10	|	batch: 3800/7581	|	loss: 0.27281	|	acc: 87.58%
+epoch:  5/10	|	batch: 3900/7581	|	loss: 0.27494	|	acc: 87.60%
+epoch:  5/10	|	batch: 4000/7581	|	loss: 0.27654	|	acc: 87.94%
+ >> epoch:  5	|	total_batch: 34324	|	eval_loss: 0.33118	|	eval_acc: 85.01
+
+              precision    recall  f1-score   support
+
+           0       0.87      0.90      0.88     25545
+           1       0.81      0.77      0.79     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.84      0.83      0.84     40430
+weighted avg       0.85      0.85      0.85     40430
+
+epoch:  5/10	|	batch: 4100/7581	|	loss: 0.25798	|	acc: 88.48%
+epoch:  5/10	|	batch: 4200/7581	|	loss: 0.28304	|	acc: 87.67%
+epoch:  5/10	|	batch: 4300/7581	|	loss: 0.26970	|	acc: 87.60%
+epoch:  5/10	|	batch: 4400/7581	|	loss: 0.27274	|	acc: 87.90%
+epoch:  5/10	|	batch: 4500/7581	|	loss: 0.27751	|	acc: 87.21%
+ >> epoch:  5	|	total_batch: 34824	|	eval_loss: 0.33584	|	eval_acc: 84.65
+
+              precision    recall  f1-score   support
+
+           0       0.88      0.88      0.88     25545
+           1       0.79      0.80      0.79     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.83      0.84      0.84     40430
+weighted avg       0.85      0.85      0.85     40430
+
+epoch:  5/10	|	batch: 4600/7581	|	loss: 0.29252	|	acc: 87.23%
+epoch:  5/10	|	batch: 4700/7581	|	loss: 0.28728	|	acc: 87.12%
+epoch:  5/10	|	batch: 4800/7581	|	loss: 0.29132	|	acc: 86.75%
+epoch:  5/10	|	batch: 4900/7581	|	loss: 0.29507	|	acc: 86.73%
+epoch:  5/10	|	batch: 5000/7581	|	loss: 0.29364	|	acc: 86.85%
+ >> epoch:  5	|	total_batch: 35324	|	eval_loss: 0.34099	|	eval_acc: 84.46
+
+              precision    recall  f1-score   support
+
+           0       0.86      0.90      0.88     25545
+           1       0.82      0.75      0.78     14885
+
+    accuracy                           0.84     40430
+   macro avg       0.84      0.82      0.83     40430
+weighted avg       0.84      0.84      0.84     40430
+
+epoch:  5/10	|	batch: 5100/7581	|	loss: 0.28888	|	acc: 87.00%
+epoch:  5/10	|	batch: 5200/7581	|	loss: 0.28645	|	acc: 87.29%
+epoch:  5/10	|	batch: 5300/7581	|	loss: 0.27973	|	acc: 86.92%
+epoch:  5/10	|	batch: 5400/7581	|	loss: 0.28914	|	acc: 87.56%
+epoch:  5/10	|	batch: 5500/7581	|	loss: 0.27581	|	acc: 87.46%
+ >> epoch:  5	|	total_batch: 35824	|	eval_loss: 0.32838	|	eval_acc: 85.19
+
+              precision    recall  f1-score   support
+
+           0       0.87      0.89      0.88     25545
+           1       0.81      0.78      0.79     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.84      0.84      0.84     40430
+weighted avg       0.85      0.85      0.85     40430
+
+epoch:  5/10	|	batch: 5600/7581	|	loss: 0.28176	|	acc: 87.02%
+epoch:  5/10	|	batch: 5700/7581	|	loss: 0.26727	|	acc: 88.38%
+epoch:  5/10	|	batch: 5800/7581	|	loss: 0.27315	|	acc: 88.04%
+epoch:  5/10	|	batch: 5900/7581	|	loss: 0.27532	|	acc: 88.15%
+epoch:  5/10	|	batch: 6000/7581	|	loss: 0.26451	|	acc: 88.10%
+ >> epoch:  5	|	total_batch: 36324	|	eval_loss: 0.33052	|	eval_acc: 85.13
+
+              precision    recall  f1-score   support
+
+           0       0.88      0.89      0.88     25545
+           1       0.80      0.79      0.80     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.84      0.84      0.84     40430
+weighted avg       0.85      0.85      0.85     40430
+
+epoch:  5/10	|	batch: 6100/7581	|	loss: 0.26801	|	acc: 87.85%
+epoch:  5/10	|	batch: 6200/7581	|	loss: 0.28529	|	acc: 87.21%
+epoch:  5/10	|	batch: 6300/7581	|	loss: 0.27017	|	acc: 87.92%
+epoch:  5/10	|	batch: 6400/7581	|	loss: 0.27794	|	acc: 88.02%
+epoch:  5/10	|	batch: 6500/7581	|	loss: 0.26587	|	acc: 88.21%
+ >> epoch:  5	|	total_batch: 36824	|	eval_loss: 0.34288	|	eval_acc: 84.66
+
+              precision    recall  f1-score   support
+
+           0       0.86      0.91      0.88     25545
+           1       0.83      0.74      0.78     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.84      0.82      0.83     40430
+weighted avg       0.85      0.85      0.84     40430
+
+epoch:  5/10	|	batch: 6600/7581	|	loss: 0.28139	|	acc: 87.56%
+epoch:  5/10	|	batch: 6700/7581	|	loss: 0.29283	|	acc: 86.40%
+epoch:  5/10	|	batch: 6800/7581	|	loss: 0.28046	|	acc: 87.65%
+epoch:  5/10	|	batch: 6900/7581	|	loss: 0.31439	|	acc: 85.48%
+epoch:  5/10	|	batch: 7000/7581	|	loss: 0.27988	|	acc: 87.42%
+ >> epoch:  5	|	total_batch: 37324	|	eval_loss: 0.33048	|	eval_acc: 84.84
+
+              precision    recall  f1-score   support
+
+           0       0.89      0.87      0.88     25545
+           1       0.78      0.82      0.80     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.84      0.84      0.84     40430
+weighted avg       0.85      0.85      0.85     40430
+
+epoch:  5/10	|	batch: 7100/7581	|	loss: 0.29362	|	acc: 87.00%
+epoch:  5/10	|	batch: 7200/7581	|	loss: 0.28339	|	acc: 87.44%
+epoch:  5/10	|	batch: 7300/7581	|	loss: 0.27411	|	acc: 88.33%
+epoch:  5/10	|	batch: 7400/7581	|	loss: 0.28059	|	acc: 87.00%
+epoch:  5/10	|	batch: 7500/7581	|	loss: 0.28226	|	acc: 87.90%
+ >> epoch:  5	|	total_batch: 37824	|	eval_loss: 0.32868	|	eval_acc: 85.06
+
+              precision    recall  f1-score   support
+
+           0       0.90      0.86      0.88     25545
+           1       0.77      0.84      0.81     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.84      0.85      0.84     40430
+weighted avg       0.85      0.85      0.85     40430
+
+
+
+----------------------- 6 epoch start! -----------------------
+epoch:  6/10	|	batch: 100/7581	|	loss: 0.24506	|	acc: 89.56%
+epoch:  6/10	|	batch: 200/7581	|	loss: 0.23499	|	acc: 89.79%
+epoch:  6/10	|	batch: 300/7581	|	loss: 0.23713	|	acc: 89.44%
+epoch:  6/10	|	batch: 400/7581	|	loss: 0.24969	|	acc: 89.06%
+epoch:  6/10	|	batch: 500/7581	|	loss: 0.23789	|	acc: 90.27%
+ >> epoch:  6	|	total_batch: 38405	|	eval_loss: 0.34381	|	eval_acc: 84.86
+
+              precision    recall  f1-score   support
+
+           0       0.86      0.91      0.88     25545
+           1       0.83      0.74      0.78     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.84      0.83      0.83     40430
+weighted avg       0.85      0.85      0.85     40430
+
+epoch:  6/10	|	batch: 600/7581	|	loss: 0.24586	|	acc: 89.19%
+epoch:  6/10	|	batch: 700/7581	|	loss: 0.24170	|	acc: 89.31%
+epoch:  6/10	|	batch: 800/7581	|	loss: 0.24898	|	acc: 89.00%
+epoch:  6/10	|	batch: 900/7581	|	loss: 0.24011	|	acc: 89.48%
+epoch:  6/10	|	batch: 1000/7581	|	loss: 0.24916	|	acc: 89.06%
+ >> epoch:  6	|	total_batch: 38905	|	eval_loss: 0.34125	|	eval_acc: 84.86
+
+              precision    recall  f1-score   support
+
+           0       0.87      0.90      0.88     25545
+           1       0.81      0.77      0.79     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.84      0.83      0.84     40430
+weighted avg       0.85      0.85      0.85     40430
+
+epoch:  6/10	|	batch: 1100/7581	|	loss: 0.24845	|	acc: 89.27%
+epoch:  6/10	|	batch: 1200/7581	|	loss: 0.26430	|	acc: 88.52%
+epoch:  6/10	|	batch: 1300/7581	|	loss: 0.28014	|	acc: 87.35%
+epoch:  6/10	|	batch: 1400/7581	|	loss: 0.28214	|	acc: 87.25%
+epoch:  6/10	|	batch: 1500/7581	|	loss: 0.27180	|	acc: 88.12%
+ >> epoch:  6	|	total_batch: 39405	|	eval_loss: 0.34047	|	eval_acc: 84.84
+
+              precision    recall  f1-score   support
+
+           0       0.87      0.89      0.88     25545
+           1       0.80      0.78      0.79     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.84      0.83      0.84     40430
+weighted avg       0.85      0.85      0.85     40430
+
+epoch:  6/10	|	batch: 1600/7581	|	loss: 0.26977	|	acc: 87.62%
+epoch:  6/10	|	batch: 1700/7581	|	loss: 0.26208	|	acc: 88.25%
+epoch:  6/10	|	batch: 1800/7581	|	loss: 0.24172	|	acc: 89.79%
+epoch:  6/10	|	batch: 1900/7581	|	loss: 0.27043	|	acc: 87.83%
+epoch:  6/10	|	batch: 2000/7581	|	loss: 0.24703	|	acc: 88.96%
+ >> epoch:  6	|	total_batch: 39905	|	eval_loss: 0.33444	|	eval_acc: 85.40
+
+              precision    recall  f1-score   support
+
+           0       0.88      0.89      0.89     25545
+           1       0.81      0.79      0.80     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.84      0.84      0.84     40430
+weighted avg       0.85      0.85      0.85     40430
+
+epoch:  6/10	|	batch: 2100/7581	|	loss: 0.25408	|	acc: 88.65%
+epoch:  6/10	|	batch: 2200/7581	|	loss: 0.23352	|	acc: 90.17%
+epoch:  6/10	|	batch: 2300/7581	|	loss: 0.24719	|	acc: 89.08%
+epoch:  6/10	|	batch: 2400/7581	|	loss: 0.24116	|	acc: 89.56%
+epoch:  6/10	|	batch: 2500/7581	|	loss: 0.24661	|	acc: 88.79%
+ >> epoch:  6	|	total_batch: 40405	|	eval_loss: 0.33050	|	eval_acc: 85.22
+
+              precision    recall  f1-score   support
+
+           0       0.88      0.89      0.88     25545
+           1       0.80      0.79      0.80     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.84      0.84      0.84     40430
+weighted avg       0.85      0.85      0.85     40430
+
+epoch:  6/10	|	batch: 2600/7581	|	loss: 0.24006	|	acc: 89.94%
+epoch:  6/10	|	batch: 2700/7581	|	loss: 0.23083	|	acc: 90.19%
+epoch:  6/10	|	batch: 2800/7581	|	loss: 0.26845	|	acc: 87.75%
+epoch:  6/10	|	batch: 2900/7581	|	loss: 0.26465	|	acc: 88.40%
+epoch:  6/10	|	batch: 3000/7581	|	loss: 0.26601	|	acc: 88.06%
+ >> epoch:  6	|	total_batch: 40905	|	eval_loss: 0.37393	|	eval_acc: 84.10
+
+              precision    recall  f1-score   support
+
+           0       0.84      0.93      0.88     25545
+           1       0.85      0.69      0.76     14885
+
+    accuracy                           0.84     40430
+   macro avg       0.84      0.81      0.82     40430
+weighted avg       0.84      0.84      0.84     40430
+
+epoch:  6/10	|	batch: 3100/7581	|	loss: 0.25855	|	acc: 88.40%
+epoch:  6/10	|	batch: 3200/7581	|	loss: 0.27341	|	acc: 87.83%
+epoch:  6/10	|	batch: 3300/7581	|	loss: 0.25964	|	acc: 88.98%
+epoch:  6/10	|	batch: 3400/7581	|	loss: 0.27323	|	acc: 88.08%
+epoch:  6/10	|	batch: 3500/7581	|	loss: 0.27588	|	acc: 88.12%
+ >> epoch:  6	|	total_batch: 41405	|	eval_loss: 0.33215	|	eval_acc: 85.01
+
+              precision    recall  f1-score   support
+
+           0       0.88      0.88      0.88     25545
+           1       0.80      0.80      0.80     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.84      0.84      0.84     40430
+weighted avg       0.85      0.85      0.85     40430
+
+epoch:  6/10	|	batch: 3600/7581	|	loss: 0.26161	|	acc: 87.79%
+epoch:  6/10	|	batch: 3700/7581	|	loss: 0.26017	|	acc: 87.98%
+epoch:  6/10	|	batch: 3800/7581	|	loss: 0.25358	|	acc: 88.83%
+epoch:  6/10	|	batch: 3900/7581	|	loss: 0.24809	|	acc: 89.31%
+epoch:  6/10	|	batch: 4000/7581	|	loss: 0.26760	|	acc: 87.62%
+ >> epoch:  6	|	total_batch: 41905	|	eval_loss: 0.32588	|	eval_acc: 85.38
+
+              precision    recall  f1-score   support
+
+           0       0.89      0.88      0.88     25545
+           1       0.80      0.81      0.80     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.84      0.84      0.84     40430
+weighted avg       0.85      0.85      0.85     40430
+
+epoch:  6/10	|	batch: 4100/7581	|	loss: 0.24823	|	acc: 89.04%
+epoch:  6/10	|	batch: 4200/7581	|	loss: 0.24797	|	acc: 89.06%
+epoch:  6/10	|	batch: 4300/7581	|	loss: 0.25165	|	acc: 89.02%
+epoch:  6/10	|	batch: 4400/7581	|	loss: 0.25843	|	acc: 88.35%
+epoch:  6/10	|	batch: 4500/7581	|	loss: 0.24439	|	acc: 89.79%
+ >> epoch:  6	|	total_batch: 42405	|	eval_loss: 0.34241	|	eval_acc: 84.81
+
+              precision    recall  f1-score   support
+
+           0       0.85      0.92      0.88     25545
+           1       0.84      0.73      0.78     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.84      0.82      0.83     40430
+weighted avg       0.85      0.85      0.85     40430
+
+epoch:  6/10	|	batch: 4600/7581	|	loss: 0.24587	|	acc: 89.15%
+epoch:  6/10	|	batch: 4700/7581	|	loss: 0.25664	|	acc: 88.62%
+epoch:  6/10	|	batch: 4800/7581	|	loss: 0.26527	|	acc: 88.46%
+epoch:  6/10	|	batch: 4900/7581	|	loss: 0.26151	|	acc: 88.40%
+epoch:  6/10	|	batch: 5000/7581	|	loss: 0.25632	|	acc: 89.08%
+ >> epoch:  6	|	total_batch: 42905	|	eval_loss: 0.33314	|	eval_acc: 85.25
+
+              precision    recall  f1-score   support
+
+           0       0.88      0.88      0.88     25545
+           1       0.80      0.80      0.80     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.84      0.84      0.84     40430
+weighted avg       0.85      0.85      0.85     40430
+
+epoch:  6/10	|	batch: 5100/7581	|	loss: 0.27022	|	acc: 88.17%
+epoch:  6/10	|	batch: 5200/7581	|	loss: 0.28765	|	acc: 86.98%
+epoch:  6/10	|	batch: 5300/7581	|	loss: 0.27707	|	acc: 87.62%
+epoch:  6/10	|	batch: 5400/7581	|	loss: 0.27406	|	acc: 88.23%
+epoch:  6/10	|	batch: 5500/7581	|	loss: 0.27226	|	acc: 88.08%
+ >> epoch:  6	|	total_batch: 43405	|	eval_loss: 0.32984	|	eval_acc: 85.16
+
+              precision    recall  f1-score   support
+
+           0       0.89      0.88      0.88     25545
+           1       0.79      0.81      0.80     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.84      0.84      0.84     40430
+weighted avg       0.85      0.85      0.85     40430
+
+epoch:  6/10	|	batch: 5600/7581	|	loss: 0.26282	|	acc: 88.23%
+epoch:  6/10	|	batch: 5700/7581	|	loss: 0.25833	|	acc: 88.85%
+epoch:  6/10	|	batch: 5800/7581	|	loss: 0.25272	|	acc: 88.92%
+epoch:  6/10	|	batch: 5900/7581	|	loss: 0.26821	|	acc: 88.50%
+epoch:  6/10	|	batch: 6000/7581	|	loss: 0.24839	|	acc: 89.08%
+ >> epoch:  6	|	total_batch: 43905	|	eval_loss: 0.32383	|	eval_acc: 85.70
+
+              precision    recall  f1-score   support
+
+           0       0.90      0.87      0.89     25545
+           1       0.79      0.83      0.81     14885
+
+    accuracy                           0.86     40430
+   macro avg       0.84      0.85      0.85     40430
+weighted avg       0.86      0.86      0.86     40430
+
+epoch:  6/10	|	batch: 6100/7581	|	loss: 0.26037	|	acc: 88.60%
+epoch:  6/10	|	batch: 6200/7581	|	loss: 0.26849	|	acc: 88.02%
+epoch:  6/10	|	batch: 6300/7581	|	loss: 0.23725	|	acc: 89.69%
+epoch:  6/10	|	batch: 6400/7581	|	loss: 0.25449	|	acc: 88.31%
+epoch:  6/10	|	batch: 6500/7581	|	loss: 0.24127	|	acc: 89.27%
+ >> epoch:  6	|	total_batch: 44405	|	eval_loss: 0.33289	|	eval_acc: 85.19
+
+              precision    recall  f1-score   support
+
+           0       0.89      0.87      0.88     25545
+           1       0.78      0.83      0.80     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.84      0.85      0.84     40430
+weighted avg       0.85      0.85      0.85     40430
+
+epoch:  6/10	|	batch: 6600/7581	|	loss: 0.25528	|	acc: 88.77%
+epoch:  6/10	|	batch: 6700/7581	|	loss: 0.25291	|	acc: 89.08%
+epoch:  6/10	|	batch: 6800/7581	|	loss: 0.26454	|	acc: 88.25%
+epoch:  6/10	|	batch: 6900/7581	|	loss: 0.27121	|	acc: 88.23%
+epoch:  6/10	|	batch: 7000/7581	|	loss: 0.27751	|	acc: 87.75%
+ >> epoch:  6	|	total_batch: 44905	|	eval_loss: 0.33681	|	eval_acc: 85.00
+
+              precision    recall  f1-score   support
+
+           0       0.88      0.88      0.88     25545
+           1       0.80      0.79      0.80     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.84      0.84      0.84     40430
+weighted avg       0.85      0.85      0.85     40430
+
+epoch:  6/10	|	batch: 7100/7581	|	loss: 0.26853	|	acc: 88.69%
+epoch:  6/10	|	batch: 7200/7581	|	loss: 0.29529	|	acc: 86.88%
+epoch:  6/10	|	batch: 7300/7581	|	loss: 0.27671	|	acc: 87.60%
+epoch:  6/10	|	batch: 7400/7581	|	loss: 0.27554	|	acc: 87.52%
+epoch:  6/10	|	batch: 7500/7581	|	loss: 0.26158	|	acc: 88.52%
+ >> epoch:  6	|	total_batch: 45405	|	eval_loss: 0.34187	|	eval_acc: 84.88
+
+              precision    recall  f1-score   support
+
+           0       0.87      0.90      0.88     25545
+           1       0.81      0.77      0.79     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.84      0.83      0.84     40430
+weighted avg       0.85      0.85      0.85     40430
+
+
+
+----------------------- 7 epoch start! -----------------------
+epoch:  7/10	|	batch: 100/7581	|	loss: 0.23387	|	acc: 89.98%
+epoch:  7/10	|	batch: 200/7581	|	loss: 0.22956	|	acc: 90.21%
+epoch:  7/10	|	batch: 300/7581	|	loss: 0.22787	|	acc: 90.15%
+epoch:  7/10	|	batch: 400/7581	|	loss: 0.22948	|	acc: 89.81%
+epoch:  7/10	|	batch: 500/7581	|	loss: 0.22972	|	acc: 89.96%
+ >> epoch:  7	|	total_batch: 45986	|	eval_loss: 0.33423	|	eval_acc: 85.53
+
+              precision    recall  f1-score   support
+
+           0       0.88      0.89      0.89     25545
+           1       0.81      0.80      0.80     14885
+
+    accuracy                           0.86     40430
+   macro avg       0.85      0.84      0.84     40430
+weighted avg       0.85      0.86      0.86     40430
+
+epoch:  7/10	|	batch: 600/7581	|	loss: 0.22115	|	acc: 90.67%
+epoch:  7/10	|	batch: 700/7581	|	loss: 0.22469	|	acc: 89.88%
+epoch:  7/10	|	batch: 800/7581	|	loss: 0.21760	|	acc: 90.96%
+epoch:  7/10	|	batch: 900/7581	|	loss: 0.21314	|	acc: 90.67%
+epoch:  7/10	|	batch: 1000/7581	|	loss: 0.22440	|	acc: 90.42%
+ >> epoch:  7	|	total_batch: 46486	|	eval_loss: 0.35176	|	eval_acc: 85.11
+
+              precision    recall  f1-score   support
+
+           0       0.87      0.90      0.88     25545
+           1       0.82      0.76      0.79     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.84      0.83      0.84     40430
+weighted avg       0.85      0.85      0.85     40430
+
+epoch:  7/10	|	batch: 1100/7581	|	loss: 0.24066	|	acc: 89.79%
+epoch:  7/10	|	batch: 1200/7581	|	loss: 0.22055	|	acc: 90.33%
+epoch:  7/10	|	batch: 1300/7581	|	loss: 0.21741	|	acc: 90.79%
+epoch:  7/10	|	batch: 1400/7581	|	loss: 0.24253	|	acc: 89.58%
+epoch:  7/10	|	batch: 1500/7581	|	loss: 0.24190	|	acc: 90.02%
+ >> epoch:  7	|	total_batch: 46986	|	eval_loss: 0.34535	|	eval_acc: 85.03
+
+              precision    recall  f1-score   support
+
+           0       0.89      0.86      0.88     25545
+           1       0.78      0.83      0.80     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.84      0.85      0.84     40430
+weighted avg       0.85      0.85      0.85     40430
+
+epoch:  7/10	|	batch: 1600/7581	|	loss: 0.24316	|	acc: 89.73%
+epoch:  7/10	|	batch: 1700/7581	|	loss: 0.24432	|	acc: 89.56%
+epoch:  7/10	|	batch: 1800/7581	|	loss: 0.25002	|	acc: 89.60%
+epoch:  7/10	|	batch: 1900/7581	|	loss: 0.24132	|	acc: 89.88%
+epoch:  7/10	|	batch: 2000/7581	|	loss: 0.23646	|	acc: 89.88%
+ >> epoch:  7	|	total_batch: 47486	|	eval_loss: 0.34136	|	eval_acc: 84.98
+
+              precision    recall  f1-score   support
+
+           0       0.90      0.86      0.88     25545
+           1       0.77      0.83      0.80     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.84      0.85      0.84     40430
+weighted avg       0.85      0.85      0.85     40430
+
+epoch:  7/10	|	batch: 2100/7581	|	loss: 0.24690	|	acc: 89.85%
+epoch:  7/10	|	batch: 2200/7581	|	loss: 0.22388	|	acc: 90.04%
+epoch:  7/10	|	batch: 2300/7581	|	loss: 0.23011	|	acc: 90.31%
+epoch:  7/10	|	batch: 2400/7581	|	loss: 0.22625	|	acc: 90.40%
+epoch:  7/10	|	batch: 2500/7581	|	loss: 0.22623	|	acc: 90.46%
+ >> epoch:  7	|	total_batch: 47986	|	eval_loss: 0.33753	|	eval_acc: 85.45
+
+              precision    recall  f1-score   support
+
+           0       0.88      0.89      0.89     25545
+           1       0.80      0.80      0.80     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.84      0.84      0.84     40430
+weighted avg       0.85      0.85      0.85     40430
+
+epoch:  7/10	|	batch: 2600/7581	|	loss: 0.22505	|	acc: 90.27%
+epoch:  7/10	|	batch: 2700/7581	|	loss: 0.21939	|	acc: 90.77%
+epoch:  7/10	|	batch: 2800/7581	|	loss: 0.22509	|	acc: 90.25%
+epoch:  7/10	|	batch: 2900/7581	|	loss: 0.22925	|	acc: 90.17%
+epoch:  7/10	|	batch: 3000/7581	|	loss: 0.24077	|	acc: 89.69%
+ >> epoch:  7	|	total_batch: 48486	|	eval_loss: 0.33094	|	eval_acc: 85.57
+
+              precision    recall  f1-score   support
+
+           0       0.89      0.88      0.89     25545
+           1       0.80      0.81      0.80     14885
+
+    accuracy                           0.86     40430
+   macro avg       0.84      0.85      0.85     40430
+weighted avg       0.86      0.86      0.86     40430
+
+epoch:  7/10	|	batch: 3100/7581	|	loss: 0.23741	|	acc: 89.79%
+epoch:  7/10	|	batch: 3200/7581	|	loss: 0.24684	|	acc: 89.69%
+epoch:  7/10	|	batch: 3300/7581	|	loss: 0.26624	|	acc: 88.27%
+epoch:  7/10	|	batch: 3400/7581	|	loss: 0.23573	|	acc: 89.81%
+epoch:  7/10	|	batch: 3500/7581	|	loss: 0.25097	|	acc: 88.62%
+ >> epoch:  7	|	total_batch: 48986	|	eval_loss: 0.34037	|	eval_acc: 84.75
+
+              precision    recall  f1-score   support
+
+           0       0.88      0.88      0.88     25545
+           1       0.79      0.79      0.79     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.84      0.84      0.84     40430
+weighted avg       0.85      0.85      0.85     40430
+
+epoch:  7/10	|	batch: 3600/7581	|	loss: 0.24660	|	acc: 89.71%
+epoch:  7/10	|	batch: 3700/7581	|	loss: 0.25563	|	acc: 88.67%
+epoch:  7/10	|	batch: 3800/7581	|	loss: 0.23490	|	acc: 89.79%
+epoch:  7/10	|	batch: 3900/7581	|	loss: 0.23482	|	acc: 90.27%
+epoch:  7/10	|	batch: 4000/7581	|	loss: 0.24394	|	acc: 89.65%
+ >> epoch:  7	|	total_batch: 49486	|	eval_loss: 0.34166	|	eval_acc: 84.86
+
+              precision    recall  f1-score   support
+
+           0       0.87      0.89      0.88     25545
+           1       0.81      0.77      0.79     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.84      0.83      0.84     40430
+weighted avg       0.85      0.85      0.85     40430
+
+epoch:  7/10	|	batch: 4100/7581	|	loss: 0.25249	|	acc: 89.02%
+epoch:  7/10	|	batch: 4200/7581	|	loss: 0.24743	|	acc: 89.19%
+epoch:  7/10	|	batch: 4300/7581	|	loss: 0.23513	|	acc: 89.52%
+epoch:  7/10	|	batch: 4400/7581	|	loss: 0.23188	|	acc: 89.88%
+epoch:  7/10	|	batch: 4500/7581	|	loss: 0.23300	|	acc: 90.08%
+ >> epoch:  7	|	total_batch: 49986	|	eval_loss: 0.34277	|	eval_acc: 85.34
+
+              precision    recall  f1-score   support
+
+           0       0.86      0.92      0.89     25545
+           1       0.84      0.75      0.79     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.85      0.83      0.84     40430
+weighted avg       0.85      0.85      0.85     40430
+
+epoch:  7/10	|	batch: 4600/7581	|	loss: 0.22929	|	acc: 90.50%
+epoch:  7/10	|	batch: 4700/7581	|	loss: 0.21516	|	acc: 90.83%
+epoch:  7/10	|	batch: 4800/7581	|	loss: 0.23042	|	acc: 90.29%
+epoch:  7/10	|	batch: 4900/7581	|	loss: 0.22831	|	acc: 90.46%
+epoch:  7/10	|	batch: 5000/7581	|	loss: 0.23922	|	acc: 90.04%
+ >> epoch:  7	|	total_batch: 50486	|	eval_loss: 0.33715	|	eval_acc: 85.40
+
+              precision    recall  f1-score   support
+
+           0       0.88      0.89      0.89     25545
+           1       0.81      0.79      0.80     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.84      0.84      0.84     40430
+weighted avg       0.85      0.85      0.85     40430
+
+epoch:  7/10	|	batch: 5100/7581	|	loss: 0.25459	|	acc: 88.83%
+epoch:  7/10	|	batch: 5200/7581	|	loss: 0.24510	|	acc: 89.44%
+epoch:  7/10	|	batch: 5300/7581	|	loss: 0.25112	|	acc: 89.15%
+epoch:  7/10	|	batch: 5400/7581	|	loss: 0.25340	|	acc: 88.90%
+epoch:  7/10	|	batch: 5500/7581	|	loss: 0.24888	|	acc: 89.40%
+ >> epoch:  7	|	total_batch: 50986	|	eval_loss: 0.34074	|	eval_acc: 85.16
+
+              precision    recall  f1-score   support
+
+           0       0.86      0.91      0.89     25545
+           1       0.83      0.75      0.79     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.85      0.83      0.84     40430
+weighted avg       0.85      0.85      0.85     40430
+
+epoch:  7/10	|	batch: 5600/7581	|	loss: 0.26059	|	acc: 88.90%
+epoch:  7/10	|	batch: 5700/7581	|	loss: 0.25414	|	acc: 88.96%
+epoch:  7/10	|	batch: 5800/7581	|	loss: 0.25446	|	acc: 89.10%
+epoch:  7/10	|	batch: 5900/7581	|	loss: 0.27367	|	acc: 87.77%
+epoch:  7/10	|	batch: 6000/7581	|	loss: 0.24528	|	acc: 89.40%
+ >> epoch:  7	|	total_batch: 51486	|	eval_loss: 0.34914	|	eval_acc: 84.53
+
+              precision    recall  f1-score   support
+
+           0       0.86      0.91      0.88     25545
+           1       0.83      0.74      0.78     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.84      0.82      0.83     40430
+weighted avg       0.84      0.85      0.84     40430
+
+epoch:  7/10	|	batch: 6100/7581	|	loss: 0.25100	|	acc: 89.67%
+epoch:  7/10	|	batch: 6200/7581	|	loss: 0.26135	|	acc: 88.40%
+epoch:  7/10	|	batch: 6300/7581	|	loss: 0.25106	|	acc: 89.08%
+epoch:  7/10	|	batch: 6400/7581	|	loss: 0.23631	|	acc: 89.79%
+epoch:  7/10	|	batch: 6500/7581	|	loss: 0.24381	|	acc: 89.81%
+ >> epoch:  7	|	total_batch: 51986	|	eval_loss: 0.32293	|	eval_acc: 85.69
+
+              precision    recall  f1-score   support
+
+           0       0.88      0.89      0.89     25545
+           1       0.81      0.79      0.80     14885
+
+    accuracy                           0.86     40430
+   macro avg       0.85      0.84      0.85     40430
+weighted avg       0.86      0.86      0.86     40430
+
+epoch:  7/10	|	batch: 6600/7581	|	loss: 0.22941	|	acc: 90.00%
+epoch:  7/10	|	batch: 6700/7581	|	loss: 0.25316	|	acc: 89.08%
+epoch:  7/10	|	batch: 6800/7581	|	loss: 0.23878	|	acc: 89.48%
+epoch:  7/10	|	batch: 6900/7581	|	loss: 0.23945	|	acc: 90.15%
+epoch:  7/10	|	batch: 7000/7581	|	loss: 0.24959	|	acc: 88.75%
+ >> epoch:  7	|	total_batch: 52486	|	eval_loss: 0.32239	|	eval_acc: 85.62
+
+              precision    recall  f1-score   support
+
+           0       0.89      0.88      0.89     25545
+           1       0.80      0.82      0.81     14885
+
+    accuracy                           0.86     40430
+   macro avg       0.84      0.85      0.85     40430
+weighted avg       0.86      0.86      0.86     40430
+
+epoch:  7/10	|	batch: 7100/7581	|	loss: 0.25893	|	acc: 88.90%
+epoch:  7/10	|	batch: 7200/7581	|	loss: 0.24695	|	acc: 89.25%
+epoch:  7/10	|	batch: 7300/7581	|	loss: 0.23530	|	acc: 89.92%
+epoch:  7/10	|	batch: 7400/7581	|	loss: 0.25336	|	acc: 89.08%
+epoch:  7/10	|	batch: 7500/7581	|	loss: 0.26465	|	acc: 88.58%
+ >> epoch:  7	|	total_batch: 52986	|	eval_loss: 0.33230	|	eval_acc: 85.58
+
+              precision    recall  f1-score   support
+
+           0       0.88      0.89      0.89     25545
+           1       0.81      0.79      0.80     14885
+
+    accuracy                           0.86     40430
+   macro avg       0.85      0.84      0.84     40430
+weighted avg       0.86      0.86      0.86     40430
+
+
+
+----------------------- 8 epoch start! -----------------------
+epoch:  8/10	|	batch: 100/7581	|	loss: 0.22757	|	acc: 90.25%
+epoch:  8/10	|	batch: 200/7581	|	loss: 0.22885	|	acc: 90.42%
+epoch:  8/10	|	batch: 300/7581	|	loss: 0.23220	|	acc: 90.12%
+epoch:  8/10	|	batch: 400/7581	|	loss: 0.22181	|	acc: 90.50%
+epoch:  8/10	|	batch: 500/7581	|	loss: 0.21865	|	acc: 90.40%
+ >> epoch:  8	|	total_batch: 53567	|	eval_loss: 0.35758	|	eval_acc: 85.15
+
+              precision    recall  f1-score   support
+
+           0       0.87      0.90      0.88     25545
+           1       0.82      0.77      0.79     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.84      0.83      0.84     40430
+weighted avg       0.85      0.85      0.85     40430
+
+epoch:  8/10	|	batch: 600/7581	|	loss: 0.21807	|	acc: 90.65%
+epoch:  8/10	|	batch: 700/7581	|	loss: 0.22030	|	acc: 90.48%
+epoch:  8/10	|	batch: 800/7581	|	loss: 0.20540	|	acc: 91.62%
+epoch:  8/10	|	batch: 900/7581	|	loss: 0.20609	|	acc: 90.92%
+epoch:  8/10	|	batch: 1000/7581	|	loss: 0.20374	|	acc: 91.35%
+ >> epoch:  8	|	total_batch: 54067	|	eval_loss: 0.34214	|	eval_acc: 85.63
+
+              precision    recall  f1-score   support
+
+           0       0.87      0.90      0.89     25545
+           1       0.83      0.77      0.80     14885
+
+    accuracy                           0.86     40430
+   macro avg       0.85      0.84      0.84     40430
+weighted avg       0.86      0.86      0.86     40430
+
+epoch:  8/10	|	batch: 1100/7581	|	loss: 0.19045	|	acc: 92.17%
+epoch:  8/10	|	batch: 1200/7581	|	loss: 0.19472	|	acc: 91.54%
+epoch:  8/10	|	batch: 1300/7581	|	loss: 0.21479	|	acc: 90.48%
+epoch:  8/10	|	batch: 1400/7581	|	loss: 0.22001	|	acc: 90.83%
+epoch:  8/10	|	batch: 1500/7581	|	loss: 0.20655	|	acc: 91.04%
+ >> epoch:  8	|	total_batch: 54567	|	eval_loss: 0.34857	|	eval_acc: 85.61
+
+              precision    recall  f1-score   support
+
+           0       0.87      0.90      0.89     25545
+           1       0.82      0.77      0.80     14885
+
+    accuracy                           0.86     40430
+   macro avg       0.85      0.84      0.84     40430
+weighted avg       0.86      0.86      0.86     40430
+
+epoch:  8/10	|	batch: 1600/7581	|	loss: 0.22111	|	acc: 90.56%
+epoch:  8/10	|	batch: 1700/7581	|	loss: 0.21427	|	acc: 90.75%
+epoch:  8/10	|	batch: 1800/7581	|	loss: 0.22531	|	acc: 90.50%
+epoch:  8/10	|	batch: 1900/7581	|	loss: 0.22166	|	acc: 90.31%
+epoch:  8/10	|	batch: 2000/7581	|	loss: 0.23069	|	acc: 90.08%
+ >> epoch:  8	|	total_batch: 55067	|	eval_loss: 0.35741	|	eval_acc: 84.69
+
+              precision    recall  f1-score   support
+
+           0       0.86      0.90      0.88     25545
+           1       0.81      0.76      0.78     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.84      0.83      0.83     40430
+weighted avg       0.85      0.85      0.85     40430
+
+epoch:  8/10	|	batch: 2100/7581	|	loss: 0.23268	|	acc: 89.73%
+epoch:  8/10	|	batch: 2200/7581	|	loss: 0.24341	|	acc: 90.06%
+epoch:  8/10	|	batch: 2300/7581	|	loss: 0.25527	|	acc: 88.65%
+epoch:  8/10	|	batch: 2400/7581	|	loss: 0.23172	|	acc: 89.69%
+epoch:  8/10	|	batch: 2500/7581	|	loss: 0.22361	|	acc: 90.38%
+ >> epoch:  8	|	total_batch: 55567	|	eval_loss: 0.35265	|	eval_acc: 85.18
+
+              precision    recall  f1-score   support
+
+           0       0.86      0.91      0.89     25545
+           1       0.84      0.74      0.79     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.85      0.83      0.84     40430
+weighted avg       0.85      0.85      0.85     40430
+
+epoch:  8/10	|	batch: 2600/7581	|	loss: 0.22795	|	acc: 90.58%
+epoch:  8/10	|	batch: 2700/7581	|	loss: 0.22162	|	acc: 90.42%
+epoch:  8/10	|	batch: 2800/7581	|	loss: 0.20438	|	acc: 91.15%
+epoch:  8/10	|	batch: 2900/7581	|	loss: 0.21229	|	acc: 90.94%
+epoch:  8/10	|	batch: 3000/7581	|	loss: 0.20625	|	acc: 91.17%
+ >> epoch:  8	|	total_batch: 56067	|	eval_loss: 0.33856	|	eval_acc: 85.78
+
+              precision    recall  f1-score   support
+
+           0       0.88      0.90      0.89     25545
+           1       0.82      0.79      0.80     14885
+
+    accuracy                           0.86     40430
+   macro avg       0.85      0.84      0.85     40430
+weighted avg       0.86      0.86      0.86     40430
+
+epoch:  8/10	|	batch: 3100/7581	|	loss: 0.20752	|	acc: 91.42%
+epoch:  8/10	|	batch: 3200/7581	|	loss: 0.20547	|	acc: 91.38%
+epoch:  8/10	|	batch: 3300/7581	|	loss: 0.21717	|	acc: 90.73%
+epoch:  8/10	|	batch: 3400/7581	|	loss: 0.21468	|	acc: 90.38%
+epoch:  8/10	|	batch: 3500/7581	|	loss: 0.22516	|	acc: 90.23%
+ >> epoch:  8	|	total_batch: 56567	|	eval_loss: 0.33583	|	eval_acc: 85.70
+
+              precision    recall  f1-score   support
+
+           0       0.89      0.88      0.89     25545
+           1       0.80      0.82      0.81     14885
+
+    accuracy                           0.86     40430
+   macro avg       0.85      0.85      0.85     40430
+weighted avg       0.86      0.86      0.86     40430
+
+epoch:  8/10	|	batch: 3600/7581	|	loss: 0.22255	|	acc: 90.50%
+epoch:  8/10	|	batch: 3700/7581	|	loss: 0.21893	|	acc: 90.60%
+epoch:  8/10	|	batch: 3800/7581	|	loss: 0.23647	|	acc: 89.94%
+epoch:  8/10	|	batch: 3900/7581	|	loss: 0.24066	|	acc: 89.69%
+epoch:  8/10	|	batch: 4000/7581	|	loss: 0.24994	|	acc: 88.94%
+ >> epoch:  8	|	total_batch: 57067	|	eval_loss: 0.34446	|	eval_acc: 84.70
+
+              precision    recall  f1-score   support
+
+           0       0.86      0.90      0.88     25545
+           1       0.82      0.75      0.78     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.84      0.83      0.83     40430
+weighted avg       0.85      0.85      0.85     40430
+
+epoch:  8/10	|	batch: 4100/7581	|	loss: 0.23182	|	acc: 90.35%
+epoch:  8/10	|	batch: 4200/7581	|	loss: 0.23038	|	acc: 90.12%
+epoch:  8/10	|	batch: 4300/7581	|	loss: 0.24258	|	acc: 89.92%
+epoch:  8/10	|	batch: 4400/7581	|	loss: 0.24733	|	acc: 89.46%
+epoch:  8/10	|	batch: 4500/7581	|	loss: 0.22746	|	acc: 90.83%
+ >> epoch:  8	|	total_batch: 57567	|	eval_loss: 0.34422	|	eval_acc: 85.05
+
+              precision    recall  f1-score   support
+
+           0       0.86      0.91      0.89     25545
+           1       0.83      0.74      0.79     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.85      0.83      0.84     40430
+weighted avg       0.85      0.85      0.85     40430
+
+epoch:  8/10	|	batch: 4600/7581	|	loss: 0.22442	|	acc: 90.54%
+epoch:  8/10	|	batch: 4700/7581	|	loss: 0.23339	|	acc: 89.42%
+epoch:  8/10	|	batch: 4800/7581	|	loss: 0.22852	|	acc: 90.52%
+epoch:  8/10	|	batch: 4900/7581	|	loss: 0.22828	|	acc: 90.17%
+epoch:  8/10	|	batch: 5000/7581	|	loss: 0.20868	|	acc: 91.23%
+ >> epoch:  8	|	total_batch: 58067	|	eval_loss: 0.32709	|	eval_acc: 85.79
+
+              precision    recall  f1-score   support
+
+           0       0.90      0.87      0.89     25545
+           1       0.79      0.83      0.81     14885
+
+    accuracy                           0.86     40430
+   macro avg       0.85      0.85      0.85     40430
+weighted avg       0.86      0.86      0.86     40430
+
+epoch:  8/10	|	batch: 5100/7581	|	loss: 0.20452	|	acc: 90.88%
+epoch:  8/10	|	batch: 5200/7581	|	loss: 0.21251	|	acc: 90.94%
+epoch:  8/10	|	batch: 5300/7581	|	loss: 0.21445	|	acc: 91.17%
+epoch:  8/10	|	batch: 5400/7581	|	loss: 0.21796	|	acc: 91.10%
+epoch:  8/10	|	batch: 5500/7581	|	loss: 0.22447	|	acc: 90.42%
+ >> epoch:  8	|	total_batch: 58567	|	eval_loss: 0.32797	|	eval_acc: 85.64
+
+              precision    recall  f1-score   support
+
+           0       0.89      0.89      0.89     25545
+           1       0.80      0.81      0.81     14885
+
+    accuracy                           0.86     40430
+   macro avg       0.85      0.85      0.85     40430
+weighted avg       0.86      0.86      0.86     40430
+
+epoch:  8/10	|	batch: 5600/7581	|	loss: 0.22251	|	acc: 90.71%
+epoch:  8/10	|	batch: 5700/7581	|	loss: 0.23864	|	acc: 89.58%
+epoch:  8/10	|	batch: 5800/7581	|	loss: 0.23888	|	acc: 89.73%
+epoch:  8/10	|	batch: 5900/7581	|	loss: 0.25425	|	acc: 88.85%
+epoch:  8/10	|	batch: 6000/7581	|	loss: 0.23704	|	acc: 89.60%
+ >> epoch:  8	|	total_batch: 59067	|	eval_loss: 0.34228	|	eval_acc: 85.12
+
+              precision    recall  f1-score   support
+
+           0       0.89      0.87      0.88     25545
+           1       0.79      0.82      0.80     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.84      0.84      0.84     40430
+weighted avg       0.85      0.85      0.85     40430
+
+epoch:  8/10	|	batch: 6100/7581	|	loss: 0.23475	|	acc: 89.67%
+epoch:  8/10	|	batch: 6200/7581	|	loss: 0.24106	|	acc: 89.29%
+epoch:  8/10	|	batch: 6300/7581	|	loss: 0.24288	|	acc: 89.27%
+epoch:  8/10	|	batch: 6400/7581	|	loss: 0.23250	|	acc: 90.02%
+epoch:  8/10	|	batch: 6500/7581	|	loss: 0.21990	|	acc: 90.77%
+ >> epoch:  8	|	total_batch: 59567	|	eval_loss: 0.34830	|	eval_acc: 85.38
+
+              precision    recall  f1-score   support
+
+           0       0.89      0.88      0.88     25545
+           1       0.79      0.81      0.80     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.84      0.85      0.84     40430
+weighted avg       0.85      0.85      0.85     40430
+
+epoch:  8/10	|	batch: 6600/7581	|	loss: 0.22886	|	acc: 89.65%
+epoch:  8/10	|	batch: 6700/7581	|	loss: 0.22931	|	acc: 89.90%
+epoch:  8/10	|	batch: 6800/7581	|	loss: 0.23135	|	acc: 89.75%
+epoch:  8/10	|	batch: 6900/7581	|	loss: 0.22431	|	acc: 90.27%
+epoch:  8/10	|	batch: 7000/7581	|	loss: 0.21747	|	acc: 90.85%
+ >> epoch:  8	|	total_batch: 60067	|	eval_loss: 0.32772	|	eval_acc: 85.89
+
+              precision    recall  f1-score   support
+
+           0       0.88      0.90      0.89     25545
+           1       0.82      0.79      0.80     14885
+
+    accuracy                           0.86     40430
+   macro avg       0.85      0.84      0.85     40430
+weighted avg       0.86      0.86      0.86     40430
+
+epoch:  8/10	|	batch: 7100/7581	|	loss: 0.23446	|	acc: 89.71%
+epoch:  8/10	|	batch: 7200/7581	|	loss: 0.22001	|	acc: 90.56%
+epoch:  8/10	|	batch: 7300/7581	|	loss: 0.21816	|	acc: 90.33%
+epoch:  8/10	|	batch: 7400/7581	|	loss: 0.24259	|	acc: 89.88%
+epoch:  8/10	|	batch: 7500/7581	|	loss: 0.23126	|	acc: 89.94%
+ >> epoch:  8	|	total_batch: 60567	|	eval_loss: 0.34385	|	eval_acc: 85.50
+
+              precision    recall  f1-score   support
+
+           0       0.87      0.91      0.89     25545
+           1       0.83      0.76      0.79     14885
+
+    accuracy                           0.86     40430
+   macro avg       0.85      0.83      0.84     40430
+weighted avg       0.85      0.86      0.85     40430
+
+
+
+----------------------- 9 epoch start! -----------------------
+epoch:  9/10	|	batch: 100/7581	|	loss: 0.19306	|	acc: 91.79%
+epoch:  9/10	|	batch: 200/7581	|	loss: 0.18875	|	acc: 92.35%
+epoch:  9/10	|	batch: 300/7581	|	loss: 0.20794	|	acc: 90.92%
+epoch:  9/10	|	batch: 400/7581	|	loss: 0.21221	|	acc: 90.73%
+epoch:  9/10	|	batch: 500/7581	|	loss: 0.21438	|	acc: 91.00%
+ >> epoch:  9	|	total_batch: 61148	|	eval_loss: 0.34523	|	eval_acc: 84.87
+
+              precision    recall  f1-score   support
+
+           0       0.86      0.90      0.88     25545
+           1       0.82      0.76      0.79     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.84      0.83      0.83     40430
+weighted avg       0.85      0.85      0.85     40430
+
+epoch:  9/10	|	batch: 600/7581	|	loss: 0.20908	|	acc: 91.10%
+epoch:  9/10	|	batch: 700/7581	|	loss: 0.21877	|	acc: 90.52%
+epoch:  9/10	|	batch: 800/7581	|	loss: 0.21555	|	acc: 90.54%
+epoch:  9/10	|	batch: 900/7581	|	loss: 0.21468	|	acc: 91.27%
+epoch:  9/10	|	batch: 1000/7581	|	loss: 0.20003	|	acc: 91.71%
+ >> epoch:  9	|	total_batch: 61648	|	eval_loss: 0.36427	|	eval_acc: 85.11
+
+              precision    recall  f1-score   support
+
+           0       0.86      0.92      0.89     25545
+           1       0.84      0.74      0.79     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.85      0.83      0.84     40430
+weighted avg       0.85      0.85      0.85     40430
+
+epoch:  9/10	|	batch: 1100/7581	|	loss: 0.20154	|	acc: 92.00%
+epoch:  9/10	|	batch: 1200/7581	|	loss: 0.20358	|	acc: 91.42%
+epoch:  9/10	|	batch: 1300/7581	|	loss: 0.19193	|	acc: 92.27%
+epoch:  9/10	|	batch: 1400/7581	|	loss: 0.19015	|	acc: 92.15%
+epoch:  9/10	|	batch: 1500/7581	|	loss: 0.19267	|	acc: 91.79%
+ >> epoch:  9	|	total_batch: 62148	|	eval_loss: 0.35225	|	eval_acc: 85.55
+
+              precision    recall  f1-score   support
+
+           0       0.87      0.91      0.89     25545
+           1       0.83      0.76      0.80     14885
+
+    accuracy                           0.86     40430
+   macro avg       0.85      0.84      0.84     40430
+weighted avg       0.85      0.86      0.85     40430
+
+epoch:  9/10	|	batch: 1600/7581	|	loss: 0.18657	|	acc: 92.35%
+epoch:  9/10	|	batch: 1700/7581	|	loss: 0.18659	|	acc: 91.90%
+epoch:  9/10	|	batch: 1800/7581	|	loss: 0.18195	|	acc: 92.42%
+epoch:  9/10	|	batch: 1900/7581	|	loss: 0.19857	|	acc: 91.81%
+epoch:  9/10	|	batch: 2000/7581	|	loss: 0.20636	|	acc: 91.52%
+ >> epoch:  9	|	total_batch: 62648	|	eval_loss: 0.34463	|	eval_acc: 85.68
+
+              precision    recall  f1-score   support
+
+           0       0.89      0.89      0.89     25545
+           1       0.81      0.80      0.81     14885
+
+    accuracy                           0.86     40430
+   macro avg       0.85      0.85      0.85     40430
+weighted avg       0.86      0.86      0.86     40430
+
+epoch:  9/10	|	batch: 2100/7581	|	loss: 0.21605	|	acc: 91.02%
+epoch:  9/10	|	batch: 2200/7581	|	loss: 0.20131	|	acc: 91.31%
+epoch:  9/10	|	batch: 2300/7581	|	loss: 0.22471	|	acc: 90.38%
+epoch:  9/10	|	batch: 2400/7581	|	loss: 0.23661	|	acc: 89.92%
+epoch:  9/10	|	batch: 2500/7581	|	loss: 0.23264	|	acc: 89.98%
+ >> epoch:  9	|	total_batch: 63148	|	eval_loss: 0.34539	|	eval_acc: 85.17
+
+              precision    recall  f1-score   support
+
+           0       0.88      0.89      0.88     25545
+           1       0.81      0.78      0.80     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.84      0.84      0.84     40430
+weighted avg       0.85      0.85      0.85     40430
+
+epoch:  9/10	|	batch: 2600/7581	|	loss: 0.22812	|	acc: 90.44%
+epoch:  9/10	|	batch: 2700/7581	|	loss: 0.24078	|	acc: 89.50%
+epoch:  9/10	|	batch: 2800/7581	|	loss: 0.22756	|	acc: 90.21%
+epoch:  9/10	|	batch: 2900/7581	|	loss: 0.20899	|	acc: 91.31%
+epoch:  9/10	|	batch: 3000/7581	|	loss: 0.21471	|	acc: 90.92%
+ >> epoch:  9	|	total_batch: 63648	|	eval_loss: 0.34127	|	eval_acc: 85.52
+
+              precision    recall  f1-score   support
+
+           0       0.88      0.89      0.89     25545
+           1       0.81      0.80      0.80     14885
+
+    accuracy                           0.86     40430
+   macro avg       0.85      0.84      0.84     40430
+weighted avg       0.85      0.86      0.85     40430
+
+epoch:  9/10	|	batch: 3100/7581	|	loss: 0.20441	|	acc: 91.19%
+epoch:  9/10	|	batch: 3200/7581	|	loss: 0.20659	|	acc: 91.02%
+epoch:  9/10	|	batch: 3300/7581	|	loss: 0.20482	|	acc: 91.62%
+epoch:  9/10	|	batch: 3400/7581	|	loss: 0.20744	|	acc: 91.21%
+epoch:  9/10	|	batch: 3500/7581	|	loss: 0.19060	|	acc: 91.75%
+ >> epoch:  9	|	total_batch: 64148	|	eval_loss: 0.34400	|	eval_acc: 85.69
+
+              precision    recall  f1-score   support
+
+           0       0.88      0.90      0.89     25545
+           1       0.82      0.78      0.80     14885
+
+    accuracy                           0.86     40430
+   macro avg       0.85      0.84      0.84     40430
+weighted avg       0.86      0.86      0.86     40430
+
+epoch:  9/10	|	batch: 3600/7581	|	loss: 0.18677	|	acc: 92.19%
+epoch:  9/10	|	batch: 3700/7581	|	loss: 0.19400	|	acc: 92.19%
+epoch:  9/10	|	batch: 3800/7581	|	loss: 0.20316	|	acc: 91.56%
+epoch:  9/10	|	batch: 3900/7581	|	loss: 0.21381	|	acc: 90.56%
+epoch:  9/10	|	batch: 4000/7581	|	loss: 0.20501	|	acc: 91.40%
+ >> epoch:  9	|	total_batch: 64648	|	eval_loss: 0.37552	|	eval_acc: 84.80
+
+              precision    recall  f1-score   support
+
+           0       0.87      0.89      0.88     25545
+           1       0.81      0.77      0.79     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.84      0.83      0.83     40430
+weighted avg       0.85      0.85      0.85     40430
+
+epoch:  9/10	|	batch: 4100/7581	|	loss: 0.21219	|	acc: 91.08%
+epoch:  9/10	|	batch: 4200/7581	|	loss: 0.21350	|	acc: 90.83%
+epoch:  9/10	|	batch: 4300/7581	|	loss: 0.24118	|	acc: 90.02%
+epoch:  9/10	|	batch: 4400/7581	|	loss: 0.23708	|	acc: 89.73%
+epoch:  9/10	|	batch: 4500/7581	|	loss: 0.23907	|	acc: 89.58%
+ >> epoch:  9	|	total_batch: 65148	|	eval_loss: 0.34398	|	eval_acc: 84.31
+
+              precision    recall  f1-score   support
+
+           0       0.90      0.85      0.87     25545
+           1       0.76      0.84      0.80     14885
+
+    accuracy                           0.84     40430
+   macro avg       0.83      0.84      0.83     40430
+weighted avg       0.85      0.84      0.84     40430
+
+epoch:  9/10	|	batch: 4600/7581	|	loss: 0.23723	|	acc: 89.48%
+epoch:  9/10	|	batch: 4700/7581	|	loss: 0.22804	|	acc: 90.33%
+epoch:  9/10	|	batch: 4800/7581	|	loss: 0.22685	|	acc: 90.48%
+epoch:  9/10	|	batch: 4900/7581	|	loss: 0.21563	|	acc: 90.81%
+epoch:  9/10	|	batch: 5000/7581	|	loss: 0.21577	|	acc: 90.83%
+ >> epoch:  9	|	total_batch: 65648	|	eval_loss: 0.34422	|	eval_acc: 85.58
+
+              precision    recall  f1-score   support
+
+           0       0.90      0.87      0.88     25545
+           1       0.79      0.83      0.81     14885
+
+    accuracy                           0.86     40430
+   macro avg       0.84      0.85      0.85     40430
+weighted avg       0.86      0.86      0.86     40430
+
+epoch:  9/10	|	batch: 5100/7581	|	loss: 0.22725	|	acc: 90.38%
+epoch:  9/10	|	batch: 5200/7581	|	loss: 0.20337	|	acc: 91.00%
+epoch:  9/10	|	batch: 5300/7581	|	loss: 0.19425	|	acc: 92.04%
+epoch:  9/10	|	batch: 5400/7581	|	loss: 0.21123	|	acc: 91.44%
+epoch:  9/10	|	batch: 5500/7581	|	loss: 0.19580	|	acc: 91.50%
+ >> epoch:  9	|	total_batch: 66148	|	eval_loss: 0.33159	|	eval_acc: 85.80
+
+              precision    recall  f1-score   support
+
+           0       0.89      0.88      0.89     25545
+           1       0.80      0.82      0.81     14885
+
+    accuracy                           0.86     40430
+   macro avg       0.85      0.85      0.85     40430
+weighted avg       0.86      0.86      0.86     40430
+
+epoch:  9/10	|	batch: 5600/7581	|	loss: 0.20749	|	acc: 90.83%
+epoch:  9/10	|	batch: 5700/7581	|	loss: 0.19933	|	acc: 91.48%
+epoch:  9/10	|	batch: 5800/7581	|	loss: 0.20979	|	acc: 91.25%
+epoch:  9/10	|	batch: 5900/7581	|	loss: 0.19796	|	acc: 91.58%
+epoch:  9/10	|	batch: 6000/7581	|	loss: 0.20477	|	acc: 91.15%
+ >> epoch:  9	|	total_batch: 66648	|	eval_loss: 0.35183	|	eval_acc: 85.02
+
+              precision    recall  f1-score   support
+
+           0       0.91      0.84      0.88     25545
+           1       0.76      0.86      0.81     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.84      0.85      0.84     40430
+weighted avg       0.86      0.85      0.85     40430
+
+epoch:  9/10	|	batch: 6100/7581	|	loss: 0.23188	|	acc: 90.33%
+epoch:  9/10	|	batch: 6200/7581	|	loss: 0.22604	|	acc: 89.96%
+epoch:  9/10	|	batch: 6300/7581	|	loss: 0.24092	|	acc: 89.85%
+epoch:  9/10	|	batch: 6400/7581	|	loss: 0.24385	|	acc: 89.06%
+epoch:  9/10	|	batch: 6500/7581	|	loss: 0.23366	|	acc: 90.25%
+ >> epoch:  9	|	total_batch: 67148	|	eval_loss: 0.34705	|	eval_acc: 85.07
+
+              precision    recall  f1-score   support
+
+           0       0.86      0.91      0.88     25545
+           1       0.82      0.75      0.79     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.84      0.83      0.84     40430
+weighted avg       0.85      0.85      0.85     40430
+
+epoch:  9/10	|	batch: 6600/7581	|	loss: 0.23282	|	acc: 89.71%
+epoch:  9/10	|	batch: 6700/7581	|	loss: 0.22277	|	acc: 90.65%
+epoch:  9/10	|	batch: 6800/7581	|	loss: 0.21912	|	acc: 90.62%
+epoch:  9/10	|	batch: 6900/7581	|	loss: 0.22928	|	acc: 90.33%
+epoch:  9/10	|	batch: 7000/7581	|	loss: 0.22166	|	acc: 90.58%
+ >> epoch:  9	|	total_batch: 67648	|	eval_loss: 0.34210	|	eval_acc: 85.58
+
+              precision    recall  f1-score   support
+
+           0       0.87      0.90      0.89     25545
+           1       0.82      0.77      0.80     14885
+
+    accuracy                           0.86     40430
+   macro avg       0.85      0.84      0.84     40430
+weighted avg       0.85      0.86      0.85     40430
+
+epoch:  9/10	|	batch: 7100/7581	|	loss: 0.21832	|	acc: 90.98%
+epoch:  9/10	|	batch: 7200/7581	|	loss: 0.20643	|	acc: 91.35%
+epoch:  9/10	|	batch: 7300/7581	|	loss: 0.21638	|	acc: 90.96%
+epoch:  9/10	|	batch: 7400/7581	|	loss: 0.21476	|	acc: 91.00%
+epoch:  9/10	|	batch: 7500/7581	|	loss: 0.21452	|	acc: 90.58%
+ >> epoch:  9	|	total_batch: 68148	|	eval_loss: 0.32820	|	eval_acc: 85.80
+
+              precision    recall  f1-score   support
+
+           0       0.90      0.88      0.89     25545
+           1       0.80      0.82      0.81     14885
+
+    accuracy                           0.86     40430
+   macro avg       0.85      0.85      0.85     40430
+weighted avg       0.86      0.86      0.86     40430
+
+
+
+----------------------- 10 epoch start! -----------------------
+epoch: 10/10	|	batch: 100/7581	|	loss: 0.17146	|	acc: 92.71%
+epoch: 10/10	|	batch: 200/7581	|	loss: 0.16184	|	acc: 93.52%
+epoch: 10/10	|	batch: 300/7581	|	loss: 0.17001	|	acc: 93.31%
+epoch: 10/10	|	batch: 400/7581	|	loss: 0.17092	|	acc: 92.85%
+epoch: 10/10	|	batch: 500/7581	|	loss: 0.16997	|	acc: 93.08%
+ >> epoch: 10	|	total_batch: 68729	|	eval_loss: 0.36338	|	eval_acc: 85.57
+
+              precision    recall  f1-score   support
+
+           0       0.87      0.91      0.89     25545
+           1       0.83      0.77      0.80     14885
+
+    accuracy                           0.86     40430
+   macro avg       0.85      0.84      0.84     40430
+weighted avg       0.85      0.86      0.85     40430
+
+epoch: 10/10	|	batch: 600/7581	|	loss: 0.18945	|	acc: 91.94%
+epoch: 10/10	|	batch: 700/7581	|	loss: 0.20123	|	acc: 91.48%
+epoch: 10/10	|	batch: 800/7581	|	loss: 0.19470	|	acc: 91.67%
+epoch: 10/10	|	batch: 900/7581	|	loss: 0.21459	|	acc: 90.69%
+epoch: 10/10	|	batch: 1000/7581	|	loss: 0.21386	|	acc: 91.06%
+ >> epoch: 10	|	total_batch: 69229	|	eval_loss: 0.36024	|	eval_acc: 84.98
+
+              precision    recall  f1-score   support
+
+           0       0.86      0.91      0.88     25545
+           1       0.82      0.76      0.79     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.84      0.83      0.84     40430
+weighted avg       0.85      0.85      0.85     40430
+
+epoch: 10/10	|	batch: 1100/7581	|	loss: 0.22300	|	acc: 90.42%
+epoch: 10/10	|	batch: 1200/7581	|	loss: 0.21280	|	acc: 91.17%
+epoch: 10/10	|	batch: 1300/7581	|	loss: 0.20377	|	acc: 91.56%
+epoch: 10/10	|	batch: 1400/7581	|	loss: 0.19247	|	acc: 91.48%
+epoch: 10/10	|	batch: 1500/7581	|	loss: 0.18915	|	acc: 92.04%
+ >> epoch: 10	|	total_batch: 69729	|	eval_loss: 0.37418	|	eval_acc: 85.42
+
+              precision    recall  f1-score   support
+
+           0       0.87      0.91      0.89     25545
+           1       0.83      0.76      0.79     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.85      0.83      0.84     40430
+weighted avg       0.85      0.85      0.85     40430
+
+epoch: 10/10	|	batch: 1600/7581	|	loss: 0.17433	|	acc: 92.40%
+epoch: 10/10	|	batch: 1700/7581	|	loss: 0.18353	|	acc: 92.48%
+epoch: 10/10	|	batch: 1800/7581	|	loss: 0.18343	|	acc: 92.44%
+epoch: 10/10	|	batch: 1900/7581	|	loss: 0.18819	|	acc: 92.31%
+epoch: 10/10	|	batch: 2000/7581	|	loss: 0.16918	|	acc: 93.12%
+ >> epoch: 10	|	total_batch: 70229	|	eval_loss: 0.35999	|	eval_acc: 85.94
+
+              precision    recall  f1-score   support
+
+           0       0.88      0.90      0.89     25545
+           1       0.82      0.78      0.80     14885
+
+    accuracy                           0.86     40430
+   macro avg       0.85      0.84      0.85     40430
+weighted avg       0.86      0.86      0.86     40430
+
+epoch: 10/10	|	batch: 2100/7581	|	loss: 0.17119	|	acc: 92.81%
+epoch: 10/10	|	batch: 2200/7581	|	loss: 0.17100	|	acc: 92.60%
+epoch: 10/10	|	batch: 2300/7581	|	loss: 0.18807	|	acc: 92.08%
+epoch: 10/10	|	batch: 2400/7581	|	loss: 0.18380	|	acc: 92.31%
+epoch: 10/10	|	batch: 2500/7581	|	loss: 0.20309	|	acc: 91.52%
+ >> epoch: 10	|	total_batch: 70729	|	eval_loss: 0.34956	|	eval_acc: 85.63
+
+              precision    recall  f1-score   support
+
+           0       0.88      0.89      0.89     25545
+           1       0.81      0.80      0.80     14885
+
+    accuracy                           0.86     40430
+   macro avg       0.85      0.84      0.84     40430
+weighted avg       0.86      0.86      0.86     40430
+
+epoch: 10/10	|	batch: 2600/7581	|	loss: 0.19726	|	acc: 91.62%
+epoch: 10/10	|	batch: 2700/7581	|	loss: 0.20549	|	acc: 91.40%
+epoch: 10/10	|	batch: 2800/7581	|	loss: 0.20651	|	acc: 90.98%
+epoch: 10/10	|	batch: 2900/7581	|	loss: 0.22210	|	acc: 90.46%
+epoch: 10/10	|	batch: 3000/7581	|	loss: 0.20101	|	acc: 91.44%
+ >> epoch: 10	|	total_batch: 71229	|	eval_loss: 0.34315	|	eval_acc: 85.26
+
+              precision    recall  f1-score   support
+
+           0       0.89      0.87      0.88     25545
+           1       0.79      0.82      0.80     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.84      0.84      0.84     40430
+weighted avg       0.85      0.85      0.85     40430
+
+epoch: 10/10	|	batch: 3100/7581	|	loss: 0.20361	|	acc: 91.54%
+epoch: 10/10	|	batch: 3200/7581	|	loss: 0.21035	|	acc: 91.21%
+epoch: 10/10	|	batch: 3300/7581	|	loss: 0.21961	|	acc: 90.60%
+epoch: 10/10	|	batch: 3400/7581	|	loss: 0.20412	|	acc: 91.33%
+epoch: 10/10	|	batch: 3500/7581	|	loss: 0.19571	|	acc: 91.90%
+ >> epoch: 10	|	total_batch: 71729	|	eval_loss: 0.34819	|	eval_acc: 85.69
+
+              precision    recall  f1-score   support
+
+           0       0.88      0.90      0.89     25545
+           1       0.82      0.79      0.80     14885
+
+    accuracy                           0.86     40430
+   macro avg       0.85      0.84      0.84     40430
+weighted avg       0.86      0.86      0.86     40430
+
+epoch: 10/10	|	batch: 3600/7581	|	loss: 0.18870	|	acc: 91.88%
+epoch: 10/10	|	batch: 3700/7581	|	loss: 0.20241	|	acc: 91.48%
+epoch: 10/10	|	batch: 3800/7581	|	loss: 0.19784	|	acc: 91.60%
+epoch: 10/10	|	batch: 3900/7581	|	loss: 0.18883	|	acc: 92.15%
+epoch: 10/10	|	batch: 4000/7581	|	loss: 0.18411	|	acc: 92.06%
+ >> epoch: 10	|	total_batch: 72229	|	eval_loss: 0.35526	|	eval_acc: 86.03
+
+              precision    recall  f1-score   support
+
+           0       0.88      0.90      0.89     25545
+           1       0.82      0.80      0.81     14885
+
+    accuracy                           0.86     40430
+   macro avg       0.85      0.85      0.85     40430
+weighted avg       0.86      0.86      0.86     40430
+
+epoch: 10/10	|	batch: 4100/7581	|	loss: 0.18581	|	acc: 92.06%
+epoch: 10/10	|	batch: 4200/7581	|	loss: 0.17945	|	acc: 92.35%
+epoch: 10/10	|	batch: 4300/7581	|	loss: 0.20526	|	acc: 91.75%
+epoch: 10/10	|	batch: 4400/7581	|	loss: 0.18437	|	acc: 92.33%
+epoch: 10/10	|	batch: 4500/7581	|	loss: 0.19604	|	acc: 91.50%
+ >> epoch: 10	|	total_batch: 72729	|	eval_loss: 0.35085	|	eval_acc: 85.82
+
+              precision    recall  f1-score   support
+
+           0       0.89      0.89      0.89     25545
+           1       0.81      0.81      0.81     14885
+
+    accuracy                           0.86     40430
+   macro avg       0.85      0.85      0.85     40430
+weighted avg       0.86      0.86      0.86     40430
+
+epoch: 10/10	|	batch: 4600/7581	|	loss: 0.22213	|	acc: 90.58%
+epoch: 10/10	|	batch: 4700/7581	|	loss: 0.21204	|	acc: 90.94%
+epoch: 10/10	|	batch: 4800/7581	|	loss: 0.22803	|	acc: 90.21%
+epoch: 10/10	|	batch: 4900/7581	|	loss: 0.21466	|	acc: 90.54%
+epoch: 10/10	|	batch: 5000/7581	|	loss: 0.22104	|	acc: 90.23%
+ >> epoch: 10	|	total_batch: 73229	|	eval_loss: 0.34932	|	eval_acc: 85.41
+
+              precision    recall  f1-score   support
+
+           0       0.87      0.91      0.89     25545
+           1       0.83      0.76      0.79     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.85      0.83      0.84     40430
+weighted avg       0.85      0.85      0.85     40430
+
+epoch: 10/10	|	batch: 5100/7581	|	loss: 0.22156	|	acc: 90.27%
+epoch: 10/10	|	batch: 5200/7581	|	loss: 0.21195	|	acc: 90.94%
+epoch: 10/10	|	batch: 5300/7581	|	loss: 0.23067	|	acc: 90.50%
+epoch: 10/10	|	batch: 5400/7581	|	loss: 0.20005	|	acc: 91.79%
+epoch: 10/10	|	batch: 5500/7581	|	loss: 0.20169	|	acc: 91.38%
+ >> epoch: 10	|	total_batch: 73729	|	eval_loss: 0.34585	|	eval_acc: 85.92
+
+              precision    recall  f1-score   support
+
+           0       0.90      0.87      0.89     25545
+           1       0.79      0.83      0.81     14885
+
+    accuracy                           0.86     40430
+   macro avg       0.85      0.85      0.85     40430
+weighted avg       0.86      0.86      0.86     40430
+
+epoch: 10/10	|	batch: 5600/7581	|	loss: 0.20662	|	acc: 91.48%
+epoch: 10/10	|	batch: 5700/7581	|	loss: 0.19611	|	acc: 91.69%
+epoch: 10/10	|	batch: 5800/7581	|	loss: 0.20014	|	acc: 91.54%
+epoch: 10/10	|	batch: 5900/7581	|	loss: 0.19791	|	acc: 91.85%
+epoch: 10/10	|	batch: 6000/7581	|	loss: 0.18937	|	acc: 91.94%
+ >> epoch: 10	|	total_batch: 74229	|	eval_loss: 0.33958	|	eval_acc: 86.12
+
+              precision    recall  f1-score   support
+
+           0       0.88      0.90      0.89     25545
+           1       0.82      0.80      0.81     14885
+
+    accuracy                           0.86     40430
+   macro avg       0.85      0.85      0.85     40430
+weighted avg       0.86      0.86      0.86     40430
+
+epoch: 10/10	|	batch: 6100/7581	|	loss: 0.19459	|	acc: 91.69%
+epoch: 10/10	|	batch: 6200/7581	|	loss: 0.19613	|	acc: 91.56%
+epoch: 10/10	|	batch: 6300/7581	|	loss: 0.20176	|	acc: 91.56%
+epoch: 10/10	|	batch: 6400/7581	|	loss: 0.19142	|	acc: 92.10%
+epoch: 10/10	|	batch: 6500/7581	|	loss: 0.21900	|	acc: 90.75%
+ >> epoch: 10	|	total_batch: 74729	|	eval_loss: 0.32738	|	eval_acc: 85.73
+
+              precision    recall  f1-score   support
+
+           0       0.89      0.88      0.89     25545
+           1       0.80      0.82      0.81     14885
+
+    accuracy                           0.86     40430
+   macro avg       0.85      0.85      0.85     40430
+weighted avg       0.86      0.86      0.86     40430
+
+epoch: 10/10	|	batch: 6600/7581	|	loss: 0.22021	|	acc: 90.65%
+epoch: 10/10	|	batch: 6700/7581	|	loss: 0.21422	|	acc: 91.08%
+epoch: 10/10	|	batch: 6800/7581	|	loss: 0.21942	|	acc: 90.50%
+epoch: 10/10	|	batch: 6900/7581	|	loss: 0.22516	|	acc: 90.27%
+epoch: 10/10	|	batch: 7000/7581	|	loss: 0.23610	|	acc: 89.90%
+ >> epoch: 10	|	total_batch: 75229	|	eval_loss: 0.34326	|	eval_acc: 85.00
+
+              precision    recall  f1-score   support
+
+           0       0.89      0.87      0.88     25545
+           1       0.79      0.81      0.80     14885
+
+    accuracy                           0.85     40430
+   macro avg       0.84      0.84      0.84     40430
+weighted avg       0.85      0.85      0.85     40430
+
+epoch: 10/10	|	batch: 7100/7581	|	loss: 0.22193	|	acc: 90.23%
+epoch: 10/10	|	batch: 7200/7581	|	loss: 0.21734	|	acc: 90.48%
+epoch: 10/10	|	batch: 7300/7581	|	loss: 0.21238	|	acc: 91.23%
+epoch: 10/10	|	batch: 7400/7581	|	loss: 0.21449	|	acc: 90.85%
+epoch: 10/10	|	batch: 7500/7581	|	loss: 0.21588	|	acc: 90.69%
+ >> epoch: 10	|	total_batch: 75729	|	eval_loss: 0.33883	|	eval_acc: 85.62
+
+              precision    recall  f1-score   support
+
+           0       0.88      0.90      0.89     25545
+           1       0.82      0.79      0.80     14885
+
+    accuracy                           0.86     40430
+   macro avg       0.85      0.84      0.84     40430
+weighted avg       0.86      0.86      0.86     40430
+
