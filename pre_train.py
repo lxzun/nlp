@@ -93,7 +93,7 @@ if __name__ == '__main__':
     parser.add_argument('--seed', type=int, default=42)
     parser.add_argument('--drop_rate', type=float, default=0.)
 
-    parser.add_argument('--new_vocab', type=int, default=1)
+    parser.add_argument('--new_vocab', type=int, default=3)
     parser.add_argument('--embedding_size', type=int, default=128)
     parser.add_argument('--hidden_size', type=int, default=768)
     parser.add_argument('--m', type=int, default=32)
