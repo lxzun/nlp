@@ -110,7 +110,7 @@ class Mydataset_spm(nn.Module):
             label = self.data[item]['label']
             return torch.LongTensor(data), label
 
-        elif self.task in ['mrpc', 'rte', 'qnli']:
+        elif self.task in ['mrpc', 'rte']:
             data1 = self.tokenizer.encode_as_ids(self.data[item]["sentence1"])
             data2 = self.tokenizer.encode_as_ids(self.data[item]["sentence2"])
             data = data1 + [self.sep_ids] + data2
@@ -140,6 +140,18 @@ class Mydataset_spm(nn.Module):
 
             label = self.data[item]['label']
             return torch.LongTensor(data), label
+
+        elif self.task == 'qnli':
+            data1 = self.tokenizer.encode_as_ids(self.data[item]["question"])
+            data2 = self.tokenizer.encode_as_ids(self.data[item]["sentence"])
+            data = data1 + [self.sep_ids] + data2
+            if len(data) > self.max_length:
+                data = data[:self.max_length]
+            data = np.array(data, dtype=int)
+
+            label = self.data[item]['label']
+            return torch.LongTensor(data), label
+
 
     def make_batch(self, samples):
         data = [i[0] for i in samples]

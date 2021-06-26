@@ -111,8 +111,8 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
     parser.add_argument('--num_epochs', type=int, default=10)
-    parser.add_argument('--batch_size', type=int, default=48)
-    parser.add_argument('--step_batch', type=int, default=5)
+    parser.add_argument('--batch_size', type=int, default=20)
+    parser.add_argument('--step_batch', type=int, default=50)
     parser.add_argument('--eval_batch_size', type=int, default=120)
 
     parser.add_argument('--lr', type=float, default=5e-05)
@@ -128,7 +128,7 @@ if __name__ == '__main__':
     parser.add_argument('--n_layer', type=int, default=4)
     parser.add_argument('--attd_mode', type=int, default=2)
     parser.add_argument('--max_seq_length', type=int, default=512*2)
-    parser.add_argument('--task', type=str, default='mrpc', help='qqp, mrpc, sst2, rte, qnli, mnli')
+    parser.add_argument('--task', type=str, default='qnli', help='qqp, mrpc, sst2, rte, qnli, mnli')
 
     parser.add_argument('--save_vocab', type=bool, default=True)
     parser.add_argument('--pretrained_vocab_path', type=str, default='log/train/log_21-06-11_23-15-50/vocab_save/embedding_weight', help='load pretrained vocab path')
@@ -221,7 +221,7 @@ if __name__ == '__main__':
 
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(model.parameters(), lr=args.lr)
-    scheduler = optim.lr_scheduler.CyclicLR(optimizer, base_lr=5e-5, step_size_up=1000, step_size_down=1000, max_lr=5e-4, mode='triangular', cycle_momentum=False)
+    scheduler = optim.lr_scheduler.CyclicLR(optimizer, base_lr=5e-5, step_size_up=1000, step_size_down=1000, max_lr=2e-4, mode='triangular', cycle_momentum=False)
     optimizer.zero_grad()
 
     best_acc = 0
