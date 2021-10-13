@@ -9,6 +9,7 @@ from tensorboardX import SummaryWriter
 from dataset import Mydataset, Mydataset_spm
 from models.Mymodel import MymodelForSequenceClassification
 from sklearn.metrics import classification_report as cr
+from transformers import AdamW
 
 
 def train(model, trainloader, criterion, optimizer, scheduler, epoch_idx, testloader, args, device):
@@ -129,6 +130,8 @@ if __name__ == '__main__':
     parser.add_argument('--attd_mode', type=int, default=2)
     parser.add_argument('--max_seq_length', type=int, default=512*2)
     parser.add_argument('--task', type=str, default='qnli', help='qqp, mrpc, sst2, rte, qnli, mnli')
+    parser.add_argument('--freeze', type=bool, default=False, help='freezing main model w/o ouput layer')
+    
 
     parser.add_argument('--save_vocab', type=bool, default=True)
     parser.add_argument('--pretrained_vocab_path', type=str, default='log/train/log_21-06-11_23-15-50/vocab_save/embedding_weight', help='load pretrained vocab path')
@@ -175,8 +178,8 @@ if __name__ == '__main__':
         testset = Mydataset(task=args.task, max_length=args.max_seq_length, split='validation')
 
 
-    trainloader = DataLoader(trainset, args.batch_size, num_workers=2, shuffle=True, collate_fn=trainset.make_batch)
-    testloader = DataLoader(testset, args.eval_batch_size, num_workers=2, shuffle=False, collate_fn=testset.make_batch)
+    trainloader = DataLoader(trainset, args.batch_size, num_workers=2, shuffle=True)
+    testloader = DataLoader(testset, args.eval_batch_size, num_workers=2, shuffle=False)
 
 
     log('\n---- dataset info ----')
@@ -195,7 +198,9 @@ if __name__ == '__main__':
                                                  n_layer=args.n_layer,
                                                  pad_ids=trainset.pad_ids,
                                                  num_classes=num_classes,
-                                                 attd_mode=args.attd_mode)
+                                                 attd_mode=args.attd_mode,
+                                                 drop_rate=args.drop_rate,
+                                                 freeze=args.freeze)
 
     elif args.task in ['mnli']:
         num_classes=3
@@ -206,7 +211,9 @@ if __name__ == '__main__':
                                                  n_layer=args.n_layer,
                                                  pad_ids=trainset.pad_ids,
                                                  num_classes=num_classes,
-                                                 attd_mode=args.attd_mode)
+                                                 attd_mode=args.attd_mode,
+                                                 drop_rate=args.drop_rate,
+                                                 freeze=args.freeze)
 
     if args.pretrained_vocab:
         model.load(vocab_path=args.pretrained_vocab_path)
@@ -220,7 +227,7 @@ if __name__ == '__main__':
         model = nn.DataParallel(model)
 
     criterion = nn.CrossEntropyLoss()
-    optimizer = optim.Adam(model.parameters(), lr=args.lr)
+    optimizer = optim.AdamW(model.parameters(), lr=args.lr)
     scheduler = optim.lr_scheduler.CyclicLR(optimizer, base_lr=5e-5, step_size_up=1000, step_size_down=1000, max_lr=2e-4, mode='triangular', cycle_momentum=False)
     optimizer.zero_grad()
 

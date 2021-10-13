@@ -1,4 +1,4 @@
-import torch
++import torch
 from torch import nn
 
 
@@ -94,6 +94,61 @@ class Myattention2(nn.Module):
 
         return out
 
+class Myattention3(nn.Module):
+    def __init__(self, m, out_dim, hidden_size, k=3, drop_rate=0):
+        super(Myattention3, self).__init__()
+        assert (k % 2 != 0), 'K must be Odd'
+        self.q = nn.Conv2d(m, out_dim, k, padding=(k-1)//2)
+        self.k = nn.Conv2d(m, out_dim, k, padding=(k-1)//2)
+        self.v = nn.Conv2d(m, out_dim, k, padding=(k-1)//2)
+        self.softmax = nn.Softmax(dim=0)
+        self.gelu = nn.GELU()
+        self.layernorm = nn.LayerNorm(out_dim * hidden_size // m)
+        self.dropout = nn.Dropout(drop_rate)
+        self.conv = nn.Conv2d(out_dim, m, 3, padding=1)
+        self.linear = nn.Linear(hidden_size , hidden_size)
+        
+        self.lq = nn.Linear(hidden_size, hidden_size)
+        self.lk = nn.Linear(hidden_size, hidden_size)
+        self.lv = nn.Linear(hidden_size, hidden_size)
+        
+        self.llayernorm = nn.LayerNorm(hidden_size)
+
+    def forward(self, x, y):
+        input_shape = x.size() # b x m x seq_length x n
+        m, seq_length, n = input_shape[1:]
+
+        q = self.dropout(self.gelu(self.q(x)))          # b x out_dim x seq_length x n
+        k = self.dropout(self.gelu(self.k(x)))
+        v = self.dropout(self.gelu(self.v(x)))
+
+        out_dim = q.size()[1]
+
+        q = torch.transpose(q, 1, 2).contiguous()                    # b x seq_length x out_dim x n
+        q = q.view(-1, seq_length, out_dim * n)                      # b x seq_length x out_dim*n
+
+        k = torch.transpose(k, 2, 3).contiguous()                    # b x out_dim x n x seq_length
+        k = k.view(-1, out_dim * n, seq_length)                      # b x out_dim*n x seq_length
+
+        v = torch.transpose(v, 1, 2).contiguous()
+        v = v.view(-1, seq_length, out_dim * n)
+
+        score = self.softmax(torch.matmul(q, k))                     # b x seq_length x seq_length
+        out = torch.matmul(score, v)                                 # b x seq_length x out_dim*n
+        out = self.layernorm(out)
+        out = out.view(-1, seq_length, out_dim, n)                   # b x seq_length x out_dim x n
+        out = torch.transpose(out, 1, 2).contiguous()                # b x out_dim x seq_length x n
+        out = self.dropout(self.gelu(self.conv(out)))                # b x m x seq_length x n
+        out = torch.transpose(out, 1, 2).contiguous()                # b x seq_length x m x n
+        out = self.linear(out.view(-1, seq_length, m * n))           # b x seq_length x hidden_size
+        out = self.dropout(self.gelu(out))
+        out = out.view(-1, seq_length, m, n)                         # b x seq_length x m x n
+        out = torch.transpose(out, 1, 2).contiguous()                # b x m x seq_length x n
+
+        out = out + x
+
+        return out
+    
 class MyEmbedding(nn.Module):
     def __init__(self, vocab_size, embedding_size, hidden_size, pad_ids, drop_rate=0):
         super(MyEmbedding, self).__init__()
@@ -118,6 +173,8 @@ class Mymodel(nn.Module):
             self.model = nn.ModuleList([Myattention(m, out_dim, hidden_size, k, drop_rate) for _ in range(n_layer)])
         elif attd_mode == 2:
             self.model = nn.ModuleList([Myattention2(m, out_dim, hidden_size, k, drop_rate) for _ in range(n_layer)])
+        elif attd_mode == 3:
+            self.model = nn.ModuleList([Myattention3(m, out_dim, hidden_size, k, drop_rate) for _ in range(n_layer)])
 
     def forward(self, x):
         # b, seq_length
@@ -146,7 +203,7 @@ class Mymodel(nn.Module):
         if model_path: self.model.load_state_dict(torch.load(model_path))
 
 class MymodelForPretrain(nn.Module):
-    def __init__(self, vocab_size, embedding_size, hidden_size, m, out_dim, n_layer, pad_ids, k=3, attd_mode=1, drop_rate=0):
+    def __init__(self, vocab_size, embedding_size, hidden_size, m, out_dim, n_layer, pad_ids, k=3, attd_mode=1, drop_rate=0, freeze=False):
         super(MymodelForPretrain, self).__init__()
         self.vocab_size = vocab_size
         self.hidden_size = hidden_size
@@ -177,11 +234,16 @@ class MymodelForPretrain(nn.Module):
 
 
 class MymodelForSequenceClassification(nn.Module):
-    def __init__(self, vocab_size, embedding_size, hidden_size, m, out_dim, n_layer, pad_ids, num_classes, k=3, attd_mode=1, drop_rate=0):
+    def __init__(self, vocab_size, embedding_size, hidden_size, m, out_dim, n_layer, pad_ids, num_classes, k=3, attd_mode=1, drop_rate=0, freeze=False):
         super(MymodelForSequenceClassification, self).__init__()
         self.vocab_size = vocab_size
         self.hidden_size = hidden_size
         self.model = Mymodel(vocab_size, embedding_size, hidden_size, m, out_dim, n_layer, pad_ids, k, attd_mode, drop_rate)
+        
+        if freeze:
+            for param in self.model.parameters():
+                param.requires_grad = False
+        
         self.linear = nn.Linear(hidden_size, num_classes)
 
     def forward(self, x):

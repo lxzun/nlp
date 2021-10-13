@@ -31,7 +31,7 @@ class Mydataset(nn.Module):
 
     def __getitem__(self, item):
         if self.task == 'pretrain':
-            data = self.tokenizer(self.data[item]["text"], return_tensors='pt', truncation=True, max_length=self.max_length,
+            data = self.tokenizer(self.data[item]["text"], return_tensors='pt', truncation=True, padding='max_length', max_length=self.max_length,
                                   return_attention_mask=False, return_token_type_ids=False)['input_ids']
             label = data[:, 1:].flatten()
             data = label.clone()
@@ -51,14 +51,6 @@ class Mydataset(nn.Module):
                                   return_token_type_ids=self.return_token_type_ids)['input_ids'][:, 1:].flatten()
             label = self.data[item]['label']
             return data, label
-
-    def make_batch(self, samples):
-        data = [i[0] for i in samples]
-        label = [i[1] for i in samples]
-        data = nn.utils.rnn.pad_sequence(data, True, self.pad_ids)
-        if self.task == 'pretrain':
-            label = nn.utils.rnn.pad_sequence(label, True, self.pad_ids)
-        return data, torch.LongTensor(label)
 
 class Mydataset_spm(nn.Module):
     def __init__(self, task='pretrain', vocab=None, max_length=512, split='train', seq_mask=False):
@@ -86,9 +78,11 @@ class Mydataset_spm(nn.Module):
     def __getitem__(self, item):
         if self.task == 'pretrain':
             data = self.tokenizer.encode_as_ids(self.data[item]['text'])
-            data = np.array(data, dtype=int)
             if len(data) > self.max_length:
                 data = data[:self.max_length]
+            else:
+                data = data + [self.pad_ids] * (self.max_length - len(data))
+            data = np.array(data, dtype=int)
             label = np.array(data, dtype=int)
             indices = list(range(len(data)))
             k = int(len(data) * 0.15)
@@ -105,6 +99,8 @@ class Mydataset_spm(nn.Module):
             data = data1 + [self.sep_ids] + data2
             if len(data) > self.max_length:
                 data = data[:self.max_length]
+            else:
+                data = data + [self.pad_ids] * (self.max_length - len(data))
             data = np.array(data, dtype=int)
 
             label = self.data[item]['label']
@@ -116,6 +112,8 @@ class Mydataset_spm(nn.Module):
             data = data1 + [self.sep_ids] + data2
             if len(data) > self.max_length:
                 data = data[:self.max_length]
+            else:
+                data = data + [self.pad_ids] * (self.max_length - len(data))
             data = np.array(data, dtype=int)
 
             label = self.data[item]['label']
@@ -125,6 +123,8 @@ class Mydataset_spm(nn.Module):
             data = self.tokenizer.encode_as_ids(self.data[item]["sentence"])
             if len(data) > self.max_length:
                 data = data[:self.max_length]
+            else:
+                data = data + [self.pad_ids] * (self.max_length - len(data))
             data = np.array(data, dtype=int)
 
             label = self.data[item]['label']
@@ -136,6 +136,8 @@ class Mydataset_spm(nn.Module):
             data = data1 + [self.sep_ids] + data2
             if len(data) > self.max_length:
                 data = data[:self.max_length]
+            else:
+                data = data + [self.pad_ids] * (self.max_length - len(data))
             data = np.array(data, dtype=int)
 
             label = self.data[item]['label']
@@ -147,19 +149,12 @@ class Mydataset_spm(nn.Module):
             data = data1 + [self.sep_ids] + data2
             if len(data) > self.max_length:
                 data = data[:self.max_length]
+            else:
+                data = data + [self.pad_ids] * (self.max_length - len(data))
             data = np.array(data, dtype=int)
 
             label = self.data[item]['label']
             return torch.LongTensor(data), label
-
-
-    def make_batch(self, samples):
-        data = [i[0] for i in samples]
-        label = [i[1] for i in samples]
-        data = nn.utils.rnn.pad_sequence(data, True, self.pad_ids)
-        if self.task == 'pretrain':
-            label = nn.utils.rnn.pad_sequence(label, True, self.pad_ids)
-        return data, torch.LongTensor(label)
 
 
 if __name__=='__main__':

@@ -9,7 +9,8 @@ from tensorboardX import SummaryWriter
 from dataset import Mydataset, Mydataset_spm
 from models.Mymodel import MymodelForPretrain
 from torch.utils.data.sampler import SubsetRandomSampler
-
+from transformers import AdamW
+from torchsummary import summary
 
 def train(model, trainloader, criterion, optimizer, scheduler, epoch_idx, testloader, args, device):
     global best_loss
@@ -85,7 +86,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
     parser.add_argument('--num_epochs', type=int, default=4)
-    parser.add_argument('--batch_size', type=int, default=64)
+    parser.add_argument('--batch_size', type=int, default=20)
     parser.add_argument('--step_batch', type=int, default=200)
     parser.add_argument('--eval_batch_size', type=int, default=256)
 
@@ -93,15 +94,15 @@ if __name__ == '__main__':
     parser.add_argument('--seed', type=int, default=42)
     parser.add_argument('--drop_rate', type=float, default=0.)
 
-    parser.add_argument('--new_vocab', type=int, default=3)
+    parser.add_argument('--new_vocab', type=int, default=0)
     parser.add_argument('--embedding_size', type=int, default=128)
     parser.add_argument('--hidden_size', type=int, default=768)
     parser.add_argument('--m', type=int, default=32)
-    parser.add_argument('--out_dim', type=int, default=64)
+    parser.add_argument('--out_dim', type=int, default=128)
     parser.add_argument('--k', type=int, default=3)
-    parser.add_argument('--n_layer', type=int, default=4)
+    parser.add_argument('--n_layer', type=int, default=12)
     parser.add_argument('--attd_mode', type=int, default=2)
-    parser.add_argument('--max_seq_length', type=int, default=512*2)
+    parser.add_argument('--max_seq_length', type=int, default=512*1)
     parser.add_argument('--task', type=str, default='pretrain')
 
     parser.add_argument('--save_vocab', type=bool, default=True)
@@ -151,8 +152,8 @@ if __name__ == '__main__':
 
     train_sampler = SubsetRandomSampler(train_indices)
     valid_sampler = SubsetRandomSampler(val_indices)
-    trainloader = DataLoader(dataset, args.batch_size, num_workers=2, sampler=train_sampler, collate_fn=dataset.make_batch)
-    testloader = DataLoader(dataset, args.batch_size, num_workers=2, sampler=valid_sampler, collate_fn=dataset.make_batch)
+    trainloader = DataLoader(dataset, args.batch_size, num_workers=2, sampler=train_sampler)
+    testloader = DataLoader(dataset, args.batch_size, num_workers=2, sampler=valid_sampler)
 
 
     log('\n---- dataset info ----')
@@ -172,12 +173,16 @@ if __name__ == '__main__':
                                drop_rate=args.drop_rate)
     if device == 'cuda':
         model.to(device)
+        summary(model, input_size=(512,), dtype=torch.cuda.LongTensor)
+    else:
+        summary(model, input_size=(512,), dtype=torch.LongTensor)
+        
 
     if args.multi_gpu and torch.cuda.device_count() > 1:
         model = nn.DataParallel(model)
 
     criterion = nn.CrossEntropyLoss()
-    optimizer = optim.Adam(model.parameters(), lr=args.lr)
+    optimizer = AdamW(model.parameters(), lr=args.lr)
     scheduler = optim.lr_scheduler.CyclicLR(optimizer, base_lr=1e-5, step_size_up=50, step_size_down=1000, max_lr=1e-3, mode='triangular', cycle_momentum=False)
     optimizer.zero_grad()
 
