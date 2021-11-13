@@ -54,7 +54,8 @@ def train(model, trainloader, criterion, optimizer, scheduler, epoch_idx, testlo
                     writer.add_text('best loss', '{}b_{}'.format(total_batch, best_loss), total_batch)
 
             train_loss = 0
-
+            
+            
     return avg_loss
 
 
@@ -86,7 +87,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
     parser.add_argument('--num_epochs', type=int, default=4)
-    parser.add_argument('--batch_size', type=int, default=20)
+    parser.add_argument('--batch_size', type=int, default=30)
     parser.add_argument('--step_batch', type=int, default=200)
     parser.add_argument('--eval_batch_size', type=int, default=256)
 
@@ -125,9 +126,9 @@ if __name__ == '__main__':
     log_dir = mk_dir(os.path.join(log_dir, f'log_{today}'))
     log_file = os.path.join(log_dir, 'log.txt')
     model_save = mk_dir(os.path.join(log_dir, 'model_save')) if args.save_model else None
-    model_save = model_save + '/model_weight' if model_save else None
+    model_save = model_save + '/model_weight.pth' if model_save else None
     vocab_save = mk_dir(os.path.join(log_dir, 'vocab_save')) if args.save_vocab else None
-    vocab_save = vocab_save + '/embedding_weight' if vocab_save else None
+    vocab_save = vocab_save + '/embedding_weight.pth' if vocab_save else None
     writer = SummaryWriter(log_dir)
 
     device = args.use_cuda if torch.cuda.is_available() else 'cpu'
@@ -152,8 +153,8 @@ if __name__ == '__main__':
 
     train_sampler = SubsetRandomSampler(train_indices)
     valid_sampler = SubsetRandomSampler(val_indices)
-    trainloader = DataLoader(dataset, args.batch_size, num_workers=2, sampler=train_sampler)
-    testloader = DataLoader(dataset, args.batch_size, num_workers=2, sampler=valid_sampler)
+    trainloader = DataLoader(dataset, args.batch_size, num_worker=2, sampler=train_sampler)
+    testloader = DataLoader(dataset, args.batch_size, num_worker=2, sampler=valid_sampler)
 
 
     log('\n---- dataset info ----')
