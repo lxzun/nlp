@@ -18,6 +18,8 @@ class Mydataset(nn.Module):
         self.pad_ids = self.tokenizer.pad_token_id
         self.task = task
         self.seq_mask = seq_mask
+        self.return_attention_maks = return_attention_mask
+        self.return_token_type_ids = return_token_type_ids
         if task == 'pretrain':
             self.data = load_dataset('openwebtext', split='train')
             self.length = self.data.num_rows
@@ -31,8 +33,10 @@ class Mydataset(nn.Module):
 
     def __getitem__(self, item):
         if self.task == 'pretrain':
-            data = self.tokenizer(self.data[item]["text"], return_tensors='pt', truncation=True, padding='max_length', max_length=self.max_length,
-                                  return_attention_mask=False, return_token_type_ids=False)['input_ids']
+            data = self.tokenizer(self.data[item]["text"], return_tensors='pt', truncation=True, padding='max_length',
+                                  max_length=self.max_length,
+                                  return_attention_mask=self.return_attention_maks,
+                                  return_token_type_ids=self.return_token_type_ids)
             label = data[:, 1:].flatten()
             data = label.clone()
             indices = list(range(len(data)))
@@ -45,10 +49,14 @@ class Mydataset(nn.Module):
             return data, label
 
         if self.task == 'qqp':
+            # data = self.tokenizer(self.data[item]["question1"], text_pair=self.data[item]["question2"],
+            #                       truncation=True, max_length=self.max_length,
+            #                       return_tensors='pt', return_attention_mask=self.return_attention_maks,
+            #                       return_token_type_ids=self.return_token_type_ids)['input_ids'][:, 1:].flatten()
             data = self.tokenizer(self.data[item]["question1"], text_pair=self.data[item]["question2"],
-                                  truncation=True, max_length=self.max_length,
+                                  truncation=True, max_length=self.max_length, padding='max_length',
                                   return_tensors='pt', return_attention_mask=self.return_attention_maks,
-                                  return_token_type_ids=self.return_token_type_ids)['input_ids'][:, 1:].flatten()
+                                  return_token_type_ids=self.return_token_type_ids)
             label = self.data[item]['label']
             return data, label
 
@@ -158,4 +166,4 @@ class Mydataset_spm(nn.Module):
 
 
 if __name__=='__main__':
-    Mydataset(max_length=9999999)
+    a = Mydataset(task='qqp', return_attention_mask=True, return_token_type_ids=True)[1]

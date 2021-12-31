@@ -1,0 +1,39 @@
+num_epochs: 4
+batch_size: 40
+step_batch: 200
+eval_batch_size: 256
+lr: 0.0005
+seed: 42
+drop_rate: 0.0
+new_vocab: 0
+embedding_size: 128
+hidden_size: 768
+m: 32
+out_dim: 128
+k: 3
+n_layer: 12
+attd_mode: 2
+max_seq_length: 512
+task: pretrain
+save_vocab: True
+pretrained_vocab_path: 
+pretrained_vocab: False
+save_model: True
+pretrained_model_path: 
+pretrained_model: False
+use_cuda: cuda
+multi_gpu: True
+Real used device: cuda
+
+---- dataset info ----
+
+* train data *
+- num : 8003752
+
+* eval data *
+- num : 10017
+----------------------
+
+
+
+----------------------- 1 epoch start! -----------------------

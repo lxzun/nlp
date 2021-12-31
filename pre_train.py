@@ -119,16 +119,16 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
 
-    log_root = mk_dir('./log')
+    log_root = mk_dir('log_under_12')
     today = str(datetime.today().strftime('%y-%m-%d_%H-%M-%S'))
     log_dir = mk_dir(os.path.join(log_root, f'{args.task}'))
     log_dir = mk_dir(os.path.join(log_dir, f'A{args.attd_mode}_V{args.new_vocab}_S{args.max_seq_length}_E{args.embedding_size}_H{args.hidden_size}_M{args.m}_K{args.k}_O{args.out_dim}_L{args.n_layer}'))
     log_dir = mk_dir(os.path.join(log_dir, f'log_{today}'))
-    log_file = os.path.join(log_dir, 'log.txt')
+    log_file = os.path.join(log_dir, 'log_under_12.txt')
     model_save = mk_dir(os.path.join(log_dir, 'model_save')) if args.save_model else None
-    model_save = model_save + '/model_weight.pth' if model_save else None
+    model_save = model_save + '/model_weight' if model_save else None
     vocab_save = mk_dir(os.path.join(log_dir, 'vocab_save')) if args.save_vocab else None
-    vocab_save = vocab_save + '/embedding_weight.pth' if vocab_save else None
+    vocab_save = vocab_save + '/embedding_weight' if vocab_save else None
     writer = SummaryWriter(log_dir)
 
     device = args.use_cuda if torch.cuda.is_available() else 'cpu'
@@ -153,8 +153,8 @@ if __name__ == '__main__':
 
     train_sampler = SubsetRandomSampler(train_indices)
     valid_sampler = SubsetRandomSampler(val_indices)
-    trainloader = DataLoader(dataset, args.batch_size, num_worker=2, sampler=train_sampler)
-    testloader = DataLoader(dataset, args.batch_size, num_worker=2, sampler=valid_sampler)
+    trainloader = DataLoader(dataset, args.batch_size, sampler=train_sampler)
+    testloader = DataLoader(dataset, args.batch_size, sampler=valid_sampler)
 
 
     log('\n---- dataset info ----')

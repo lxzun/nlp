@@ -1,0 +1,97 @@
+num_epochs: 4
+batch_size: 30
+step_batch: 200
+eval_batch_size: 256
+lr: 0.0005
+seed: 42
+drop_rate: 0.0
+new_vocab: 0
+embedding_size: 128
+hidden_size: 768
+m: 32
+out_dim: 128
+k: 3
+n_layer: 12
+attd_mode: 2
+max_seq_length: 512
+task: pretrain
+save_vocab: True
+pretrained_vocab_path: 
+pretrained_vocab: False
+save_model: True
+pretrained_model_path: 
+pretrained_model: False
+use_cuda: cuda
+multi_gpu: True
+Real used device: cuda
+
+---- dataset info ----
+
+* train data *
+- num : 8003752
+
+* eval data *
+- num : 10017
+----------------------
+
+
+
+----------------------- 1 epoch start! -----------------------
+epoch:  1/4	|	batch: 200/266792	|	loss: 3.33766	|	0.00085150
+epoch:  1/4	|	batch: 400/266792	|	loss: 1.00218	|	0.00065350
+epoch:  1/4	|	batch: 600/266792	|	loss: 0.90093	|	0.00045550
+epoch:  1/4	|	batch: 800/266792	|	loss: 0.86351	|	0.00025750
+epoch:  1/4	|	batch: 1000/266792	|	loss: 0.85126	|	0.00005950
+ >> epoch:  1	|	total_batch: 1000	|	eval_loss: 0.84307462
+epoch:  1/4	|	batch: 1200/266792	|	loss: 0.85360	|	0.00090100
+epoch:  1/4	|	batch: 1400/266792	|	loss: 0.84551	|	0.00070300
+epoch:  1/4	|	batch: 1600/266792	|	loss: 0.82761	|	0.00050500
+epoch:  1/4	|	batch: 1800/266792	|	loss: 0.81772	|	0.00030700
+epoch:  1/4	|	batch: 2000/266792	|	loss: 0.80251	|	0.00010900
+ >> epoch:  1	|	total_batch: 2000	|	eval_loss: 0.79416525
+epoch:  1/4	|	batch: 2200/266792	|	loss: 0.80672	|	0.00095050
+epoch:  1/4	|	batch: 2400/266792	|	loss: 0.82692	|	0.00075250
+epoch:  1/4	|	batch: 2600/266792	|	loss: 1.33329	|	0.00055450
+epoch:  1/4	|	batch: 2800/266792	|	loss: 1.00426	|	0.00035650
+epoch:  1/4	|	batch: 3000/266792	|	loss: 0.98694	|	0.00015850
+ >> epoch:  1	|	total_batch: 3000	|	eval_loss: 0.98311639
+epoch:  1/4	|	batch: 3200/266792	|	loss: 0.98456	|	0.00100000
+epoch:  1/4	|	batch: 3400/266792	|	loss: 0.99698	|	0.00080200
+epoch:  1/4	|	batch: 3600/266792	|	loss: 0.99259	|	0.00060400
+epoch:  1/4	|	batch: 3800/266792	|	loss: 0.99026	|	0.00040600
+epoch:  1/4	|	batch: 4000/266792	|	loss: 0.97924	|	0.00020800
+ >> epoch:  1	|	total_batch: 4000	|	eval_loss: 0.97519165
+epoch:  1/4	|	batch: 4200/266792	|	loss: 0.97704	|	0.00001000
+epoch:  1/4	|	batch: 4400/266792	|	loss: 0.98976	|	0.00085150
+epoch:  1/4	|	batch: 4600/266792	|	loss: 1.11376	|	0.00065350
+epoch:  1/4	|	batch: 4800/266792	|	loss: 0.99833	|	0.00045550
+epoch:  1/4	|	batch: 5000/266792	|	loss: 0.98546	|	0.00025750
+ >> epoch:  1	|	total_batch: 5000	|	eval_loss: 0.97253990
+epoch:  1/4	|	batch: 5200/266792	|	loss: 0.97667	|	0.00005950
+epoch:  1/4	|	batch: 5400/266792	|	loss: 1.49502	|	0.00090100
+epoch:  1/4	|	batch: 5600/266792	|	loss: 0.98798	|	0.00070300
+epoch:  1/4	|	batch: 5800/266792	|	loss: 0.96968	|	0.00050500
+epoch:  1/4	|	batch: 6000/266792	|	loss: 0.96577	|	0.00030700
+ >> epoch:  1	|	total_batch: 6000	|	eval_loss: 0.96287626
+epoch:  1/4	|	batch: 6200/266792	|	loss: 0.96416	|	0.00010900
+epoch:  1/4	|	batch: 6400/266792	|	loss: 0.96095	|	0.00095050
+epoch:  1/4	|	batch: 6600/266792	|	loss: 0.96000	|	0.00075250
+epoch:  1/4	|	batch: 6800/266792	|	loss: 0.95768	|	0.00055450
+epoch:  1/4	|	batch: 7000/266792	|	loss: 0.96483	|	0.00035650
+ >> epoch:  1	|	total_batch: 7000	|	eval_loss: 0.95518243
+epoch:  1/4	|	batch: 7200/266792	|	loss: 0.95124	|	0.00015850
+epoch:  1/4	|	batch: 7400/266792	|	loss: 0.95106	|	0.00100000
+epoch:  1/4	|	batch: 7600/266792	|	loss: 0.95747	|	0.00080200
+epoch:  1/4	|	batch: 7800/266792	|	loss: 0.96678	|	0.00060400
+epoch:  1/4	|	batch: 8000/266792	|	loss: 0.95320	|	0.00040600
+ >> epoch:  1	|	total_batch: 8000	|	eval_loss: 0.95188975
+epoch:  1/4	|	batch: 8200/266792	|	loss: 0.95400	|	0.00020800
+epoch:  1/4	|	batch: 8400/266792	|	loss: 0.95214	|	0.00001000
+epoch:  1/4	|	batch: 8600/266792	|	loss: 0.96746	|	0.00085150
+epoch:  1/4	|	batch: 8800/266792	|	loss: 1.03796	|	0.00065350
+epoch:  1/4	|	batch: 9000/266792	|	loss: 0.98639	|	0.00045550
+ >> epoch:  1	|	total_batch: 9000	|	eval_loss: 0.98805618
+epoch:  1/4	|	batch: 9200/266792	|	loss: 0.98004	|	0.00025750
+epoch:  1/4	|	batch: 9400/266792	|	loss: 0.97076	|	0.00005950
+epoch:  1/4	|	batch: 9600/266792	|	loss: 1.03041	|	0.00090100
+epoch:  1/4	|	batch: 9800/266792	|	loss: 1.30479	|	0.00070300
