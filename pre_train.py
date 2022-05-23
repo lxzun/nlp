@@ -10,7 +10,6 @@ from dataset import Mydataset, Mydataset_spm
 from models.Mymodel import MymodelForPretrain
 from torch.utils.data.sampler import SubsetRandomSampler
 from transformers import AdamW
-from torchsummary import summary
 
 def train(model, trainloader, criterion, optimizer, scheduler, epoch_idx, testloader, args, device):
     global best_loss
@@ -172,11 +171,6 @@ if __name__ == '__main__':
                                pad_ids=dataset.pad_ids,
                                attd_mode=args.attd_mode,
                                drop_rate=args.drop_rate)
-    if device == 'cuda':
-        model.to(device)
-        summary(model, input_size=(512,), dtype=torch.cuda.LongTensor)
-    else:
-        summary(model, input_size=(512,), dtype=torch.LongTensor)
         
 
     if args.multi_gpu and torch.cuda.device_count() > 1:
