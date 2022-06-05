@@ -7,10 +7,8 @@ import torch
 import sentencepiece as spm
 
 class Mydataset(nn.Module):
-    def __init__(self, task='pretrain', max_length=512, split='train', seq_mask=False, return_attention_mask=False, return_token_type_ids=False):
+    def __init__(self, task='pretrain', max_length=512, split='train', seq_mask=False):
         super(Mydataset, self).__init__()
-        self.return_attention_maks = return_attention_mask
-        self.return_token_type_ids = return_token_type_ids
         self.max_length = max_length
         self.tokenizer = AutoTokenizer.from_pretrained('bert-base-uncased')
         self.vocab_size = self.tokenizer.vocab_size
@@ -18,8 +16,6 @@ class Mydataset(nn.Module):
         self.pad_ids = self.tokenizer.pad_token_id
         self.task = task
         self.seq_mask = seq_mask
-        self.return_attention_maks = return_attention_mask
-        self.return_token_type_ids = return_token_type_ids
         if task == 'pretrain':
             self.data = load_dataset('openwebtext', split='train')
             self.length = self.data.num_rows
@@ -34,10 +30,8 @@ class Mydataset(nn.Module):
     def __getitem__(self, item):
         if self.task == 'pretrain':
             data = self.tokenizer(self.data[item]["text"], return_tensors='pt', truncation=True, padding='max_length',
-                                  max_length=self.max_length,
-                                  return_attention_mask=self.return_attention_maks,
-                                  return_token_type_ids=self.return_token_type_ids)
-            label = data[:, 1:].flatten()
+                                  max_length=self.max_length, return_attention_mask=False, return_token_type_ids=False)
+            label = data['input_ids'].flatten()
             data = label.clone()
             indices = list(range(len(data)))
             k = int(len(data) * 0.15)
@@ -49,14 +43,10 @@ class Mydataset(nn.Module):
             return data, label
 
         if self.task == 'qqp':
-            # data = self.tokenizer(self.data[item]["question1"], text_pair=self.data[item]["question2"],
-            #                       truncation=True, max_length=self.max_length,
-            #                       return_tensors='pt', return_attention_mask=self.return_attention_maks,
-            #                       return_token_type_ids=self.return_token_type_ids)['input_ids'][:, 1:].flatten()
             data = self.tokenizer(self.data[item]["question1"], text_pair=self.data[item]["question2"],
-                                  truncation=True, max_length=self.max_length, padding='max_length',
-                                  return_tensors='pt', return_attention_mask=self.return_attention_maks,
-                                  return_token_type_ids=self.return_token_type_ids)
+                                  truncation=True, max_length=self.max_length,
+                                  return_tensors='pt', return_attention_mask=False,
+                                  return_token_type_ids=False)['input_ids'].flatten()
             label = self.data[item]['label']
             return data, label
 
@@ -87,18 +77,24 @@ class Mydataset_spm(nn.Module):
         if self.task == 'pretrain':
             data = self.tokenizer.encode_as_ids(self.data[item]['text'])
             if len(data) > self.max_length:
-                data = data[:self.max_length]
+                indices = list(range(len(data)))
+                s = rd.sample(indices[:-self.max_length], k=1)[0]
+                data = data[s:s+self.max_length]
             else:
                 data = data + [self.pad_ids] * (self.max_length - len(data))
             data = np.array(data, dtype=int)
             label = np.array(data, dtype=int)
-            indices = list(range(len(data)))
-            k = int(len(data) * 0.15)
+            indices_a = list(range(len(data)))
+            k = int(len(data) * 0.25)
             if self.seq_mask:
-                s = rd.sample(indices[:-k], k=1)[0]
-                indices = list(range(s, s+k))
+                indices = set()
+                while len(indices) < k:
+                    i = np.random.randint(1, 10)
+                    s = rd.sample(indices_a[:-i], k=1)[0]
+                    indices.update(list(range(s, s+i)))
+
             else: indices = rd.sample(indices, k=k)
-            data[indices] = self.mask_ids
+            data[list(indices)] = self.mask_ids
             return torch.LongTensor(data), torch.LongTensor(label)
 
         elif self.task == 'qqp':

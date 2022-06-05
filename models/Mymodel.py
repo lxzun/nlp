@@ -1,19 +1,23 @@
 import torch
 from torch import nn
-
+import shutil
+import os
 
 class Myattention(nn.Module):
     def __init__(self, m, out_dim, hidden_size, k=3, drop_rate=0):
         super(Myattention, self).__init__()
         assert (k % 2 != 0), 'K must be Odd'
+        self.hidden = hidden_size
         self.q = nn.Conv2d(m, out_dim, k, padding=(k-1)//2)
         self.k = nn.Conv2d(m, out_dim, k, padding=(k-1)//2)
         self.v = nn.Conv2d(m, out_dim, k, padding=(k-1)//2)
         self.softmax = nn.Softmax(dim=0)
         self.gelu = nn.GELU()
-        self.layernorm = nn.LayerNorm(out_dim * hidden_size // m)
+        self.layernorm = nn.LayerNorm(hidden_size // m)
         self.dropout = nn.Dropout(drop_rate)
-        self.conv = nn.Conv2d(out_dim, m, 3, padding=1)
+        self.conv1= nn.Conv2d(out_dim, m, 1)
+        # self.conv2 = nn.Conv2d(m, hidden_size, 1)
+        # self.conv3 = nn.Conv2d(hidden_size, m, 1)
 
     def forward(self, x):
         input_shape = x.size() # b x m x seq_length x n
@@ -34,14 +38,15 @@ class Myattention(nn.Module):
         v = torch.transpose(v, 1, 2).contiguous()
         v = v.view(-1, seq_length, out_dim * n)
 
-        score = self.softmax(torch.matmul(q, k))                     # b x seq_length x seq_length
+        score = self.softmax(torch.matmul(q, k)/(self.hidden**(1/2)))         # b x seq_length x seq_length
         out = torch.matmul(score, v)                                 # b x seq_length x out_dim*n
-        out = self.layernorm(out)
         out = out.view(-1, seq_length, out_dim, n)                   # b x seq_length x out_dim x n
         out = torch.transpose(out, 1, 2).contiguous()                # b x out_dim x seq_length x n
-        out = self.dropout(self.gelu(self.conv(out)))                # b x m x seq_length x n
-
+        out = self.conv1(out)                                        # b x m x seq_length x n
+        out = self.layernorm(out)
+        
         out = out + x
+
 
         return out
 
@@ -49,53 +54,62 @@ class Myattention2(nn.Module):
     def __init__(self, m, out_dim, hidden_size, k=3, drop_rate=0):
         super(Myattention2, self).__init__()
         assert (k % 2 != 0), 'K must be Odd'
-        self.q = nn.Conv2d(m, out_dim, k, padding=(k-1)//2)
-        self.k = nn.Conv2d(m, out_dim, k, padding=(k-1)//2)
-        self.v = nn.Conv2d(m, out_dim, k, padding=(k-1)//2)
+        self.q = nn.Conv2d(m, out_dim, kernel_size=(k, hidden_size // m), padding=((k-1)//2, 0))
+        self.k = nn.Conv2d(m, out_dim, kernel_size=(k, hidden_size // m), padding=((k-1)//2, 0))
+        self.v = nn.Conv2d(m, out_dim, kernel_size=(k, hidden_size // m), padding=((k-1)//2, 0))
         self.softmax = nn.Softmax(dim=0)
         self.gelu = nn.GELU()
-        self.layernorm = nn.LayerNorm(out_dim * hidden_size // m)
+        self.layernorm = nn.LayerNorm(hidden_size // m)
         self.dropout = nn.Dropout(drop_rate)
-        self.conv = nn.Conv2d(out_dim, m, 3, padding=1)
-        self.linear = nn.Linear(hidden_size , hidden_size)
+        self.conv1_1= nn.Conv2d(1, hidden_size // m, 1)
+        self.conv1_2= nn.Conv2d(out_dim, m, 1)
+        self.conv2 = nn.Conv2d(m, hidden_size, 1)
+        self.conv3 = nn.Conv2d(hidden_size, m, 1)
 
     def forward(self, x):
         input_shape = x.size() # b x m x seq_length x n
         m, seq_length, n = input_shape[1:]
 
-        q = self.dropout(self.gelu(self.q(x)))          # b x out_dim x seq_length x n
+        q = self.dropout(self.gelu(self.q(x)))          # b x out_dim x seq_length x 1
         k = self.dropout(self.gelu(self.k(x)))
         v = self.dropout(self.gelu(self.v(x)))
 
         out_dim = q.size()[1]
 
-        q = torch.transpose(q, 1, 2).contiguous()                    # b x seq_length x out_dim x n
-        q = q.view(-1, seq_length, out_dim * n)                      # b x seq_length x out_dim*n
+        q = torch.transpose(q, 1, 2).contiguous()                    # b x seq_length x out_dim x 1
+        q = q.view(-1, seq_length, out_dim)                      # b x seq_length x out_dim*1
 
-        k = torch.transpose(k, 2, 3).contiguous()                    # b x out_dim x n x seq_length
-        k = k.view(-1, out_dim * n, seq_length)                      # b x out_dim*n x seq_length
+        k = torch.transpose(k, 2, 3).contiguous()                    # b x out_dim x 1 x seq_length
+        k = k.view(-1, out_dim, seq_length)                      # b x out_dim*1 x seq_length
 
         v = torch.transpose(v, 1, 2).contiguous()
-        v = v.view(-1, seq_length, out_dim * n)
+        v = v.view(-1, seq_length, out_dim)
 
         score = self.softmax(torch.matmul(q, k))                     # b x seq_length x seq_length
-        out = torch.matmul(score, v)                                 # b x seq_length x out_dim*n
-        out = self.layernorm(out)
-        out = out.view(-1, seq_length, out_dim, n)                   # b x seq_length x out_dim x n
-        out = torch.transpose(out, 1, 2).contiguous()                # b x out_dim x seq_length x n
-        out = self.dropout(self.gelu(self.conv(out)))                # b x m x seq_length x n
-        out = torch.transpose(out, 1, 2).contiguous()                # b x seq_length x m x n
-        out = self.linear(out.view(-1, seq_length, m * n))           # b x seq_length x hidden_size
-        out = self.dropout(self.gelu(out))
-        out = out.view(-1, seq_length, m, n)                         # b x seq_length x m x n
-        out = torch.transpose(out, 1, 2).contiguous()                # b x m x seq_length x n
+        out = torch.matmul(score, v)                                 # b x seq_length x out_dim*1
+        out = out.view(-1, 1, seq_length, out_dim)                   # b x 1 x seq_length x out_dim
+        out = self.conv1_1(out)                                      # b x n x seq_length x out_dim
+        out = torch.transpose(out, 1, 3).contiguous()                # b x out_dim x seq_length x n
+        
+        out = self.conv1_2(out)                                        # b x m x seq_length x n
 
+        
         out = out + x
+        out1 = self.layernorm(out)
+
+
+        out = self.conv2(out1)                                       # b x hidden_size x seq_length x n
+        out = self.dropout(self.gelu(self.conv3(out)))               # b x m x seq_length x n
+        out = self.layernorm(out)
+
+        out = out + out1
+
 
         return out
 
+
 class Myattention3(nn.Module):
-    def __init__(self, m, out_dim, hidden_size, k=3, drop_rate=0):
+    def __init__(self, m, out_dim, hidden_size, intermediate_size, k=3, drop_rate=0):
         super(Myattention3, self).__init__()
         assert (k % 2 != 0), 'K must be Odd'
         self.q = nn.Conv2d(m, out_dim, k, padding=(k-1)//2)
@@ -104,21 +118,18 @@ class Myattention3(nn.Module):
         self.softmax = nn.Softmax(dim=0)
         self.gelu = nn.GELU()
         self.layernorm = nn.LayerNorm(out_dim * hidden_size // m)
+        self.layernorm2 = nn.LayerNorm(hidden_size)
         self.dropout = nn.Dropout(drop_rate)
-        self.conv = nn.Conv2d(out_dim, m, 3, padding=1)
-        self.linear = nn.Linear(hidden_size , hidden_size)
-        
-        self.lq = nn.Linear(hidden_size, hidden_size)
-        self.lk = nn.Linear(hidden_size, hidden_size)
-        self.lv = nn.Linear(hidden_size, hidden_size)
-        
-        self.llayernorm = nn.LayerNorm(hidden_size)
+        self.conv = nn.Conv2d(out_dim, m, 1)
+        self.linear1 = nn.Linear(hidden_size, intermediate_size)
+        self.linear2 = nn.Linear(intermediate_size, hidden_size)
 
-    def forward(self, x, y):
+
+    def forward(self, x):
         input_shape = x.size() # b x m x seq_length x n
         m, seq_length, n = input_shape[1:]
 
-        q = self.dropout(self.gelu(self.q(x)))          # b x out_dim x seq_length x n
+        q = self.dropout(self.gelu(self.q(x)))                       # b x out_dim x seq_length x n
         k = self.dropout(self.gelu(self.k(x)))
         v = self.dropout(self.gelu(self.v(x)))
 
@@ -135,13 +146,23 @@ class Myattention3(nn.Module):
 
         score = self.softmax(torch.matmul(q, k))                     # b x seq_length x seq_length
         out = torch.matmul(score, v)                                 # b x seq_length x out_dim*n
+
         out = self.layernorm(out)
+
         out = out.view(-1, seq_length, out_dim, n)                   # b x seq_length x out_dim x n
         out = torch.transpose(out, 1, 2).contiguous()                # b x out_dim x seq_length x n
         out = self.dropout(self.gelu(self.conv(out)))                # b x m x seq_length x n
         out = torch.transpose(out, 1, 2).contiguous()                # b x seq_length x m x n
-        out = self.linear(out.view(-1, seq_length, m * n))           # b x seq_length x hidden_size
+
+        out3 = out.view(-1, seq_length, m * n)                       # b x seq_length x hidden_size
+
+        out = self.linear1(out3)                                     # b x seq_length x intermediate_size
         out = self.dropout(self.gelu(out))
+        out = self.linear2(out)                                      # b x seq_length x hidden_size
+
+        out = out + out3
+        out = self.layernorm2(out)
+
         out = out.view(-1, seq_length, m, n)                         # b x seq_length x m x n
         out = torch.transpose(out, 1, 2).contiguous()                # b x m x seq_length x n
 
@@ -164,7 +185,7 @@ class MyEmbedding(nn.Module):
         return x
 
 class Mymodel(nn.Module):
-    def __init__(self, vocab_size, embedding_size, hidden_size, m, out_dim, n_layer, pad_ids, k=3, attd_mode=1, drop_rate=0):
+    def __init__(self, vocab_size, embedding_size, hidden_size, m, out_dim, n_layer, pad_ids, k=3, intermediate_size=3072, attd_mode=1, drop_rate=0):
         super(Mymodel, self).__init__()
         assert (hidden_size % m == 0), f"hidden_size: {hidden_size}, m: {m} ==> Must be hidden_size % m == 0!"
         self.m = m
@@ -174,7 +195,7 @@ class Mymodel(nn.Module):
         elif attd_mode == 2:
             self.model = nn.ModuleList([Myattention2(m, out_dim, hidden_size, k, drop_rate) for _ in range(n_layer)])
         elif attd_mode == 3:
-            self.model = nn.ModuleList([Myattention3(m, out_dim, hidden_size, k, drop_rate) for _ in range(n_layer)])
+            self.model = nn.ModuleList([Myattention3(m, out_dim, hidden_size, intermediate_size, k, drop_rate) for _ in range(n_layer)])
 
     def forward(self, x):
         # b, seq_length
@@ -194,20 +215,23 @@ class Mymodel(nn.Module):
 
         return (x,) + all_outputs
 
-    def save(self, vocab_path=None, model_path=None):
-        if vocab_path: torch.save(self.embed.state_dict(), vocab_path)
-        if model_path: torch.save(self.model.state_dict(), model_path)
-
-    def load(self, vocab_path=None, model_path=None):
-        if vocab_path: self.embed.load_state_dict(torch.load(vocab_path))
-        if model_path: self.model.load_state_dict(torch.load(model_path))
 
 class MymodelForPretrain(nn.Module):
-    def __init__(self, vocab_size, embedding_size, hidden_size, m, out_dim, n_layer, pad_ids, k=3, attd_mode=1, drop_rate=0, freeze=False):
+    def __init__(self, vocab_size, embedding_size, hidden_size, m, out_dim, n_layer, pad_ids, k=3, attd_mode=1, intermediate_size=3072, drop_rate=0):
         super(MymodelForPretrain, self).__init__()
         self.vocab_size = vocab_size
         self.hidden_size = hidden_size
-        self.model = Mymodel(vocab_size, embedding_size, hidden_size, m, out_dim, n_layer, pad_ids, k, attd_mode, drop_rate)
+        self.model = Mymodel(vocab_size=vocab_size,
+                             embedding_size=embedding_size, 
+                             hidden_size=hidden_size, 
+                             m=m, 
+                             out_dim=out_dim, 
+                             n_layer=n_layer, 
+                             pad_ids=pad_ids, 
+                             k=k, 
+                             intermediate_size=intermediate_size, 
+                             attd_mode=attd_mode, 
+                             drop_rate=drop_rate)
         self.linear = nn.Linear(hidden_size, embedding_size)
         self.linear2 = nn.Linear(embedding_size, vocab_size)
 
@@ -222,15 +246,23 @@ class MymodelForPretrain(nn.Module):
 
         out = self.linear(hidden)                                # b x seq_length x embedding_size
         out = self.linear2(out)                                  # b x seq_length x vocab_size
-        out = out.view(-1, self.vocab_size)                      # b*seq_length x vocab_size
+        # out = out.view(-1, self.vocab_size)                      # b*seq_length x vocab_size
 
         return out
+    
+    def model_save(self, epoch, optimizer, scheduler, is_best, args):
+        self.save_checkpoint({
+            'epoch': epoch + 1,
+            'state_dict': self.model.state_dict(),
+            'optimizer': optimizer.state_dict(),
+            'scheduler': scheduler.state_dict()
+        }, is_best, args)
 
-    def save(self, vocab_path=None, model_path=None):
-        self.model.save(vocab_path, model_path)
-
-    def load(self, vocab_path=None, model_path=None):
-        self.model.load(vocab_path, model_path)
+    def save_checkpoint(self, state, is_best, args, filename='checkpoint.pth.tar'):
+        filename = os.path.join(args.log_dir, filename)
+        torch.save(state, filename)
+        if is_best:
+            shutil.copyfile(filename, os.path.join(args.log_dir, 'model_best.pth.tar'))
 
 
 class MymodelForSequenceClassification(nn.Module):
@@ -245,6 +277,10 @@ class MymodelForSequenceClassification(nn.Module):
                 param.requires_grad = False
         
         self.linear = nn.Linear(hidden_size, num_classes)
+    
+    def freezing(self, freeze):
+        pass
+
 
     def forward(self, x):
         # b x seq_length
@@ -255,13 +291,7 @@ class MymodelForSequenceClassification(nn.Module):
         hidden = torch.transpose(hidden, 1, 2).contiguous()      # b x seq_length x m x n
         hidden = hidden.view(-1, x.size()[1], self.hidden_size)  # b x seq_length x hidden_size
         hidden = torch.mean(hidden, dim=1)                       # b x hidden_size
-        # hidden = hidden[:,0,:]                                   # b x hidden_size
+        # hidden = hidden[:,0,:]                                 # b x hidden_size
         out = self.linear(hidden)                                # b x num_classes
 
         return out
-
-    def save(self, vocab_path=None, model_path=None):
-        self.model.save(vocab_path, model_path)
-
-    def load(self, vocab_path=None, model_path=None):
-        self.model.load(vocab_path, model_path)

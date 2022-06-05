@@ -48,7 +48,7 @@ parser.add_argument('--dist-backend', default='nccl', type=str,
 
 
 
-parser.add_argument('--seed', default=42, type=int,
+parser.add_argument('--seed', default=None, type=int,
                     help='seed for initializing training. ')
 parser.add_argument('--gpu', default=None, type=int,
                     help='GPU id to use.')
@@ -60,29 +60,29 @@ parser.add_argument('--multiprocessing-distributed', default=True, action='store
                          'fastest way to use PyTorch for either single node or '
                          'multi node data parallel training')
 
-parser.add_argument('--epochs', default=1, type=int, metavar='N',
+parser.add_argument('--epochs', default=10, type=int, metavar='N',
                     help='number of total epochs to run')
 parser.add_argument('--start-epoch', default=0, type=int, metavar='N',
                     help='manual epoch number (useful on restarts)')
-parser.add_argument('-b', '--batch-size', default=8*3, type=int,
+parser.add_argument('-b', '--batch-size', default=1*3, type=int,
                     metavar='N',
                     help='mini-batch size (default: 256), this is the total '
                          'batch size of all GPUs on the current node when ' 
                          'using Data Parallel or Distributed Data Parallel')
-parser.add_argument('--lr', '--learning-rate', default=1e-03, type=float,
+parser.add_argument('--lr', '--learning-rate', default=3e-04, type=float,
                     metavar='LR', help='initial learning rate', dest='lr')
 parser.add_argument('-p', '--print-freq', default=100, type=int,
                     metavar='N', help='print frequency (default: 10)')
-parser.add_argument('--drop_rate', type=float, default=0.1)
+parser.add_argument('--drop_rate', type=float, default=0.)
 
-parser.add_argument('--new_vocab', type=int, default=0)
-parser.add_argument('--embedding_size', type=int, default=32)
-parser.add_argument('--hidden_size', type=int, default=128)
+parser.add_argument('--new_vocab', type=int, default=1)
+parser.add_argument('--embedding_size', type=int, default=16)
+parser.add_argument('--hidden_size', type=int, default=32)
 parser.add_argument('--intermediate_size', type=int, default=3072)
-parser.add_argument('--m', type=int, default=4)
-parser.add_argument('--out_dim', type=int, default=32)
+parser.add_argument('--m', type=int, default=2)
+parser.add_argument('--out_dim', type=int, default=128)
 parser.add_argument('--k', type=int, default=3)
-parser.add_argument('--n_layer', type=int, default=12)
+parser.add_argument('--n_layer', type=int, default=4)
 parser.add_argument('--attd_mode', type=int, default=1)
 parser.add_argument('--max_seq_length', type=int, default=512*2)
 parser.add_argument('--task', type=str, default='pretrain')
@@ -105,10 +105,9 @@ def main():
     args.log_file = log_file
     args.log_dir = log_dir
 
-    if args.attd_mode == 1:
-        log(f'model size: {((args.new_vocab*1000+6)*args.embedding_size+args.embedding_size*args.hidden_size+args.hidden_size+(args.k**2 * args.m * args.out_dim * 3 + args.out_dim * 3 + args.m * args.out_dim + args.m)*args.n_layer)/1000000:.2f} M', log_file)
-        log(f'flops: {(args.embedding_size*args.hidden_size+(args.n_layer*(args.out_dim*args.max_seq_length*args.hidden_size*args.k*args.k*3+args.max_seq_length*(args.hidden_size//args.m)*2+args.out_dim*args.max_seq_length*args.hidden_size)))/1000000000:.2f} B', log_file)
-    
+    # elif args.attd_mode == 2:
+    #     log()
+
     if args.seed is not None:
         random.seed(args.seed)
         torch.manual_seed(args.seed)
@@ -265,6 +264,7 @@ def main_worker(gpu, ngpus_per_node, args):
 
         if args.multiprocessing_distributed and args.rank % args.ngpus_per_node == 0:
             model.module.model_save(epoch, optimizer, scheduler, False, args)
+
 
 def train(train_loader, model, criterion, optimizer, epoch, scheduler, args):
     batch_time = AverageMeter('Time', ':6.3f')

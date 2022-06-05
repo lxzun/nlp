@@ -1,7 +1,7 @@
 import sentencepiece as spm
 
 corpus = "openwebtext.txt"
-prefix = "vocab_20"
+prefix = "../vocab/vocab_20"
 vocab_size = 20000
 spm.SentencePieceTrainer.Train(f"--input={corpus} --model_prefix={prefix} --vocab_size={vocab_size + 6}" +
                                 " --model_type=bpe" +
