@@ -1,2 +1,0 @@
-model size: 0.05 M
-flops: 1.41 B

@@ -33,14 +33,21 @@ class Mydataset(nn.Module):
                                   max_length=self.max_length, return_attention_mask=False, return_token_type_ids=False)
             label = data['input_ids'].flatten()
             data = label.clone()
-            indices = list(range(len(data)))
+            indices_a = list(range(len(data)))
             k = int(len(data) * 0.15)
             if self.seq_mask:
-                s = rd.sample(indices[:-k], k=1)[0]
-                indices = list(range(s, s+k))
-            else: indices = rd.sample(indices, k=k)
+                indices = set()
+                while len(indices) < k:
+                    i = np.random.randint(1, 5)
+                    s = rd.sample(indices_a[:-i], k=1)[0]
+                    indices.update(list(range(s, s+i)))
+
+            else: indices = rd.sample(indices_a, k=k)
+            indices = list(indices)[:k]
             data[indices] = self.mask_ids
-            return data, label
+            mask = torch.zeros_like(data, dtype=torch.bool)
+            mask[indices] = True
+            return data, label, mask
 
         if self.task == 'qqp':
             data = self.tokenizer(self.data[item]["question1"], text_pair=self.data[item]["question2"],

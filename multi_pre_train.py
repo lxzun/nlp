@@ -18,7 +18,7 @@ import torch.multiprocessing as mp
 import torch.utils.data
 import torch.utils.data.distributed
 from dataset import Mydataset, Mydataset_spm
-from models.Mymodel import MymodelForPretrain
+from models.Mymodel import MymodelForPretrain, MymodelForPretrain2
 from sklearn.metrics import f1_score
 
 from torch.utils.data.sampler import SubsetRandomSampler
@@ -60,11 +60,11 @@ parser.add_argument('--multiprocessing-distributed', default=True, action='store
                          'fastest way to use PyTorch for either single node or '
                          'multi node data parallel training')
 
-parser.add_argument('--epochs', default=1, type=int, metavar='N',
+parser.add_argument('--epochs', default=3, type=int, metavar='N',
                     help='number of total epochs to run')
 parser.add_argument('--start-epoch', default=0, type=int, metavar='N',
                     help='manual epoch number (useful on restarts)')
-parser.add_argument('-b', '--batch-size', default=8*3, type=int,
+parser.add_argument('-b', '--batch-size', default=46*3, type=int,
                     metavar='N',
                     help='mini-batch size (default: 256), this is the total '
                          'batch size of all GPUs on the current node when ' 
@@ -75,16 +75,16 @@ parser.add_argument('-p', '--print-freq', default=100, type=int,
                     metavar='N', help='print frequency (default: 10)')
 parser.add_argument('--drop_rate', type=float, default=0.1)
 
+parser.add_argument('--mode', type=int, default=1)
 parser.add_argument('--new_vocab', type=int, default=0)
-parser.add_argument('--embedding_size', type=int, default=32)
-parser.add_argument('--hidden_size', type=int, default=128)
-parser.add_argument('--intermediate_size', type=int, default=3072)
-parser.add_argument('--m', type=int, default=4)
-parser.add_argument('--out_dim', type=int, default=32)
+parser.add_argument('--embedding_size', type=int, default=16)
+parser.add_argument('--hidden_size', type=int, default=288)
+parser.add_argument('--m', type=int, default=12)
+parser.add_argument('--out_dim', type=int, default=12)
 parser.add_argument('--k', type=int, default=3)
-parser.add_argument('--n_layer', type=int, default=12)
-parser.add_argument('--attd_mode', type=int, default=1)
-parser.add_argument('--max_seq_length', type=int, default=512*2)
+parser.add_argument('--n_layer', type=int, default=4)
+parser.add_argument('--attd_mode', type=int, default=2)
+parser.add_argument('--max_seq_length', type=int, default=512)
 parser.add_argument('--task', type=str, default='pretrain')
 
 parser.add_argument('--use_cuda', type=str, default='cuda')
@@ -179,15 +179,24 @@ def main_worker(gpu, ngpus_per_node, args):
 
 
     # create model
-    model = MymodelForPretrain(vocab_size=dataset.vocab_size,
-                               embedding_size=args.embedding_size,
-                               hidden_size=args.hidden_size,
-                               m=args.m, out_dim=args.out_dim,
-                               n_layer=args.n_layer,
-                               pad_ids=dataset.pad_ids,
-                               intermediate_size=args.intermediate_size,
-                               attd_mode=args.attd_mode,
-                               drop_rate=args.drop_rate)
+    if args.mode == 1:
+        model = MymodelForPretrain(vocab_size=dataset.vocab_size,
+                                embedding_size=args.embedding_size,
+                                hidden_size=args.hidden_size,
+                                m=args.m, out_dim=args.out_dim,
+                                n_layer=args.n_layer,
+                                pad_ids=dataset.pad_ids,
+                                attd_mode=args.attd_mode,
+                                drop_rate=args.drop_rate)
+    elif args.mode == 2:
+        model = MymodelForPretrain2(vocab_size=dataset.vocab_size,
+                                embedding_size=args.embedding_size,
+                                hidden_size=args.hidden_size,
+                                m=args.m, out_dim=args.out_dim,
+                                n_layer=args.n_layer,
+                                pad_ids=dataset.pad_ids,
+                                attd_mode=args.attd_mode,
+                                drop_rate=args.drop_rate)
 
     if not torch.cuda.is_available() or args.cpu:
         print('using CPU, this will be slow')
@@ -203,12 +212,18 @@ def main_worker(gpu, ngpus_per_node, args):
             # ourselves based on the total number of GPUs of the current node.
             args.batch_size = int(args.batch_size / ngpus_per_node)
             args.workers = int((args.workers + ngpus_per_node - 1) / ngpus_per_node)
-            model = torch.nn.parallel.DistributedDataParallel(model, device_ids=[args.gpu])
+            if args.mode == 1:
+                model = torch.nn.parallel.DistributedDataParallel(model, device_ids=[args.gpu])
+            elif args.mode == 2:
+                model = torch.nn.parallel.DistributedDataParallel(model, device_ids=[args.gpu], find_unused_parameters=True)
         else:
             model.cuda()
             # DistributedDataParallel will divide and allocate batch_size to all
             # available GPUs if device_ids are not set
-            model = torch.nn.parallel.DistributedDataParallel(model)
+            if args.mode == 1:
+                model = torch.nn.parallel.DistributedDataParallel(model)
+            elif args.mode == 2:
+                model = torch.nn.parallel.DistributedDataParallel(model, find_unused_parameters=True)
 
     elif args.gpu is not None:
         torch.cuda.set_device(args.gpu)
@@ -218,7 +233,8 @@ def main_worker(gpu, ngpus_per_node, args):
         model = torch.nn.DataParallel(model).cuda()
 
     # define loss function (criterion), optimizer, and learning rate scheduler
-    criterion = nn.CrossEntropyLoss().cuda(args.gpu)
+    criterion1 = nn.CrossEntropyLoss().cuda(args.gpu)
+    criterion2 = nn.MSELoss().cuda(args.gpu)
 
     optimizer = torch.optim.AdamW(model.parameters(), args.lr, amsgrad=True)
 
@@ -256,7 +272,7 @@ def main_worker(gpu, ngpus_per_node, args):
             train_sampler.set_epoch(epoch)
 
         # train for one epoch
-        train(train_loader, model, criterion, optimizer, epoch, scheduler, args)
+        train(train_loader, model, criterion1, criterion2, optimizer, epoch, scheduler, args)
 
         # remember best acc@1 and save checkpoint
 
@@ -266,7 +282,7 @@ def main_worker(gpu, ngpus_per_node, args):
         if args.multiprocessing_distributed and args.rank % args.ngpus_per_node == 0:
             model.module.model_save(epoch, optimizer, scheduler, False, args)
 
-def train(train_loader, model, criterion, optimizer, epoch, scheduler, args):
+def train(train_loader, model, criterion1, criterion2, optimizer, epoch, scheduler, args):
     batch_time = AverageMeter('Time', ':6.3f')
     data_time = AverageMeter('Data', ':6.3f')
     losses = AverageMeter('Loss', ':.4e')
@@ -281,18 +297,32 @@ def train(train_loader, model, criterion, optimizer, epoch, scheduler, args):
     model.train()
 
     end = time.time()
-    for i, (data, target) in enumerate(train_loader, 1):
+    for i, (data, target, mask) in enumerate(train_loader, 1):
         # measure data loading time
         data_time.update(time.time() - end)
 
         if args.gpu is not None and not args.cpu:
             data = data.cuda(args.gpu, non_blocking=True)
+        if args.gpu is not None and not args.cpu:
+            mask = mask.cuda(args.gpu, non_blocking=True)
         if torch.cuda.is_available() and not args.cpu:
             target = target.cuda(args.gpu, non_blocking=True)
 
         # compute output
-        output = model(data)
-        loss = criterion(torch.transpose(output, 1, 2).contiguous(), target)
+        if args.mode == 1:
+            output = model(data)
+            if i%10 == 0:
+                loss = criterion1(torch.transpose(output, 1, 2).contiguous(), target)
+            else:
+                loss = criterion1(output[mask], target[mask])
+
+        elif args.mode ==2:
+            output, output2, output3 = model(data, target)
+            if i%10 == 0:
+                loss = criterion1(torch.transpose(output, 1, 2).contiguous(), target)
+            else:
+                loss = criterion1(output[mask], target[mask])
+                loss += criterion2(output2[mask], output3[mask])
 
         # measure accuracy and record loss
         acc1 = accuracy(output, target, topk=(1,))
@@ -314,7 +344,7 @@ def train(train_loader, model, criterion, optimizer, epoch, scheduler, args):
             progress.display(i)
         
         if i % 1000 == 0:
-            scheduler.step()
+            # scheduler.step()
 
             if not args.multiprocessing_distributed:
                 model.model_save(epoch, optimizer, scheduler, False, args)
@@ -443,7 +473,7 @@ def cal_f1(output, target):
     with torch.no_grad():
         batch_size = target.size(0)
         f1 = 0
-        for i in range(len(output)):
+        for i in range(batch_size):
             _, pred = output[i].topk(1, 1, True, True)
             pred = pred.t()
             score = f1_score(target[i].cpu(), pred.squeeze().cpu(), average='macro')
@@ -458,7 +488,7 @@ def accuracy(output, target, topk=(1,)):
         maxk = max(topk)
         batch_size = target.size(0)
         acc = [0] * len(topk)
-        for i in range(len(output)):
+        for i in range(batch_size):
             _, pred = output[i].topk(maxk, 1, True, True)
             pred = pred.t()
             correct = pred.eq(target[i].view(1, -1).expand_as(pred))
