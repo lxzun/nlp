@@ -29,6 +29,9 @@ from tensorboardX import SummaryWriter
 os.environ['MASTER_ADDR'] = 'localhost'
 os.environ['MASTER_PORT'] = '12355'
 
+# os.environ['CUDA_LAUNCH_BLOCKING'] = "1"
+# os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+
 parser = argparse.ArgumentParser(description='pre-train H&M article')
 parser.add_argument('-j', '--workers', default=5*3, type=int, metavar='N',
                     help='number of data loading workers (default: 4)')
@@ -64,7 +67,7 @@ parser.add_argument('--epochs', default=3, type=int, metavar='N',
                     help='number of total epochs to run')
 parser.add_argument('--start-epoch', default=0, type=int, metavar='N',
                     help='manual epoch number (useful on restarts)')
-parser.add_argument('-b', '--batch-size', default=46*3, type=int,
+parser.add_argument('-b', '--batch-size', default=110*3, type=int,
                     metavar='N',
                     help='mini-batch size (default: 256), this is the total '
                          'batch size of all GPUs on the current node when ' 
@@ -76,13 +79,13 @@ parser.add_argument('-p', '--print-freq', default=100, type=int,
 parser.add_argument('--drop_rate', type=float, default=0.1)
 
 parser.add_argument('--mode', type=int, default=1)
-parser.add_argument('--new_vocab', type=int, default=0)
-parser.add_argument('--embedding_size', type=int, default=16)
-parser.add_argument('--hidden_size', type=int, default=288)
-parser.add_argument('--m', type=int, default=12)
-parser.add_argument('--out_dim', type=int, default=12)
+parser.add_argument('--new_vocab', type=int, default=1)
+parser.add_argument('--embedding_size', type=int, default=128)
+parser.add_argument('--hidden_size', type=int, default=256)
+parser.add_argument('--m', type=int, default=8)
+parser.add_argument('--out_dim', type=int, default=8)
 parser.add_argument('--k', type=int, default=3)
-parser.add_argument('--n_layer', type=int, default=4)
+parser.add_argument('--n_layer', type=int, default=12)
 parser.add_argument('--attd_mode', type=int, default=2)
 parser.add_argument('--max_seq_length', type=int, default=512)
 parser.add_argument('--task', type=str, default='pretrain')
@@ -200,6 +203,7 @@ def main_worker(gpu, ngpus_per_node, args):
 
     if not torch.cuda.is_available() or args.cpu:
         print('using CPU, this will be slow')
+
     elif args.distributed:
         # For multiprocessing distributed, DistributedDataParallel constructor
         # should always set the single device scope, otherwise,
@@ -311,7 +315,7 @@ def train(train_loader, model, criterion1, criterion2, optimizer, epoch, schedul
         # compute output
         if args.mode == 1:
             output = model(data)
-            if i%10 == 0:
+            if i%10 == 0 and i < -1:
                 loss = criterion1(torch.transpose(output, 1, 2).contiguous(), target)
             else:
                 loss = criterion1(output[mask], target[mask])

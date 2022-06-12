@@ -18,8 +18,9 @@ import torch.multiprocessing as mp
 import torch.utils.data
 import torch.utils.data.distributed
 from dataset import Mydataset, Mydataset_spm
-from models.Mymodel import MymodelForPretrain
-from sklearn.metrics import f1_score
+from models.Mymodel import MymodelForSequenceClassification 
+from sklearn.metrics import f1_score, matthews_corrcoef
+from scipy.stats import pearsonr, spearmanr
 
 from torch.utils.data.sampler import SubsetRandomSampler
 from datetime import datetime
@@ -28,6 +29,9 @@ from tensorboardX import SummaryWriter
 
 os.environ['MASTER_ADDR'] = 'localhost'
 os.environ['MASTER_PORT'] = '12355'
+
+# os.environ['CUDA_LAUNCH_BLOCKING'] = "1"
+# os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
 parser = argparse.ArgumentParser(description='pre-train H&M article')
 parser.add_argument('-j', '--workers', default=5*3, type=int, metavar='N',
@@ -48,7 +52,7 @@ parser.add_argument('--dist-backend', default='nccl', type=str,
 
 
 
-parser.add_argument('--seed', default=None, type=int,
+parser.add_argument('--seed', default=42, type=int,
                     help='seed for initializing training. ')
 parser.add_argument('--gpu', default=None, type=int,
                     help='GPU id to use.')
@@ -60,35 +64,37 @@ parser.add_argument('--multiprocessing-distributed', default=True, action='store
                          'fastest way to use PyTorch for either single node or '
                          'multi node data parallel training')
 
-parser.add_argument('--epochs', default=10, type=int, metavar='N',
+parser.add_argument('--epochs', default=3, type=int, metavar='N',
                     help='number of total epochs to run')
 parser.add_argument('--start-epoch', default=0, type=int, metavar='N',
                     help='manual epoch number (useful on restarts)')
-parser.add_argument('-b', '--batch-size', default=1*3, type=int,
+parser.add_argument('-b', '--batch-size', default=24*3, type=int,
                     metavar='N',
                     help='mini-batch size (default: 256), this is the total '
                          'batch size of all GPUs on the current node when ' 
                          'using Data Parallel or Distributed Data Parallel')
-parser.add_argument('--lr', '--learning-rate', default=3e-04, type=float,
+parser.add_argument('--lr', '--learning-rate', default=1e-03, type=float,
                     metavar='LR', help='initial learning rate', dest='lr')
 parser.add_argument('-p', '--print-freq', default=100, type=int,
                     metavar='N', help='print frequency (default: 10)')
-parser.add_argument('--drop_rate', type=float, default=0.)
+parser.add_argument('--drop_rate', type=float, default=0.1)
 
-parser.add_argument('--new_vocab', type=int, default=1)
-parser.add_argument('--embedding_size', type=int, default=16)
-parser.add_argument('--hidden_size', type=int, default=32)
-parser.add_argument('--intermediate_size', type=int, default=3072)
-parser.add_argument('--m', type=int, default=2)
-parser.add_argument('--out_dim', type=int, default=128)
+parser.add_argument('--new_vocab', type=int, default=0)
+parser.add_argument('--embedding_size', type=int, default=128)
+parser.add_argument('--hidden_size', type=int, default=756)
+parser.add_argument('--m', type=int, default=12)
+parser.add_argument('--out_dim', type=int, default=12)
 parser.add_argument('--k', type=int, default=3)
-parser.add_argument('--n_layer', type=int, default=4)
-parser.add_argument('--attd_mode', type=int, default=1)
-parser.add_argument('--max_seq_length', type=int, default=512*2)
+parser.add_argument('--n_layer', type=int, default=12)
+parser.add_argument('--attd_mode', type=int, default=2)
+parser.add_argument('--max_seq_length', type=int, default=512)
 parser.add_argument('--task', type=str, default='pretrain')
 
 parser.add_argument('--use_cuda', type=str, default='cuda')
 parser.add_argument('--multi_gpu', type=bool, default=True)
+
+parser.add_argument('--pre_trained_model', default='', type=str, metavar='PATH',
+                    help='path to pre-trained model checkpoint (default: none)')
 
 best_acc1 = 0
 
@@ -105,9 +111,10 @@ def main():
     args.log_file = log_file
     args.log_dir = log_dir
 
-    # elif args.attd_mode == 2:
-    #     log()
-
+    if args.attd_mode == 1:
+        log(f'model size: {((args.new_vocab*1000+6)*args.embedding_size+args.embedding_size*args.hidden_size+args.hidden_size+(args.k**2 * args.m * args.out_dim * 3 + args.out_dim * 3 + args.m * args.out_dim + args.m)*args.n_layer)/1000000:.2f} M', log_file)
+        log(f'flops: {(args.embedding_size*args.hidden_size+(args.n_layer*(args.out_dim*args.max_seq_length*args.hidden_size*args.k*args.k*3+args.max_seq_length*(args.hidden_size//args.m)*2+args.out_dim*args.max_seq_length*args.hidden_size)))/1000000000:.2f} B', log_file)
+    
     if args.seed is not None:
         random.seed(args.seed)
         torch.manual_seed(args.seed)
@@ -178,18 +185,18 @@ def main_worker(gpu, ngpus_per_node, args):
 
 
     # create model
-    model = MymodelForPretrain(vocab_size=dataset.vocab_size,
-                               embedding_size=args.embedding_size,
-                               hidden_size=args.hidden_size,
-                               m=args.m, out_dim=args.out_dim,
-                               n_layer=args.n_layer,
-                               pad_ids=dataset.pad_ids,
-                               intermediate_size=args.intermediate_size,
-                               attd_mode=args.attd_mode,
-                               drop_rate=args.drop_rate)
+    model = MymodelForSequenceClassification(vocab_size=dataset.vocab_size,
+                                            embedding_size=args.embedding_size,
+                                            hidden_size=args.hidden_size,
+                                            m=args.m, out_dim=args.out_dim,
+                                            n_layer=args.n_layer,
+                                            pad_ids=dataset.pad_ids,
+                                            attd_mode=args.attd_mode,
+                                            drop_rate=args.drop_rate)
 
     if not torch.cuda.is_available() or args.cpu:
         print('using CPU, this will be slow')
+
     elif args.distributed:
         # For multiprocessing distributed, DistributedDataParallel constructor
         # should always set the single device scope, otherwise,
@@ -202,12 +209,12 @@ def main_worker(gpu, ngpus_per_node, args):
             # ourselves based on the total number of GPUs of the current node.
             args.batch_size = int(args.batch_size / ngpus_per_node)
             args.workers = int((args.workers + ngpus_per_node - 1) / ngpus_per_node)
-            model = torch.nn.parallel.DistributedDataParallel(model, device_ids=[args.gpu])
+            model = torch.nn.parallel.DistributedDataParallel(model, device_ids=[args.gpu], find_unused_parameters=True)
         else:
             model.cuda()
             # DistributedDataParallel will divide and allocate batch_size to all
             # available GPUs if device_ids are not set
-            model = torch.nn.parallel.DistributedDataParallel(model)
+            model = torch.nn.parallel.DistributedDataParallel(model, find_unused_parameters=True)
 
     elif args.gpu is not None:
         torch.cuda.set_device(args.gpu)
@@ -217,12 +224,27 @@ def main_worker(gpu, ngpus_per_node, args):
         model = torch.nn.DataParallel(model).cuda()
 
     # define loss function (criterion), optimizer, and learning rate scheduler
-    criterion = nn.CrossEntropyLoss().cuda(args.gpu)
+    criterion1 = nn.CrossEntropyLoss().cuda(args.gpu)
 
     optimizer = torch.optim.AdamW(model.parameters(), args.lr, amsgrad=True)
 
     """Sets the learning rate to the initial LR decayed by 10 every 30 epochs"""
     scheduler = CosineAnnealingLR(optimizer=optimizer, T_max=55, eta_min=1e-6)
+
+    if args.pre_trained_model:
+        if os.path.isfile(args.pre_trained_model):
+            print("=> loading checkpoint '{}'".format(args.pre_trained_model))
+            if args.gpu is None:
+                checkpoint = torch.load(args.pre_trained_model)
+            else:
+                loc = 'cuda:{}'.format(args.gpu)
+                checkpoint = torch.load(args.pre_trained_model, map_location=loc)
+            model.load_state_dict(checkpoint['state_dict'])
+            print("=> loaded checkpoint '{}'"
+                  .format(args.pre_trained_model))
+        else:
+            print("=> no checkpoint found at '{}'".format(args.pre_trained_model))
+
 
     # optionally resume from a checkpoint
     if args.resume:
@@ -235,10 +257,10 @@ def main_worker(gpu, ngpus_per_node, args):
                 loc = 'cuda:{}'.format(args.gpu)
                 checkpoint = torch.load(args.resume, map_location=loc)
             args.start_epoch = checkpoint['epoch']
-            # best_acc1 = checkpoint['best_acc1']
-            # if args.gpu is not None:
-            #     # best_acc1 may be from a checkpoint from a different GPU
-            #     best_acc1 = best_acc1.to(args.gpu)
+            best_acc1 = checkpoint['best_acc1']
+            if args.gpu is not None:
+                # best_acc1 may be from a checkpoint from a different GPU
+                best_acc1 = best_acc1.to(args.gpu)
             model.load_state_dict(checkpoint['state_dict'])
             optimizer.load_state_dict(checkpoint['optimizer'])
             scheduler.load_state_dict(checkpoint['scheduler'])
@@ -255,7 +277,7 @@ def main_worker(gpu, ngpus_per_node, args):
             train_sampler.set_epoch(epoch)
 
         # train for one epoch
-        train(train_loader, model, criterion, optimizer, epoch, scheduler, args)
+        train(train_loader, model, criterion1, optimizer, epoch, scheduler, args)
 
         # remember best acc@1 and save checkpoint
 
@@ -265,17 +287,45 @@ def main_worker(gpu, ngpus_per_node, args):
         if args.multiprocessing_distributed and args.rank % args.ngpus_per_node == 0:
             model.module.model_save(epoch, optimizer, scheduler, False, args)
 
-
-def train(train_loader, model, criterion, optimizer, epoch, scheduler, args):
+def train(train_loader, model, criterion1, optimizer, epoch, scheduler, args):
     batch_time = AverageMeter('Time', ':6.3f')
     data_time = AverageMeter('Data', ':6.3f')
     losses = AverageMeter('Loss', ':.4e')
     top1 = AverageMeter('Acc', ':6.2f')
-    scores = AverageMeter('F1', ':6.2f')
-    progress = ProgressMeter(
-        len(train_loader),
-        [batch_time, data_time, losses, top1, scores],
-        prefix="Epoch: [{}]".format(epoch), log_file=args.log_file)
+    if args.task == 'cola':
+        scores = AverageMeter('Matthews', ':6.2f')
+        progress = ProgressMeter(
+            len(train_loader),
+            [batch_time, data_time, losses, top1, scores],
+            prefix="Epoch: [{}]".format(epoch), log_file=args.log_file)
+
+    elif args.task == 'sts-b':
+        p_scores = AverageMeter('Pearson', ':6.2f')
+        s_scores = AverageMeter('Spearman', ':6.2f')
+        progress = ProgressMeter(
+            len(train_loader),
+            [batch_time, data_time, losses, top1, p_scores, s_scores],
+            prefix="Epoch: [{}]".format(epoch), log_file=args.log_file)
+
+    elif args.task in {'qqp', 'mrpc'}:
+        scores = AverageMeter('F1', ':6.2f')
+        progress = ProgressMeter(
+            len(train_loader),
+            [batch_time, data_time, losses, top1, scores],
+            prefix="Epoch: [{}]".format(epoch), log_file=args.log_file)
+
+    elif args.task in 'mnli':
+        scores = AverageMeter('Acc_mm', ':6.2f')
+        progress = ProgressMeter(
+            len(train_loader),
+            [batch_time, data_time, losses, top1, scores],
+            prefix="Epoch: [{}]".format(epoch), log_file=args.log_file)
+            
+    else:
+        progress = ProgressMeter(
+            len(train_loader),
+            [batch_time, data_time, losses, top1],
+            prefix="Epoch: [{}]".format(epoch), log_file=args.log_file)
 
     # switch to train mode
     model.train()
@@ -292,14 +342,30 @@ def train(train_loader, model, criterion, optimizer, epoch, scheduler, args):
 
         # compute output
         output = model(data)
-        loss = criterion(torch.transpose(output, 1, 2).contiguous(), target)
+        loss = criterion1(torch.transpose(output, 1, 2).contiguous(), target)
 
         # measure accuracy and record loss
         acc1 = accuracy(output, target, topk=(1,))
-        score = cal_f1(output, target)
+
         losses.update(loss.item(), data[0].size(0))
         top1.update(acc1[0].item(), data[0].size(0))
-        scores.update(score, data[0].size(0))
+
+        if args.task == 'cola':
+            score = cal_matthews(output, target)
+            scores.update(score, data[0].size(0))
+
+        elif args.task == 'sts-b':
+            p_score = cal_pearson(output, target)
+            s_score = cal_spearman(output, target)
+            p_scores.update(p_score, data[0].size(0))
+            s_scores.update(s_score, data[0].size(0))
+
+
+        elif args.task in {'qqp', 'mrpc'}:
+            score = cal_f1(output, target)
+            scores.update(score, data[0].size(0))
+            
+
 
         # compute gradient and do SGD step
         optimizer.zero_grad()
@@ -313,8 +379,9 @@ def train(train_loader, model, criterion, optimizer, epoch, scheduler, args):
         if i % args.print_freq == 0:
             progress.display(i)
         
-        if i % 1000 == 0:
-            scheduler.step()
+        if i % 500 == 0:
+            # scheduler.step()
+            validate()
 
             if not args.multiprocessing_distributed:
                 model.model_save(epoch, optimizer, scheduler, False, args)
@@ -439,11 +506,10 @@ class ProgressMeter(object):
 
 
 def cal_f1(output, target):
-    """Computes the accuracy over the k top predictions for the specified values of k"""
     with torch.no_grad():
         batch_size = target.size(0)
         f1 = 0
-        for i in range(len(output)):
+        for i in range(batch_size):
             _, pred = output[i].topk(1, 1, True, True)
             pred = pred.t()
             score = f1_score(target[i].cpu(), pred.squeeze().cpu(), average='macro')
@@ -452,13 +518,52 @@ def cal_f1(output, target):
         return f1
 
 
+def cal_spearman(output, target):
+    with torch.no_grad():
+        batch_size = target.size(0)
+        spearman = 0
+        for i in range(batch_size):
+            _, pred = output[i].topk(1, 1, True, True)
+            pred = pred.t()
+            score, _ = spearmanr(target[i].cpu(), pred.squeeze().cpu())
+            spearman += score * (100.0 / batch_size)
+
+        return spearman
+
+
+def cal_pearson(output, target):
+    with torch.no_grad():
+        batch_size = target.size(0)
+        pearsonr = 0
+        for i in range(batch_size):
+            _, pred = output[i].topk(1, 1, True, True)
+            pred = pred.t()
+            score, _ = pearsonr(target[i].cpu(), pred.squeeze().cpu())
+            pearson += score * (100.0 / batch_size)
+
+        return pearsonr
+
+
+def cal_matthews(output, target):
+    with torch.no_grad():
+        batch_size = target.size(0)
+        matthews = 0
+        for i in range(batch_size):
+            _, pred = output[i].topk(1, 1, True, True)
+            pred = pred.t()
+            score = matthews_corrcoef(target[i].cpu(), pred.squeeze().cpu())
+            matthews += score * (100.0 / batch_size)
+
+        return matthews
+
+
 def accuracy(output, target, topk=(1,)):
     """Computes the accuracy over the k top predictions for the specified values of k"""
     with torch.no_grad():
         maxk = max(topk)
         batch_size = target.size(0)
         acc = [0] * len(topk)
-        for i in range(len(output)):
+        for i in range(batch_size):
             _, pred = output[i].topk(maxk, 1, True, True)
             pred = pred.t()
             correct = pred.eq(target[i].view(1, -1).expand_as(pred))

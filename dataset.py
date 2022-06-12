@@ -57,6 +57,39 @@ class Mydataset(nn.Module):
             label = self.data[item]['label']
             return data, label
 
+        
+        elif self.task in ['mrpc', 'rte']:
+            data = self.tokenizer(self.data[item]["sentence1"], text_pair=self.data[item]["sentence2"],
+                                   truncation=True, max_length=self.max_length,
+                                   return_tensors='pt', return_attention_mask=False,
+                                   return_token_type_ids=False)['input_ids'].flatten()
+            label = self.data[item]['label']
+            return data, label
+
+        elif self.task == 'sst2':
+            data = self.tokenizer(self.data[item]["sentence"],
+                                   truncation=True, max_length=self.max_length,
+                                   return_tensors='pt', return_attention_mask=False,
+                                   return_token_type_ids=False)['input_ids'].flatten()
+            label = self.data[item]['label']
+            return data, label
+
+        elif self.task == 'mnli':
+            data = self.tokenizer(self.data[item]["premise"], text_pair=self.data[item]["hypothesis"],
+                                   truncation=True, max_length=self.max_length,
+                                   return_tensors='pt', return_attention_mask=False,
+                                   return_token_type_ids=False)['input_ids'].flatten()
+            label = self.data[item]['label']
+            return data, label
+
+        elif self.task == 'qnli':
+            data = self.tokenizer(self.data[item]["question"], text_pair=self.data[item]["sentence"],
+                                   truncation=True, max_length=self.max_length,
+                                   return_tensors='pt', return_attention_mask=False,
+                                   return_token_type_ids=False)['input_ids'].flatten()
+            label = self.data[item]['label']
+            return data, label
+
 class Mydataset_spm(nn.Module):
     def __init__(self, task='pretrain', vocab=None, max_length=512, split='train', seq_mask=False):
         super(Mydataset_spm, self).__init__()
@@ -92,17 +125,21 @@ class Mydataset_spm(nn.Module):
             data = np.array(data, dtype=int)
             label = np.array(data, dtype=int)
             indices_a = list(range(len(data)))
-            k = int(len(data) * 0.25)
+            k = int(len(data) * 0.15)
             if self.seq_mask:
                 indices = set()
                 while len(indices) < k:
-                    i = np.random.randint(1, 10)
+                    i = np.random.randint(1, 4)
                     s = rd.sample(indices_a[:-i], k=1)[0]
                     indices.update(list(range(s, s+i)))
 
             else: indices = rd.sample(indices, k=k)
-            data[list(indices)] = self.mask_ids
-            return torch.LongTensor(data), torch.LongTensor(label)
+            indices = list(indices)[:k]
+            data[indices] = self.mask_ids
+            data = torch.LongTensor(data)
+            mask = torch.zeros_like(data, dtype=torch.bool)
+            mask[indices] = True
+            return data, torch.LongTensor(label), mask
 
         elif self.task == 'qqp':
             data1 = self.tokenizer.encode_as_ids(self.data[item]["question1"])
