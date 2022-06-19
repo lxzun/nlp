@@ -1,0 +1,600 @@
+Epoch: [0][5/9]	Time  1.652 ( 7.459)	Data  0.000 ( 5.465)	Loss 6.1652e-01 (7.1856e-01)	Acc  69.70 ( 62.67)	Matthews   0.00 ( -0.26)
+Epoch: [0][5/9]	Time  1.651 ( 7.459)	Data  0.000 ( 5.466)	Loss 6.0621e-01 (7.2598e-01)	Acc  70.91 ( 62.55)	Matthews   0.00 (  0.00)
+Epoch: [0][5/9]	Time  1.652 ( 7.461)	Data  0.000 ( 5.472)	Loss 5.8538e-01 (7.6923e-01)	Acc  73.33 ( 61.27)	Matthews   0.00 (  0.74)
+ * Time 28.946  Loss 0.648 Acc 69.271 Matthews 0.000
+ * Time 29.008  Loss 0.648 Acc 69.271 Matthews 0.000
+ * Time 29.025  Loss 0.648 Acc 69.271 Matthews 0.000
+Epoch: [1][5/9]	Time  1.649 ( 7.205)	Data  0.000 ( 5.552)	Loss 6.2032e-01 (6.4402e-01)	Acc  69.70 ( 70.00)	Matthews   0.00 (  0.00)
+Epoch: [1][5/9]	Time  1.648 ( 7.184)	Data  0.000 ( 5.522)	Loss 6.3353e-01 (6.5963e-01)	Acc  68.18 ( 69.03)	Matthews   0.00 (  0.00)
+Epoch: [1][5/9]	Time  1.646 ( 7.196)	Data  0.000 ( 5.541)	Loss 6.1638e-01 (6.2804e-01)	Acc  70.00 ( 71.21)	Matthews   0.00 (  0.00)
+ * Time 28.628  Loss 0.620 Acc 69.271 Matthews 0.000
+ * Time 28.645  Loss 0.620 Acc 69.271 Matthews 0.000
+ * Time 28.778  Loss 0.620 Acc 69.271 Matthews 0.000
+Epoch: [2][5/9]	Time  1.648 ( 7.194)	Data  0.000 ( 5.537)	Loss 6.0763e-01 (6.0337e-01)	Acc  71.82 ( 71.94)	Matthews   0.00 (  0.00)
+Epoch: [2][5/9]	Time  1.648 ( 7.187)	Data  0.000 ( 5.531)	Loss 6.4781e-01 (6.2750e-01)	Acc  68.79 ( 69.52)	Matthews   0.00 (  0.00)
+Epoch: [2][5/9]	Time  1.648 ( 7.188)	Data  0.000 ( 5.540)	Loss 5.6034e-01 (6.1292e-01)	Acc  75.45 ( 70.61)	Matthews   0.00 (  0.00)
+ * Time 28.714  Loss 0.622 Acc 69.271 Matthews 0.000
+ * Time 28.754  Loss 0.622 Acc 69.271 Matthews 0.000
+ * Time 28.690  Loss 0.622 Acc 69.271 Matthews 0.000
+Epoch: [3][5/9]	Time  1.647 ( 7.205)	Data  0.000 ( 5.544)	Loss 5.9316e-01 (5.9748e-01)	Acc  71.82 ( 72.48)	Matthews   0.00 (  0.00)
+Epoch: [3][5/9]	Time  1.646 ( 7.205)	Data  0.000 ( 5.559)	Loss 6.2784e-01 (6.1036e-01)	Acc  67.88 ( 70.55)	Matthews   0.00 (  0.00)
+Epoch: [3][5/9]	Time  1.649 ( 7.209)	Data  0.000 ( 5.545)	Loss 5.9353e-01 (6.1133e-01)	Acc  71.82 ( 70.36)	Matthews   0.00 (  0.00)
+ * Time 28.757  Loss 0.616 Acc 69.271 Matthews 0.000
+ * Time 28.780  Loss 0.616 Acc 69.271 Matthews 0.000
+ * Time 28.900  Loss 0.616 Acc 69.271 Matthews 0.000
+Epoch: [4][5/9]	Time  1.653 ( 7.209)	Data  0.000 ( 5.560)	Loss 5.9630e-01 (6.1235e-01)	Acc  72.42 ( 70.24)	Matthews   0.00 (  0.00)
+Epoch: [4][5/9]	Time  1.651 ( 7.205)	Data  0.000 ( 5.556)	Loss 6.0137e-01 (6.0301e-01)	Acc  71.82 ( 71.45)	Matthews   0.00 (  0.00)
+Epoch: [4][5/9]	Time  1.652 ( 7.195)	Data  0.000 ( 5.533)	Loss 6.1796e-01 (6.1668e-01)	Acc  69.39 ( 69.64)	Matthews   0.00 (  0.00)
+ * Time 28.856  Loss 0.622 Acc 69.271 Matthews 0.000
+ * Time 28.941  Loss 0.622 Acc 69.271 Matthews 0.000
+ * Time 28.988  Loss 0.622 Acc 69.271 Matthews 0.000
+Epoch: [5][5/9]	Time  1.649 ( 7.228)	Data  0.000 ( 5.555)	Loss 5.7562e-01 (5.9901e-01)	Acc  75.15 ( 71.52)	Matthews   0.00 (  0.00)
+Epoch: [5][5/9]	Time  1.647 ( 7.243)	Data  0.000 ( 5.596)	Loss 6.1549e-01 (6.2129e-01)	Acc  68.79 ( 68.67)	Matthews   0.00 (  0.00)
+Epoch: [5][5/9]	Time  1.651 ( 7.226)	Data  0.000 ( 5.547)	Loss 6.0735e-01 (6.0067e-01)	Acc  70.30 ( 70.91)	Matthews   0.00 (  0.00)
+ * Time 28.944  Loss 0.616 Acc 69.271 Matthews 0.000
+ * Time 28.958  Loss 0.616 Acc 69.271 Matthews 0.000
+ * Time 28.985  Loss 0.616 Acc 69.271 Matthews 0.000
+Epoch: [6][5/9]	Time  1.653 ( 7.187)	Data  0.000 ( 5.531)	Loss 5.9972e-01 (6.1155e-01)	Acc  71.21 ( 69.76)	Matthews   0.00 (  0.00)
+Epoch: [6][5/9]	Time  1.652 ( 7.201)	Data  0.000 ( 5.550)	Loss 5.9750e-01 (6.1672e-01)	Acc  70.91 ( 69.15)	Matthews   0.00 (  0.00)
+Epoch: [6][5/9]	Time  1.650 ( 7.180)	Data  0.000 ( 5.530)	Loss 5.8542e-01 (5.9259e-01)	Acc  72.73 ( 71.58)	Matthews   0.00 (  0.00)
+ * Time 28.756  Loss 0.611 Acc 69.271 Matthews 0.000
+ * Time 28.685  Loss 0.611 Acc 69.271 Matthews 0.000
+ * Time 28.681  Loss 0.611 Acc 69.271 Matthews 0.000
+Epoch: [7][5/9]	Time  1.648 ( 7.188)	Data  0.000 ( 5.518)	Loss 5.9505e-01 (5.9922e-01)	Acc  69.70 ( 70.00)	Matthews  -3.61 (  0.22)
+Epoch: [7][5/9]	Time  1.647 ( 7.191)	Data  0.000 ( 5.544)	Loss 5.8656e-01 (5.9317e-01)	Acc  71.82 ( 70.55)	Matthews   6.60 (  1.99)
+Epoch: [7][5/9]	Time  1.650 ( 7.180)	Data  0.000 ( 5.509)	Loss 6.1467e-01 (5.9826e-01)	Acc  67.88 ( 70.06)	Matthews   7.96 (  1.59)
+ * Time 28.691  Loss 0.615 Acc 68.951 Matthews 3.421
+ * Time 28.708  Loss 0.615 Acc 68.951 Matthews 3.421
+ * Time 28.676  Loss 0.615 Acc 68.951 Matthews 3.421
+Epoch: [8][5/9]	Time  1.648 ( 7.213)	Data  0.000 ( 5.540)	Loss 5.9990e-01 (5.8995e-01)	Acc  68.79 ( 69.03)	Matthews  10.38 (  8.50)
+Epoch: [8][5/9]	Time  1.648 ( 7.213)	Data  0.000 ( 5.552)	Loss 5.8964e-01 (5.7591e-01)	Acc  70.30 ( 71.88)	Matthews  13.04 (  8.23)
+Epoch: [8][5/9]	Time  1.648 ( 7.210)	Data  0.000 ( 5.562)	Loss 5.5677e-01 (5.8127e-01)	Acc  73.33 ( 71.70)	Matthews  16.56 (  9.32)
+ * Time 28.754  Loss 0.620 Acc 69.195 Matthews 4.030
+ * Time 28.800  Loss 0.620 Acc 69.195 Matthews 4.030
+ * Time 28.992  Loss 0.620 Acc 69.195 Matthews 4.030
+Epoch: [9][5/9]	Time  1.647 ( 7.215)	Data  0.000 ( 5.561)	Loss 5.3184e-01 (5.7927e-01)	Acc  75.76 ( 70.79)	Matthews   9.36 ( 12.62)
+Epoch: [9][5/9]	Time  1.648 ( 7.236)	Data  0.000 ( 5.563)	Loss 5.6189e-01 (5.6197e-01)	Acc  73.64 ( 73.03)	Matthews  14.31 ( 15.09)
+Epoch: [9][5/9]	Time  1.647 ( 7.203)	Data  0.000 ( 5.556)	Loss 5.8133e-01 (5.7543e-01)	Acc  71.82 ( 70.30)	Matthews  16.10 (  9.93)
+ * Time 28.854  Loss 0.626 Acc 67.570 Matthews -0.538
+ * Time 28.807  Loss 0.626 Acc 67.570 Matthews -0.538
+ * Time 28.830  Loss 0.626 Acc 67.570 Matthews -0.538
+Epoch: [10][5/9]	Time  1.648 ( 7.196)	Data  0.000 ( 5.540)	Loss 5.3900e-01 (5.4925e-01)	Acc  75.45 ( 73.76)	Matthews  17.47 ( 15.86)
+Epoch: [10][5/9]	Time  1.648 ( 7.193)	Data  0.000 ( 5.540)	Loss 5.6199e-01 (5.6988e-01)	Acc  73.33 ( 71.76)	Matthews  26.40 ( 20.15)
+Epoch: [10][5/9]	Time  1.648 ( 7.194)	Data  0.000 ( 5.546)	Loss 5.7007e-01 (5.6853e-01)	Acc  71.21 ( 70.36)	Matthews  22.43 (  8.64)
+ * Time 28.834  Loss 0.627 Acc 67.098 Matthews 8.045
+ * Time 28.889  Loss 0.627 Acc 67.098 Matthews 8.045
+ * Time 28.836  Loss 0.627 Acc 67.098 Matthews 8.045
+Epoch: [11][5/9]	Time  1.647 ( 7.277)	Data  0.000 ( 5.574)	Loss 5.9183e-01 (5.5419e-01)	Acc  69.39 ( 71.33)	Matthews  12.11 ( 13.66)
+Epoch: [11][5/9]	Time  1.648 ( 7.275)	Data  0.000 ( 5.565)	Loss 5.5666e-01 (5.6130e-01)	Acc  72.12 ( 71.33)	Matthews  24.96 ( 21.21)
+Epoch: [11][5/9]	Time  1.648 ( 7.271)	Data  0.000 ( 5.622)	Loss 6.1576e-01 (5.7621e-01)	Acc  67.58 ( 71.15)	Matthews   6.09 ( 16.44)
+ * Time 28.668  Loss 0.636 Acc 67.722 Matthews 8.190
+ * Time 28.714  Loss 0.636 Acc 67.722 Matthews 8.190
+ * Time 28.691  Loss 0.636 Acc 67.722 Matthews 8.190
+Epoch: [12][5/9]	Time  1.650 ( 7.181)	Data  0.000 ( 5.531)	Loss 5.6760e-01 (5.5944e-01)	Acc  70.30 ( 71.39)	Matthews  27.45 ( 23.83)
+Epoch: [12][5/9]	Time  1.646 ( 7.201)	Data  0.000 ( 5.554)	Loss 5.8760e-01 (5.5494e-01)	Acc  70.91 ( 72.36)	Matthews  19.23 ( 19.03)
+Epoch: [12][5/9]	Time  1.650 ( 7.191)	Data  0.000 ( 5.534)	Loss 5.5959e-01 (5.3074e-01)	Acc  70.61 ( 73.52)	Matthews  24.46 ( 22.11)
+ * Time 28.716  Loss 0.636 Acc 67.797 Matthews 5.333
+ * Time 28.718  Loss 0.636 Acc 67.797 Matthews 5.333
+ * Time 28.805  Loss 0.636 Acc 67.797 Matthews 5.333
+Epoch: [13][5/9]	Time  1.649 ( 7.231)	Data  0.000 ( 5.561)	Loss 5.2907e-01 (5.2525e-01)	Acc  75.76 ( 74.42)	Matthews  34.69 ( 26.46)
+Epoch: [13][5/9]	Time  1.649 ( 7.232)	Data  0.000 ( 5.579)	Loss 5.1029e-01 (5.2436e-01)	Acc  76.36 ( 74.48)	Matthews  38.30 ( 30.45)
+Epoch: [13][5/9]	Time  1.649 ( 7.222)	Data  0.000 ( 5.573)	Loss 5.6646e-01 (5.4322e-01)	Acc  69.39 ( 73.27)	Matthews  29.24 ( 28.06)
+ * Time 28.669  Loss 0.640 Acc 67.570 Matthews 12.307
+ * Time 28.678  Loss 0.640 Acc 67.570 Matthews 12.307
+ * Time 28.704  Loss 0.640 Acc 67.570 Matthews 12.307
+Epoch: [14][5/9]	Time  1.648 ( 7.194)	Data  0.000 ( 5.547)	Loss 4.9802e-01 (5.2425e-01)	Acc  78.79 ( 73.82)	Matthews  40.41 ( 30.07)
+Epoch: [14][5/9]	Time  1.652 ( 7.188)	Data  0.000 ( 5.533)	Loss 5.5337e-01 (5.3032e-01)	Acc  70.61 ( 73.58)	Matthews  27.99 ( 31.25)
+Epoch: [14][5/9]	Time  1.663 ( 7.194)	Data  0.000 ( 5.524)	Loss 4.9259e-01 (5.1815e-01)	Acc  75.45 ( 74.24)	Matthews  26.93 ( 28.75)
+ * Time 28.663  Loss 0.643 Acc 66.778 Matthews 13.765
+ * Time 28.749  Loss 0.643 Acc 66.778 Matthews 13.765
+ * Time 28.697  Loss 0.643 Acc 66.778 Matthews 13.765
+Epoch: [15][5/9]	Time  1.648 ( 7.196)	Data  0.000 ( 5.527)	Loss 5.0292e-01 (5.1721e-01)	Acc  76.06 ( 75.64)	Matthews  33.24 ( 32.05)
+Epoch: [15][5/9]	Time  1.648 ( 7.205)	Data  0.000 ( 5.554)	Loss 4.9224e-01 (5.1356e-01)	Acc  75.76 ( 73.88)	Matthews  34.18 ( 30.52)
+Epoch: [15][5/9]	Time  1.647 ( 7.195)	Data  0.000 ( 5.546)	Loss 5.1048e-01 (5.2240e-01)	Acc  76.06 ( 74.36)	Matthews  40.19 ( 32.99)
+ * Time 28.697  Loss 0.652 Acc 68.631 Matthews 14.417
+ * Time 28.739  Loss 0.652 Acc 68.631 Matthews 14.417
+ * Time 28.711  Loss 0.652 Acc 68.631 Matthews 14.417
+Epoch: [16][5/9]	Time  1.649 ( 7.240)	Data  0.000 ( 5.591)	Loss 4.6854e-01 (4.9376e-01)	Acc  76.36 ( 75.82)	Matthews  36.72 ( 33.97)
+Epoch: [16][5/9]	Time  1.647 ( 7.223)	Data  0.000 ( 5.572)	Loss 5.1683e-01 (4.9924e-01)	Acc  72.12 ( 74.67)	Matthews  26.83 ( 33.81)
+Epoch: [16][5/9]	Time  1.657 ( 7.220)	Data  0.000 ( 5.546)	Loss 4.8270e-01 (5.0660e-01)	Acc  77.27 ( 75.27)	Matthews  43.53 ( 33.40)
+ * Time 28.847  Loss 0.658 Acc 68.951 Matthews 16.145
+ * Time 28.839  Loss 0.658 Acc 68.951 Matthews 16.145
+ * Time 28.856  Loss 0.658 Acc 68.951 Matthews 16.145
+Epoch: [17][5/9]	Time  1.648 ( 7.248)	Data  0.000 ( 5.586)	Loss 4.7987e-01 (4.9359e-01)	Acc  74.85 ( 76.00)	Matthews  31.65 ( 35.28)
+Epoch: [17][5/9]	Time  1.648 ( 7.238)	Data  0.000 ( 5.577)	Loss 4.9690e-01 (4.8490e-01)	Acc  75.76 ( 76.91)	Matthews  42.94 ( 39.91)
+Epoch: [17][5/9]	Time  1.648 ( 7.215)	Data  0.000 ( 5.567)	Loss 5.0917e-01 (5.0523e-01)	Acc  73.03 ( 74.18)	Matthews  26.85 ( 32.72)
+ * Time 28.802  Loss 0.667 Acc 67.494 Matthews 15.336
+ * Time 28.769  Loss 0.667 Acc 67.494 Matthews 15.336
+ * Time 28.820  Loss 0.667 Acc 67.494 Matthews 15.336
+Epoch: [18][5/9]	Time  1.649 ( 7.233)	Data  0.000 ( 5.558)	Loss 4.3362e-01 (4.7353e-01)	Acc  79.70 ( 76.42)	Matthews  47.45 ( 37.30)
+Epoch: [18][5/9]	Time  1.647 ( 7.224)	Data  0.000 ( 5.575)	Loss 5.2394e-01 (4.8104e-01)	Acc  74.55 ( 76.79)	Matthews  35.91 ( 39.76)
+Epoch: [18][5/9]	Time  1.652 ( 7.231)	Data  0.000 ( 5.576)	Loss 4.6292e-01 (4.8463e-01)	Acc  79.70 ( 77.03)	Matthews  41.27 ( 40.78)
+ * Time 28.792  Loss 0.688 Acc 67.436 Matthews 14.564
+ * Time 28.819  Loss 0.688 Acc 67.436 Matthews 14.564
+ * Time 28.809  Loss 0.688 Acc 67.436 Matthews 14.564
+Epoch: [19][5/9]	Time  1.649 ( 7.203)	Data  0.000 ( 5.542)	Loss 4.9557e-01 (4.8811e-01)	Acc  75.76 ( 76.12)	Matthews  38.82 ( 38.86)
+Epoch: [19][5/9]	Time  1.648 ( 7.206)	Data  0.000 ( 5.551)	Loss 4.4212e-01 (4.7700e-01)	Acc  80.30 ( 76.73)	Matthews  51.31 ( 38.04)
+Epoch: [19][5/9]	Time  1.649 ( 7.194)	Data  0.000 ( 5.545)	Loss 4.9455e-01 (4.7096e-01)	Acc  77.27 ( 77.33)	Matthews  35.21 ( 39.86)
+ * Time 28.759  Loss 0.678 Acc 67.890 Matthews 13.292
+ * Time 28.715  Loss 0.678 Acc 67.890 Matthews 13.292
+ * Time 28.715  Loss 0.678 Acc 67.890 Matthews 13.292
+Epoch: [20][5/9]	Time  1.647 ( 7.212)	Data  0.000 ( 5.565)	Loss 4.6495e-01 (4.7152e-01)	Acc  76.97 ( 76.73)	Matthews  39.14 ( 39.00)
+Epoch: [20][5/9]	Time  1.650 ( 7.202)	Data  0.000 ( 5.552)	Loss 4.9044e-01 (4.6427e-01)	Acc  74.55 ( 77.09)	Matthews  37.23 ( 38.93)
+Epoch: [20][5/9]	Time  1.649 ( 7.212)	Data  0.000 ( 5.562)	Loss 4.8419e-01 (4.7747e-01)	Acc  76.67 ( 76.97)	Matthews  40.56 ( 39.30)
+ * Time 28.514  Loss 0.682 Acc 66.678 Matthews 13.247
+ * Time 28.556  Loss 0.682 Acc 66.678 Matthews 13.247
+ * Time 28.564  Loss 0.682 Acc 66.678 Matthews 13.247
+Epoch: [21][5/9]	Time  1.647 ( 7.196)	Data  0.000 ( 5.540)	Loss 4.6263e-01 (4.5687e-01)	Acc  79.09 ( 78.12)	Matthews  49.69 ( 42.15)
+Epoch: [21][5/9]	Time  1.648 ( 7.189)	Data  0.000 ( 5.543)	Loss 4.5895e-01 (4.6844e-01)	Acc  76.36 ( 76.67)	Matthews  39.77 ( 41.32)
+Epoch: [21][5/9]	Time  1.649 ( 7.178)	Data  0.000 ( 5.529)	Loss 4.3064e-01 (4.4474e-01)	Acc  80.91 ( 78.48)	Matthews  48.90 ( 43.30)
+ * Time 28.738  Loss 0.714 Acc 67.360 Matthews 12.611
+ * Time 28.684  Loss 0.714 Acc 67.360 Matthews 12.611
+ * Time 28.655  Loss 0.714 Acc 67.360 Matthews 12.611
+Epoch: [22][5/9]	Time  1.649 ( 7.210)	Data  0.000 ( 5.545)	Loss 4.4864e-01 (4.6446e-01)	Acc  77.88 ( 77.82)	Matthews  49.85 ( 44.71)
+Epoch: [22][5/9]	Time  1.649 ( 7.210)	Data  0.000 ( 5.552)	Loss 4.5596e-01 (4.6999e-01)	Acc  76.97 ( 76.18)	Matthews  44.98 ( 40.86)
+Epoch: [22][5/9]	Time  1.650 ( 7.201)	Data  0.000 ( 5.552)	Loss 4.7455e-01 (4.5829e-01)	Acc  78.48 ( 79.03)	Matthews  47.34 ( 45.28)
+ * Time 28.720  Loss 0.702 Acc 66.602 Matthews 11.264
+ * Time 28.699  Loss 0.702 Acc 66.602 Matthews 11.264
+ * Time 28.723  Loss 0.702 Acc 66.602 Matthews 11.264
+Epoch: [23][5/9]	Time  1.646 ( 7.187)	Data  0.000 ( 5.541)	Loss 4.1835e-01 (4.3574e-01)	Acc  80.61 ( 79.94)	Matthews  48.58 ( 47.30)
+Epoch: [23][5/9]	Time  1.649 ( 7.191)	Data  0.000 ( 5.531)	Loss 4.4431e-01 (4.4916e-01)	Acc  78.79 ( 78.55)	Matthews  47.92 ( 45.59)
+Epoch: [23][5/9]	Time  1.650 ( 7.183)	Data  0.000 ( 5.533)	Loss 4.4969e-01 (4.4941e-01)	Acc  76.97 ( 78.91)	Matthews  41.14 ( 46.87)
+ * Time 28.651  Loss 0.710 Acc 64.733 Matthews 12.035
+ * Time 28.685  Loss 0.710 Acc 64.733 Matthews 12.035
+ * Time 28.704  Loss 0.710 Acc 64.733 Matthews 12.035
+Epoch: [24][5/9]	Time  1.648 ( 7.168)	Data  0.000 ( 5.518)	Loss 4.6799e-01 (4.3350e-01)	Acc  77.58 ( 79.45)	Matthews  46.03 ( 47.21)
+Epoch: [24][5/9]	Time  1.649 ( 7.160)	Data  0.000 ( 5.502)	Loss 4.2751e-01 (4.5691e-01)	Acc  79.70 ( 77.82)	Matthews  47.88 ( 44.03)
+Epoch: [24][5/9]	Time  1.648 ( 7.170)	Data  0.000 ( 5.522)	Loss 4.3049e-01 (4.3671e-01)	Acc  78.48 ( 78.06)	Matthews  41.54 ( 44.36)
+ * Time 28.793  Loss 0.716 Acc 66.678 Matthews 15.250
+ * Time 28.810  Loss 0.716 Acc 66.678 Matthews 15.250
+ * Time 28.834  Loss 0.716 Acc 66.678 Matthews 15.250
+Epoch: [25][5/9]	Time  1.648 ( 7.191)	Data  0.000 ( 5.541)	Loss 4.6024e-01 (4.4137e-01)	Acc  76.06 ( 77.76)	Matthews  32.86 ( 40.72)
+Epoch: [25][5/9]	Time  1.648 ( 7.199)	Data  0.000 ( 5.546)	Loss 4.4909e-01 (4.5796e-01)	Acc  79.09 ( 77.39)	Matthews  44.64 ( 39.28)
+Epoch: [25][5/9]	Time  1.648 ( 7.180)	Data  0.000 ( 5.532)	Loss 4.6049e-01 (4.6843e-01)	Acc  78.18 ( 76.24)	Matthews  48.25 ( 40.74)
+ * Time 28.753  Loss 0.714 Acc 68.455 Matthews 16.566
+ * Time 28.785  Loss 0.714 Acc 68.455 Matthews 16.566
+ * Time 28.706  Loss 0.714 Acc 68.455 Matthews 16.566
+Epoch: [26][5/9]	Time  1.651 ( 7.179)	Data  0.000 ( 5.516)	Loss 4.1895e-01 (4.5132e-01)	Acc  80.00 ( 78.18)	Matthews  45.52 ( 42.50)
+Epoch: [26][5/9]	Time  1.648 ( 7.171)	Data  0.000 ( 5.523)	Loss 4.1641e-01 (4.2761e-01)	Acc  80.61 ( 80.06)	Matthews  52.79 ( 47.97)
+Epoch: [26][5/9]	Time  1.651 ( 7.181)	Data  0.000 ( 5.519)	Loss 4.4968e-01 (4.2436e-01)	Acc  76.97 ( 79.76)	Matthews  44.91 ( 45.68)
+ * Time 28.673  Loss 0.734 Acc 68.135 Matthews 14.362
+ * Time 28.698  Loss 0.734 Acc 68.135 Matthews 14.362
+ * Time 28.767  Loss 0.734 Acc 68.135 Matthews 14.362
+Epoch: [27][5/9]	Time  1.647 ( 7.238)	Data  0.000 ( 5.560)	Loss 4.3469e-01 (4.2232e-01)	Acc  77.88 ( 79.52)	Matthews  48.58 ( 49.04)
+Epoch: [27][5/9]	Time  1.647 ( 7.223)	Data  0.000 ( 5.576)	Loss 4.0877e-01 (4.3523e-01)	Acc  82.42 ( 79.94)	Matthews  56.01 ( 49.90)
+Epoch: [27][5/9]	Time  1.652 ( 7.233)	Data  0.000 ( 5.553)	Loss 3.8991e-01 (4.1285e-01)	Acc  80.91 ( 80.73)	Matthews  49.95 ( 51.24)
+ * Time 28.661  Loss 0.737 Acc 67.849 Matthews 15.702
+ * Time 28.713  Loss 0.737 Acc 67.849 Matthews 15.702
+ * Time 28.663  Loss 0.737 Acc 67.849 Matthews 15.702
+Epoch: [28][5/9]	Time  1.648 ( 7.203)	Data  0.000 ( 5.549)	Loss 3.9961e-01 (4.1766e-01)	Acc  83.64 ( 81.76)	Matthews  57.83 ( 53.54)
+Epoch: [28][5/9]	Time  1.647 ( 7.209)	Data  0.000 ( 5.561)	Loss 4.2326e-01 (4.2797e-01)	Acc  80.30 ( 79.15)	Matthews  52.89 ( 48.48)
+Epoch: [28][5/9]	Time  1.650 ( 7.195)	Data  0.000 ( 5.545)	Loss 3.9106e-01 (4.0256e-01)	Acc  81.21 ( 81.76)	Matthews  53.48 ( 55.06)
+ * Time 28.624  Loss 0.751 Acc 65.356 Matthews 14.308
+ * Time 28.660  Loss 0.751 Acc 65.356 Matthews 14.308
+ * Time 28.618  Loss 0.751 Acc 65.356 Matthews 14.308
+Epoch: [29][5/9]	Time  1.647 ( 7.211)	Data  0.000 ( 5.565)	Loss 4.2003e-01 (4.2822e-01)	Acc  80.30 ( 79.21)	Matthews  53.78 ( 45.99)
+Epoch: [29][5/9]	Time  1.651 ( 7.216)	Data  0.000 ( 5.535)	Loss 4.2669e-01 (4.1369e-01)	Acc  78.79 ( 80.67)	Matthews  46.16 ( 50.96)
+Epoch: [29][5/9]	Time  1.660 ( 7.220)	Data  0.000 ( 5.529)	Loss 3.9743e-01 (4.0724e-01)	Acc  81.21 ( 80.67)	Matthews  53.59 ( 51.64)
+ * Time 28.605  Loss 0.749 Acc 65.525 Matthews 13.703
+ * Time 28.678  Loss 0.749 Acc 65.525 Matthews 13.703
+ * Time 28.630  Loss 0.749 Acc 65.525 Matthews 13.703
+Epoch: [30][5/9]	Time  1.654 ( 7.183)	Data  0.000 ( 5.532)	Loss 4.1018e-01 (4.1586e-01)	Acc  80.91 ( 80.61)	Matthews  53.57 ( 50.84)
+Epoch: [30][5/9]	Time  1.649 ( 7.169)	Data  0.000 ( 5.520)	Loss 4.0383e-01 (4.1689e-01)	Acc  80.91 ( 79.70)	Matthews  53.14 ( 49.03)
+Epoch: [30][5/9]	Time  1.655 ( 7.174)	Data  0.000 ( 5.515)	Loss 4.3239e-01 (4.2242e-01)	Acc  80.30 ( 79.70)	Matthews  53.34 ( 47.25)
+ * Time 28.657  Loss 0.781 Acc 67.604 Matthews 13.054
+ * Time 28.735  Loss 0.781 Acc 67.604 Matthews 13.054
+ * Time 28.718  Loss 0.781 Acc 67.604 Matthews 13.054
+Epoch: [31][5/9]	Time  1.648 ( 7.198)	Data  0.000 ( 5.535)	Loss 4.0233e-01 (3.9984e-01)	Acc  80.00 ( 81.64)	Matthews  49.23 ( 54.10)
+Epoch: [31][5/9]	Time  1.648 ( 7.206)	Data  0.000 ( 5.550)	Loss 4.0524e-01 (3.9056e-01)	Acc  81.82 ( 83.21)	Matthews  54.56 ( 56.62)
+Epoch: [31][5/9]	Time  1.646 ( 7.191)	Data  0.000 ( 5.543)	Loss 3.8535e-01 (4.0480e-01)	Acc  83.94 ( 81.03)	Matthews  60.76 ( 52.34)
+ * Time 28.698  Loss 0.751 Acc 66.695 Matthews 15.233
+ * Time 28.708  Loss 0.751 Acc 66.695 Matthews 15.233
+ * Time 28.692  Loss 0.751 Acc 66.695 Matthews 15.233
+Epoch: [32][5/9]	Time  1.647 ( 7.183)	Data  0.000 ( 5.534)	Loss 3.7826e-01 (4.1949e-01)	Acc  83.03 ( 80.67)	Matthews  56.62 ( 52.02)
+Epoch: [32][5/9]	Time  1.649 ( 7.182)	Data  0.000 ( 5.528)	Loss 4.2924e-01 (3.9501e-01)	Acc  76.97 ( 81.58)	Matthews  44.01 ( 53.02)
+Epoch: [32][5/9]	Time  1.647 ( 7.175)	Data  0.000 ( 5.526)	Loss 3.9295e-01 (3.7264e-01)	Acc  79.39 ( 82.61)	Matthews  49.06 ( 55.89)
+ * Time 28.681  Loss 0.772 Acc 66.923 Matthews 15.369
+ * Time 28.673  Loss 0.772 Acc 66.923 Matthews 15.369
+ * Time 28.806  Loss 0.772 Acc 66.923 Matthews 15.369
+Epoch: [33][5/9]	Time  1.648 ( 7.230)	Data  0.000 ( 5.563)	Loss 4.0503e-01 (4.0571e-01)	Acc  79.70 ( 80.73)	Matthews  49.02 ( 51.83)
+Epoch: [33][5/9]	Time  1.649 ( 7.231)	Data  0.000 ( 5.556)	Loss 4.0601e-01 (3.8132e-01)	Acc  82.42 ( 81.70)	Matthews  53.70 ( 54.04)
+Epoch: [33][5/9]	Time  1.649 ( 7.218)	Data  0.000 ( 5.569)	Loss 3.7129e-01 (3.9532e-01)	Acc  83.33 ( 82.24)	Matthews  55.98 ( 53.98)
+ * Time 28.710  Loss 0.786 Acc 66.544 Matthews 17.192
+ * Time 28.787  Loss 0.786 Acc 66.544 Matthews 17.192
+ * Time 28.887  Loss 0.786 Acc 66.544 Matthews 17.192
+Epoch: [34][5/9]	Time  1.649 ( 7.206)	Data  0.000 ( 5.551)	Loss 3.8752e-01 (3.9654e-01)	Acc  80.61 ( 80.97)	Matthews  52.10 ( 52.85)
+Epoch: [34][5/9]	Time  1.648 ( 7.209)	Data  0.000 ( 5.545)	Loss 3.7688e-01 (3.7961e-01)	Acc  83.33 ( 82.85)	Matthews  60.48 ( 59.23)
+Epoch: [34][5/9]	Time  1.648 ( 7.212)	Data  0.000 ( 5.564)	Loss 4.0474e-01 (3.9628e-01)	Acc  80.30 ( 81.21)	Matthews  52.16 ( 53.06)
+ * Time 28.827  Loss 0.794 Acc 65.163 Matthews 12.522
+ * Time 28.785  Loss 0.794 Acc 65.163 Matthews 12.522
+ * Time 28.809  Loss 0.794 Acc 65.163 Matthews 12.522
+Epoch: [35][5/9]	Time  1.647 ( 7.263)	Data  0.000 ( 5.617)	Loss 4.0944e-01 (3.8743e-01)	Acc  81.52 ( 81.39)	Matthews  54.40 ( 54.16)
+Epoch: [35][5/9]	Time  1.649 ( 7.262)	Data  0.000 ( 5.552)	Loss 3.8535e-01 (3.7215e-01)	Acc  81.21 ( 82.36)	Matthews  54.48 ( 56.27)
+Epoch: [35][5/9]	Time  1.647 ( 7.249)	Data  0.000 ( 5.602)	Loss 3.7649e-01 (3.6469e-01)	Acc  82.12 ( 82.67)	Matthews  55.66 ( 54.57)
+ * Time 28.721  Loss 0.813 Acc 63.521 Matthews 13.658
+ * Time 28.718  Loss 0.813 Acc 63.521 Matthews 13.658
+ * Time 28.701  Loss 0.813 Acc 63.521 Matthews 13.658
+Epoch: [36][5/9]	Time  1.649 ( 7.209)	Data  0.000 ( 5.552)	Loss 3.7580e-01 (3.7345e-01)	Acc  82.42 ( 82.97)	Matthews  54.90 ( 56.46)
+Epoch: [36][5/9]	Time  1.648 ( 7.223)	Data  0.000 ( 5.572)	Loss 3.7438e-01 (3.6763e-01)	Acc  83.33 ( 83.88)	Matthews  55.09 ( 58.87)
+Epoch: [36][5/9]	Time  1.649 ( 7.223)	Data  0.000 ( 5.575)	Loss 3.8404e-01 (3.8437e-01)	Acc  83.33 ( 82.61)	Matthews  59.98 ( 58.69)
+ * Time 28.707  Loss 0.817 Acc 63.428 Matthews 10.941
+ * Time 28.752  Loss 0.817 Acc 63.428 Matthews 10.941
+ * Time 28.979  Loss 0.817 Acc 63.428 Matthews 10.941
+Epoch: [37][5/9]	Time  1.655 ( 7.239)	Data  0.000 ( 5.590)	Loss 3.9366e-01 (3.7502e-01)	Acc  82.12 ( 82.73)	Matthews  53.92 ( 57.29)
+Epoch: [37][5/9]	Time  1.655 ( 7.249)	Data  0.000 ( 5.594)	Loss 3.4673e-01 (3.6612e-01)	Acc  85.15 ( 82.42)	Matthews  65.51 ( 56.51)
+Epoch: [37][5/9]	Time  1.655 ( 7.221)	Data  0.000 ( 5.554)	Loss 4.5007e-01 (3.9476e-01)	Acc  79.09 ( 81.64)	Matthews  50.57 ( 54.89)
+ * Time 28.738  Loss 0.840 Acc 66.131 Matthews 11.618
+ * Time 28.772  Loss 0.840 Acc 66.131 Matthews 11.618
+ * Time 28.781  Loss 0.840 Acc 66.131 Matthews 11.618
+Epoch: [38][5/9]	Time  1.648 ( 7.214)	Data  0.000 ( 5.556)	Loss 3.5243e-01 (3.5998e-01)	Acc  85.45 ( 83.45)	Matthews  63.62 ( 59.00)
+Epoch: [38][5/9]	Time  1.649 ( 7.204)	Data  0.000 ( 5.548)	Loss 4.0211e-01 (3.8370e-01)	Acc  79.70 ( 81.39)	Matthews  51.03 ( 54.76)
+Epoch: [38][5/9]	Time  1.648 ( 7.209)	Data  0.000 ( 5.561)	Loss 3.5523e-01 (3.7632e-01)	Acc  83.03 ( 82.55)	Matthews  59.02 ( 57.94)
+ * Time 28.721  Loss 0.830 Acc 62.897 Matthews 14.456
+ * Time 28.751  Loss 0.830 Acc 62.897 Matthews 14.456
+ * Time 28.748  Loss 0.830 Acc 62.897 Matthews 14.456
+Epoch: [39][5/9]	Time  1.645 ( 7.216)	Data  0.000 ( 5.569)	Loss 3.8885e-01 (3.6177e-01)	Acc  81.21 ( 83.76)	Matthews  54.97 ( 60.35)
+Epoch: [39][5/9]	Time  1.648 ( 7.215)	Data  0.000 ( 5.550)	Loss 3.7875e-01 (3.6528e-01)	Acc  81.21 ( 82.36)	Matthews  54.36 ( 55.68)
+Epoch: [39][5/9]	Time  1.649 ( 7.204)	Data  0.000 ( 5.541)	Loss 4.7576e-01 (3.9067e-01)	Acc  76.97 ( 82.06)	Matthews  47.00 ( 56.08)
+ * Time 28.730  Loss 0.818 Acc 65.828 Matthews 13.719
+ * Time 28.716  Loss 0.818 Acc 65.828 Matthews 13.719
+ * Time 28.914  Loss 0.818 Acc 65.828 Matthews 13.719
+Epoch: [40][5/9]	Time  1.649 ( 7.231)	Data  0.000 ( 5.561)	Loss 3.9992e-01 (3.7802e-01)	Acc  78.79 ( 82.06)	Matthews  49.79 ( 54.00)
+Epoch: [40][5/9]	Time  1.650 ( 7.236)	Data  0.000 ( 5.564)	Loss 3.3022e-01 (3.4423e-01)	Acc  84.85 ( 83.94)	Matthews  66.03 ( 59.35)
+Epoch: [40][5/9]	Time  1.650 ( 7.215)	Data  0.000 ( 5.566)	Loss 3.7085e-01 (3.7677e-01)	Acc  81.52 ( 82.48)	Matthews  56.46 ( 57.68)
+ * Time 28.633  Loss 0.832 Acc 65.036 Matthews 13.458
+ * Time 28.634  Loss 0.832 Acc 65.036 Matthews 13.458
+ * Time 28.651  Loss 0.832 Acc 65.036 Matthews 13.458
+Epoch: [41][5/9]	Time  1.648 ( 7.218)	Data  0.000 ( 5.553)	Loss 3.4568e-01 (3.6775e-01)	Acc  84.24 ( 83.52)	Matthews  60.77 ( 59.95)
+Epoch: [41][5/9]	Time  1.650 ( 7.211)	Data  0.000 ( 5.558)	Loss 3.4887e-01 (3.5559e-01)	Acc  83.33 ( 82.91)	Matthews  55.89 ( 58.52)
+Epoch: [41][5/9]	Time  1.648 ( 7.219)	Data  0.000 ( 5.544)	Loss 3.3746e-01 (3.7729e-01)	Acc  83.64 ( 82.42)	Matthews  56.80 ( 58.52)
+ * Time 28.698  Loss 0.843 Acc 65.583 Matthews 14.043
+ * Time 28.701  Loss 0.843 Acc 65.583 Matthews 14.043
+ * Time 28.765  Loss 0.843 Acc 65.583 Matthews 14.043
+Epoch: [42][5/9]	Time  1.647 ( 7.216)	Data  0.000 ( 5.570)	Loss 3.5676e-01 (3.4091e-01)	Acc  83.94 ( 84.42)	Matthews  60.88 ( 61.80)
+Epoch: [42][5/9]	Time  1.647 ( 7.203)	Data  0.000 ( 5.550)	Loss 3.7861e-01 (3.4802e-01)	Acc  81.82 ( 83.45)	Matthews  53.75 ( 59.23)
+Epoch: [42][5/9]	Time  1.650 ( 7.218)	Data  0.000 ( 5.563)	Loss 3.4420e-01 (3.5013e-01)	Acc  85.15 ( 84.48)	Matthews  66.13 ( 62.66)
+ * Time 28.773  Loss 0.856 Acc 64.733 Matthews 14.861
+ * Time 28.788  Loss 0.856 Acc 64.733 Matthews 14.861
+ * Time 28.807  Loss 0.856 Acc 64.733 Matthews 14.861
+Epoch: [43][5/9]	Time  1.648 ( 7.204)	Data  0.000 ( 5.549)	Loss 3.4111e-01 (3.5850e-01)	Acc  85.45 ( 83.33)	Matthews  65.79 ( 59.37)
+Epoch: [43][5/9]	Time  1.649 ( 7.202)	Data  0.000 ( 5.529)	Loss 3.4640e-01 (3.5708e-01)	Acc  85.15 ( 84.06)	Matthews  62.42 ( 60.52)
+Epoch: [43][5/9]	Time  1.649 ( 7.199)	Data  0.000 ( 5.549)	Loss 3.1737e-01 (3.3513e-01)	Acc  85.45 ( 84.79)	Matthews  63.16 ( 62.80)
+ * Time 28.667  Loss 0.872 Acc 67.208 Matthews 16.718
+ * Time 28.701  Loss 0.872 Acc 67.208 Matthews 16.718
+ * Time 28.640  Loss 0.872 Acc 67.208 Matthews 16.718
+Epoch: [44][5/9]	Time  1.653 ( 7.216)	Data  0.000 ( 5.548)	Loss 3.9381e-01 (3.4070e-01)	Acc  81.21 ( 84.00)	Matthews  54.28 ( 61.22)
+Epoch: [44][5/9]	Time  1.652 ( 7.214)	Data  0.000 ( 5.566)	Loss 3.4119e-01 (3.4676e-01)	Acc  83.03 ( 83.64)	Matthews  59.60 ( 59.83)
+Epoch: [44][5/9]	Time  1.653 ( 7.215)	Data  0.000 ( 5.544)	Loss 3.7144e-01 (3.5231e-01)	Acc  83.03 ( 84.18)	Matthews  57.81 ( 61.66)
+ * Time 28.743  Loss 0.863 Acc 63.789 Matthews 12.770
+ * Time 28.783  Loss 0.863 Acc 63.789 Matthews 12.770
+ * Time 28.764  Loss 0.863 Acc 63.789 Matthews 12.770
+Epoch: [45][5/9]	Time  1.648 ( 7.194)	Data  0.000 ( 5.547)	Loss 2.5312e-01 (3.2594e-01)	Acc  88.79 ( 85.27)	Matthews  68.30 ( 64.38)
+Epoch: [45][5/9]	Time  1.649 ( 7.196)	Data  0.000 ( 5.533)	Loss 3.2097e-01 (3.3854e-01)	Acc  85.76 ( 84.73)	Matthews  64.39 ( 63.09)
+Epoch: [45][5/9]	Time  1.651 ( 7.186)	Data  0.000 ( 5.530)	Loss 3.5178e-01 (3.4534e-01)	Acc  83.64 ( 84.91)	Matthews  57.89 ( 63.78)
+ * Time 28.696  Loss 0.870 Acc 64.867 Matthews 14.728
+ * Time 28.692  Loss 0.870 Acc 64.867 Matthews 14.728
+ * Time 28.687  Loss 0.870 Acc 64.867 Matthews 14.728
+Epoch: [46][5/9]	Time  1.653 ( 7.210)	Data  0.000 ( 5.551)	Loss 3.3147e-01 (3.3137e-01)	Acc  84.85 ( 85.03)	Matthews  65.67 ( 63.25)
+Epoch: [46][5/9]	Time  1.653 ( 7.197)	Data  0.000 ( 5.546)	Loss 3.4085e-01 (3.4725e-01)	Acc  84.55 ( 84.55)	Matthews  61.46 ( 61.95)
+Epoch: [46][5/9]	Time  1.653 ( 7.215)	Data  0.000 ( 5.562)	Loss 3.2066e-01 (3.2071e-01)	Acc  85.76 ( 85.45)	Matthews  66.35 ( 63.66)
+ * Time 28.715  Loss 0.903 Acc 67.604 Matthews 15.225
+ * Time 28.764  Loss 0.903 Acc 67.604 Matthews 15.225
+ * Time 28.796  Loss 0.903 Acc 67.604 Matthews 15.225
+Epoch: [47][5/9]	Time  1.649 ( 7.186)	Data  0.000 ( 5.525)	Loss 3.5539e-01 (3.3641e-01)	Acc  84.85 ( 85.70)	Matthews  66.42 ( 65.39)
+Epoch: [47][5/9]	Time  1.649 ( 7.192)	Data  0.000 ( 5.540)	Loss 2.8222e-01 (3.1681e-01)	Acc  89.39 ( 85.82)	Matthews  74.23 ( 64.42)
+Epoch: [47][5/9]	Time  1.649 ( 7.191)	Data  0.000 ( 5.542)	Loss 3.5658e-01 (3.3768e-01)	Acc  82.42 ( 84.00)	Matthews  58.05 ( 59.72)
+ * Time 28.632  Loss 0.909 Acc 65.129 Matthews 13.234
+ * Time 28.587  Loss 0.909 Acc 65.129 Matthews 13.234
+ * Time 28.616  Loss 0.909 Acc 65.129 Matthews 13.234
+Epoch: [48][5/9]	Time  1.648 ( 7.237)	Data  0.000 ( 5.545)	Loss 3.0668e-01 (3.2628e-01)	Acc  86.67 ( 85.88)	Matthews  63.11 ( 64.31)
+Epoch: [48][5/9]	Time  1.651 ( 7.230)	Data  0.000 ( 5.565)	Loss 3.2537e-01 (3.1631e-01)	Acc  85.15 ( 85.45)	Matthews  64.50 ( 65.56)
+Epoch: [48][5/9]	Time  1.648 ( 7.239)	Data  0.000 ( 5.591)	Loss 3.1080e-01 (3.1595e-01)	Acc  86.36 ( 85.94)	Matthews  67.68 ( 64.67)
+ * Time 28.721  Loss 0.904 Acc 62.274 Matthews 10.479
+ * Time 28.754  Loss 0.904 Acc 62.274 Matthews 10.479
+ * Time 28.793  Loss 0.904 Acc 62.274 Matthews 10.479
+Epoch: [49][5/9]	Time  1.649 ( 7.212)	Data  0.000 ( 5.531)	Loss 3.3311e-01 (3.2809e-01)	Acc  85.15 ( 85.33)	Matthews  64.94 ( 64.74)
+Epoch: [49][5/9]	Time  1.650 ( 7.211)	Data  0.000 ( 5.538)	Loss 2.9646e-01 (3.3690e-01)	Acc  84.55 ( 83.39)	Matthews  63.41 ( 60.19)
+Epoch: [49][5/9]	Time  1.650 ( 7.226)	Data  0.000 ( 5.576)	Loss 3.4796e-01 (3.3354e-01)	Acc  83.94 ( 85.64)	Matthews  60.03 ( 65.04)
+ * Time 28.738  Loss 0.901 Acc 65.449 Matthews 13.601
+ * Time 28.763  Loss 0.901 Acc 65.449 Matthews 13.601
+ * Time 28.768  Loss 0.901 Acc 65.449 Matthews 13.601
+Epoch: [50][5/9]	Time  1.650 ( 7.207)	Data  0.000 ( 5.550)	Loss 3.2159e-01 (3.3437e-01)	Acc  86.97 ( 84.06)	Matthews  66.38 ( 61.19)
+Epoch: [50][5/9]	Time  1.648 ( 7.204)	Data  0.000 ( 5.545)	Loss 3.5172e-01 (3.1900e-01)	Acc  84.55 ( 85.15)	Matthews  66.57 ( 64.32)
+Epoch: [50][5/9]	Time  1.650 ( 7.210)	Data  0.000 ( 5.560)	Loss 3.0722e-01 (3.2586e-01)	Acc  88.18 ( 85.45)	Matthews  68.61 ( 63.71)
+ * Time 28.685  Loss 0.907 Acc 63.899 Matthews 12.025
+ * Time 28.727  Loss 0.907 Acc 63.899 Matthews 12.025
+ * Time 28.754  Loss 0.907 Acc 63.899 Matthews 12.025
+Epoch: [51][5/9]	Time  1.649 ( 7.190)	Data  0.000 ( 5.542)	Loss 3.1528e-01 (3.3576e-01)	Acc  87.27 ( 85.82)	Matthews  68.87 ( 65.13)
+Epoch: [51][5/9]	Time  1.651 ( 7.190)	Data  0.000 ( 5.534)	Loss 2.6763e-01 (3.1453e-01)	Acc  88.79 ( 85.58)	Matthews  70.86 ( 65.33)
+Epoch: [51][5/9]	Time  1.649 ( 7.199)	Data  0.000 ( 5.551)	Loss 3.0016e-01 (3.1337e-01)	Acc  88.48 ( 87.09)	Matthews  72.31 ( 69.14)
+ * Time 28.836  Loss 0.904 Acc 63.335 Matthews 8.987
+ * Time 28.851  Loss 0.904 Acc 63.335 Matthews 8.987
+ * Time 28.848  Loss 0.904 Acc 63.335 Matthews 8.987
+Epoch: [52][5/9]	Time  1.648 ( 7.230)	Data  0.000 ( 5.577)	Loss 3.0328e-01 (3.0367e-01)	Acc  87.27 ( 87.58)	Matthews  68.15 ( 69.53)
+Epoch: [52][5/9]	Time  1.648 ( 7.216)	Data  0.000 ( 5.561)	Loss 3.3836e-01 (3.1826e-01)	Acc  84.24 ( 86.36)	Matthews  58.76 ( 65.38)
+Epoch: [52][5/9]	Time  1.649 ( 7.209)	Data  0.000 ( 5.561)	Loss 3.4872e-01 (3.0448e-01)	Acc  83.94 ( 86.06)	Matthews  61.00 ( 65.13)
+ * Time 28.733  Loss 0.935 Acc 62.863 Matthews 11.020
+ * Time 28.770  Loss 0.935 Acc 62.863 Matthews 11.020
+ * Time 28.830  Loss 0.935 Acc 62.863 Matthews 11.020
+Epoch: [53][5/9]	Time  1.649 ( 7.217)	Data  0.000 ( 5.569)	Loss 2.9940e-01 (3.0528e-01)	Acc  86.36 ( 86.42)	Matthews  64.78 ( 65.79)
+Epoch: [53][5/9]	Time  1.650 ( 7.236)	Data  0.000 ( 5.584)	Loss 3.4973e-01 (3.0530e-01)	Acc  83.64 ( 86.06)	Matthews  62.48 ( 66.19)
+Epoch: [53][5/9]	Time  1.648 ( 7.241)	Data  0.000 ( 5.593)	Loss 3.4607e-01 (2.9711e-01)	Acc  85.15 ( 86.91)	Matthews  67.05 ( 67.52)
+ * Time 28.737  Loss 0.942 Acc 63.621 Matthews 10.287
+ * Time 28.725  Loss 0.942 Acc 63.621 Matthews 10.287
+ * Time 28.719  Loss 0.942 Acc 63.621 Matthews 10.287
+Epoch: [54][5/9]	Time  1.649 ( 7.203)	Data  0.000 ( 5.549)	Loss 2.9253e-01 (2.9358e-01)	Acc  87.58 ( 87.52)	Matthews  69.68 ( 70.38)
+Epoch: [54][5/9]	Time  1.648 ( 7.199)	Data  0.000 ( 5.547)	Loss 3.1113e-01 (3.0876e-01)	Acc  86.06 ( 86.42)	Matthews  64.80 ( 66.33)
+Epoch: [54][5/9]	Time  1.650 ( 7.201)	Data  0.000 ( 5.552)	Loss 3.1084e-01 (3.0277e-01)	Acc  86.36 ( 86.06)	Matthews  70.06 ( 64.26)
+ * Time 28.758  Loss 0.949 Acc 64.808 Matthews 12.913
+ * Time 28.762  Loss 0.949 Acc 64.808 Matthews 12.913
+ * Time 28.797  Loss 0.949 Acc 64.808 Matthews 12.913
+Epoch: [55][5/9]	Time  1.647 ( 7.197)	Data  0.000 ( 5.551)	Loss 2.9058e-01 (2.9451e-01)	Acc  86.67 ( 85.76)	Matthews  67.21 ( 64.73)
+Epoch: [55][5/9]	Time  1.648 ( 7.190)	Data  0.000 ( 5.532)	Loss 2.4405e-01 (2.9420e-01)	Acc  89.09 ( 86.12)	Matthews  70.51 ( 64.26)
+Epoch: [55][5/9]	Time  1.649 ( 7.198)	Data  0.000 ( 5.538)	Loss 3.2478e-01 (3.0262e-01)	Acc  83.03 ( 85.21)	Matthews  62.50 ( 63.13)
+ * Time 28.675  Loss 0.975 Acc 65.339 Matthews 9.949
+ * Time 28.742  Loss 0.975 Acc 65.339 Matthews 9.949
+ * Time 28.711  Loss 0.975 Acc 65.339 Matthews 9.949
+Epoch: [56][5/9]	Time  1.647 ( 7.197)	Data  0.000 ( 5.547)	Loss 3.4074e-01 (3.2335e-01)	Acc  85.45 ( 85.94)	Matthews  67.04 ( 66.12)
+Epoch: [56][5/9]	Time  1.649 ( 7.203)	Data  0.000 ( 5.546)	Loss 3.6387e-01 (3.2761e-01)	Acc  84.24 ( 84.61)	Matthews  66.32 ( 63.93)
+Epoch: [56][5/9]	Time  1.647 ( 7.191)	Data  0.000 ( 5.543)	Loss 2.9599e-01 (2.9790e-01)	Acc  88.48 ( 86.91)	Matthews  72.10 ( 67.36)
+ * Time 28.873  Loss 0.973 Acc 64.733 Matthews 9.432
+ * Time 28.880  Loss 0.973 Acc 64.733 Matthews 9.432
+ * Time 28.883  Loss 0.973 Acc 64.733 Matthews 9.432
+Epoch: [57][5/9]	Time  1.648 ( 7.229)	Data  0.000 ( 5.579)	Loss 3.3410e-01 (3.0705e-01)	Acc  85.15 ( 86.55)	Matthews  65.91 ( 68.22)
+Epoch: [57][5/9]	Time  1.650 ( 7.227)	Data  0.000 ( 5.580)	Loss 3.0080e-01 (3.0556e-01)	Acc  87.58 ( 86.97)	Matthews  68.41 ( 68.64)
+Epoch: [57][5/9]	Time  1.662 ( 7.216)	Data  0.000 ( 5.563)	Loss 3.0330e-01 (2.9502e-01)	Acc  87.27 ( 87.76)	Matthews  69.53 ( 70.27)
+ * Time 28.666  Loss 0.965 Acc 61.954 Matthews 9.113
+ * Time 28.667  Loss 0.965 Acc 61.954 Matthews 9.113
+ * Time 28.683  Loss 0.965 Acc 61.954 Matthews 9.113
+Epoch: [58][5/9]	Time  1.648 ( 7.216)	Data  0.000 ( 5.569)	Loss 3.1937e-01 (3.1036e-01)	Acc  85.15 ( 86.79)	Matthews  66.07 ( 68.61)
+Epoch: [58][5/9]	Time  1.648 ( 7.221)	Data  0.000 ( 5.570)	Loss 2.7319e-01 (3.0016e-01)	Acc  87.27 ( 86.36)	Matthews  68.43 ( 66.21)
+Epoch: [58][5/9]	Time  1.651 ( 7.207)	Data  0.000 ( 5.543)	Loss 3.2351e-01 (3.0387e-01)	Acc  86.06 ( 86.18)	Matthews  62.89 ( 64.88)
+ * Time 28.729  Loss 0.968 Acc 62.316 Matthews 6.900
+ * Time 28.777  Loss 0.968 Acc 62.316 Matthews 6.900
+ * Time 28.798  Loss 0.968 Acc 62.316 Matthews 6.900
+Epoch: [59][5/9]	Time  1.649 ( 7.227)	Data  0.000 ( 5.554)	Loss 2.9436e-01 (2.9579e-01)	Acc  86.67 ( 86.73)	Matthews  67.37 ( 66.20)
+Epoch: [59][5/9]	Time  1.651 ( 7.224)	Data  0.000 ( 5.571)	Loss 3.2716e-01 (3.1459e-01)	Acc  86.67 ( 86.30)	Matthews  68.51 ( 65.35)
+Epoch: [59][5/9]	Time  1.646 ( 7.246)	Data  0.000 ( 5.597)	Loss 2.7820e-01 (3.1094e-01)	Acc  88.79 ( 86.61)	Matthews  71.84 ( 67.16)
+ * Time 28.730  Loss 0.965 Acc 63.318 Matthews 8.344
+ * Time 28.804  Loss 0.965 Acc 63.318 Matthews 8.344
+ * Time 28.747  Loss 0.965 Acc 63.318 Matthews 8.344
+Epoch: [60][5/9]	Time  1.651 ( 7.183)	Data  0.000 ( 5.527)	Loss 3.0913e-01 (3.0420e-01)	Acc  86.06 ( 86.18)	Matthews  66.04 ( 67.33)
+Epoch: [60][5/9]	Time  1.648 ( 7.183)	Data  0.000 ( 5.535)	Loss 2.7005e-01 (2.7135e-01)	Acc  88.79 ( 88.48)	Matthews  70.92 ( 71.10)
+Epoch: [60][5/9]	Time  1.651 ( 7.187)	Data  0.000 ( 5.539)	Loss 3.3950e-01 (3.0397e-01)	Acc  84.55 ( 86.42)	Matthews  63.52 ( 66.80)
+ * Time 28.597  Loss 0.994 Acc 62.939 Matthews 8.332
+ * Time 28.677  Loss 0.994 Acc 62.939 Matthews 8.332
+ * Time 28.678  Loss 0.994 Acc 62.939 Matthews 8.332
+Epoch: [61][5/9]	Time  1.649 ( 7.201)	Data  0.000 ( 5.545)	Loss 2.4287e-01 (2.7349e-01)	Acc  87.88 ( 87.45)	Matthews  70.81 ( 68.79)
+Epoch: [61][5/9]	Time  1.649 ( 7.203)	Data  0.000 ( 5.551)	Loss 3.3999e-01 (3.0184e-01)	Acc  83.33 ( 86.97)	Matthews  62.63 ( 68.16)
+Epoch: [61][5/9]	Time  1.650 ( 7.194)	Data  0.000 ( 5.544)	Loss 2.5845e-01 (2.7691e-01)	Acc  88.48 ( 87.39)	Matthews  72.46 ( 69.35)
+ * Time 28.681  Loss 1.019 Acc 62.467 Matthews 6.184
+ * Time 28.715  Loss 1.019 Acc 62.467 Matthews 6.184
+ * Time 28.691  Loss 1.019 Acc 62.467 Matthews 6.184
+Epoch: [62][5/9]	Time  1.647 ( 7.193)	Data  0.000 ( 5.547)	Loss 2.7466e-01 (2.6321e-01)	Acc  88.48 ( 88.00)	Matthews  69.98 ( 69.49)
+Epoch: [62][5/9]	Time  1.649 ( 7.194)	Data  0.000 ( 5.537)	Loss 3.0134e-01 (2.7420e-01)	Acc  84.55 ( 88.06)	Matthews  64.80 ( 71.87)
+Epoch: [62][5/9]	Time  1.649 ( 7.197)	Data  0.000 ( 5.527)	Loss 2.6074e-01 (2.8895e-01)	Acc  89.09 ( 87.15)	Matthews  74.74 ( 68.78)
+ * Time 28.664  Loss 0.994 Acc 62.863 Matthews 7.860
+ * Time 28.793  Loss 0.994 Acc 62.863 Matthews 7.860
+ * Time 28.786  Loss 0.994 Acc 62.863 Matthews 7.860
+Epoch: [63][5/9]	Time  1.648 ( 7.214)	Data  0.000 ( 5.566)	Loss 2.6981e-01 (2.5646e-01)	Acc  86.97 ( 88.12)	Matthews  66.51 ( 70.44)
+Epoch: [63][5/9]	Time  1.649 ( 7.214)	Data  0.000 ( 5.560)	Loss 2.8662e-01 (2.8854e-01)	Acc  87.27 ( 86.61)	Matthews  69.35 ( 68.09)
+Epoch: [63][5/9]	Time  1.652 ( 7.230)	Data  0.000 ( 5.573)	Loss 2.5372e-01 (2.8876e-01)	Acc  90.61 ( 87.45)	Matthews  76.87 ( 69.37)
+ * Time 28.844  Loss 1.002 Acc 63.318 Matthews 6.630
+ * Time 28.845  Loss 1.002 Acc 63.318 Matthews 6.630
+ * Time 28.820  Loss 1.002 Acc 63.318 Matthews 6.630
+Epoch: [64][5/9]	Time  1.649 ( 7.207)	Data  0.000 ( 5.549)	Loss 2.6995e-01 (2.7713e-01)	Acc  87.58 ( 87.58)	Matthews  70.51 ( 69.19)
+Epoch: [64][5/9]	Time  1.647 ( 7.204)	Data  0.000 ( 5.546)	Loss 3.0903e-01 (2.7203e-01)	Acc  86.36 ( 87.94)	Matthews  67.63 ( 69.01)
+Epoch: [64][5/9]	Time  1.649 ( 7.205)	Data  0.000 ( 5.556)	Loss 2.4639e-01 (2.8292e-01)	Acc  90.30 ( 87.33)	Matthews  75.07 ( 68.90)
+ * Time 28.619  Loss 0.980 Acc 62.729 Matthews 9.523
+ * Time 28.661  Loss 0.980 Acc 62.729 Matthews 9.523
+ * Time 28.640  Loss 0.980 Acc 62.729 Matthews 9.523
+Epoch: [65][5/9]	Time  1.648 ( 7.214)	Data  0.000 ( 5.533)	Loss 2.3038e-01 (2.8409e-01)	Acc  87.88 ( 87.15)	Matthews  70.14 ( 67.25)
+Epoch: [65][5/9]	Time  1.648 ( 7.202)	Data  0.000 ( 5.554)	Loss 3.0756e-01 (2.9966e-01)	Acc  84.55 ( 86.48)	Matthews  64.41 ( 67.77)
+Epoch: [65][5/9]	Time  1.648 ( 7.211)	Data  0.000 ( 5.527)	Loss 3.2411e-01 (2.8652e-01)	Acc  84.85 ( 86.42)	Matthews  62.50 ( 66.56)
+ * Time 28.716  Loss 1.007 Acc 62.501 Matthews 8.208
+ * Time 28.846  Loss 1.007 Acc 62.501 Matthews 8.208
+ * Time 28.866  Loss 1.007 Acc 62.501 Matthews 8.208
+Epoch: [66][5/9]	Time  1.649 ( 7.222)	Data  0.000 ( 5.559)	Loss 2.1227e-01 (2.7026e-01)	Acc  91.82 ( 88.36)	Matthews  80.79 ( 71.95)
+Epoch: [66][5/9]	Time  1.648 ( 7.234)	Data  0.000 ( 5.583)	Loss 2.8515e-01 (2.7202e-01)	Acc  87.27 ( 88.73)	Matthews  70.81 ( 73.33)
+Epoch: [66][5/9]	Time  1.657 ( 7.214)	Data  0.000 ( 5.564)	Loss 2.4370e-01 (2.7136e-01)	Acc  90.61 ( 88.18)	Matthews  76.44 ( 71.88)
+ * Time 28.800  Loss 1.045 Acc 62.181 Matthews 4.032
+ * Time 28.784  Loss 1.045 Acc 62.181 Matthews 4.032
+ * Time 28.843  Loss 1.045 Acc 62.181 Matthews 4.032
+Epoch: [67][5/9]	Time  1.649 ( 7.177)	Data  0.000 ( 5.525)	Loss 2.4287e-01 (2.4066e-01)	Acc  88.18 ( 89.15)	Matthews  70.90 ( 73.16)
+Epoch: [67][5/9]	Time  1.648 ( 7.170)	Data  0.000 ( 5.511)	Loss 2.5919e-01 (2.7381e-01)	Acc  89.09 ( 87.82)	Matthews  74.87 ( 70.88)
+Epoch: [67][5/9]	Time  1.649 ( 7.177)	Data  0.000 ( 5.530)	Loss 2.8988e-01 (2.8446e-01)	Acc  87.27 ( 88.18)	Matthews  70.67 ( 72.00)
+ * Time 28.609  Loss 1.011 Acc 62.653 Matthews 7.629
+ * Time 28.654  Loss 1.011 Acc 62.653 Matthews 7.629
+ * Time 28.631  Loss 1.011 Acc 62.653 Matthews 7.629
+Epoch: [68][5/9]	Time  1.648 ( 7.186)	Data  0.000 ( 5.535)	Loss 2.6671e-01 (2.7303e-01)	Acc  89.70 ( 88.12)	Matthews  73.83 ( 70.75)
+Epoch: [68][5/9]	Time  1.649 ( 7.186)	Data  0.000 ( 5.519)	Loss 2.8697e-01 (2.7949e-01)	Acc  87.27 ( 86.97)	Matthews  70.04 ( 67.47)
+Epoch: [68][5/9]	Time  1.648 ( 7.182)	Data  0.000 ( 5.534)	Loss 2.9000e-01 (2.6594e-01)	Acc  87.88 ( 88.30)	Matthews  69.80 ( 71.82)
+ * Time 28.626  Loss 1.003 Acc 60.253 Matthews 6.017
+ * Time 28.627  Loss 1.003 Acc 60.253 Matthews 6.017
+ * Time 28.640  Loss 1.003 Acc 60.253 Matthews 6.017
+Epoch: [69][5/9]	Time  1.648 ( 7.211)	Data  0.000 ( 5.564)	Loss 2.4392e-01 (2.5856e-01)	Acc  88.48 ( 88.73)	Matthews  70.73 ( 72.97)
+Epoch: [69][5/9]	Time  1.652 ( 7.202)	Data  0.000 ( 5.537)	Loss 3.3334e-01 (2.9775e-01)	Acc  86.06 ( 86.67)	Matthews  67.03 ( 68.32)
+Epoch: [69][5/9]	Time  1.654 ( 7.215)	Data  0.000 ( 5.560)	Loss 2.8539e-01 (2.7404e-01)	Acc  87.88 ( 88.24)	Matthews  72.07 ( 71.84)
+ * Time 28.938  Loss 1.002 Acc 63.882 Matthews 9.509
+ * Time 28.942  Loss 1.002 Acc 63.882 Matthews 9.509
+ * Time 28.985  Loss 1.002 Acc 63.882 Matthews 9.509
+Epoch: [70][5/9]	Time  1.649 ( 7.219)	Data  0.000 ( 5.559)	Loss 2.8099e-01 (2.8018e-01)	Acc  87.27 ( 87.58)	Matthews  70.39 ( 69.21)
+Epoch: [70][5/9]	Time  1.650 ( 7.235)	Data  0.000 ( 5.549)	Loss 3.0420e-01 (2.7161e-01)	Acc  87.88 ( 87.64)	Matthews  70.88 ( 69.89)
+Epoch: [70][5/9]	Time  1.649 ( 7.208)	Data  0.000 ( 5.560)	Loss 3.0758e-01 (2.8407e-01)	Acc  86.36 ( 87.27)	Matthews  67.99 ( 69.15)
+ * Time 28.708  Loss 1.024 Acc 64.581 Matthews 9.093
+ * Time 28.738  Loss 1.024 Acc 64.581 Matthews 9.093
+ * Time 28.778  Loss 1.024 Acc 64.581 Matthews 9.093
+Epoch: [71][5/9]	Time  1.653 ( 7.218)	Data  0.000 ( 5.564)	Loss 3.0911e-01 (2.6470e-01)	Acc  88.18 ( 89.33)	Matthews  71.29 ( 74.01)
+Epoch: [71][5/9]	Time  1.653 ( 7.202)	Data  0.000 ( 5.542)	Loss 3.1971e-01 (2.9213e-01)	Acc  86.36 ( 87.52)	Matthews  68.35 ( 69.53)
+Epoch: [71][5/9]	Time  1.653 ( 7.220)	Data  0.000 ( 5.566)	Loss 2.6009e-01 (2.6894e-01)	Acc  88.48 ( 87.70)	Matthews  71.37 ( 70.45)
+ * Time 28.810  Loss 0.987 Acc 63.107 Matthews 8.892
+ * Time 28.848  Loss 0.987 Acc 63.107 Matthews 8.892
+ * Time 28.841  Loss 0.987 Acc 63.107 Matthews 8.892
+Epoch: [72][5/9]	Time  1.649 ( 7.208)	Data  0.000 ( 5.546)	Loss 2.6134e-01 (2.5420e-01)	Acc  88.48 ( 89.03)	Matthews  73.49 ( 73.89)
+Epoch: [72][5/9]	Time  1.648 ( 7.208)	Data  0.000 ( 5.559)	Loss 2.5508e-01 (2.7114e-01)	Acc  87.88 ( 88.36)	Matthews  69.31 ( 71.08)
+Epoch: [72][5/9]	Time  1.650 ( 7.210)	Data  0.000 ( 5.562)	Loss 2.8739e-01 (2.7754e-01)	Acc  85.76 ( 87.58)	Matthews  63.74 ( 69.90)
+ * Time 28.692  Loss 1.007 Acc 62.804 Matthews 7.754
+ * Time 28.685  Loss 1.007 Acc 62.804 Matthews 7.754
+ * Time 28.663  Loss 1.007 Acc 62.804 Matthews 7.754
+Epoch: [73][5/9]	Time  1.650 ( 7.215)	Data  0.000 ( 5.568)	Loss 2.8361e-01 (2.6268e-01)	Acc  86.67 ( 87.58)	Matthews  67.88 ( 68.96)
+Epoch: [73][5/9]	Time  1.650 ( 7.210)	Data  0.000 ( 5.543)	Loss 2.8900e-01 (2.8739e-01)	Acc  89.09 ( 88.12)	Matthews  75.01 ( 71.11)
+Epoch: [73][5/9]	Time  1.657 ( 7.202)	Data  0.000 ( 5.548)	Loss 2.1848e-01 (2.4049e-01)	Acc  90.91 ( 89.27)	Matthews  78.86 ( 73.98)
+ * Time 28.812  Loss 1.046 Acc 63.335 Matthews 7.093
+ * Time 28.969  Loss 1.046 Acc 63.335 Matthews 7.093
+ * Time 29.184  Loss 1.046 Acc 63.335 Matthews 7.093
+Epoch: [74][5/9]	Time  1.650 ( 7.264)	Data  0.000 ( 5.556)	Loss 3.0820e-01 (2.5238e-01)	Acc  85.45 ( 88.97)	Matthews  64.53 ( 72.94)
+Epoch: [74][5/9]	Time  1.648 ( 7.277)	Data  0.000 ( 5.628)	Loss 2.9769e-01 (2.9090e-01)	Acc  84.85 ( 86.73)	Matthews  62.85 ( 67.39)
+Epoch: [74][5/9]	Time  1.646 ( 7.303)	Data  0.000 ( 5.600)	Loss 2.6522e-01 (2.6520e-01)	Acc  88.18 ( 88.12)	Matthews  70.53 ( 72.12)
+ * Time 28.960  Loss 1.031 Acc 60.859 Matthews 4.246
+ * Time 29.094  Loss 1.031 Acc 60.859 Matthews 4.246
+ * Time 29.247  Loss 1.031 Acc 60.859 Matthews 4.246
+Epoch: [75][5/9]	Time  1.648 ( 7.216)	Data  0.000 ( 5.553)	Loss 2.4180e-01 (2.4998e-01)	Acc  89.39 ( 89.27)	Matthews  73.91 ( 74.01)
+Epoch: [75][5/9]	Time  1.650 ( 7.200)	Data  0.000 ( 5.539)	Loss 2.4828e-01 (2.4133e-01)	Acc  89.39 ( 89.64)	Matthews  71.97 ( 73.98)
+Epoch: [75][5/9]	Time  1.647 ( 7.212)	Data  0.000 ( 5.564)	Loss 2.7179e-01 (2.4470e-01)	Acc  88.48 ( 89.45)	Matthews  69.01 ( 73.98)
+ * Time 28.816  Loss 1.038 Acc 61.937 Matthews 8.660
+ * Time 28.790  Loss 1.038 Acc 61.937 Matthews 8.660
+ * Time 28.819  Loss 1.038 Acc 61.937 Matthews 8.660
+Epoch: [76][5/9]	Time  1.646 ( 7.212)	Data  0.000 ( 5.566)	Loss 3.3652e-01 (2.7116e-01)	Acc  84.55 ( 88.00)	Matthews  61.81 ( 69.83)
+Epoch: [76][5/9]	Time  1.648 ( 7.209)	Data  0.000 ( 5.548)	Loss 2.3681e-01 (2.5271e-01)	Acc  88.48 ( 88.42)	Matthews  69.68 ( 70.80)
+Epoch: [76][5/9]	Time  1.649 ( 7.219)	Data  0.000 ( 5.558)	Loss 2.7915e-01 (2.8422e-01)	Acc  88.48 ( 87.33)	Matthews  72.66 ( 70.46)
+ * Time 28.772  Loss 1.062 Acc 65.204 Matthews 8.990
+ * Time 28.775  Loss 1.062 Acc 65.204 Matthews 8.990
+ * Time 28.790  Loss 1.062 Acc 65.204 Matthews 8.990
+Epoch: [77][5/9]	Time  1.648 ( 7.183)	Data  0.000 ( 5.526)	Loss 2.8741e-01 (2.6749e-01)	Acc  88.18 ( 87.70)	Matthews  69.34 ( 69.72)
+Epoch: [77][5/9]	Time  1.649 ( 7.190)	Data  0.000 ( 5.532)	Loss 2.8155e-01 (2.4560e-01)	Acc  88.48 ( 89.64)	Matthews  72.23 ( 73.92)
+Epoch: [77][5/9]	Time  1.649 ( 7.193)	Data  0.000 ( 5.546)	Loss 2.2188e-01 (2.4655e-01)	Acc  90.91 ( 89.94)	Matthews  79.82 ( 75.54)
+ * Time 28.695  Loss 1.043 Acc 62.030 Matthews 5.666
+ * Time 28.750  Loss 1.043 Acc 62.030 Matthews 5.666
+ * Time 28.860  Loss 1.043 Acc 62.030 Matthews 5.666
+Epoch: [78][5/9]	Time  1.648 ( 7.264)	Data  0.000 ( 5.589)	Loss 2.8348e-01 (2.5324e-01)	Acc  88.18 ( 89.33)	Matthews  70.73 ( 73.85)
+Epoch: [78][5/9]	Time  1.649 ( 7.251)	Data  0.000 ( 5.565)	Loss 2.3567e-01 (2.3274e-01)	Acc  88.48 ( 89.15)	Matthews  71.51 ( 72.57)
+Epoch: [78][5/9]	Time  1.649 ( 7.233)	Data  0.000 ( 5.584)	Loss 2.7611e-01 (2.6052e-01)	Acc  86.97 ( 88.30)	Matthews  70.91 ( 71.63)
+ * Time 28.685  Loss 1.062 Acc 62.636 Matthews 9.024
+ * Time 28.700  Loss 1.062 Acc 62.636 Matthews 9.024
+ * Time 28.715  Loss 1.062 Acc 62.636 Matthews 9.024
+Epoch: [79][5/9]	Time  1.649 ( 7.168)	Data  0.000 ( 5.503)	Loss 2.7722e-01 (2.5845e-01)	Acc  86.36 ( 89.09)	Matthews  64.48 ( 73.57)
+Epoch: [79][5/9]	Time  1.647 ( 7.180)	Data  0.000 ( 5.533)	Loss 2.6935e-01 (2.6513e-01)	Acc  85.76 ( 88.24)	Matthews  67.73 ( 71.83)
+Epoch: [79][5/9]	Time  1.650 ( 7.175)	Data  0.000 ( 5.526)	Loss 2.4668e-01 (2.3408e-01)	Acc  88.79 ( 89.70)	Matthews  73.64 ( 75.37)
+ * Time 28.695  Loss 1.073 Acc 61.878 Matthews 5.952
+ * Time 28.663  Loss 1.073 Acc 61.878 Matthews 5.952
+ * Time 28.723  Loss 1.073 Acc 61.878 Matthews 5.952
+Epoch: [80][5/9]	Time  1.648 ( 7.202)	Data  0.000 ( 5.549)	Loss 2.1334e-01 (2.4311e-01)	Acc  92.42 ( 89.82)	Matthews  81.70 ( 75.13)
+Epoch: [80][5/9]	Time  1.648 ( 7.192)	Data  0.000 ( 5.535)	Loss 2.4310e-01 (2.4659e-01)	Acc  89.39 ( 89.21)	Matthews  75.10 ( 74.12)
+Epoch: [80][5/9]	Time  1.649 ( 7.202)	Data  0.000 ( 5.554)	Loss 2.4129e-01 (2.2810e-01)	Acc  88.79 ( 90.30)	Matthews  75.15 ( 77.27)
+ * Time 28.804  Loss 1.071 Acc 62.636 Matthews 8.437
+ * Time 28.811  Loss 1.071 Acc 62.636 Matthews 8.437
+ * Time 28.909  Loss 1.071 Acc 62.636 Matthews 8.437
+Epoch: [81][5/9]	Time  1.648 ( 7.202)	Data  0.000 ( 5.544)	Loss 2.4429e-01 (2.3282e-01)	Acc  89.09 ( 90.24)	Matthews  71.70 ( 75.84)
+Epoch: [81][5/9]	Time  1.649 ( 7.208)	Data  0.000 ( 5.556)	Loss 2.2383e-01 (2.6307e-01)	Acc  90.61 ( 89.03)	Matthews  75.53 ( 73.25)
+Epoch: [81][5/9]	Time  1.648 ( 7.207)	Data  0.000 ( 5.558)	Loss 2.8121e-01 (2.5359e-01)	Acc  86.67 ( 88.42)	Matthews  68.99 ( 72.51)
+ * Time 28.774  Loss 1.050 Acc 61.028 Matthews 4.282
+ * Time 28.776  Loss 1.050 Acc 61.028 Matthews 4.282
+ * Time 28.786  Loss 1.050 Acc 61.028 Matthews 4.282
+Epoch: [82][5/9]	Time  1.649 ( 7.207)	Data  0.000 ( 5.531)	Loss 2.5506e-01 (2.3139e-01)	Acc  87.88 ( 90.00)	Matthews  71.35 ( 76.25)
+Epoch: [82][5/9]	Time  1.648 ( 7.206)	Data  0.000 ( 5.527)	Loss 2.6105e-01 (2.4613e-01)	Acc  86.97 ( 89.45)	Matthews  69.15 ( 74.79)
+Epoch: [82][5/9]	Time  1.650 ( 7.197)	Data  0.000 ( 5.549)	Loss 2.4652e-01 (2.3238e-01)	Acc  87.27 ( 89.70)	Matthews  66.97 ( 75.05)
+ * Time 28.766  Loss 1.126 Acc 62.501 Matthews 6.944
+ * Time 28.755  Loss 1.126 Acc 62.501 Matthews 6.944
+ * Time 28.754  Loss 1.126 Acc 62.501 Matthews 6.944
+Epoch: [83][5/9]	Time  1.648 ( 7.201)	Data  0.000 ( 5.554)	Loss 2.4125e-01 (2.4757e-01)	Acc  90.61 ( 88.61)	Matthews  74.34 ( 70.85)
+Epoch: [83][5/9]	Time  1.651 ( 7.201)	Data  0.000 ( 5.550)	Loss 2.6480e-01 (2.3829e-01)	Acc  89.70 ( 90.12)	Matthews  76.01 ( 76.88)
+Epoch: [83][5/9]	Time  1.649 ( 7.193)	Data  0.000 ( 5.544)	Loss 2.1253e-01 (2.4383e-01)	Acc  91.52 ( 89.27)	Matthews  79.60 ( 73.20)
+ * Time 28.778  Loss 1.134 Acc 63.142 Matthews 8.109
+ * Time 28.800  Loss 1.134 Acc 63.142 Matthews 8.109
+ * Time 28.855  Loss 1.134 Acc 63.142 Matthews 8.109
+Epoch: [84][5/9]	Time  1.659 ( 7.277)	Data  0.000 ( 5.588)	Loss 2.2210e-01 (2.3576e-01)	Acc  91.52 ( 89.64)	Matthews  79.64 ( 75.02)
+Epoch: [84][5/9]	Time  1.659 ( 7.252)	Data  0.000 ( 5.592)	Loss 2.3518e-01 (2.4634e-01)	Acc  90.61 ( 89.52)	Matthews  78.31 ( 74.36)
+Epoch: [84][5/9]	Time  1.659 ( 7.246)	Data  0.000 ( 5.595)	Loss 2.8927e-01 (2.5003e-01)	Acc  87.58 ( 88.91)	Matthews  71.54 ( 73.83)
+ * Time 28.728  Loss 1.087 Acc 62.897 Matthews 7.566
+ * Time 28.682  Loss 1.087 Acc 62.897 Matthews 7.566
+ * Time 28.787  Loss 1.087 Acc 62.897 Matthews 7.566
+Epoch: [85][5/9]	Time  1.662 ( 7.184)	Data  0.000 ( 5.533)	Loss 2.8780e-01 (2.4734e-01)	Acc  85.76 ( 89.03)	Matthews  64.93 ( 73.56)
+Epoch: [85][5/9]	Time  1.663 ( 7.184)	Data  0.000 ( 5.531)	Loss 2.2277e-01 (2.2002e-01)	Acc  90.30 ( 90.97)	Matthews  75.89 ( 78.17)
+Epoch: [85][5/9]	Time  1.656 ( 7.196)	Data  0.000 ( 5.542)	Loss 2.3186e-01 (2.3182e-01)	Acc  90.30 ( 90.61)	Matthews  76.20 ( 77.50)
+ * Time 28.807  Loss 1.103 Acc 62.611 Matthews 9.778
+ * Time 28.782  Loss 1.103 Acc 62.611 Matthews 9.778
+ * Time 28.833  Loss 1.103 Acc 62.611 Matthews 9.778
+Epoch: [86][5/9]	Time  1.648 ( 7.224)	Data  0.000 ( 5.573)	Loss 2.5012e-01 (2.4818e-01)	Acc  89.09 ( 89.15)	Matthews  72.40 ( 73.87)
+Epoch: [86][5/9]	Time  1.649 ( 7.220)	Data  0.000 ( 5.570)	Loss 2.6509e-01 (2.4326e-01)	Acc  87.88 ( 89.82)	Matthews  70.76 ( 75.55)
+Epoch: [86][5/9]	Time  1.648 ( 7.214)	Data  0.000 ( 5.565)	Loss 2.3745e-01 (2.2980e-01)	Acc  89.70 ( 90.30)	Matthews  74.38 ( 77.33)
+ * Time 28.725  Loss 1.093 Acc 61.407 Matthews 4.960
+ * Time 28.747  Loss 1.093 Acc 61.407 Matthews 4.960
+ * Time 28.752  Loss 1.093 Acc 61.407 Matthews 4.960
+Epoch: [87][5/9]	Time  1.647 ( 7.219)	Data  0.000 ( 5.570)	Loss 2.2609e-01 (2.2597e-01)	Acc  90.61 ( 89.76)	Matthews  76.27 ( 74.86)
+Epoch: [87][5/9]	Time  1.649 ( 7.223)	Data  0.000 ( 5.565)	Loss 2.9991e-01 (2.3324e-01)	Acc  88.48 ( 90.42)	Matthews  71.79 ( 76.41)
+Epoch: [87][5/9]	Time  1.648 ( 7.215)	Data  0.000 ( 5.554)	Loss 2.1419e-01 (2.5271e-01)	Acc  90.00 ( 88.36)	Matthews  73.78 ( 72.10)
+ * Time 28.718  Loss 1.082 Acc 63.538 Matthews 12.053
+ * Time 28.726  Loss 1.082 Acc 63.538 Matthews 12.053
+ * Time 28.746  Loss 1.082 Acc 63.538 Matthews 12.053
+Epoch: [88][5/9]	Time  1.648 ( 7.212)	Data  0.000 ( 5.554)	Loss 2.4650e-01 (2.2304e-01)	Acc  89.39 ( 90.18)	Matthews  74.39 ( 76.24)
+Epoch: [88][5/9]	Time  1.649 ( 7.207)	Data  0.000 ( 5.548)	Loss 2.6321e-01 (2.4991e-01)	Acc  88.48 ( 89.39)	Matthews  73.90 ( 74.31)
+Epoch: [88][5/9]	Time  1.648 ( 7.221)	Data  0.000 ( 5.572)	Loss 2.4603e-01 (2.1795e-01)	Acc  89.39 ( 90.61)	Matthews  75.99 ( 77.56)
+ * Time 28.758  Loss 1.122 Acc 62.181 Matthews 3.559
+ * Time 28.832  Loss 1.122 Acc 62.181 Matthews 3.559
+ * Time 28.797  Loss 1.122 Acc 62.181 Matthews 3.559
+Epoch: [89][5/9]	Time  1.649 ( 7.193)	Data  0.000 ( 5.541)	Loss 2.6887e-01 (2.3433e-01)	Acc  87.88 ( 89.33)	Matthews  71.47 ( 74.51)
+Epoch: [89][5/9]	Time  1.649 ( 7.182)	Data  0.000 ( 5.528)	Loss 2.6269e-01 (2.4405e-01)	Acc  87.88 ( 89.39)	Matthews  71.68 ( 74.22)
+Epoch: [89][5/9]	Time  1.649 ( 7.194)	Data  0.000 ( 5.545)	Loss 2.1794e-01 (2.3499e-01)	Acc  89.39 ( 89.39)	Matthews  75.42 ( 73.32)
+ * Time 28.759  Loss 1.128 Acc 63.015 Matthews 5.774
+ * Time 28.807  Loss 1.128 Acc 63.015 Matthews 5.774
+ * Time 28.785  Loss 1.128 Acc 63.015 Matthews 5.774
+Epoch: [90][5/9]	Time  1.649 ( 7.228)	Data  0.000 ( 5.536)	Loss 2.4152e-01 (2.3550e-01)	Acc  88.18 ( 89.82)	Matthews  71.01 ( 73.91)
+Epoch: [90][5/9]	Time  1.649 ( 7.233)	Data  0.000 ( 5.545)	Loss 2.5330e-01 (2.4003e-01)	Acc  88.18 ( 89.21)	Matthews  71.78 ( 72.74)
+Epoch: [90][5/9]	Time  1.649 ( 7.231)	Data  0.000 ( 5.581)	Loss 2.0376e-01 (2.1881e-01)	Acc  90.61 ( 90.73)	Matthews  76.99 ( 77.80)
+ * Time 28.710  Loss 1.072 Acc 63.428 Matthews 10.277
+ * Time 28.766  Loss 1.072 Acc 63.428 Matthews 10.277
+ * Time 28.765  Loss 1.072 Acc 63.428 Matthews 10.277
+Epoch: [91][5/9]	Time  1.648 ( 7.167)	Data  0.000 ( 5.510)	Loss 2.5562e-01 (2.4879e-01)	Acc  88.18 ( 89.03)	Matthews  72.60 ( 73.13)
+Epoch: [91][5/9]	Time  1.649 ( 7.174)	Data  0.000 ( 5.528)	Loss 2.5383e-01 (2.3183e-01)	Acc  89.70 ( 90.30)	Matthews  73.97 ( 76.68)
+Epoch: [91][5/9]	Time  1.649 ( 7.192)	Data  0.000 ( 5.544)	Loss 2.1364e-01 (2.3111e-01)	Acc  92.12 ( 90.18)	Matthews  80.79 ( 76.22)
+ * Time 28.685  Loss 1.143 Acc 64.430 Matthews 10.589
+ * Time 28.701  Loss 1.143 Acc 64.430 Matthews 10.589
+ * Time 28.723  Loss 1.143 Acc 64.430 Matthews 10.589
+Epoch: [92][5/9]	Time  1.648 ( 7.233)	Data  0.000 ( 5.577)	Loss 2.2322e-01 (2.2553e-01)	Acc  90.91 ( 90.55)	Matthews  78.17 ( 76.87)
+Epoch: [92][5/9]	Time  1.647 ( 7.234)	Data  0.000 ( 5.556)	Loss 1.8233e-01 (2.2112e-01)	Acc  92.42 ( 91.03)	Matthews  82.69 ( 78.15)
+Epoch: [92][5/9]	Time  1.648 ( 7.229)	Data  0.000 ( 5.580)	Loss 2.1989e-01 (2.2126e-01)	Acc  89.09 ( 90.91)	Matthews  74.77 ( 78.23)
+ * Time 28.827  Loss 1.136 Acc 63.218 Matthews 10.466
+ * Time 28.865  Loss 1.136 Acc 63.218 Matthews 10.466
+ * Time 29.056  Loss 1.136 Acc 63.218 Matthews 10.466
+Epoch: [93][5/9]	Time  1.648 ( 7.257)	Data  0.000 ( 5.586)	Loss 2.3531e-01 (2.1755e-01)	Acc  89.70 ( 90.67)	Matthews  72.20 ( 76.68)
+Epoch: [93][5/9]	Time  1.650 ( 7.237)	Data  0.000 ( 5.548)	Loss 2.2430e-01 (2.4653e-01)	Acc  90.30 ( 89.21)	Matthews  76.92 ( 74.49)
+Epoch: [93][5/9]	Time  1.648 ( 7.249)	Data  0.000 ( 5.601)	Loss 2.2272e-01 (2.3716e-01)	Acc  90.00 ( 89.94)	Matthews  75.40 ( 76.19)
+ * Time 28.932  Loss 1.099 Acc 63.538 Matthews 13.785
+ * Time 28.900  Loss 1.099 Acc 63.538 Matthews 13.785
+ * Time 28.909  Loss 1.099 Acc 63.538 Matthews 13.785
+Epoch: [94][5/9]	Time  1.649 ( 7.183)	Data  0.000 ( 5.520)	Loss 2.3482e-01 (2.3449e-01)	Acc  90.91 ( 89.82)	Matthews  78.56 ( 75.54)
+Epoch: [94][5/9]	Time  1.649 ( 7.181)	Data  0.000 ( 5.531)	Loss 2.3667e-01 (2.5162e-01)	Acc  87.88 ( 88.36)	Matthews  70.61 ( 71.97)
+Epoch: [94][5/9]	Time  1.649 ( 7.189)	Data  0.000 ( 5.526)	Loss 2.4534e-01 (2.4395e-01)	Acc  89.09 ( 89.27)	Matthews  72.40 ( 73.63)
+ * Time 28.775  Loss 1.117 Acc 63.806 Matthews 9.989
+ * Time 28.776  Loss 1.117 Acc 63.806 Matthews 9.989
+ * Time 28.921  Loss 1.117 Acc 63.806 Matthews 9.989
+Epoch: [95][5/9]	Time  1.649 ( 7.219)	Data  0.000 ( 5.545)	Loss 2.0201e-01 (2.0545e-01)	Acc  93.64 ( 91.39)	Matthews  85.09 ( 79.72)
+Epoch: [95][5/9]	Time  1.647 ( 7.221)	Data  0.000 ( 5.545)	Loss 2.5066e-01 (2.2489e-01)	Acc  89.09 ( 90.06)	Matthews  72.11 ( 75.29)
+Epoch: [95][5/9]	Time  1.649 ( 7.240)	Data  0.000 ( 5.591)	Loss 2.6754e-01 (2.3339e-01)	Acc  86.36 ( 89.39)	Matthews  68.99 ( 74.64)
+ * Time 28.795  Loss 1.190 Acc 65.111 Matthews 9.738
+ * Time 28.825  Loss 1.190 Acc 65.111 Matthews 9.738
+ * Time 28.861  Loss 1.190 Acc 65.111 Matthews 9.738
+Epoch: [96][5/9]	Time  1.649 ( 7.199)	Data  0.000 ( 5.542)	Loss 2.1584e-01 (2.1201e-01)	Acc  91.21 ( 90.42)	Matthews  78.38 ( 76.68)
+Epoch: [96][5/9]	Time  1.649 ( 7.204)	Data  0.000 ( 5.549)	Loss 2.0813e-01 (2.1380e-01)	Acc  93.33 ( 90.85)	Matthews  83.88 ( 78.09)
+Epoch: [96][5/9]	Time  1.649 ( 7.227)	Data  0.000 ( 5.579)	Loss 2.3030e-01 (2.2449e-01)	Acc  89.70 ( 90.91)	Matthews  75.96 ( 78.91)
+ * Time 28.746  Loss 1.211 Acc 63.369 Matthews 10.291
+ * Time 28.771  Loss 1.211 Acc 63.369 Matthews 10.291
+ * Time 28.852  Loss 1.211 Acc 63.369 Matthews 10.291
+Epoch: [97][5/9]	Time  1.648 ( 7.210)	Data  0.000 ( 5.548)	Loss 1.8873e-01 (2.1440e-01)	Acc  91.21 ( 90.55)	Matthews  77.83 ( 76.82)
+Epoch: [97][5/9]	Time  1.649 ( 7.219)	Data  0.000 ( 5.549)	Loss 2.5216e-01 (2.1654e-01)	Acc  88.79 ( 90.24)	Matthews  72.74 ( 76.80)
+Epoch: [97][5/9]	Time  1.648 ( 7.204)	Data  0.000 ( 5.556)	Loss 2.1940e-01 (2.0873e-01)	Acc  90.30 ( 91.33)	Matthews  73.08 ( 78.02)
+ * Time 28.731  Loss 1.191 Acc 62.443 Matthews 10.643
+ * Time 28.773  Loss 1.191 Acc 62.443 Matthews 10.643
+ * Time 28.927  Loss 1.191 Acc 62.443 Matthews 10.643
+Epoch: [98][5/9]	Time  1.646 ( 7.222)	Data  0.000 ( 5.576)	Loss 2.0019e-01 (2.0399e-01)	Acc  90.91 ( 91.45)	Matthews  78.44 ( 79.76)
+Epoch: [98][5/9]	Time  1.650 ( 7.186)	Data  0.000 ( 5.534)	Loss 2.3886e-01 (2.1125e-01)	Acc  89.39 ( 91.15)	Matthews  75.14 ( 78.43)
+Epoch: [98][5/9]	Time  1.651 ( 7.186)	Data  0.000 ( 5.537)	Loss 2.3012e-01 (2.1980e-01)	Acc  90.00 ( 91.39)	Matthews  76.83 ( 79.58)
+ * Time 28.631  Loss 1.181 Acc 64.413 Matthews 9.899
+ * Time 28.677  Loss 1.181 Acc 64.413 Matthews 9.899
+ * Time 28.674  Loss 1.181 Acc 64.413 Matthews 9.899
+Epoch: [99][5/9]	Time  1.650 ( 7.235)	Data  0.000 ( 5.555)	Loss 2.1592e-01 (2.1812e-01)	Acc  90.91 ( 90.79)	Matthews  78.84 ( 78.28)
+Epoch: [99][5/9]	Time  1.650 ( 7.218)	Data  0.000 ( 5.534)	Loss 1.9227e-01 (2.0703e-01)	Acc  92.12 ( 91.45)	Matthews  80.09 ( 78.14)
+Epoch: [99][5/9]	Time  1.651 ( 7.233)	Data  0.000 ( 5.584)	Loss 2.5117e-01 (2.4047e-01)	Acc  87.88 ( 89.70)	Matthews  70.76 ( 73.86)
+ * Time 28.768  Loss 1.203 Acc 64.185 Matthews 8.200
+ * Time 28.765  Loss 1.203 Acc 64.185 Matthews 8.200
+ * Time 28.825  Loss 1.203 Acc 64.185 Matthews 8.200

@@ -64,39 +64,38 @@ parser.add_argument('--multiprocessing-distributed', default=True, action='store
                          'fastest way to use PyTorch for either single node or '
                          'multi node data parallel training')
 
-parser.add_argument('--epochs', default=3, type=int, metavar='N',
+parser.add_argument('--epochs', default=30, type=int, metavar='N',
                     help='number of total epochs to run')
 parser.add_argument('--start-epoch', default=0, type=int, metavar='N',
                     help='manual epoch number (useful on restarts)')
-parser.add_argument('-b', '--batch-size', default=24*3, type=int,
+parser.add_argument('-b', '--batch-size', default=80*3, type=int,
                     metavar='N',
                     help='mini-batch size (default: 256), this is the total '
                          'batch size of all GPUs on the current node when ' 
                          'using Data Parallel or Distributed Data Parallel')
 parser.add_argument('--lr', '--learning-rate', default=1e-03, type=float,
                     metavar='LR', help='initial learning rate', dest='lr')
-parser.add_argument('-p', '--print-freq', default=100, type=int,
+parser.add_argument('-p', '--print-freq', default=5, type=int,
                     metavar='N', help='print frequency (default: 10)')
 parser.add_argument('--drop_rate', type=float, default=0.1)
 
 parser.add_argument('--new_vocab', type=int, default=0)
 parser.add_argument('--embedding_size', type=int, default=128)
-parser.add_argument('--hidden_size', type=int, default=756)
-parser.add_argument('--m', type=int, default=12)
-parser.add_argument('--out_dim', type=int, default=12)
+parser.add_argument('--hidden_size', type=int, default=256)
+parser.add_argument('--m', type=int, default=8)
+parser.add_argument('--out_dim', type=int, default=8)
 parser.add_argument('--k', type=int, default=3)
 parser.add_argument('--n_layer', type=int, default=12)
 parser.add_argument('--attd_mode', type=int, default=2)
 parser.add_argument('--max_seq_length', type=int, default=512)
-parser.add_argument('--task', type=str, default='pretrain')
+parser.add_argument('--task', type=str, default='rte') #['cola', 'sst2', 'mrpc', 'qqp', 'stsb', 'mnli', 'qnli', 'rte']
+parser.add_argument('--freeze', type=bool, default=False)
 
 parser.add_argument('--use_cuda', type=str, default='cuda')
 parser.add_argument('--multi_gpu', type=bool, default=True)
 
-parser.add_argument('--pre_trained_model', default='', type=str, metavar='PATH',
+parser.add_argument('--pre_trained_model', default='/home/ubuntu/workdir/nlp/log/pretrain/A2_V0_S512_E128_H256_M8_K3_O8_L12/log_22-06-12_09-39-34/checkpoint.pth.tar', type=str, metavar='PATH',
                     help='path to pre-trained model checkpoint (default: none)')
-
-best_acc1 = 0
 
 
 def main():
@@ -148,9 +147,9 @@ def main():
 
 
 def main_worker(gpu, ngpus_per_node, args):
-    global best_acc1
     args.gpu = gpu
     args.ngpus_per_node = ngpus_per_node
+    args.best_acc = 0
 
     if args.gpu is not None:
         print("Use GPU: {} for training".format(args.gpu))
@@ -169,30 +168,51 @@ def main_worker(gpu, ngpus_per_node, args):
     # Data loading code
     
     if args.new_vocab: 
-        dataset = Mydataset_spm(task=args.task, vocab=f'vocab/vocab_{args.new_vocab}.model', max_length=args.max_seq_length, seq_mask=True)
+        dataset = Mydataset_spm(task=args.task, vocab=f'vocab/vocab_{args.new_vocab}.model', max_length=args.max_seq_length)
+        if args.task == 'mnli':
+            testset = Mydataset_spm(task=args.task, vocab=f'vocab/vocab_{args.new_vocab}.model', max_length=args.max_seq_length, split='validation_matched')
+            testset2 = Mydataset_spm(task=args.task, vocab=f'vocab/vocab_{args.new_vocab}.model', max_length=args.max_seq_length, split='validation_mismatched')
+        else:
+            testset = Mydataset_spm(task=args.task, vocab=f'vocab/vocab_{args.new_vocab}.model', max_length=args.max_seq_length, split='validation')
+
+
     else: 
         dataset = Mydataset(task=args.task, max_length=args.max_seq_length, seq_mask=True)
+        if args.task == 'mnli':
+            testset = Mydataset(task=args.task, max_length=args.max_seq_length, seq_mask=True, split='validation_matched')
+            testset2 = Mydataset(task=args.task, max_length=args.max_seq_length, seq_mask=True, split='validation_mismatched')
+        else:
+            testset = Mydataset(task=args.task, max_length=args.max_seq_length, seq_mask=True, split='validation')
 
     if args.distributed:
         train_sampler = torch.utils.data.distributed.DistributedSampler(dataset)
-
+            
     else:
         dataset_size = len(dataset)
         indices = list(range(dataset_size))
         train_sampler = SubsetRandomSampler(indices)
 
     train_loader = torch.utils.data.DataLoader(dataset, args.batch_size, num_workers=args.workers, pin_memory=True, sampler=train_sampler)
-
+    val_loader = torch.utils.data.DataLoader(testset, args.batch_size, num_workers=args.workers, pin_memory=True)
+    if args.task == 'mnli':
+        val_loader2 = torch.utils.data.DataLoader(testset2, args.batch_size, num_workers=args.workers, pin_memory=True)
+    
 
     # create model
+    n_classes = 2
+    if args.task == 'mnli':
+        n_classes = 3
     model = MymodelForSequenceClassification(vocab_size=dataset.vocab_size,
                                             embedding_size=args.embedding_size,
                                             hidden_size=args.hidden_size,
                                             m=args.m, out_dim=args.out_dim,
                                             n_layer=args.n_layer,
                                             pad_ids=dataset.pad_ids,
+                                            num_classes=n_classes,
+                                            k=args.k,
                                             attd_mode=args.attd_mode,
-                                            drop_rate=args.drop_rate)
+                                            drop_rate=args.drop_rate,
+                                            freeze=args.freeze)
 
     if not torch.cuda.is_available() or args.cpu:
         print('using CPU, this will be slow')
@@ -209,12 +229,12 @@ def main_worker(gpu, ngpus_per_node, args):
             # ourselves based on the total number of GPUs of the current node.
             args.batch_size = int(args.batch_size / ngpus_per_node)
             args.workers = int((args.workers + ngpus_per_node - 1) / ngpus_per_node)
-            model = torch.nn.parallel.DistributedDataParallel(model, device_ids=[args.gpu], find_unused_parameters=True)
+            model = torch.nn.parallel.DistributedDataParallel(model, device_ids=[args.gpu])
         else:
             model.cuda()
             # DistributedDataParallel will divide and allocate batch_size to all
             # available GPUs if device_ids are not set
-            model = torch.nn.parallel.DistributedDataParallel(model, find_unused_parameters=True)
+            model = torch.nn.parallel.DistributedDataParallel(model)
 
     elif args.gpu is not None:
         torch.cuda.set_device(args.gpu)
@@ -225,6 +245,8 @@ def main_worker(gpu, ngpus_per_node, args):
 
     # define loss function (criterion), optimizer, and learning rate scheduler
     criterion1 = nn.CrossEntropyLoss().cuda(args.gpu)
+    if args.task == 'stsb':
+        criterion1 = nn.BCELoss().cuda(args.gpu)
 
     optimizer = torch.optim.AdamW(model.parameters(), args.lr, amsgrad=True)
 
@@ -239,7 +261,7 @@ def main_worker(gpu, ngpus_per_node, args):
             else:
                 loc = 'cuda:{}'.format(args.gpu)
                 checkpoint = torch.load(args.pre_trained_model, map_location=loc)
-            model.load_state_dict(checkpoint['state_dict'])
+            model.module.model_load(checkpoint['state_dict'])
             print("=> loaded checkpoint '{}'"
                   .format(args.pre_trained_model))
         else:
@@ -257,10 +279,10 @@ def main_worker(gpu, ngpus_per_node, args):
                 loc = 'cuda:{}'.format(args.gpu)
                 checkpoint = torch.load(args.resume, map_location=loc)
             args.start_epoch = checkpoint['epoch']
-            best_acc1 = checkpoint['best_acc1']
-            if args.gpu is not None:
+            args.best_acc = checkpoint['best_acc1']
+            # if args.gpu is not None:
                 # best_acc1 may be from a checkpoint from a different GPU
-                best_acc1 = best_acc1.to(args.gpu)
+                # args.best_acc = best_acc1.to(args.gpu)
             model.load_state_dict(checkpoint['state_dict'])
             optimizer.load_state_dict(checkpoint['optimizer'])
             scheduler.load_state_dict(checkpoint['scheduler'])
@@ -277,51 +299,67 @@ def main_worker(gpu, ngpus_per_node, args):
             train_sampler.set_epoch(epoch)
 
         # train for one epoch
-        train(train_loader, model, criterion1, optimizer, epoch, scheduler, args)
+        if args.task == 'mnli':
+            best_acc = train(train_loader, model, criterion1, optimizer, epoch, scheduler, args, val_loader, val_loader2)
+        else:
+            best_acc = train(train_loader, model, criterion1, optimizer, epoch, scheduler, args, val_loader)
+        
+        args.best_acc = best_acc
 
-        # remember best acc@1 and save checkpoint
+        eval_acc = validate(val_loader, model, criterion1, args)
+        if args.task == 'mnli':
+            eval_acc += validate(val_loader2, model, criterion1, args, True)
+        
+        if args.best_acc < eval_acc:
+            args.best_acc = eval_acc
 
-        if not args.multiprocessing_distributed:
-            model.model_save(epoch, optimizer, scheduler, False, args)
+            if not args.multiprocessing_distributed or (args.multiprocessing_distributed and args.rank % args.ngpus_per_node == 0):
+                save_checkpoint({'epoch': epoch + 1,
+                                'state_dict': model.state_dict(),
+                                'best_acc1': args.best_acc,
+                                'optimizer': optimizer.state_dict(),
+                                'scheduler': scheduler.state_dict()
+                                }, True, args)
+        else:
+            if not args.multiprocessing_distributed or (args.multiprocessing_distributed and args.rank % args.ngpus_per_node == 0):
+                save_checkpoint({'epoch': epoch + 1,
+                                'state_dict': model.state_dict(),
+                                'best_acc1': args.best_acc,
+                                'optimizer': optimizer.state_dict(),
+                                'scheduler': scheduler.state_dict()
+                                }, False, args)
 
-        if args.multiprocessing_distributed and args.rank % args.ngpus_per_node == 0:
-            model.module.model_save(epoch, optimizer, scheduler, False, args)
 
-def train(train_loader, model, criterion1, optimizer, epoch, scheduler, args):
+def train(train_loader, model, criterion1, optimizer, epoch, scheduler, args, val_loader, val_loader2=None):
     batch_time = AverageMeter('Time', ':6.3f')
     data_time = AverageMeter('Data', ':6.3f')
     losses = AverageMeter('Loss', ':.4e')
-    top1 = AverageMeter('Acc', ':6.2f')
     if args.task == 'cola':
+        top1 = AverageMeter('Acc', ':6.2f')
         scores = AverageMeter('Matthews', ':6.2f')
         progress = ProgressMeter(
             len(train_loader),
             [batch_time, data_time, losses, top1, scores],
             prefix="Epoch: [{}]".format(epoch), log_file=args.log_file)
 
-    elif args.task == 'sts-b':
+    elif args.task == 'stsb':
         p_scores = AverageMeter('Pearson', ':6.2f')
         s_scores = AverageMeter('Spearman', ':6.2f')
         progress = ProgressMeter(
             len(train_loader),
-            [batch_time, data_time, losses, top1, p_scores, s_scores],
+            [batch_time, data_time, losses, p_scores, s_scores],
             prefix="Epoch: [{}]".format(epoch), log_file=args.log_file)
 
     elif args.task in {'qqp', 'mrpc'}:
+        top1 = AverageMeter('Acc', ':6.2f')
         scores = AverageMeter('F1', ':6.2f')
-        progress = ProgressMeter(
-            len(train_loader),
-            [batch_time, data_time, losses, top1, scores],
-            prefix="Epoch: [{}]".format(epoch), log_file=args.log_file)
-
-    elif args.task in 'mnli':
-        scores = AverageMeter('Acc_mm', ':6.2f')
         progress = ProgressMeter(
             len(train_loader),
             [batch_time, data_time, losses, top1, scores],
             prefix="Epoch: [{}]".format(epoch), log_file=args.log_file)
             
     else:
+        top1 = AverageMeter('Acc', ':6.2f')
         progress = ProgressMeter(
             len(train_loader),
             [batch_time, data_time, losses, top1],
@@ -342,30 +380,40 @@ def train(train_loader, model, criterion1, optimizer, epoch, scheduler, args):
 
         # compute output
         output = model(data)
-        loss = criterion1(torch.transpose(output, 1, 2).contiguous(), target)
+        if args.task == 'stsb':
+            output = output.softmax(1)[:, 1].to(torch.double)
+            target = target/5
+        loss = criterion1(output, target)
 
         # measure accuracy and record loss
-        acc1 = accuracy(output, target, topk=(1,))
 
         losses.update(loss.item(), data[0].size(0))
-        top1.update(acc1[0].item(), data[0].size(0))
 
         if args.task == 'cola':
+            acc1 = accuracy(output, target)
+            top1.update(acc1.item(), data[0].size(0))
             score = cal_matthews(output, target)
             scores.update(score, data[0].size(0))
 
-        elif args.task == 'sts-b':
-            p_score = cal_pearson(output, target)
-            s_score = cal_spearman(output, target)
+        elif args.task == 'stsb':
+            output = output*5
+            target = target*5
+            p_score = cal_pearson(output.detach(), target)
+            s_score = cal_spearman(output.detach(), target)
             p_scores.update(p_score, data[0].size(0))
             s_scores.update(s_score, data[0].size(0))
 
 
         elif args.task in {'qqp', 'mrpc'}:
+            acc1 = accuracy(output, target)
+            top1.update(acc1.item(), data[0].size(0))
             score = cal_f1(output, target)
             scores.update(score, data[0].size(0))
-            
 
+        else:
+            acc1 = accuracy(output, target)
+            top1.update(acc1.item(), data[0].size(0))
+            
 
         # compute gradient and do SGD step
         optimizer.zero_grad()
@@ -378,59 +426,135 @@ def train(train_loader, model, criterion1, optimizer, epoch, scheduler, args):
 
         if i % args.print_freq == 0:
             progress.display(i)
+        elif len(train_loader) < args.print_freq and (len(train_loader)//3)%i == 0:
+            progress.display(i)
         
-        if i % 500 == 0:
+        if i % (len(train_loader)//3) == 0 and len(train_loader) > 50:
             # scheduler.step()
-            validate()
+            eval_acc = validate(val_loader, model, criterion1, args)
+            if args.task == 'mnli':
+                eval_acc += validate(val_loader2, model, criterion1, args, True)
+            model.train()
+            
+            if args.best_acc < eval_acc:
+                args.best_acc = eval_acc
 
-            if not args.multiprocessing_distributed:
-                model.model_save(epoch, optimizer, scheduler, False, args)
+                if not args.multiprocessing_distributed or (args.multiprocessing_distributed and args.rank % args.ngpus_per_node == 0):
+                    save_checkpoint({'epoch': epoch + 1,
+                                    'state_dict': model.state_dict(),
+                                    'best_acc1': args.best_acc,
+                                    'optimizer': optimizer.state_dict(),
+                                    'scheduler': scheduler.state_dict()
+                                    }, True, args)
+            else:
+                if not args.multiprocessing_distributed or (args.multiprocessing_distributed and args.rank % args.ngpus_per_node == 0):
+                    save_checkpoint({'epoch': epoch + 1,
+                                    'state_dict': model.state_dict(),
+                                    'best_acc1': args.best_acc,
+                                    'optimizer': optimizer.state_dict(),
+                                    'scheduler': scheduler.state_dict()
+                                    }, False, args)
+    return args.best_acc
 
-            if args.multiprocessing_distributed and args.rank % args.ngpus_per_node == 0:
-                model.module.model_save(epoch, optimizer, scheduler, False, args)
 
 
-def validate(val_loader, model, criterion, args):
-    batch_time = AverageMeter('Time', ':6.3f', Summary.NONE)
-    losses = AverageMeter('Loss', ':.4e', Summary.NONE)
-    top1 = AverageMeter('Acc@1', ':6.2f', Summary.AVERAGE)
-    top5 = AverageMeter('Acc@5', ':6.2f', Summary.AVERAGE)
-    progress = ProgressMeter(
-        len(val_loader),
-        [batch_time, losses, top1, top5],
-        prefix='Test: ')
+
+
+def validate(val_loader, model, criterion, args, mnli_mm=False):
+    batch_time = AverageMeter('Time', ':6.3f', Summary.SUM)
+    data_time = AverageMeter('Data', ':6.3f', Summary.NONE)
+    losses = AverageMeter('Loss', ':.4e')
+
+    if args.task == 'cola':
+        top1 = AverageMeter('Acc', ':6.2f')
+        scores = AverageMeter('Matthews', ':6.2f')
+        progress = ProgressMeter(
+            len(val_loader),
+            [batch_time, data_time, losses, top1, scores],
+            prefix="[Eval]", log_file=args.log_file)
+
+    elif args.task == 'stsb':
+        p_scores = AverageMeter('Pearson', ':6.2f')
+        s_scores = AverageMeter('Spearman', ':6.2f')
+        progress = ProgressMeter(
+            len(val_loader),
+            [batch_time, data_time, losses, p_scores, s_scores],
+            prefix="[Eval]", log_file=args.log_file)
+
+    elif args.task in {'qqp', 'mrpc'}:
+        top1 = AverageMeter('Acc', ':6.2f')
+        scores = AverageMeter('F1', ':6.2f')
+        progress = ProgressMeter(
+            len(val_loader),
+            [batch_time, data_time, losses, top1, scores],
+            prefix="[Eval]", log_file=args.log_file)
+            
+    else:
+        top1 = AverageMeter('Acc', ':6.2f')
+        if mnli_mm:
+            top1 = AverageMeter('Acc_mm', ':6.2f')
+        progress = ProgressMeter(
+            len(val_loader),
+            [batch_time, data_time, losses, top1],
+            prefix="[Eval]", log_file=args.log_file)
 
     # switch to evaluate mode
     model.eval()
-
     with torch.no_grad():
         end = time.time()
         for i, (data, target) in enumerate(val_loader):
-            if args.gpu is not None:
-                data = [x.cuda(args.gpu, non_blocking=True) for x in data]
-            if torch.cuda.is_available():
-                target = [x.cuda(args.gpu, non_blocking=True) for x in target]
+            if args.gpu is not None and not args.cpu:
+                data = data.cuda(args.gpu, non_blocking=True)
+            if torch.cuda.is_available() and not args.cpu:
+                target = target.cuda(args.gpu, non_blocking=True)
 
             # compute output
-            output, _ = model(data)
-            for j, logit in enumerate(output):
-                if j == 0:
-                    loss = criterion(logit, target[j])
-                else:
-                    loss += criterion(logit, target[j])
+            output = model(data)
+            if args.task == 'stsb':
+                output = output.softmax(1)[:, 1].to(torch.double)
+                target = target/5
+            loss = criterion(output, target)
+
 
             # measure accuracy and record loss
-            acc1, acc5 = accuracy(output, target, topk=(1, 5))
-            losses.update(loss.item(), data[0].size(0))
-            top1.update(acc1[0], data[0].size(0))
-            top5.update(acc5[0], data[0].size(0))
 
+            losses.update(loss.item(), data[0].size(0))
+            
+            if args.task == 'cola':
+                acc1 = accuracy(output, target)
+                top1.update(acc1.item(), data[0].size(0))
+                score = cal_matthews(output, target)
+                scores.update(score, data[0].size(0))
+
+            elif args.task == 'stsb':
+                p_score = cal_pearson(output, target)
+                s_score = cal_spearman(output, target)
+                p_scores.update(p_score, data[0].size(0))
+                s_scores.update(s_score, data[0].size(0))
+
+
+            elif args.task in {'qqp', 'mrpc'}:
+                acc1 = accuracy(output, target)
+                top1.update(acc1.item(), data[0].size(0))
+                score = cal_f1(output, target)
+                scores.update(score, data[0].size(0))
+            
+            else:
+                acc1 = accuracy(output, target)
+                top1.update(acc1.item(), data[0].size(0))
+
+            
             # measure elapsed time
             batch_time.update(time.time() - end)
             end = time.time()
 
         progress.display_summary()
 
+    if args.task == 'stsb':
+        return (s_scores.avg + p_scores.avg)/2
+    if args.task in {'cola', 'qqp', 'mrpc'}:
+        return (top1.avg + scores.avg)/2
+        
     return top1.avg
 
 
@@ -507,74 +631,54 @@ class ProgressMeter(object):
 
 def cal_f1(output, target):
     with torch.no_grad():
-        batch_size = target.size(0)
-        f1 = 0
-        for i in range(batch_size):
-            _, pred = output[i].topk(1, 1, True, True)
-            pred = pred.t()
-            score = f1_score(target[i].cpu(), pred.squeeze().cpu(), average='macro')
-            f1 += score * (100.0 / batch_size)
+        _, pred = output.topk(1, 1, True, True)
+        pred = pred.flatten()
+        score = f1_score(target.cpu(), pred.cpu(), average='macro')
+        f1 = score * (100.0)
 
         return f1
 
 
 def cal_spearman(output, target):
     with torch.no_grad():
-        batch_size = target.size(0)
-        spearman = 0
-        for i in range(batch_size):
-            _, pred = output[i].topk(1, 1, True, True)
-            pred = pred.t()
-            score, _ = spearmanr(target[i].cpu(), pred.squeeze().cpu())
-            spearman += score * (100.0 / batch_size)
+        score, _ = spearmanr(target.cpu(), output.cpu())
+        spearman = score * (100.0)
 
         return spearman
 
 
 def cal_pearson(output, target):
-    with torch.no_grad():
-        batch_size = target.size(0)
-        pearsonr = 0
-        for i in range(batch_size):
-            _, pred = output[i].topk(1, 1, True, True)
-            pred = pred.t()
-            score, _ = pearsonr(target[i].cpu(), pred.squeeze().cpu())
-            pearson += score * (100.0 / batch_size)
+        score, _ = pearsonr(target.cpu(), output.cpu())
+        pearson = score * (100.0)
 
-        return pearsonr
+        return pearson
 
 
 def cal_matthews(output, target):
     with torch.no_grad():
-        batch_size = target.size(0)
-        matthews = 0
-        for i in range(batch_size):
-            _, pred = output[i].topk(1, 1, True, True)
-            pred = pred.t()
-            score = matthews_corrcoef(target[i].cpu(), pred.squeeze().cpu())
-            matthews += score * (100.0 / batch_size)
+        _, pred = output.topk(1, 1, True, True)
+        pred = pred.flatten()
+        score = matthews_corrcoef(target.cpu(), pred.cpu())
+        matthews = score * (100.0)
 
         return matthews
 
 
-def accuracy(output, target, topk=(1,)):
+def accuracy(output, target):
     """Computes the accuracy over the k top predictions for the specified values of k"""
     with torch.no_grad():
-        maxk = max(topk)
-        batch_size = target.size(0)
-        acc = [0] * len(topk)
-        for i in range(batch_size):
-            _, pred = output[i].topk(maxk, 1, True, True)
-            pred = pred.t()
-            correct = pred.eq(target[i].view(1, -1).expand_as(pred))
-
-            for j, k in enumerate(topk):
-                correct_k = correct[:k].reshape(-1).float().mean(0, keepdim=True)
-                acc[j] += (correct_k.mul_(100.0 / batch_size))
-
+        _, pred = output.topk(1, 1, True, True)
+        pred = pred.flatten()
+        correct = pred.eq(target)
+        acc = correct.float().mean().mul_(100.0)
         return acc
 
 
+def save_checkpoint(state, is_best, args, filename='checkpoint.pth.tar'):
+    filename = os.path.join(args.log_dir, filename)
+    torch.save(state, filename)
+    if is_best:
+        shutil.copyfile(filename, os.path.join(args.log_dir, 'model_best.pth.tar'))
 
 def mk_dir(path_: str):
     os.makedirs(path_) if not os.path.isdir(path_) else None

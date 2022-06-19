@@ -284,6 +284,9 @@ class MymodelForPretrain(nn.Module):
         if is_best:
             shutil.copyfile(filename, os.path.join(args.log_dir, 'model_best.pth.tar'))
 
+    def model_load(self, checkpoint):
+        self.model.load_state_dict(checkpoint)
+
 class MymodelForPretrain2(nn.Module):
     def __init__(self, vocab_size, embedding_size, hidden_size, m, out_dim, n_layer, pad_ids, k=3, attd_mode=1, drop_rate=0):
         super(MymodelForPretrain2, self).__init__()
@@ -331,6 +334,8 @@ class MymodelForPretrain2(nn.Module):
         if is_best:
             shutil.copyfile(filename, os.path.join(args.log_dir, 'model_best.pth.tar'))
 
+    def model_load(self, checkpoint):
+        self.model.load_state_dict(checkpoint)
 
 class MymodelForSequenceClassification(nn.Module):
     def __init__(self, vocab_size, embedding_size, hidden_size, m, out_dim, n_layer, pad_ids, num_classes, k=3, attd_mode=1, drop_rate=0, freeze=False):
@@ -344,9 +349,7 @@ class MymodelForSequenceClassification(nn.Module):
                 param.requires_grad = False
         
         self.linear = nn.Linear(hidden_size, num_classes)
-    
-    def freezing(self, freeze):
-        pass
+        self.drop_out = nn.Dropout(drop_rate)
 
 
     def forward(self, x):
@@ -354,11 +357,14 @@ class MymodelForSequenceClassification(nn.Module):
 
         outputs = self.model(x)
 
-        hidden = outputs[0]                                      # b x m x seq_length x n
+        hidden = self.drop_out(outputs[0])                                      # b x m x seq_length x n
         hidden = torch.transpose(hidden, 1, 2).contiguous()      # b x seq_length x m x n
         hidden = hidden.view(-1, x.size()[1], self.hidden_size)  # b x seq_length x hidden_size
         hidden = torch.mean(hidden, dim=1)                       # b x hidden_size
         # hidden = hidden[:,0,:]                                 # b x hidden_size
-        out = self.linear(hidden)                                # b x num_classes
+        out = self.linear(hidden)                 # b x num_classes
 
         return out
+
+    def model_load(self, checkpoint):
+        self.model.load_state_dict(checkpoint)

@@ -1,0 +1,900 @@
+Epoch: [0][ 5/14]	Time  1.460 ( 7.389)	Data  0.000 ( 5.566)	Loss 1.1705e+00 (1.0645e+00)	Pearson  21.74 (  5.91)	Spearman  17.88 (  4.82)
+Epoch: [0][ 5/14]	Time  1.460 ( 7.384)	Data  0.000 ( 5.571)	Loss 1.1381e+00 (1.0484e+00)	Pearson  16.54 (  4.71)	Spearman  14.34 (  4.35)
+Epoch: [0][ 5/14]	Time  1.460 ( 7.384)	Data  0.000 ( 5.543)	Loss 1.1697e+00 (1.0626e+00)	Pearson  39.27 ( 13.85)	Spearman  38.54 ( 15.15)
+Epoch: [0][10/14]	Time  1.461 ( 4.425)	Data  0.000 ( 2.783)	Loss 9.1832e-01 (9.4595e-01)	Pearson -10.14 (  3.51)	Spearman  -9.42 (  3.19)
+Epoch: [0][10/14]	Time  1.461 ( 4.422)	Data  0.000 ( 2.786)	Loss 8.8452e-01 (9.4667e-01)	Pearson   5.90 (  3.87)	Spearman   6.11 (  3.01)
+Epoch: [0][10/14]	Time  1.462 ( 4.422)	Data  0.000 ( 2.771)	Loss 8.9640e-01 (9.4819e-01)	Pearson -10.22 ( 10.53)	Spearman -14.26 ( 10.07)
+ * Time 31.456  Loss 0.738 Pearson 13.098 Spearman 12.379
+ * Time 31.574  Loss 0.738 Pearson 13.098 Spearman 12.379
+ * Time 31.654  Loss 0.738 Pearson 13.098 Spearman 12.379
+Epoch: [1][ 5/14]	Time  1.459 ( 7.161)	Data  0.000 ( 5.634)	Loss 6.8837e-01 (7.5487e-01)	Pearson  35.17 ( 22.02)	Spearman  32.63 ( 18.06)
+Epoch: [1][ 5/14]	Time  1.458 ( 7.118)	Data  0.000 ( 5.659)	Loss 6.9001e-01 (7.6551e-01)	Pearson  20.30 ( 18.25)	Spearman  21.07 ( 15.91)
+Epoch: [1][ 5/14]	Time  1.460 ( 7.148)	Data  0.000 ( 5.666)	Loss 6.9165e-01 (7.4763e-01)	Pearson  11.31 ( 17.12)	Spearman   7.74 ( 13.86)
+Epoch: [1][10/14]	Time  1.461 ( 4.311)	Data  0.000 ( 2.817)	Loss 6.8878e-01 (7.3279e-01)	Pearson   3.96 ( 16.35)	Spearman   1.70 ( 13.56)
+Epoch: [1][10/14]	Time  1.462 ( 4.289)	Data  0.000 ( 2.829)	Loss 7.3970e-01 (7.4708e-01)	Pearson  22.59 ( 18.11)	Spearman  21.79 ( 15.85)
+Epoch: [1][10/14]	Time  1.462 ( 4.304)	Data  0.000 ( 2.833)	Loss 7.2334e-01 (7.3323e-01)	Pearson  12.52 ( 16.06)	Spearman   9.96 ( 14.37)
+ * Time 31.338  Loss 0.698 Pearson 14.339 Spearman 13.361
+ * Time 31.511  Loss 0.698 Pearson 14.339 Spearman 13.361
+ * Time 31.463  Loss 0.698 Pearson 14.339 Spearman 13.361
+Epoch: [2][ 5/14]	Time  1.464 ( 7.241)	Data  0.000 ( 5.635)	Loss 6.7950e-01 (7.0422e-01)	Pearson  29.27 ( 21.36)	Spearman  30.73 ( 19.05)
+Epoch: [2][ 5/14]	Time  1.464 ( 7.084)	Data  0.000 ( 5.624)	Loss 6.8166e-01 (7.0427e-01)	Pearson  14.04 ( 22.74)	Spearman   8.89 ( 18.85)
+Epoch: [2][ 5/14]	Time  1.466 ( 7.220)	Data  0.000 ( 5.635)	Loss 6.8170e-01 (7.0045e-01)	Pearson  22.23 ( 22.24)	Spearman  16.89 ( 18.19)
+Epoch: [2][10/14]	Time  1.461 ( 4.351)	Data  0.000 ( 2.817)	Loss 6.8416e-01 (6.9823e-01)	Pearson  20.27 ( 22.01)	Spearman  17.22 ( 19.08)
+Epoch: [2][10/14]	Time  1.461 ( 4.273)	Data  0.000 ( 2.812)	Loss 7.0856e-01 (7.0449e-01)	Pearson  23.96 ( 22.53)	Spearman  20.61 ( 19.16)
+Epoch: [2][10/14]	Time  1.461 ( 4.340)	Data  0.000 ( 2.817)	Loss 7.0587e-01 (7.0540e-01)	Pearson  39.38 ( 24.95)	Spearman  36.99 ( 21.32)
+ * Time 31.369  Loss 0.692 Pearson 14.861 Spearman 14.366
+ * Time 31.373  Loss 0.692 Pearson 14.861 Spearman 14.366
+ * Time 31.476  Loss 0.692 Pearson 14.861 Spearman 14.366
+Epoch: [3][ 5/14]	Time  1.460 ( 7.246)	Data  0.000 ( 5.634)	Loss 6.7375e-01 (6.8985e-01)	Pearson  20.16 ( 22.31)	Spearman  12.98 ( 17.50)
+Epoch: [3][ 5/14]	Time  1.462 ( 7.240)	Data  0.000 ( 5.629)	Loss 6.7964e-01 (6.9071e-01)	Pearson  29.72 ( 25.38)	Spearman  26.91 ( 22.82)
+Epoch: [3][ 5/14]	Time  1.460 ( 7.111)	Data  0.000 ( 5.651)	Loss 6.8061e-01 (6.9069e-01)	Pearson  25.40 ( 26.38)	Spearman  21.31 ( 23.71)
+Epoch: [3][10/14]	Time  1.461 ( 4.353)	Data  0.000 ( 2.817)	Loss 6.7229e-01 (6.8984e-01)	Pearson  25.80 ( 23.21)	Spearman  20.30 ( 18.62)
+Epoch: [3][10/14]	Time  1.460 ( 4.285)	Data  0.000 ( 2.826)	Loss 6.7616e-01 (6.9339e-01)	Pearson  23.39 ( 24.89)	Spearman  19.24 ( 21.49)
+Epoch: [3][10/14]	Time  1.461 ( 4.350)	Data  0.000 ( 2.815)	Loss 6.7979e-01 (6.8698e-01)	Pearson  28.53 ( 27.46)	Spearman  26.37 ( 24.81)
+ * Time 31.305  Loss 0.686 Pearson 15.458 Spearman 15.032
+ * Time 31.404  Loss 0.686 Pearson 15.458 Spearman 15.032
+ * Time 31.359  Loss 0.686 Pearson 15.458 Spearman 15.032
+Epoch: [4][ 5/14]	Time  1.463 ( 7.256)	Data  0.000 ( 5.653)	Loss 6.9623e-01 (6.8621e-01)	Pearson   8.99 ( 21.00)	Spearman   0.05 ( 15.89)
+Epoch: [4][ 5/14]	Time  1.461 ( 7.245)	Data  0.000 ( 5.642)	Loss 6.6239e-01 (6.7633e-01)	Pearson  35.70 ( 30.23)	Spearman  32.97 ( 27.51)
+Epoch: [4][ 5/14]	Time  1.461 ( 7.104)	Data  0.000 ( 5.642)	Loss 6.6429e-01 (6.7727e-01)	Pearson  23.96 ( 23.59)	Spearman  22.33 ( 19.21)
+Epoch: [4][10/14]	Time  1.460 ( 4.353)	Data  0.000 ( 2.821)	Loss 6.7989e-01 (6.8027e-01)	Pearson  26.65 ( 28.06)	Spearman  24.11 ( 25.37)
+Epoch: [4][10/14]	Time  1.461 ( 4.358)	Data  0.000 ( 2.827)	Loss 6.7181e-01 (6.8162e-01)	Pearson  34.47 ( 24.49)	Spearman  32.36 ( 19.63)
+Epoch: [4][10/14]	Time  1.460 ( 4.282)	Data  0.000 ( 2.821)	Loss 6.7229e-01 (6.7662e-01)	Pearson  30.15 ( 27.94)	Spearman  28.43 ( 25.08)
+ * Time 31.466  Loss 0.691 Pearson 17.355 Spearman 16.310
+ * Time 31.495  Loss 0.691 Pearson 17.355 Spearman 16.310
+ * Time 31.515  Loss 0.691 Pearson 17.355 Spearman 16.310
+Epoch: [5][ 5/14]	Time  1.460 ( 7.206)	Data  0.000 ( 5.616)	Loss 6.6833e-01 (6.7224e-01)	Pearson  26.67 ( 28.37)	Spearman  23.46 ( 25.15)
+Epoch: [5][ 5/14]	Time  1.460 ( 7.212)	Data  0.000 ( 5.639)	Loss 6.7498e-01 (6.7706e-01)	Pearson  28.19 ( 28.78)	Spearman  21.52 ( 24.21)
+Epoch: [5][ 5/14]	Time  1.460 ( 7.078)	Data  0.000 ( 5.618)	Loss 6.6283e-01 (6.7273e-01)	Pearson  32.08 ( 31.11)	Spearman  29.39 ( 28.86)
+Epoch: [5][10/14]	Time  1.460 ( 4.333)	Data  0.000 ( 2.808)	Loss 6.6834e-01 (6.7244e-01)	Pearson  36.13 ( 30.81)	Spearman  32.35 ( 27.88)
+Epoch: [5][10/14]	Time  1.463 ( 4.337)	Data  0.000 ( 2.819)	Loss 6.7839e-01 (6.7516e-01)	Pearson  27.76 ( 29.85)	Spearman  19.85 ( 24.81)
+Epoch: [5][10/14]	Time  1.460 ( 4.269)	Data  0.000 ( 2.809)	Loss 6.7491e-01 (6.7340e-01)	Pearson  32.56 ( 30.94)	Spearman  28.07 ( 28.35)
+ * Time 31.502  Loss 0.690 Pearson 19.700 Spearman 17.313
+ * Time 31.417  Loss 0.690 Pearson 19.700 Spearman 17.313
+ * Time 31.459  Loss 0.690 Pearson 19.700 Spearman 17.313
+Epoch: [6][ 5/14]	Time  1.461 ( 7.265)	Data  0.000 ( 5.633)	Loss 6.6958e-01 (6.6720e-01)	Pearson  34.13 ( 33.74)	Spearman  28.81 ( 30.43)
+Epoch: [6][ 5/14]	Time  1.461 ( 7.266)	Data  0.000 ( 5.643)	Loss 6.7699e-01 (6.7174e-01)	Pearson  40.66 ( 39.02)	Spearman  39.15 ( 36.97)
+Epoch: [6][ 5/14]	Time  1.460 ( 7.127)	Data  0.000 ( 5.667)	Loss 6.6681e-01 (6.7275e-01)	Pearson  27.68 ( 31.18)	Spearman  26.99 ( 29.06)
+Epoch: [6][10/14]	Time  1.462 ( 4.295)	Data  0.000 ( 2.834)	Loss 6.6052e-01 (6.6821e-01)	Pearson  42.92 ( 34.48)	Spearman  39.45 ( 32.15)
+Epoch: [6][10/14]	Time  1.462 ( 4.365)	Data  0.000 ( 2.816)	Loss 6.6111e-01 (6.6599e-01)	Pearson  40.82 ( 36.10)	Spearman  37.37 ( 32.89)
+Epoch: [6][10/14]	Time  1.464 ( 4.366)	Data  0.000 ( 2.822)	Loss 6.7552e-01 (6.7324e-01)	Pearson  30.27 ( 33.81)	Spearman  28.39 ( 30.24)
+ * Time 31.383  Loss 0.688 Pearson 21.721 Spearman 18.986
+ * Time 31.504  Loss 0.688 Pearson 21.721 Spearman 18.986
+ * Time 31.563  Loss 0.688 Pearson 21.721 Spearman 18.986
+Epoch: [7][ 5/14]	Time  1.460 ( 7.254)	Data  0.000 ( 5.653)	Loss 6.5475e-01 (6.6248e-01)	Pearson  43.47 ( 41.61)	Spearman  42.55 ( 39.94)
+Epoch: [7][ 5/14]	Time  1.461 ( 7.280)	Data  0.000 ( 5.648)	Loss 6.5054e-01 (6.6825e-01)	Pearson  47.06 ( 36.22)	Spearman  43.28 ( 33.52)
+Epoch: [7][ 5/14]	Time  1.459 ( 7.115)	Data  0.000 ( 5.656)	Loss 6.5667e-01 (6.6530e-01)	Pearson  44.63 ( 37.05)	Spearman  40.04 ( 33.62)
+Epoch: [7][10/14]	Time  1.461 ( 4.357)	Data  0.000 ( 2.826)	Loss 6.6798e-01 (6.6330e-01)	Pearson  34.43 ( 41.98)	Spearman  32.09 ( 40.43)
+Epoch: [7][10/14]	Time  1.460 ( 4.370)	Data  0.000 ( 2.824)	Loss 6.6658e-01 (6.6260e-01)	Pearson  33.49 ( 39.21)	Spearman  32.72 ( 37.08)
+Epoch: [7][10/14]	Time  1.461 ( 4.288)	Data  0.000 ( 2.828)	Loss 6.6634e-01 (6.6563e-01)	Pearson  38.79 ( 37.40)	Spearman  37.98 ( 35.40)
+ * Time 31.319  Loss 0.692 Pearson 23.107 Spearman 19.763
+ * Time 31.424  Loss 0.692 Pearson 23.107 Spearman 19.763
+ * Time 31.391  Loss 0.692 Pearson 23.107 Spearman 19.763
+Epoch: [8][ 5/14]	Time  1.461 ( 7.107)	Data  0.000 ( 5.647)	Loss 6.5572e-01 (6.5205e-01)	Pearson  42.86 ( 44.34)	Spearman  42.23 ( 42.36)
+Epoch: [8][ 5/14]	Time  1.464 ( 7.247)	Data  0.000 ( 5.641)	Loss 6.5146e-01 (6.5229e-01)	Pearson  49.02 ( 45.95)	Spearman  50.33 ( 44.72)
+Epoch: [8][ 5/14]	Time  1.464 ( 7.253)	Data  0.000 ( 5.633)	Loss 6.5555e-01 (6.6404e-01)	Pearson  49.82 ( 41.85)	Spearman  48.77 ( 41.91)
+Epoch: [8][10/14]	Time  1.465 ( 4.286)	Data  0.000 ( 2.824)	Loss 6.3459e-01 (6.5167e-01)	Pearson  58.23 ( 46.46)	Spearman  58.21 ( 45.24)
+Epoch: [8][10/14]	Time  1.465 ( 4.356)	Data  0.000 ( 2.821)	Loss 6.5730e-01 (6.5282e-01)	Pearson  45.57 ( 46.25)	Spearman  47.70 ( 45.49)
+Epoch: [8][10/14]	Time  1.465 ( 4.359)	Data  0.000 ( 2.816)	Loss 6.5219e-01 (6.6089e-01)	Pearson  39.62 ( 41.58)	Spearman  39.22 ( 41.04)
+ * Time 31.380  Loss 0.684 Pearson 24.884 Spearman 21.756
+ * Time 31.426  Loss 0.684 Pearson 24.884 Spearman 21.756
+ * Time 31.404  Loss 0.684 Pearson 24.884 Spearman 21.756
+Epoch: [9][ 5/14]	Time  1.460 ( 7.220)	Data  0.000 ( 5.656)	Loss 6.3304e-01 (6.4609e-01)	Pearson  56.89 ( 51.61)	Spearman  56.29 ( 50.74)
+Epoch: [9][ 5/14]	Time  1.463 ( 7.231)	Data  0.000 ( 5.666)	Loss 6.5294e-01 (6.5127e-01)	Pearson  46.70 ( 46.96)	Spearman  44.25 ( 45.01)
+Epoch: [9][ 5/14]	Time  1.461 ( 7.095)	Data  0.000 ( 5.636)	Loss 6.5158e-01 (6.5136e-01)	Pearson  46.89 ( 47.32)	Spearman  44.70 ( 46.25)
+Epoch: [9][10/14]	Time  1.461 ( 4.340)	Data  0.000 ( 2.828)	Loss 6.5544e-01 (6.4468e-01)	Pearson  45.49 ( 51.87)	Spearman  42.72 ( 50.77)
+Epoch: [9][10/14]	Time  1.460 ( 4.278)	Data  0.000 ( 2.818)	Loss 6.5264e-01 (6.4403e-01)	Pearson  48.25 ( 52.04)	Spearman  47.71 ( 51.13)
+Epoch: [9][10/14]	Time  1.461 ( 4.346)	Data  0.000 ( 2.833)	Loss 6.5148e-01 (6.4922e-01)	Pearson  49.51 ( 49.81)	Spearman  47.13 ( 48.40)
+ * Time 31.352  Loss 0.686 Pearson 26.714 Spearman 23.572
+ * Time 31.252  Loss 0.686 Pearson 26.714 Spearman 23.572
+ * Time 31.349  Loss 0.686 Pearson 26.714 Spearman 23.572
+Epoch: [10][ 5/14]	Time  1.466 ( 7.277)	Data  0.000 ( 5.669)	Loss 6.2570e-01 (6.3633e-01)	Pearson  57.62 ( 56.95)	Spearman  59.43 ( 56.89)
+Epoch: [10][ 5/14]	Time  1.460 ( 7.143)	Data  0.000 ( 5.680)	Loss 6.3620e-01 (6.4426e-01)	Pearson  56.15 ( 52.34)	Spearman  55.39 ( 51.56)
+Epoch: [10][ 5/14]	Time  1.461 ( 7.278)	Data  0.000 ( 5.657)	Loss 6.3006e-01 (6.3013e-01)	Pearson  57.69 ( 60.71)	Spearman  56.05 ( 60.36)
+Epoch: [10][10/14]	Time  1.460 ( 4.370)	Data  0.000 ( 2.828)	Loss 6.4744e-01 (6.2981e-01)	Pearson  50.82 ( 58.69)	Spearman  46.61 ( 57.67)
+Epoch: [10][10/14]	Time  1.462 ( 4.370)	Data  0.000 ( 2.834)	Loss 6.2980e-01 (6.3319e-01)	Pearson  60.67 ( 57.97)	Spearman  58.82 ( 57.87)
+Epoch: [10][10/14]	Time  1.460 ( 4.303)	Data  0.000 ( 2.840)	Loss 6.3219e-01 (6.4427e-01)	Pearson  59.04 ( 52.87)	Spearman  59.02 ( 51.70)
+ * Time 31.646  Loss 0.674 Pearson 29.899 Spearman 27.026
+ * Time 31.706  Loss 0.674 Pearson 29.899 Spearman 27.026
+ * Time 31.668  Loss 0.674 Pearson 29.899 Spearman 27.026
+Epoch: [11][ 5/14]	Time  1.459 ( 7.276)	Data  0.000 ( 5.635)	Loss 6.4010e-01 (6.2964e-01)	Pearson  51.41 ( 59.13)	Spearman  49.69 ( 57.55)
+Epoch: [11][ 5/14]	Time  1.460 ( 7.272)	Data  0.000 ( 5.641)	Loss 6.1928e-01 (6.1657e-01)	Pearson  68.75 ( 67.46)	Spearman  67.91 ( 66.87)
+Epoch: [11][ 5/14]	Time  1.458 ( 7.140)	Data  0.000 ( 5.681)	Loss 5.9210e-01 (6.1512e-01)	Pearson  72.68 ( 65.70)	Spearman  72.18 ( 64.61)
+Epoch: [11][10/14]	Time  1.462 ( 4.368)	Data  0.000 ( 2.817)	Loss 6.2395e-01 (6.2704e-01)	Pearson  65.27 ( 60.58)	Spearman  64.87 ( 59.24)
+Epoch: [11][10/14]	Time  1.460 ( 4.300)	Data  0.000 ( 2.841)	Loss 6.1307e-01 (6.1130e-01)	Pearson  62.87 ( 66.35)	Spearman  62.87 ( 65.53)
+Epoch: [11][10/14]	Time  1.462 ( 4.366)	Data  0.000 ( 2.820)	Loss 5.8960e-01 (6.1567e-01)	Pearson  70.63 ( 65.50)	Spearman  68.94 ( 64.75)
+ * Time 31.585  Loss 0.670 Pearson 32.782 Spearman 30.104
+ * Time 31.607  Loss 0.670 Pearson 32.782 Spearman 30.104
+ * Time 31.510  Loss 0.670 Pearson 32.782 Spearman 30.104
+Epoch: [12][ 5/14]	Time  1.459 ( 7.214)	Data  0.000 ( 5.627)	Loss 6.0867e-01 (6.0180e-01)	Pearson  70.39 ( 71.37)	Spearman  71.61 ( 70.79)
+Epoch: [12][ 5/14]	Time  1.459 ( 7.077)	Data  0.000 ( 5.618)	Loss 6.1421e-01 (6.0152e-01)	Pearson  66.62 ( 69.71)	Spearman  66.01 ( 68.57)
+Epoch: [12][ 5/14]	Time  1.461 ( 7.217)	Data  0.000 ( 5.630)	Loss 5.9998e-01 (6.0319e-01)	Pearson  70.61 ( 70.73)	Spearman  70.31 ( 70.22)
+Epoch: [12][10/14]	Time  1.460 ( 4.337)	Data  0.000 ( 2.814)	Loss 6.3196e-01 (6.0360e-01)	Pearson  55.21 ( 68.87)	Spearman  53.84 ( 67.97)
+Epoch: [12][10/14]	Time  1.461 ( 4.268)	Data  0.000 ( 2.809)	Loss 5.9755e-01 (5.9914e-01)	Pearson  69.21 ( 70.66)	Spearman  66.56 ( 69.59)
+Epoch: [12][10/14]	Time  1.461 ( 4.339)	Data  0.000 ( 2.815)	Loss 6.1433e-01 (6.0509e-01)	Pearson  65.41 ( 70.07)	Spearman  64.68 ( 69.39)
+ * Time 31.464  Loss 0.687 Pearson 34.560 Spearman 33.143
+ * Time 31.626  Loss 0.687 Pearson 34.560 Spearman 33.143
+ * Time 31.516  Loss 0.687 Pearson 34.560 Spearman 33.143
+Epoch: [13][ 5/14]	Time  1.460 ( 7.260)	Data  0.000 ( 5.628)	Loss 5.9627e-01 (5.9198e-01)	Pearson  73.06 ( 74.90)	Spearman  73.83 ( 74.68)
+Epoch: [13][ 5/14]	Time  1.460 ( 7.267)	Data  0.000 ( 5.609)	Loss 5.8248e-01 (5.8892e-01)	Pearson  80.71 ( 75.70)	Spearman  79.69 ( 74.21)
+Epoch: [13][ 5/14]	Time  1.459 ( 7.122)	Data  0.000 ( 5.662)	Loss 5.9373e-01 (6.0097e-01)	Pearson  74.71 ( 72.84)	Spearman  75.79 ( 71.95)
+Epoch: [13][10/14]	Time  1.460 ( 4.360)	Data  0.000 ( 2.814)	Loss 5.8738e-01 (5.9096e-01)	Pearson  73.19 ( 74.61)	Spearman  71.93 ( 73.57)
+Epoch: [13][10/14]	Time  1.462 ( 4.364)	Data  0.000 ( 2.805)	Loss 5.8234e-01 (5.8651e-01)	Pearson  74.97 ( 75.87)	Spearman  74.21 ( 74.89)
+Epoch: [13][10/14]	Time  1.460 ( 4.291)	Data  0.000 ( 2.831)	Loss 5.9939e-01 (5.9885e-01)	Pearson  75.22 ( 73.90)	Spearman  74.49 ( 73.10)
+ * Time 31.485  Loss 0.666 Pearson 37.337 Spearman 35.187
+ * Time 31.481  Loss 0.666 Pearson 37.337 Spearman 35.187
+ * Time 31.446  Loss 0.666 Pearson 37.337 Spearman 35.187
+Epoch: [14][ 5/14]	Time  1.460 ( 7.215)	Data  0.000 ( 5.597)	Loss 5.9437e-01 (5.8039e-01)	Pearson  73.13 ( 79.27)	Spearman  71.42 ( 78.11)
+Epoch: [14][ 5/14]	Time  1.462 ( 7.214)	Data  0.000 ( 5.639)	Loss 5.8492e-01 (5.8657e-01)	Pearson  78.19 ( 78.86)	Spearman  78.55 ( 78.50)
+Epoch: [14][ 5/14]	Time  1.460 ( 7.074)	Data  0.000 ( 5.612)	Loss 5.7590e-01 (5.7815e-01)	Pearson  75.75 ( 79.62)	Spearman  74.25 ( 79.20)
+Epoch: [14][10/14]	Time  1.461 ( 4.338)	Data  0.000 ( 2.798)	Loss 5.9852e-01 (5.8491e-01)	Pearson  74.82 ( 77.92)	Spearman  74.41 ( 76.99)
+Epoch: [14][10/14]	Time  1.460 ( 4.267)	Data  0.000 ( 2.806)	Loss 5.5974e-01 (5.7766e-01)	Pearson  81.69 ( 79.74)	Spearman  82.79 ( 79.24)
+Epoch: [14][10/14]	Time  1.461 ( 4.338)	Data  0.000 ( 2.820)	Loss 5.7955e-01 (5.8643e-01)	Pearson  78.56 ( 78.00)	Spearman  79.84 ( 77.50)
+ * Time 31.345  Loss 0.699 Pearson 36.358 Spearman 36.225
+ * Time 31.456  Loss 0.699 Pearson 36.358 Spearman 36.225
+ * Time 31.510  Loss 0.699 Pearson 36.358 Spearman 36.225
+Epoch: [15][ 5/14]	Time  1.464 ( 7.220)	Data  0.000 ( 5.612)	Loss 5.6764e-01 (5.7489e-01)	Pearson  84.70 ( 80.57)	Spearman  84.20 ( 78.98)
+Epoch: [15][ 5/14]	Time  1.462 ( 7.064)	Data  0.000 ( 5.604)	Loss 5.8866e-01 (5.7979e-01)	Pearson  84.32 ( 80.28)	Spearman  81.73 ( 79.36)
+Epoch: [15][ 5/14]	Time  1.464 ( 7.206)	Data  0.000 ( 5.622)	Loss 5.6508e-01 (5.6705e-01)	Pearson  85.85 ( 82.92)	Spearman  85.30 ( 82.76)
+Epoch: [15][10/14]	Time  1.463 ( 4.342)	Data  0.000 ( 2.806)	Loss 5.7856e-01 (5.7755e-01)	Pearson  74.36 ( 79.70)	Spearman  72.32 ( 78.64)
+Epoch: [15][10/14]	Time  1.463 ( 4.264)	Data  0.000 ( 2.802)	Loss 5.5242e-01 (5.7394e-01)	Pearson  80.66 ( 80.36)	Spearman  81.47 ( 79.52)
+Epoch: [15][10/14]	Time  1.463 ( 4.335)	Data  0.000 ( 2.811)	Loss 5.7487e-01 (5.6299e-01)	Pearson  82.68 ( 83.05)	Spearman  82.12 ( 82.57)
+ * Time 31.408  Loss 0.680 Pearson 37.674 Spearman 36.991
+ * Time 31.388  Loss 0.680 Pearson 37.674 Spearman 36.991
+ * Time 31.405  Loss 0.680 Pearson 37.674 Spearman 36.991
+Epoch: [16][ 5/14]	Time  1.463 ( 7.240)	Data  0.000 ( 5.597)	Loss 5.3740e-01 (5.5395e-01)	Pearson  84.16 ( 83.97)	Spearman  82.35 ( 81.89)
+Epoch: [16][ 5/14]	Time  1.463 ( 7.101)	Data  0.000 ( 5.642)	Loss 5.6515e-01 (5.6534e-01)	Pearson  83.05 ( 83.04)	Spearman  82.87 ( 82.37)
+Epoch: [16][ 5/14]	Time  1.465 ( 7.240)	Data  0.000 ( 5.602)	Loss 5.4582e-01 (5.6158e-01)	Pearson  83.39 ( 84.07)	Spearman  82.05 ( 83.76)
+Epoch: [16][10/14]	Time  1.464 ( 4.352)	Data  0.000 ( 2.798)	Loss 5.4442e-01 (5.5192e-01)	Pearson  86.04 ( 84.37)	Spearman  86.22 ( 83.27)
+Epoch: [16][10/14]	Time  1.464 ( 4.283)	Data  0.000 ( 2.821)	Loss 5.6078e-01 (5.6477e-01)	Pearson  83.79 ( 83.03)	Spearman  80.62 ( 81.79)
+Epoch: [16][10/14]	Time  1.459 ( 4.352)	Data  0.000 ( 2.801)	Loss 5.6723e-01 (5.5788e-01)	Pearson  79.81 ( 83.95)	Spearman  79.38 ( 83.37)
+ * Time 31.466  Loss 0.682 Pearson 38.452 Spearman 37.620
+ * Time 31.548  Loss 0.682 Pearson 38.452 Spearman 37.620
+ * Time 31.543  Loss 0.682 Pearson 38.452 Spearman 37.620
+Epoch: [17][ 5/14]	Time  1.460 ( 7.282)	Data  0.000 ( 5.652)	Loss 5.3104e-01 (5.4521e-01)	Pearson  87.81 ( 84.91)	Spearman  88.16 ( 83.61)
+Epoch: [17][ 5/14]	Time  1.462 ( 7.275)	Data  0.000 ( 5.659)	Loss 5.6640e-01 (5.6249e-01)	Pearson  81.40 ( 83.87)	Spearman  82.44 ( 83.92)
+Epoch: [17][ 5/14]	Time  1.459 ( 7.124)	Data  0.000 ( 5.663)	Loss 5.5276e-01 (5.5111e-01)	Pearson  84.94 ( 85.35)	Spearman  84.51 ( 85.13)
+Epoch: [17][10/14]	Time  1.460 ( 4.371)	Data  0.000 ( 2.826)	Loss 5.3583e-01 (5.5275e-01)	Pearson  89.23 ( 84.58)	Spearman  88.23 ( 83.86)
+Epoch: [17][10/14]	Time  1.460 ( 4.292)	Data  0.000 ( 2.831)	Loss 5.4875e-01 (5.5431e-01)	Pearson  81.01 ( 84.73)	Spearman  78.88 ( 84.30)
+Epoch: [17][10/14]	Time  1.467 ( 4.368)	Data  0.000 ( 2.829)	Loss 5.7688e-01 (5.5763e-01)	Pearson  84.15 ( 84.64)	Spearman  84.19 ( 84.47)
+ * Time 31.481  Loss 0.674 Pearson 39.212 Spearman 38.289
+ * Time 31.447  Loss 0.674 Pearson 39.212 Spearman 38.289
+ * Time 31.493  Loss 0.674 Pearson 39.212 Spearman 38.289
+Epoch: [18][ 5/14]	Time  1.466 ( 7.260)	Data  0.000 ( 5.628)	Loss 5.4692e-01 (5.5037e-01)	Pearson  86.21 ( 86.67)	Spearman  86.89 ( 86.48)
+Epoch: [18][ 5/14]	Time  1.459 ( 7.118)	Data  0.000 ( 5.659)	Loss 5.2420e-01 (5.3178e-01)	Pearson  88.00 ( 87.42)	Spearman  87.16 ( 87.13)
+Epoch: [18][ 5/14]	Time  1.461 ( 7.260)	Data  0.000 ( 5.656)	Loss 5.7484e-01 (5.6425e-01)	Pearson  82.73 ( 85.11)	Spearman  81.02 ( 84.40)
+Epoch: [18][10/14]	Time  1.460 ( 4.360)	Data  0.000 ( 2.814)	Loss 5.3611e-01 (5.4700e-01)	Pearson  86.63 ( 86.93)	Spearman  86.12 ( 86.52)
+Epoch: [18][10/14]	Time  1.463 ( 4.290)	Data  0.000 ( 2.829)	Loss 5.7023e-01 (5.4368e-01)	Pearson  84.19 ( 86.74)	Spearman  84.00 ( 86.21)
+Epoch: [18][10/14]	Time  1.461 ( 4.360)	Data  0.000 ( 2.828)	Loss 5.3926e-01 (5.5221e-01)	Pearson  87.93 ( 86.33)	Spearman  85.79 ( 85.50)
+ * Time 31.313  Loss 0.706 Pearson 38.300 Spearman 38.442
+ * Time 31.313  Loss 0.706 Pearson 38.300 Spearman 38.442
+ * Time 31.435  Loss 0.706 Pearson 38.300 Spearman 38.442
+Epoch: [19][ 5/14]	Time  1.461 ( 7.211)	Data  0.000 ( 5.654)	Loss 5.3038e-01 (5.4341e-01)	Pearson  89.52 ( 88.42)	Spearman  89.82 ( 87.34)
+Epoch: [19][ 5/14]	Time  1.461 ( 7.210)	Data  0.000 ( 5.662)	Loss 5.5207e-01 (5.3227e-01)	Pearson  89.49 ( 88.22)	Spearman  89.50 ( 87.24)
+Epoch: [19][ 5/14]	Time  1.460 ( 7.127)	Data  0.000 ( 5.666)	Loss 5.2221e-01 (5.3980e-01)	Pearson  90.33 ( 88.56)	Spearman  89.92 ( 87.46)
+Epoch: [19][10/14]	Time  1.461 ( 4.335)	Data  0.000 ( 2.827)	Loss 5.3671e-01 (5.4542e-01)	Pearson  89.43 ( 87.93)	Spearman  89.49 ( 87.41)
+Epoch: [19][10/14]	Time  1.462 ( 4.335)	Data  0.000 ( 2.831)	Loss 5.1449e-01 (5.3715e-01)	Pearson  91.42 ( 88.66)	Spearman  91.66 ( 88.06)
+Epoch: [19][10/14]	Time  1.461 ( 4.294)	Data  0.000 ( 2.833)	Loss 5.2500e-01 (5.4112e-01)	Pearson  91.46 ( 88.70)	Spearman  89.95 ( 87.89)
+ * Time 31.495  Loss 0.688 Pearson 39.231 Spearman 38.945
+ * Time 31.521  Loss 0.688 Pearson 39.231 Spearman 38.945
+ * Time 31.571  Loss 0.688 Pearson 39.231 Spearman 38.945
+Epoch: [20][ 5/14]	Time  1.460 ( 7.259)	Data  0.000 ( 5.628)	Loss 5.6354e-01 (5.4903e-01)	Pearson  85.67 ( 87.56)	Spearman  85.45 ( 86.30)
+Epoch: [20][ 5/14]	Time  1.460 ( 7.263)	Data  0.000 ( 5.636)	Loss 5.0977e-01 (5.4039e-01)	Pearson  89.71 ( 89.66)	Spearman  89.65 ( 89.13)
+Epoch: [20][ 5/14]	Time  1.460 ( 7.118)	Data  0.000 ( 5.659)	Loss 5.6581e-01 (5.4316e-01)	Pearson  86.07 ( 87.82)	Spearman  84.43 ( 87.12)
+Epoch: [20][10/14]	Time  1.460 ( 4.360)	Data  0.000 ( 2.814)	Loss 5.2846e-01 (5.4483e-01)	Pearson  91.10 ( 87.92)	Spearman  90.39 ( 86.94)
+Epoch: [20][10/14]	Time  1.460 ( 4.362)	Data  0.000 ( 2.818)	Loss 5.4148e-01 (5.3545e-01)	Pearson  87.57 ( 89.34)	Spearman  85.78 ( 88.75)
+Epoch: [20][10/14]	Time  1.459 ( 4.289)	Data  0.000 ( 2.829)	Loss 5.0649e-01 (5.3553e-01)	Pearson  90.79 ( 88.61)	Spearman  88.21 ( 87.61)
+ * Time 31.464  Loss 0.697 Pearson 40.049 Spearman 39.809
+ * Time 31.476  Loss 0.697 Pearson 40.049 Spearman 39.809
+ * Time 31.581  Loss 0.697 Pearson 40.049 Spearman 39.809
+Epoch: [21][ 5/14]	Time  1.460 ( 7.220)	Data  0.000 ( 5.632)	Loss 5.6904e-01 (5.4486e-01)	Pearson  86.20 ( 88.87)	Spearman  84.37 ( 88.11)
+Epoch: [21][ 5/14]	Time  1.461 ( 7.226)	Data  0.000 ( 5.645)	Loss 5.3235e-01 (5.2505e-01)	Pearson  88.61 ( 89.64)	Spearman  88.81 ( 89.08)
+Epoch: [21][ 5/14]	Time  1.459 ( 7.090)	Data  0.000 ( 5.629)	Loss 5.4175e-01 (5.3061e-01)	Pearson  88.70 ( 90.12)	Spearman  88.74 ( 88.83)
+Epoch: [21][10/14]	Time  1.460 ( 4.340)	Data  0.000 ( 2.816)	Loss 5.3114e-01 (5.4079e-01)	Pearson  89.40 ( 89.42)	Spearman  88.25 ( 88.61)
+Epoch: [21][10/14]	Time  1.461 ( 4.343)	Data  0.000 ( 2.823)	Loss 5.3597e-01 (5.3030e-01)	Pearson  89.24 ( 89.69)	Spearman  89.22 ( 89.21)
+Epoch: [21][10/14]	Time  1.460 ( 4.275)	Data  0.000 ( 2.815)	Loss 5.4661e-01 (5.3826e-01)	Pearson  88.97 ( 89.63)	Spearman  87.28 ( 88.68)
+ * Time 31.443  Loss 0.696 Pearson 39.223 Spearman 38.754
+ * Time 31.501  Loss 0.696 Pearson 39.223 Spearman 38.754
+ * Time 31.553  Loss 0.696 Pearson 39.223 Spearman 38.754
+Epoch: [22][ 5/14]	Time  1.459 ( 7.179)	Data  0.000 ( 5.623)	Loss 5.2872e-01 (5.2642e-01)	Pearson  92.57 ( 90.56)	Spearman  90.83 ( 89.89)
+Epoch: [22][ 5/14]	Time  1.460 ( 7.179)	Data  0.000 ( 5.634)	Loss 5.2560e-01 (5.1464e-01)	Pearson  92.90 ( 91.96)	Spearman  91.48 ( 90.21)
+Epoch: [22][ 5/14]	Time  1.459 ( 7.102)	Data  0.000 ( 5.643)	Loss 5.5481e-01 (5.3741e-01)	Pearson  90.29 ( 90.47)	Spearman  89.03 ( 89.28)
+Epoch: [22][10/14]	Time  1.463 ( 4.320)	Data  0.000 ( 2.811)	Loss 5.4946e-01 (5.2803e-01)	Pearson  91.31 ( 90.77)	Spearman  91.68 ( 90.35)
+Epoch: [22][10/14]	Time  1.461 ( 4.281)	Data  0.000 ( 2.822)	Loss 5.3842e-01 (5.3595e-01)	Pearson  90.99 ( 90.95)	Spearman  88.06 ( 90.02)
+Epoch: [22][10/14]	Time  1.462 ( 4.320)	Data  0.000 ( 2.817)	Loss 5.5218e-01 (5.2734e-01)	Pearson  90.32 ( 91.05)	Spearman  89.93 ( 89.67)
+ * Time 31.369  Loss 0.686 Pearson 40.353 Spearman 39.554
+ * Time 31.282  Loss 0.686 Pearson 40.353 Spearman 39.554
+ * Time 31.380  Loss 0.686 Pearson 40.353 Spearman 39.554
+Epoch: [23][ 5/14]	Time  1.459 ( 7.235)	Data  0.000 ( 5.650)	Loss 5.3682e-01 (5.2144e-01)	Pearson  90.68 ( 91.45)	Spearman  90.71 ( 90.85)
+Epoch: [23][ 5/14]	Time  1.460 ( 7.239)	Data  0.000 ( 5.638)	Loss 5.4101e-01 (5.4571e-01)	Pearson  91.59 ( 90.42)	Spearman  90.61 ( 88.88)
+Epoch: [23][ 5/14]	Time  1.459 ( 7.106)	Data  0.000 ( 5.647)	Loss 5.4626e-01 (5.2375e-01)	Pearson  89.79 ( 91.53)	Spearman  89.55 ( 90.24)
+Epoch: [23][10/14]	Time  1.460 ( 4.348)	Data  0.000 ( 2.825)	Loss 5.3992e-01 (5.2410e-01)	Pearson  91.87 ( 91.20)	Spearman  91.34 ( 90.72)
+Epoch: [23][10/14]	Time  1.460 ( 4.283)	Data  0.000 ( 2.823)	Loss 5.2133e-01 (5.2728e-01)	Pearson  92.53 ( 91.51)	Spearman  91.56 ( 90.46)
+Epoch: [23][10/14]	Time  1.462 ( 4.350)	Data  0.000 ( 2.819)	Loss 5.1187e-01 (5.3847e-01)	Pearson  94.12 ( 90.50)	Spearman  93.14 ( 89.43)
+ * Time 31.470  Loss 0.705 Pearson 39.837 Spearman 39.757
+ * Time 31.421  Loss 0.705 Pearson 39.837 Spearman 39.757
+ * Time 31.423  Loss 0.705 Pearson 39.837 Spearman 39.757
+Epoch: [24][ 5/14]	Time  1.460 ( 7.182)	Data  0.000 ( 5.638)	Loss 4.9219e-01 (5.1889e-01)	Pearson  95.13 ( 92.09)	Spearman  93.83 ( 90.83)
+Epoch: [24][ 5/14]	Time  1.461 ( 7.188)	Data  0.000 ( 5.653)	Loss 5.1053e-01 (5.2508e-01)	Pearson  93.23 ( 91.84)	Spearman  90.09 ( 91.14)
+Epoch: [24][ 5/14]	Time  1.460 ( 7.098)	Data  0.000 ( 5.639)	Loss 5.2946e-01 (5.2568e-01)	Pearson  92.77 ( 91.29)	Spearman  92.12 ( 90.33)
+Epoch: [24][10/14]	Time  1.461 ( 4.321)	Data  0.000 ( 2.819)	Loss 5.4210e-01 (5.2156e-01)	Pearson  91.17 ( 91.96)	Spearman  92.01 ( 91.21)
+Epoch: [24][10/14]	Time  1.461 ( 4.279)	Data  0.000 ( 2.819)	Loss 5.1807e-01 (5.2269e-01)	Pearson  92.28 ( 91.71)	Spearman  91.55 ( 90.83)
+Epoch: [24][10/14]	Time  1.462 ( 4.324)	Data  0.000 ( 2.826)	Loss 5.2946e-01 (5.2707e-01)	Pearson  90.57 ( 92.10)	Spearman  88.52 ( 91.45)
+ * Time 31.465  Loss 0.688 Pearson 40.717 Spearman 40.186
+ * Time 31.583  Loss 0.688 Pearson 40.717 Spearman 40.186
+ * Time 31.524  Loss 0.688 Pearson 40.717 Spearman 40.186
+Epoch: [25][ 5/14]	Time  1.459 ( 7.263)	Data  0.000 ( 5.653)	Loss 5.3239e-01 (5.3293e-01)	Pearson  91.67 ( 91.38)	Spearman  91.00 ( 91.25)
+Epoch: [25][ 5/14]	Time  1.460 ( 7.264)	Data  0.000 ( 5.685)	Loss 5.1795e-01 (5.2732e-01)	Pearson  92.80 ( 92.38)	Spearman  92.57 ( 92.30)
+Epoch: [25][ 5/14]	Time  1.459 ( 7.124)	Data  0.000 ( 5.664)	Loss 5.0824e-01 (5.2719e-01)	Pearson  91.41 ( 90.79)	Spearman  91.17 ( 90.30)
+Epoch: [25][10/14]	Time  1.460 ( 4.362)	Data  0.000 ( 2.827)	Loss 5.2620e-01 (5.3134e-01)	Pearson  91.19 ( 91.54)	Spearman  90.68 ( 91.06)
+Epoch: [25][10/14]	Time  1.459 ( 4.292)	Data  0.000 ( 2.832)	Loss 5.1786e-01 (5.2506e-01)	Pearson  92.67 ( 91.21)	Spearman  92.54 ( 90.32)
+Epoch: [25][10/14]	Time  1.462 ( 4.363)	Data  0.000 ( 2.843)	Loss 4.7752e-01 (5.1999e-01)	Pearson  94.14 ( 92.40)	Spearman  93.97 ( 92.25)
+ * Time 31.327  Loss 0.699 Pearson 39.667 Spearman 39.684
+ * Time 31.447  Loss 0.699 Pearson 39.667 Spearman 39.684
+ * Time 31.444  Loss 0.699 Pearson 39.667 Spearman 39.684
+Epoch: [26][ 5/14]	Time  1.460 ( 7.169)	Data  0.000 ( 5.671)	Loss 5.1666e-01 (5.1714e-01)	Pearson  90.77 ( 92.95)	Spearman  88.39 ( 91.97)
+Epoch: [26][ 5/14]	Time  1.462 ( 7.175)	Data  0.000 ( 5.655)	Loss 5.1554e-01 (5.2638e-01)	Pearson  92.48 ( 92.96)	Spearman  91.74 ( 92.60)
+Epoch: [26][ 5/14]	Time  1.460 ( 7.108)	Data  0.000 ( 5.648)	Loss 5.2711e-01 (5.3568e-01)	Pearson  93.62 ( 91.38)	Spearman  92.61 ( 90.71)
+Epoch: [26][10/14]	Time  1.462 ( 4.315)	Data  0.000 ( 2.836)	Loss 5.0998e-01 (5.1533e-01)	Pearson  93.41 ( 93.17)	Spearman  92.03 ( 92.44)
+Epoch: [26][10/14]	Time  1.460 ( 4.284)	Data  0.000 ( 2.824)	Loss 5.1764e-01 (5.3149e-01)	Pearson  92.21 ( 91.91)	Spearman  91.01 ( 91.13)
+Epoch: [26][10/14]	Time  1.461 ( 4.318)	Data  0.000 ( 2.827)	Loss 5.4649e-01 (5.1933e-01)	Pearson  92.15 ( 92.65)	Spearman  91.37 ( 92.25)
+ * Time 31.411  Loss 0.711 Pearson 38.980 Spearman 39.037
+ * Time 31.471  Loss 0.711 Pearson 38.980 Spearman 39.037
+ * Time 31.444  Loss 0.711 Pearson 38.980 Spearman 39.037
+Epoch: [27][ 5/14]	Time  1.459 ( 7.150)	Data  0.000 ( 5.602)	Loss 5.0981e-01 (5.1690e-01)	Pearson  92.96 ( 93.47)	Spearman  93.27 ( 93.03)
+Epoch: [27][ 5/14]	Time  1.460 ( 7.069)	Data  0.000 ( 5.610)	Loss 5.2355e-01 (5.3279e-01)	Pearson  92.96 ( 92.01)	Spearman  91.41 ( 91.43)
+Epoch: [27][ 5/14]	Time  1.463 ( 7.155)	Data  0.000 ( 5.612)	Loss 5.1801e-01 (5.0405e-01)	Pearson  93.20 ( 94.13)	Spearman  92.50 ( 93.57)
+Epoch: [27][10/14]	Time  1.460 ( 4.305)	Data  0.000 ( 2.801)	Loss 5.2841e-01 (5.1475e-01)	Pearson  91.72 ( 93.30)	Spearman  91.73 ( 92.95)
+Epoch: [27][10/14]	Time  1.460 ( 4.265)	Data  0.000 ( 2.805)	Loss 5.3600e-01 (5.2668e-01)	Pearson  92.19 ( 92.53)	Spearman  91.91 ( 91.90)
+Epoch: [27][10/14]	Time  1.461 ( 4.308)	Data  0.000 ( 2.806)	Loss 4.9454e-01 (5.0887e-01)	Pearson  93.61 ( 93.97)	Spearman  93.08 ( 93.39)
+ * Time 31.208  Loss 0.695 Pearson 39.790 Spearman 39.410
+ * Time 31.381  Loss 0.695 Pearson 39.790 Spearman 39.410
+ * Time 31.357  Loss 0.695 Pearson 39.790 Spearman 39.410
+Epoch: [28][ 5/14]	Time  1.459 ( 7.182)	Data  0.000 ( 5.645)	Loss 4.6702e-01 (5.0224e-01)	Pearson  96.03 ( 94.46)	Spearman  94.21 ( 93.55)
+Epoch: [28][ 5/14]	Time  1.460 ( 7.164)	Data  0.000 ( 5.647)	Loss 5.2103e-01 (5.0450e-01)	Pearson  94.31 ( 94.42)	Spearman  93.53 ( 94.04)
+Epoch: [28][ 5/14]	Time  1.459 ( 7.088)	Data  0.000 ( 5.629)	Loss 5.3418e-01 (5.1999e-01)	Pearson  92.86 ( 93.42)	Spearman  92.63 ( 92.84)
+Epoch: [28][10/14]	Time  1.461 ( 4.321)	Data  0.000 ( 2.823)	Loss 5.6243e-01 (5.1719e-01)	Pearson  90.51 ( 93.42)	Spearman  90.49 ( 92.88)
+Epoch: [28][10/14]	Time  1.461 ( 4.274)	Data  0.000 ( 2.815)	Loss 5.1050e-01 (5.1943e-01)	Pearson  92.02 ( 92.93)	Spearman  89.73 ( 92.19)
+Epoch: [28][10/14]	Time  1.461 ( 4.313)	Data  0.000 ( 2.823)	Loss 5.5062e-01 (5.2007e-01)	Pearson  92.34 ( 93.54)	Spearman  92.57 ( 93.23)
+ * Time 31.430  Loss 0.724 Pearson 39.468 Spearman 39.999
+ * Time 31.497  Loss 0.724 Pearson 39.468 Spearman 39.999
+ * Time 31.550  Loss 0.724 Pearson 39.468 Spearman 39.999
+Epoch: [29][ 5/14]	Time  1.465 ( 7.208)	Data  0.000 ( 5.653)	Loss 5.1989e-01 (5.1762e-01)	Pearson  92.89 ( 93.29)	Spearman  92.34 ( 92.53)
+Epoch: [29][ 5/14]	Time  1.461 ( 7.124)	Data  0.000 ( 5.665)	Loss 5.4187e-01 (5.2348e-01)	Pearson  93.07 ( 93.40)	Spearman  92.30 ( 93.13)
+Epoch: [29][ 5/14]	Time  1.465 ( 7.206)	Data  0.000 ( 5.658)	Loss 5.5179e-01 (5.1975e-01)	Pearson  92.71 ( 94.10)	Spearman  90.31 ( 93.12)
+Epoch: [29][10/14]	Time  1.465 ( 4.295)	Data  0.000 ( 2.832)	Loss 5.4270e-01 (5.2676e-01)	Pearson  91.55 ( 93.06)	Spearman  90.51 ( 92.58)
+Epoch: [29][10/14]	Time  1.465 ( 4.336)	Data  0.000 ( 2.826)	Loss 5.3151e-01 (5.1188e-01)	Pearson  93.27 ( 93.67)	Spearman  92.81 ( 92.86)
+Epoch: [29][10/14]	Time  1.465 ( 4.335)	Data  0.000 ( 2.829)	Loss 4.9619e-01 (5.1674e-01)	Pearson  94.25 ( 93.90)	Spearman  93.49 ( 93.04)
+ * Time 31.487  Loss 0.692 Pearson 40.627 Spearman 39.992
+ * Time 31.479  Loss 0.692 Pearson 40.627 Spearman 39.992
+ * Time 31.506  Loss 0.692 Pearson 40.627 Spearman 39.992
+Epoch: [30][ 5/14]	Time  1.459 ( 7.175)	Data  0.000 ( 5.629)	Loss 5.1314e-01 (5.1368e-01)	Pearson  93.31 ( 93.47)	Spearman  92.45 ( 92.90)
+Epoch: [30][ 5/14]	Time  1.460 ( 7.172)	Data  0.000 ( 5.623)	Loss 5.0313e-01 (5.1720e-01)	Pearson  93.31 ( 94.46)	Spearman  92.59 ( 94.09)
+Epoch: [30][ 5/14]	Time  1.460 ( 7.091)	Data  0.000 ( 5.632)	Loss 5.0053e-01 (5.1924e-01)	Pearson  95.19 ( 93.65)	Spearman  94.14 ( 92.83)
+Epoch: [30][10/14]	Time  1.461 ( 4.318)	Data  0.000 ( 2.815)	Loss 5.1376e-01 (5.1593e-01)	Pearson  92.28 ( 93.47)	Spearman  90.81 ( 92.68)
+Epoch: [30][10/14]	Time  1.461 ( 4.276)	Data  0.000 ( 2.816)	Loss 5.1294e-01 (5.1964e-01)	Pearson  94.70 ( 93.66)	Spearman  94.75 ( 93.05)
+Epoch: [30][10/14]	Time  1.461 ( 4.317)	Data  0.000 ( 2.812)	Loss 5.4921e-01 (5.1709e-01)	Pearson  91.79 ( 94.03)	Spearman  91.78 ( 93.70)
+ * Time 31.465  Loss 0.698 Pearson 40.467 Spearman 40.003
+ * Time 31.525  Loss 0.698 Pearson 40.467 Spearman 40.003
+ * Time 31.464  Loss 0.698 Pearson 40.467 Spearman 40.003
+Epoch: [31][ 5/14]	Time  1.460 ( 7.160)	Data  0.000 ( 5.628)	Loss 5.0544e-01 (5.1404e-01)	Pearson  94.25 ( 94.52)	Spearman  94.48 ( 94.07)
+Epoch: [31][ 5/14]	Time  1.460 ( 7.160)	Data  0.000 ( 5.633)	Loss 5.2173e-01 (5.1627e-01)	Pearson  93.59 ( 94.21)	Spearman  93.40 ( 93.39)
+Epoch: [31][ 5/14]	Time  1.460 ( 7.083)	Data  0.000 ( 5.623)	Loss 5.2609e-01 (5.1522e-01)	Pearson  93.26 ( 94.20)	Spearman  93.53 ( 93.97)
+Epoch: [31][10/14]	Time  1.463 ( 4.311)	Data  0.000 ( 2.816)	Loss 4.9633e-01 (5.1728e-01)	Pearson  95.25 ( 93.99)	Spearman  95.26 ( 93.24)
+Epoch: [31][10/14]	Time  1.460 ( 4.272)	Data  0.000 ( 2.812)	Loss 5.5636e-01 (5.1793e-01)	Pearson  93.29 ( 93.99)	Spearman  91.63 ( 93.70)
+Epoch: [31][10/14]	Time  1.465 ( 4.312)	Data  0.000 ( 2.814)	Loss 4.9482e-01 (5.1393e-01)	Pearson  94.02 ( 94.14)	Spearman  91.27 ( 93.24)
+ * Time 31.379  Loss 0.690 Pearson 40.549 Spearman 39.990
+ * Time 31.362  Loss 0.690 Pearson 40.549 Spearman 39.990
+ * Time 31.609  Loss 0.690 Pearson 40.549 Spearman 39.990
+Epoch: [32][ 5/14]	Time  1.460 ( 7.171)	Data  0.000 ( 5.684)	Loss 5.4552e-01 (5.2562e-01)	Pearson  92.62 ( 94.21)	Spearman  92.26 ( 94.15)
+Epoch: [32][ 5/14]	Time  1.461 ( 7.157)	Data  0.000 ( 5.680)	Loss 5.2152e-01 (5.0418e-01)	Pearson  94.70 ( 94.51)	Spearman  93.54 ( 93.57)
+Epoch: [32][ 5/14]	Time  1.460 ( 7.098)	Data  0.000 ( 5.638)	Loss 5.1935e-01 (5.0651e-01)	Pearson  94.54 ( 95.05)	Spearman  94.47 ( 94.57)
+Epoch: [32][10/14]	Time  1.462 ( 4.316)	Data  0.000 ( 2.842)	Loss 5.2542e-01 (5.2706e-01)	Pearson  94.35 ( 93.64)	Spearman  94.16 ( 93.33)
+Epoch: [32][10/14]	Time  1.462 ( 4.279)	Data  0.000 ( 2.819)	Loss 5.0887e-01 (5.0948e-01)	Pearson  94.41 ( 94.62)	Spearman  93.44 ( 94.20)
+Epoch: [32][10/14]	Time  1.463 ( 4.309)	Data  0.000 ( 2.840)	Loss 5.1873e-01 (5.0728e-01)	Pearson  94.77 ( 94.21)	Spearman  95.17 ( 93.47)
+ * Time 31.550  Loss 0.694 Pearson 40.895 Spearman 40.422
+ * Time 31.476  Loss 0.694 Pearson 40.895 Spearman 40.422
+ * Time 31.602  Loss 0.694 Pearson 40.895 Spearman 40.422
+Epoch: [33][ 5/14]	Time  1.460 ( 7.255)	Data  0.000 ( 5.627)	Loss 4.8425e-01 (5.1100e-01)	Pearson  95.01 ( 94.34)	Spearman  94.43 ( 93.90)
+Epoch: [33][ 5/14]	Time  1.461 ( 7.258)	Data  0.000 ( 5.638)	Loss 5.1636e-01 (5.0527e-01)	Pearson  95.25 ( 95.15)	Spearman  94.71 ( 94.51)
+Epoch: [33][ 5/14]	Time  1.460 ( 7.118)	Data  0.000 ( 5.659)	Loss 5.1753e-01 (5.1077e-01)	Pearson  93.74 ( 94.40)	Spearman  93.47 ( 94.02)
+Epoch: [33][10/14]	Time  1.460 ( 4.358)	Data  0.000 ( 2.814)	Loss 5.0500e-01 (5.1594e-01)	Pearson  94.86 ( 94.56)	Spearman  95.07 ( 94.25)
+Epoch: [33][10/14]	Time  1.461 ( 4.289)	Data  0.000 ( 2.829)	Loss 4.9089e-01 (5.0975e-01)	Pearson  95.99 ( 94.69)	Spearman  95.52 ( 94.29)
+Epoch: [33][10/14]	Time  1.461 ( 4.360)	Data  0.000 ( 2.819)	Loss 4.9472e-01 (5.1167e-01)	Pearson  96.00 ( 94.86)	Spearman  96.11 ( 94.27)
+ * Time 31.674  Loss 0.700 Pearson 40.072 Spearman 39.819
+ * Time 31.784  Loss 0.700 Pearson 40.072 Spearman 39.819
+ * Time 31.916  Loss 0.700 Pearson 40.072 Spearman 39.819
+Epoch: [34][ 5/14]	Time  1.460 ( 7.215)	Data  0.000 ( 5.680)	Loss 5.0847e-01 (5.0583e-01)	Pearson  93.70 ( 94.50)	Spearman  93.83 ( 94.29)
+Epoch: [34][ 5/14]	Time  1.459 ( 7.145)	Data  0.000 ( 5.685)	Loss 4.9848e-01 (5.0352e-01)	Pearson  96.72 ( 95.21)	Spearman  95.77 ( 94.28)
+Epoch: [34][ 5/14]	Time  1.461 ( 7.226)	Data  0.000 ( 5.670)	Loss 5.0587e-01 (5.1375e-01)	Pearson  95.34 ( 95.28)	Spearman  94.97 ( 94.93)
+Epoch: [34][10/14]	Time  1.460 ( 4.337)	Data  0.000 ( 2.840)	Loss 5.0707e-01 (5.0978e-01)	Pearson  94.88 ( 94.76)	Spearman  94.17 ( 94.38)
+Epoch: [34][10/14]	Time  1.460 ( 4.302)	Data  0.000 ( 2.843)	Loss 5.1846e-01 (5.1056e-01)	Pearson  94.77 ( 94.83)	Spearman  94.60 ( 94.14)
+Epoch: [34][10/14]	Time  1.460 ( 4.343)	Data  0.000 ( 2.835)	Loss 5.1787e-01 (5.2015e-01)	Pearson  93.35 ( 94.83)	Spearman  91.90 ( 94.45)
+ * Time 31.487  Loss 0.719 Pearson 39.917 Spearman 39.835
+ * Time 31.583  Loss 0.719 Pearson 39.917 Spearman 39.835
+ * Time 31.630  Loss 0.719 Pearson 39.917 Spearman 39.835
+Epoch: [35][ 5/14]	Time  1.460 ( 7.202)	Data  0.000 ( 5.677)	Loss 5.1027e-01 (5.1464e-01)	Pearson  95.76 ( 94.91)	Spearman  93.96 ( 93.94)
+Epoch: [35][ 5/14]	Time  1.459 ( 7.191)	Data  0.000 ( 5.670)	Loss 5.2772e-01 (5.1889e-01)	Pearson  94.87 ( 94.98)	Spearman  94.72 ( 94.48)
+Epoch: [35][ 5/14]	Time  1.460 ( 7.109)	Data  0.000 ( 5.650)	Loss 5.0687e-01 (5.1880e-01)	Pearson  94.77 ( 94.45)	Spearman  94.77 ( 93.71)
+Epoch: [35][10/14]	Time  1.460 ( 4.331)	Data  0.000 ( 2.838)	Loss 5.1002e-01 (5.0754e-01)	Pearson  95.85 ( 95.11)	Spearman  95.91 ( 94.51)
+Epoch: [35][10/14]	Time  1.461 ( 4.284)	Data  0.000 ( 2.825)	Loss 5.4847e-01 (5.1660e-01)	Pearson  94.22 ( 94.70)	Spearman  94.04 ( 93.98)
+Epoch: [35][10/14]	Time  1.462 ( 4.326)	Data  0.000 ( 2.835)	Loss 5.0367e-01 (5.1130e-01)	Pearson  95.60 ( 95.14)	Spearman  95.61 ( 94.71)
+ * Time 31.503  Loss 0.700 Pearson 41.111 Spearman 40.651
+ * Time 31.504  Loss 0.700 Pearson 41.111 Spearman 40.651
+ * Time 31.536  Loss 0.700 Pearson 41.111 Spearman 40.651
+Epoch: [36][ 5/14]	Time  1.460 ( 7.288)	Data  0.000 ( 5.657)	Loss 5.3773e-01 (5.2304e-01)	Pearson  95.14 ( 94.80)	Spearman  94.80 ( 94.19)
+Epoch: [36][ 5/14]	Time  1.461 ( 7.285)	Data  0.000 ( 5.674)	Loss 5.2791e-01 (5.0657e-01)	Pearson  94.60 ( 94.95)	Spearman  93.09 ( 94.39)
+Epoch: [36][ 5/14]	Time  1.460 ( 7.145)	Data  0.000 ( 5.685)	Loss 5.4648e-01 (5.1083e-01)	Pearson  93.45 ( 94.79)	Spearman  92.71 ( 94.32)
+Epoch: [36][10/14]	Time  1.460 ( 4.374)	Data  0.000 ( 2.829)	Loss 5.1875e-01 (5.1648e-01)	Pearson  95.08 ( 94.93)	Spearman  94.55 ( 94.30)
+Epoch: [36][10/14]	Time  1.460 ( 4.303)	Data  0.000 ( 2.843)	Loss 5.1776e-01 (5.0679e-01)	Pearson  95.49 ( 95.13)	Spearman  95.70 ( 94.66)
+Epoch: [36][10/14]	Time  1.462 ( 4.373)	Data  0.000 ( 2.837)	Loss 5.3008e-01 (5.1021e-01)	Pearson  94.16 ( 94.85)	Spearman  92.94 ( 94.29)
+ * Time 31.385  Loss 0.687 Pearson 41.047 Spearman 40.298
+ * Time 31.488  Loss 0.687 Pearson 41.047 Spearman 40.298
+ * Time 31.521  Loss 0.687 Pearson 41.047 Spearman 40.298
+Epoch: [37][ 5/14]	Time  1.461 ( 7.142)	Data  0.000 ( 5.634)	Loss 5.0931e-01 (5.1461e-01)	Pearson  95.70 ( 95.89)	Spearman  94.99 ( 95.59)
+Epoch: [37][ 5/14]	Time  1.461 ( 7.141)	Data  0.000 ( 5.671)	Loss 5.0717e-01 (5.0587e-01)	Pearson  95.11 ( 95.65)	Spearman  94.70 ( 95.16)
+Epoch: [37][ 5/14]	Time  1.460 ( 7.078)	Data  0.000 ( 5.618)	Loss 5.2498e-01 (5.0613e-01)	Pearson  91.49 ( 94.62)	Spearman  90.83 ( 93.93)
+Epoch: [37][10/14]	Time  1.462 ( 4.302)	Data  0.000 ( 2.817)	Loss 5.2989e-01 (5.1499e-01)	Pearson  94.16 ( 95.32)	Spearman  91.50 ( 94.81)
+Epoch: [37][10/14]	Time  1.460 ( 4.269)	Data  0.000 ( 2.809)	Loss 5.1623e-01 (5.1579e-01)	Pearson  95.32 ( 94.79)	Spearman  94.49 ( 94.20)
+Epoch: [37][10/14]	Time  1.461 ( 4.301)	Data  0.000 ( 2.835)	Loss 5.0433e-01 (5.0941e-01)	Pearson  95.14 ( 95.48)	Spearman  93.31 ( 94.66)
+ * Time 31.519  Loss 0.692 Pearson 41.182 Spearman 40.388
+ * Time 31.456  Loss 0.692 Pearson 41.182 Spearman 40.388
+ * Time 31.468  Loss 0.692 Pearson 41.182 Spearman 40.388
+Epoch: [38][ 5/14]	Time  1.460 ( 7.164)	Data  0.000 ( 5.628)	Loss 5.1571e-01 (5.1142e-01)	Pearson  95.26 ( 95.13)	Spearman  95.35 ( 94.98)
+Epoch: [38][ 5/14]	Time  1.461 ( 7.168)	Data  0.000 ( 5.615)	Loss 5.2199e-01 (5.1270e-01)	Pearson  95.61 ( 95.52)	Spearman  95.86 ( 95.31)
+Epoch: [38][ 5/14]	Time  1.460 ( 7.090)	Data  0.000 ( 5.631)	Loss 4.9877e-01 (5.1197e-01)	Pearson  95.22 ( 95.03)	Spearman  94.88 ( 94.64)
+Epoch: [38][10/14]	Time  1.460 ( 4.312)	Data  0.000 ( 2.814)	Loss 5.1130e-01 (5.1022e-01)	Pearson  94.17 ( 94.98)	Spearman  94.37 ( 94.76)
+Epoch: [38][10/14]	Time  1.460 ( 4.314)	Data  0.000 ( 2.808)	Loss 4.9643e-01 (5.0694e-01)	Pearson  95.81 ( 95.69)	Spearman  95.36 ( 95.34)
+Epoch: [38][10/14]	Time  1.460 ( 4.275)	Data  0.000 ( 2.815)	Loss 5.2864e-01 (5.1136e-01)	Pearson  95.30 ( 95.24)	Spearman  93.82 ( 94.53)
+ * Time 31.551  Loss 0.703 Pearson 40.876 Spearman 40.270
+ * Time 31.536  Loss 0.703 Pearson 40.876 Spearman 40.270
+ * Time 31.637  Loss 0.703 Pearson 40.876 Spearman 40.270
+Epoch: [39][ 5/14]	Time  1.460 ( 7.180)	Data  0.000 ( 5.641)	Loss 5.1298e-01 (5.1650e-01)	Pearson  95.49 ( 94.90)	Spearman  95.34 ( 94.44)
+Epoch: [39][ 5/14]	Time  1.461 ( 7.179)	Data  0.000 ( 5.662)	Loss 4.8338e-01 (5.0739e-01)	Pearson  96.54 ( 95.65)	Spearman  96.79 ( 95.06)
+Epoch: [39][ 5/14]	Time  1.460 ( 7.101)	Data  0.000 ( 5.641)	Loss 5.3386e-01 (5.2859e-01)	Pearson  96.03 ( 95.09)	Spearman  95.03 ( 94.42)
+Epoch: [39][10/14]	Time  1.461 ( 4.320)	Data  0.000 ( 2.820)	Loss 5.2048e-01 (5.0986e-01)	Pearson  95.93 ( 95.28)	Spearman  94.94 ( 94.68)
+Epoch: [39][10/14]	Time  1.460 ( 4.281)	Data  0.000 ( 2.821)	Loss 4.8924e-01 (5.1348e-01)	Pearson  95.68 ( 95.38)	Spearman  95.78 ( 94.63)
+Epoch: [39][10/14]	Time  1.461 ( 4.320)	Data  0.000 ( 2.831)	Loss 5.0093e-01 (5.0739e-01)	Pearson  95.57 ( 95.81)	Spearman  94.26 ( 95.19)
+ * Time 31.427  Loss 0.711 Pearson 40.538 Spearman 40.233
+ * Time 31.463  Loss 0.711 Pearson 40.538 Spearman 40.233
+ * Time 31.473  Loss 0.711 Pearson 40.538 Spearman 40.233
+Epoch: [40][ 5/14]	Time  1.459 ( 7.170)	Data  0.000 ( 5.636)	Loss 4.8247e-01 (5.0214e-01)	Pearson  96.31 ( 95.61)	Spearman  94.90 ( 95.14)
+Epoch: [40][ 5/14]	Time  1.463 ( 7.170)	Data  0.000 ( 5.648)	Loss 4.9843e-01 (5.1896e-01)	Pearson  95.75 ( 95.22)	Spearman  95.72 ( 94.70)
+Epoch: [40][ 5/14]	Time  1.460 ( 7.093)	Data  0.000 ( 5.633)	Loss 4.9530e-01 (5.0640e-01)	Pearson  96.19 ( 94.76)	Spearman  95.65 ( 94.20)
+Epoch: [40][10/14]	Time  1.461 ( 4.315)	Data  0.000 ( 2.818)	Loss 5.2462e-01 (5.0945e-01)	Pearson  94.78 ( 95.51)	Spearman  94.16 ( 94.99)
+Epoch: [40][10/14]	Time  1.462 ( 4.315)	Data  0.000 ( 2.824)	Loss 5.4200e-01 (5.1802e-01)	Pearson  94.12 ( 95.35)	Spearman  93.16 ( 94.59)
+Epoch: [40][10/14]	Time  1.461 ( 4.277)	Data  0.000 ( 2.816)	Loss 4.9260e-01 (5.0654e-01)	Pearson  96.08 ( 94.96)	Spearman  95.75 ( 94.27)
+ * Time 31.548  Loss 0.699 Pearson 40.428 Spearman 39.916
+ * Time 31.558  Loss 0.699 Pearson 40.428 Spearman 39.916
+ * Time 31.554  Loss 0.699 Pearson 40.428 Spearman 39.916
+Epoch: [41][ 5/14]	Time  1.464 ( 7.176)	Data  0.000 ( 5.642)	Loss 4.9298e-01 (5.0294e-01)	Pearson  96.24 ( 95.58)	Spearman  95.53 ( 95.26)
+Epoch: [41][ 5/14]	Time  1.464 ( 7.180)	Data  0.000 ( 5.673)	Loss 5.1108e-01 (5.0752e-01)	Pearson  95.84 ( 95.87)	Spearman  94.69 ( 95.46)
+Epoch: [41][ 5/14]	Time  1.464 ( 7.100)	Data  0.000 ( 5.637)	Loss 4.9864e-01 (5.1009e-01)	Pearson  95.84 ( 94.80)	Spearman  95.75 ( 94.21)
+Epoch: [41][10/14]	Time  1.466 ( 4.320)	Data  0.000 ( 2.821)	Loss 5.1275e-01 (5.0788e-01)	Pearson  95.34 ( 95.65)	Spearman  94.32 ( 95.17)
+Epoch: [41][10/14]	Time  1.466 ( 4.323)	Data  0.000 ( 2.837)	Loss 5.1360e-01 (5.1054e-01)	Pearson  95.51 ( 95.47)	Spearman  94.86 ( 94.81)
+Epoch: [41][10/14]	Time  1.466 ( 4.283)	Data  0.000 ( 2.818)	Loss 4.7201e-01 (5.0774e-01)	Pearson  96.36 ( 95.29)	Spearman  95.55 ( 94.48)
+ * Time 31.589  Loss 0.692 Pearson 40.939 Spearman 40.042
+ * Time 31.457  Loss 0.692 Pearson 40.939 Spearman 40.042
+ * Time 31.474  Loss 0.692 Pearson 40.939 Spearman 40.042
+Epoch: [42][ 5/14]	Time  1.459 ( 7.213)	Data  0.000 ( 5.686)	Loss 5.0682e-01 (4.9491e-01)	Pearson  96.64 ( 96.41)	Spearman  96.59 ( 95.82)
+Epoch: [42][ 5/14]	Time  1.461 ( 7.211)	Data  0.000 ( 5.653)	Loss 4.9377e-01 (5.1618e-01)	Pearson  96.33 ( 95.41)	Spearman  94.62 ( 94.88)
+Epoch: [42][ 5/14]	Time  1.459 ( 7.135)	Data  0.000 ( 5.675)	Loss 4.9922e-01 (5.0857e-01)	Pearson  96.25 ( 96.35)	Spearman  96.24 ( 95.88)
+Epoch: [42][10/14]	Time  1.462 ( 4.337)	Data  0.000 ( 2.843)	Loss 5.3087e-01 (5.0261e-01)	Pearson  95.72 ( 96.01)	Spearman  94.55 ( 95.48)
+Epoch: [42][10/14]	Time  1.460 ( 4.298)	Data  0.000 ( 2.837)	Loss 4.6853e-01 (5.0893e-01)	Pearson  97.12 ( 96.22)	Spearman  96.08 ( 95.67)
+Epoch: [42][10/14]	Time  1.466 ( 4.337)	Data  0.000 ( 2.827)	Loss 5.0727e-01 (5.1010e-01)	Pearson  95.07 ( 95.43)	Spearman  93.47 ( 94.97)
+ * Time 31.508  Loss 0.703 Pearson 40.706 Spearman 40.312
+ * Time 31.418  Loss 0.703 Pearson 40.706 Spearman 40.312
+ * Time 31.461  Loss 0.703 Pearson 40.706 Spearman 40.312
+Epoch: [43][ 5/14]	Time  1.460 ( 7.159)	Data  0.000 ( 5.596)	Loss 4.9007e-01 (5.0338e-01)	Pearson  96.83 ( 96.03)	Spearman  95.69 ( 95.09)
+Epoch: [43][ 5/14]	Time  1.461 ( 7.160)	Data  0.000 ( 5.630)	Loss 5.0050e-01 (5.0154e-01)	Pearson  95.61 ( 95.98)	Spearman  94.84 ( 95.51)
+Epoch: [43][ 5/14]	Time  1.460 ( 7.081)	Data  0.000 ( 5.621)	Loss 5.1034e-01 (5.0536e-01)	Pearson  96.11 ( 95.76)	Spearman  95.94 ( 95.45)
+Epoch: [43][10/14]	Time  1.463 ( 4.310)	Data  0.000 ( 2.798)	Loss 5.2212e-01 (5.1153e-01)	Pearson  95.08 ( 95.84)	Spearman  93.65 ( 94.89)
+Epoch: [43][10/14]	Time  1.460 ( 4.270)	Data  0.000 ( 2.811)	Loss 5.3701e-01 (5.0746e-01)	Pearson  94.08 ( 95.50)	Spearman  93.69 ( 94.98)
+Epoch: [43][10/14]	Time  1.463 ( 4.311)	Data  0.000 ( 2.815)	Loss 4.9965e-01 (5.0185e-01)	Pearson  95.11 ( 96.04)	Spearman  94.52 ( 95.57)
+ * Time 31.285  Loss 0.705 Pearson 40.376 Spearman 39.941
+ * Time 31.372  Loss 0.705 Pearson 40.376 Spearman 39.941
+ * Time 31.327  Loss 0.705 Pearson 40.376 Spearman 39.941
+Epoch: [44][ 5/14]	Time  1.460 ( 7.128)	Data  0.000 ( 5.628)	Loss 5.0087e-01 (5.0513e-01)	Pearson  97.36 ( 95.97)	Spearman  97.03 ( 95.49)
+Epoch: [44][ 5/14]	Time  1.469 ( 7.053)	Data  0.000 ( 5.592)	Loss 5.2514e-01 (5.1502e-01)	Pearson  94.87 ( 95.52)	Spearman  94.01 ( 95.10)
+Epoch: [44][ 5/14]	Time  1.470 ( 7.123)	Data  0.000 ( 5.640)	Loss 4.9995e-01 (5.0546e-01)	Pearson  95.89 ( 96.05)	Spearman  95.67 ( 95.76)
+Epoch: [44][10/14]	Time  1.461 ( 4.292)	Data  0.000 ( 2.820)	Loss 4.9775e-01 (5.0456e-01)	Pearson  96.23 ( 95.70)	Spearman  96.03 ( 95.18)
+Epoch: [44][10/14]	Time  1.462 ( 4.295)	Data  0.000 ( 2.814)	Loss 4.7923e-01 (5.0366e-01)	Pearson  96.94 ( 96.18)	Spearman  96.23 ( 95.62)
+Epoch: [44][10/14]	Time  1.461 ( 4.258)	Data  0.000 ( 2.796)	Loss 4.9609e-01 (5.1249e-01)	Pearson  97.00 ( 95.52)	Spearman  96.52 ( 95.03)
+ * Time 31.395  Loss 0.699 Pearson 40.856 Spearman 40.185
+ * Time 31.385  Loss 0.699 Pearson 40.856 Spearman 40.185
+ * Time 31.517  Loss 0.699 Pearson 40.856 Spearman 40.185
+Epoch: [45][ 5/14]	Time  1.461 ( 7.182)	Data  0.000 ( 5.651)	Loss 4.7687e-01 (4.9666e-01)	Pearson  97.08 ( 96.39)	Spearman  96.84 ( 96.06)
+Epoch: [45][ 5/14]	Time  1.458 ( 7.104)	Data  0.000 ( 5.645)	Loss 5.0047e-01 (4.9739e-01)	Pearson  97.49 ( 96.33)	Spearman  96.95 ( 95.34)
+Epoch: [45][ 5/14]	Time  1.460 ( 7.185)	Data  0.000 ( 5.640)	Loss 5.1646e-01 (5.1498e-01)	Pearson  95.20 ( 95.89)	Spearman  94.99 ( 95.47)
+Epoch: [45][10/14]	Time  1.460 ( 4.321)	Data  0.000 ( 2.825)	Loss 4.9615e-01 (5.0142e-01)	Pearson  95.90 ( 96.18)	Spearman  94.94 ( 95.79)
+Epoch: [45][10/14]	Time  1.460 ( 4.282)	Data  0.000 ( 2.823)	Loss 4.8835e-01 (4.9999e-01)	Pearson  96.36 ( 96.18)	Spearman  95.14 ( 95.28)
+Epoch: [45][10/14]	Time  1.464 ( 4.323)	Data  0.000 ( 2.820)	Loss 5.4275e-01 (5.1301e-01)	Pearson  95.10 ( 96.10)	Spearman  93.96 ( 95.53)
+ * Time 31.472  Loss 0.704 Pearson 40.668 Spearman 40.219
+ * Time 31.503  Loss 0.704 Pearson 40.668 Spearman 40.219
+ * Time 31.534  Loss 0.704 Pearson 40.668 Spearman 40.219
+Epoch: [46][ 5/14]	Time  1.465 ( 7.166)	Data  0.000 ( 5.682)	Loss 5.2617e-01 (4.9910e-01)	Pearson  96.42 ( 96.37)	Spearman  96.59 ( 95.81)
+Epoch: [46][ 5/14]	Time  1.461 ( 7.086)	Data  0.000 ( 5.626)	Loss 4.9032e-01 (4.9772e-01)	Pearson  96.43 ( 96.76)	Spearman  95.79 ( 96.29)
+Epoch: [46][ 5/14]	Time  1.464 ( 7.167)	Data  0.000 ( 5.640)	Loss 5.1928e-01 (5.1845e-01)	Pearson  95.17 ( 95.94)	Spearman  94.36 ( 95.28)
+Epoch: [46][10/14]	Time  1.463 ( 4.315)	Data  0.000 ( 2.841)	Loss 5.1857e-01 (4.9780e-01)	Pearson  95.04 ( 96.08)	Spearman  94.37 ( 95.49)
+Epoch: [46][10/14]	Time  1.463 ( 4.275)	Data  0.000 ( 2.813)	Loss 5.1075e-01 (4.9736e-01)	Pearson  96.81 ( 96.69)	Spearman  96.41 ( 96.24)
+Epoch: [46][10/14]	Time  1.463 ( 4.315)	Data  0.000 ( 2.820)	Loss 4.7466e-01 (5.1062e-01)	Pearson  97.66 ( 95.93)	Spearman  97.22 ( 95.47)
+ * Time 31.439  Loss 0.700 Pearson 40.722 Spearman 40.206
+ * Time 31.405  Loss 0.700 Pearson 40.722 Spearman 40.206
+ * Time 31.393  Loss 0.700 Pearson 40.722 Spearman 40.206
+Epoch: [47][ 5/14]	Time  1.460 ( 7.183)	Data  0.000 ( 5.672)	Loss 4.8995e-01 (5.0080e-01)	Pearson  96.93 ( 96.73)	Spearman  96.42 ( 96.16)
+Epoch: [47][ 5/14]	Time  1.460 ( 7.183)	Data  0.000 ( 5.664)	Loss 4.9416e-01 (5.0079e-01)	Pearson  95.99 ( 96.38)	Spearman  96.05 ( 95.61)
+Epoch: [47][ 5/14]	Time  1.459 ( 7.113)	Data  0.000 ( 5.654)	Loss 4.9956e-01 (5.0235e-01)	Pearson  95.35 ( 96.19)	Spearman  92.97 ( 95.38)
+Epoch: [47][10/14]	Time  1.460 ( 4.322)	Data  0.000 ( 2.836)	Loss 5.2609e-01 (5.0627e-01)	Pearson  95.09 ( 96.36)	Spearman  94.46 ( 95.89)
+Epoch: [47][10/14]	Time  1.460 ( 4.287)	Data  0.000 ( 2.827)	Loss 5.2236e-01 (5.1040e-01)	Pearson  95.80 ( 95.97)	Spearman  95.33 ( 95.30)
+Epoch: [47][10/14]	Time  1.460 ( 4.322)	Data  0.000 ( 2.832)	Loss 5.0655e-01 (5.0046e-01)	Pearson  97.09 ( 96.51)	Spearman  97.04 ( 95.91)
+ * Time 31.442  Loss 0.699 Pearson 40.928 Spearman 39.987
+ * Time 31.463  Loss 0.699 Pearson 40.928 Spearman 39.987
+ * Time 31.423  Loss 0.699 Pearson 40.928 Spearman 39.987
+Epoch: [48][ 5/14]	Time  1.460 ( 7.150)	Data  0.000 ( 5.621)	Loss 5.0224e-01 (4.9884e-01)	Pearson  96.01 ( 96.42)	Spearman  95.80 ( 95.95)
+Epoch: [48][ 5/14]	Time  1.461 ( 7.144)	Data  0.000 ( 5.619)	Loss 5.0432e-01 (5.1229e-01)	Pearson  96.44 ( 96.17)	Spearman  95.81 ( 95.55)
+Epoch: [48][ 5/14]	Time  1.461 ( 7.066)	Data  0.000 ( 5.606)	Loss 5.2761e-01 (5.0005e-01)	Pearson  95.89 ( 96.26)	Spearman  95.42 ( 95.72)
+Epoch: [48][10/14]	Time  1.461 ( 4.305)	Data  0.000 ( 2.811)	Loss 5.2966e-01 (5.0730e-01)	Pearson  96.06 ( 96.26)	Spearman  95.94 ( 95.87)
+Epoch: [48][10/14]	Time  1.459 ( 4.263)	Data  0.000 ( 2.803)	Loss 5.0027e-01 (5.0077e-01)	Pearson  95.49 ( 96.34)	Spearman  95.38 ( 95.85)
+Epoch: [48][10/14]	Time  1.463 ( 4.303)	Data  0.000 ( 2.810)	Loss 4.9816e-01 (5.0484e-01)	Pearson  95.66 ( 96.12)	Spearman  95.55 ( 95.51)
+ * Time 31.282  Loss 0.712 Pearson 40.219 Spearman 40.175
+ * Time 31.387  Loss 0.712 Pearson 40.219 Spearman 40.175
+ * Time 31.384  Loss 0.712 Pearson 40.219 Spearman 40.175
+Epoch: [49][ 5/14]	Time  1.461 ( 7.125)	Data  0.000 ( 5.608)	Loss 5.1561e-01 (5.0611e-01)	Pearson  96.71 ( 96.25)	Spearman  96.04 ( 95.68)
+Epoch: [49][ 5/14]	Time  1.460 ( 7.123)	Data  0.000 ( 5.633)	Loss 5.0155e-01 (5.1821e-01)	Pearson  96.54 ( 95.48)	Spearman  96.20 ( 95.16)
+Epoch: [49][ 5/14]	Time  1.461 ( 7.056)	Data  0.000 ( 5.596)	Loss 4.9485e-01 (4.9960e-01)	Pearson  96.47 ( 96.66)	Spearman  95.50 ( 95.95)
+Epoch: [49][10/14]	Time  1.459 ( 4.292)	Data  0.000 ( 2.804)	Loss 5.0785e-01 (5.0301e-01)	Pearson  95.03 ( 96.14)	Spearman  94.24 ( 95.48)
+Epoch: [49][10/14]	Time  1.461 ( 4.292)	Data  0.000 ( 2.817)	Loss 5.0293e-01 (5.1143e-01)	Pearson  96.93 ( 95.94)	Spearman  96.82 ( 95.67)
+Epoch: [49][10/14]	Time  1.461 ( 4.258)	Data  0.000 ( 2.798)	Loss 4.7287e-01 (4.9438e-01)	Pearson  97.00 ( 96.66)	Spearman  95.94 ( 95.89)
+ * Time 31.370  Loss 0.710 Pearson 40.133 Spearman 39.862
+ * Time 31.479  Loss 0.710 Pearson 40.133 Spearman 39.862
+ * Time 31.593  Loss 0.710 Pearson 40.133 Spearman 39.862
+Epoch: [50][ 5/14]	Time  1.459 ( 7.086)	Data  0.000 ( 5.624)	Loss 4.9934e-01 (5.0118e-01)	Pearson  96.47 ( 96.43)	Spearman  95.35 ( 96.11)
+Epoch: [50][ 5/14]	Time  1.469 ( 7.152)	Data  0.000 ( 5.623)	Loss 4.8693e-01 (5.1013e-01)	Pearson  96.08 ( 96.37)	Spearman  95.64 ( 96.21)
+Epoch: [50][ 5/14]	Time  1.472 ( 7.155)	Data  0.000 ( 5.637)	Loss 5.2080e-01 (5.0062e-01)	Pearson  95.50 ( 96.38)	Spearman  95.40 ( 96.13)
+Epoch: [50][10/14]	Time  1.461 ( 4.306)	Data  0.000 ( 2.811)	Loss 4.9574e-01 (5.1487e-01)	Pearson  97.35 ( 96.32)	Spearman  96.54 ( 96.09)
+Epoch: [50][10/14]	Time  1.461 ( 4.273)	Data  0.000 ( 2.812)	Loss 5.1513e-01 (5.0834e-01)	Pearson  95.83 ( 96.17)	Spearman  95.15 ( 95.57)
+Epoch: [50][10/14]	Time  1.466 ( 4.308)	Data  0.000 ( 2.819)	Loss 4.7915e-01 (4.9946e-01)	Pearson  96.70 ( 96.66)	Spearman  95.96 ( 96.17)
+ * Time 31.228  Loss 0.704 Pearson 40.472 Spearman 39.940
+ * Time 31.245  Loss 0.704 Pearson 40.472 Spearman 39.940
+ * Time 31.379  Loss 0.704 Pearson 40.472 Spearman 39.940
+Epoch: [51][ 5/14]	Time  1.462 ( 7.158)	Data  0.000 ( 5.652)	Loss 5.0700e-01 (5.0564e-01)	Pearson  96.12 ( 96.22)	Spearman  96.29 ( 96.02)
+Epoch: [51][ 5/14]	Time  1.460 ( 7.072)	Data  0.000 ( 5.613)	Loss 5.1697e-01 (5.1075e-01)	Pearson  96.00 ( 96.48)	Spearman  95.77 ( 96.08)
+Epoch: [51][ 5/14]	Time  1.460 ( 7.154)	Data  0.000 ( 5.649)	Loss 5.0674e-01 (4.9591e-01)	Pearson  96.61 ( 96.78)	Spearman  95.73 ( 96.18)
+Epoch: [51][10/14]	Time  1.461 ( 4.307)	Data  0.000 ( 2.825)	Loss 5.0049e-01 (5.0072e-01)	Pearson  96.46 ( 96.69)	Spearman  95.04 ( 96.05)
+Epoch: [51][10/14]	Time  1.461 ( 4.266)	Data  0.000 ( 2.806)	Loss 4.9240e-01 (5.0554e-01)	Pearson  97.21 ( 96.66)	Spearman  94.97 ( 96.10)
+Epoch: [51][10/14]	Time  1.462 ( 4.310)	Data  0.000 ( 2.826)	Loss 5.2082e-01 (5.0573e-01)	Pearson  95.72 ( 96.13)	Spearman  95.65 ( 95.68)
+ * Time 31.326  Loss 0.719 Pearson 39.743 Spearman 39.860
+ * Time 31.390  Loss 0.719 Pearson 39.743 Spearman 39.860
+ * Time 31.494  Loss 0.719 Pearson 39.743 Spearman 39.860
+Epoch: [52][ 5/14]	Time  1.459 ( 7.195)	Data  0.000 ( 5.611)	Loss 4.8855e-01 (5.0363e-01)	Pearson  97.46 ( 96.42)	Spearman  96.97 ( 95.74)
+Epoch: [52][ 5/14]	Time  1.461 ( 7.184)	Data  0.000 ( 5.655)	Loss 4.8776e-01 (4.9060e-01)	Pearson  96.90 ( 96.61)	Spearman  96.30 ( 95.96)
+Epoch: [52][ 5/14]	Time  1.459 ( 7.100)	Data  0.000 ( 5.641)	Loss 4.8862e-01 (5.0233e-01)	Pearson  96.76 ( 97.09)	Spearman  94.94 ( 96.37)
+Epoch: [52][10/14]	Time  1.461 ( 4.327)	Data  0.000 ( 2.806)	Loss 5.1845e-01 (5.0556e-01)	Pearson  96.89 ( 96.55)	Spearman  96.62 ( 96.03)
+Epoch: [52][10/14]	Time  1.460 ( 4.280)	Data  0.000 ( 2.820)	Loss 5.4440e-01 (5.0072e-01)	Pearson  96.59 ( 96.93)	Spearman  95.75 ( 96.22)
+Epoch: [52][10/14]	Time  1.460 ( 4.322)	Data  0.000 ( 2.827)	Loss 5.0814e-01 (4.9649e-01)	Pearson  96.61 ( 96.56)	Spearman  95.08 ( 95.94)
+ * Time 31.508  Loss 0.714 Pearson 39.332 Spearman 39.091
+ * Time 31.501  Loss 0.714 Pearson 39.332 Spearman 39.091
+ * Time 31.529  Loss 0.714 Pearson 39.332 Spearman 39.091
+Epoch: [53][ 5/14]	Time  1.460 ( 7.176)	Data  0.000 ( 5.621)	Loss 5.1728e-01 (5.1416e-01)	Pearson  97.54 ( 96.79)	Spearman  97.37 ( 96.20)
+Epoch: [53][ 5/14]	Time  1.461 ( 7.178)	Data  0.000 ( 5.644)	Loss 5.1153e-01 (4.9848e-01)	Pearson  96.06 ( 96.43)	Spearman  95.25 ( 96.09)
+Epoch: [53][ 5/14]	Time  1.461 ( 7.103)	Data  0.000 ( 5.643)	Loss 5.3100e-01 (4.9619e-01)	Pearson  96.34 ( 96.69)	Spearman  95.82 ( 96.39)
+Epoch: [53][10/14]	Time  1.463 ( 4.318)	Data  0.000 ( 2.811)	Loss 4.8595e-01 (5.0929e-01)	Pearson  97.18 ( 96.45)	Spearman  96.20 ( 95.91)
+Epoch: [53][10/14]	Time  1.461 ( 4.282)	Data  0.000 ( 2.822)	Loss 4.6162e-01 (5.0189e-01)	Pearson  97.88 ( 96.55)	Spearman  97.32 ( 96.09)
+Epoch: [53][10/14]	Time  1.463 ( 4.320)	Data  0.000 ( 2.822)	Loss 4.9260e-01 (4.9641e-01)	Pearson  96.68 ( 96.59)	Spearman  95.34 ( 96.13)
+ * Time 31.284  Loss 0.704 Pearson 39.629 Spearman 38.939
+ * Time 31.297  Loss 0.704 Pearson 39.629 Spearman 38.939
+ * Time 31.389  Loss 0.704 Pearson 39.629 Spearman 38.939
+Epoch: [54][ 5/14]	Time  1.466 ( 7.154)	Data  0.000 ( 5.663)	Loss 5.0431e-01 (4.9505e-01)	Pearson  96.51 ( 96.83)	Spearman  96.08 ( 96.61)
+Epoch: [54][ 5/14]	Time  1.466 ( 7.076)	Data  0.000 ( 5.616)	Loss 4.7823e-01 (4.9756e-01)	Pearson  97.35 ( 96.41)	Spearman  97.35 ( 95.73)
+Epoch: [54][ 5/14]	Time  1.467 ( 7.159)	Data  0.000 ( 5.632)	Loss 4.8939e-01 (4.9881e-01)	Pearson  97.60 ( 96.90)	Spearman  97.07 ( 96.25)
+Epoch: [54][10/14]	Time  1.461 ( 4.309)	Data  0.000 ( 2.831)	Loss 5.1452e-01 (5.0105e-01)	Pearson  96.21 ( 96.71)	Spearman  96.19 ( 96.09)
+Epoch: [54][10/14]	Time  1.462 ( 4.270)	Data  0.000 ( 2.808)	Loss 5.3354e-01 (5.0825e-01)	Pearson  96.33 ( 96.34)	Spearman  96.40 ( 95.99)
+Epoch: [54][10/14]	Time  1.460 ( 4.311)	Data  0.000 ( 2.816)	Loss 5.0754e-01 (4.9693e-01)	Pearson  97.18 ( 96.81)	Spearman  96.83 ( 96.29)
+ * Time 31.399  Loss 0.713 Pearson 39.388 Spearman 39.183
+ * Time 31.333  Loss 0.713 Pearson 39.388 Spearman 39.183
+ * Time 31.420  Loss 0.713 Pearson 39.388 Spearman 39.183
+Epoch: [55][ 5/14]	Time  1.460 ( 7.154)	Data  0.000 ( 5.629)	Loss 5.1565e-01 (4.9639e-01)	Pearson  96.04 ( 96.82)	Spearman  95.60 ( 96.59)
+Epoch: [55][ 5/14]	Time  1.461 ( 7.152)	Data  0.000 ( 5.637)	Loss 5.1643e-01 (5.2171e-01)	Pearson  95.46 ( 96.45)	Spearman  93.46 ( 95.56)
+Epoch: [55][ 5/14]	Time  1.461 ( 7.077)	Data  0.000 ( 5.617)	Loss 5.0843e-01 (5.0543e-01)	Pearson  96.48 ( 96.46)	Spearman  95.38 ( 95.89)
+Epoch: [55][10/14]	Time  1.461 ( 4.308)	Data  0.000 ( 2.814)	Loss 5.0870e-01 (5.0411e-01)	Pearson  96.50 ( 96.58)	Spearman  94.73 ( 96.15)
+Epoch: [55][10/14]	Time  1.461 ( 4.269)	Data  0.000 ( 2.809)	Loss 5.0129e-01 (5.0187e-01)	Pearson  96.30 ( 96.46)	Spearman  94.97 ( 95.74)
+Epoch: [55][10/14]	Time  1.461 ( 4.307)	Data  0.000 ( 2.818)	Loss 5.0418e-01 (5.1363e-01)	Pearson  96.55 ( 96.56)	Spearman  95.52 ( 96.04)
+ * Time 31.331  Loss 0.700 Pearson 39.923 Spearman 39.179
+ * Time 31.427  Loss 0.700 Pearson 39.923 Spearman 39.179
+ * Time 31.361  Loss 0.700 Pearson 39.923 Spearman 39.179
+Epoch: [56][ 5/14]	Time  1.464 ( 7.167)	Data  0.000 ( 5.624)	Loss 5.0836e-01 (4.9092e-01)	Pearson  96.97 ( 96.93)	Spearman  96.16 ( 96.53)
+Epoch: [56][ 5/14]	Time  1.464 ( 7.167)	Data  0.000 ( 5.636)	Loss 4.8862e-01 (5.0413e-01)	Pearson  97.84 ( 96.82)	Spearman  97.11 ( 95.87)
+Epoch: [56][ 5/14]	Time  1.464 ( 7.103)	Data  0.000 ( 5.634)	Loss 5.1161e-01 (5.0983e-01)	Pearson  96.95 ( 96.67)	Spearman  96.82 ( 96.04)
+Epoch: [56][10/14]	Time  1.460 ( 4.314)	Data  0.000 ( 2.812)	Loss 4.5069e-01 (4.9059e-01)	Pearson  98.03 ( 97.01)	Spearman  97.12 ( 96.56)
+Epoch: [56][10/14]	Time  1.461 ( 4.315)	Data  0.000 ( 2.818)	Loss 4.9616e-01 (5.0125e-01)	Pearson  97.07 ( 96.87)	Spearman  96.91 ( 96.25)
+Epoch: [56][10/14]	Time  1.460 ( 4.282)	Data  0.000 ( 2.817)	Loss 5.2404e-01 (5.1437e-01)	Pearson  96.82 ( 96.62)	Spearman  96.94 ( 96.12)
+ * Time 31.357  Loss 0.707 Pearson 39.611 Spearman 39.138
+ * Time 31.474  Loss 0.707 Pearson 39.611 Spearman 39.138
+ * Time 31.557  Loss 0.707 Pearson 39.611 Spearman 39.138
+Epoch: [57][ 5/14]	Time  1.460 ( 7.183)	Data  0.000 ( 5.663)	Loss 4.8013e-01 (4.8575e-01)	Pearson  97.55 ( 97.45)	Spearman  97.07 ( 96.81)
+Epoch: [57][ 5/14]	Time  1.459 ( 7.183)	Data  0.000 ( 5.666)	Loss 5.1547e-01 (5.1098e-01)	Pearson  96.37 ( 96.58)	Spearman  96.74 ( 96.60)
+Epoch: [57][ 5/14]	Time  1.459 ( 7.102)	Data  0.000 ( 5.642)	Loss 5.2092e-01 (5.0812e-01)	Pearson  94.42 ( 96.43)	Spearman  93.69 ( 95.98)
+Epoch: [57][10/14]	Time  1.460 ( 4.321)	Data  0.000 ( 2.832)	Loss 4.7878e-01 (4.9255e-01)	Pearson  96.99 ( 97.20)	Spearman  96.63 ( 96.66)
+Epoch: [57][10/14]	Time  1.461 ( 4.322)	Data  0.000 ( 2.833)	Loss 5.1737e-01 (5.1109e-01)	Pearson  94.86 ( 96.38)	Spearman  93.44 ( 96.19)
+Epoch: [57][10/14]	Time  1.460 ( 4.281)	Data  0.000 ( 2.821)	Loss 4.9807e-01 (5.0686e-01)	Pearson  96.41 ( 96.68)	Spearman  94.49 ( 96.09)
+ * Time 31.414  Loss 0.718 Pearson 39.245 Spearman 39.126
+ * Time 31.659  Loss 0.718 Pearson 39.245 Spearman 39.126
+ * Time 31.609  Loss 0.718 Pearson 39.245 Spearman 39.126
+Epoch: [58][ 5/14]	Time  1.460 ( 7.194)	Data  0.000 ( 5.660)	Loss 4.8728e-01 (4.9533e-01)	Pearson  97.12 ( 96.95)	Spearman  97.11 ( 96.68)
+Epoch: [58][ 5/14]	Time  1.461 ( 7.172)	Data  0.000 ( 5.615)	Loss 4.9589e-01 (4.9144e-01)	Pearson  96.93 ( 96.86)	Spearman  96.15 ( 96.28)
+Epoch: [58][ 5/14]	Time  1.459 ( 7.097)	Data  0.000 ( 5.638)	Loss 4.7686e-01 (5.0237e-01)	Pearson  97.16 ( 96.49)	Spearman  97.23 ( 96.42)
+Epoch: [58][10/14]	Time  1.460 ( 4.327)	Data  0.000 ( 2.830)	Loss 4.8037e-01 (4.9594e-01)	Pearson  97.55 ( 96.98)	Spearman  97.55 ( 96.61)
+Epoch: [58][10/14]	Time  1.460 ( 4.279)	Data  0.000 ( 2.819)	Loss 5.0950e-01 (5.0739e-01)	Pearson  96.75 ( 96.65)	Spearman  95.62 ( 96.19)
+Epoch: [58][10/14]	Time  1.461 ( 4.316)	Data  0.000 ( 2.807)	Loss 5.1694e-01 (5.0154e-01)	Pearson  96.15 ( 96.98)	Spearman  96.55 ( 96.58)
+ * Time 31.526  Loss 0.715 Pearson 39.357 Spearman 39.154
+ * Time 31.440  Loss 0.715 Pearson 39.357 Spearman 39.154
+ * Time 31.537  Loss 0.715 Pearson 39.357 Spearman 39.154
+Epoch: [59][ 5/14]	Time  1.459 ( 7.183)	Data  0.000 ( 5.633)	Loss 5.3591e-01 (5.0873e-01)	Pearson  95.21 ( 96.74)	Spearman  94.82 ( 96.23)
+Epoch: [59][ 5/14]	Time  1.460 ( 7.181)	Data  0.000 ( 5.622)	Loss 5.1079e-01 (4.9705e-01)	Pearson  96.33 ( 97.17)	Spearman  96.22 ( 96.90)
+Epoch: [59][ 5/14]	Time  1.459 ( 7.105)	Data  0.000 ( 5.646)	Loss 4.7074e-01 (4.9296e-01)	Pearson  98.20 ( 97.41)	Spearman  98.41 ( 96.94)
+Epoch: [59][10/14]	Time  1.461 ( 4.322)	Data  0.000 ( 2.817)	Loss 5.1750e-01 (4.9766e-01)	Pearson  96.25 ( 97.07)	Spearman  96.07 ( 96.61)
+Epoch: [59][10/14]	Time  1.460 ( 4.283)	Data  0.000 ( 2.823)	Loss 4.8118e-01 (4.9536e-01)	Pearson  97.31 ( 97.28)	Spearman  96.99 ( 96.74)
+Epoch: [59][10/14]	Time  1.462 ( 4.321)	Data  0.000 ( 2.811)	Loss 4.9448e-01 (5.0299e-01)	Pearson  97.15 ( 97.01)	Spearman  96.47 ( 96.63)
+ * Time 31.363  Loss 0.706 Pearson 39.952 Spearman 39.434
+ * Time 31.448  Loss 0.706 Pearson 39.952 Spearman 39.434
+ * Time 31.465  Loss 0.706 Pearson 39.952 Spearman 39.434
+Epoch: [60][ 5/14]	Time  1.461 ( 7.194)	Data  0.000 ( 5.643)	Loss 4.9493e-01 (5.0288e-01)	Pearson  96.87 ( 96.87)	Spearman  96.68 ( 96.08)
+Epoch: [60][ 5/14]	Time  1.459 ( 7.109)	Data  0.000 ( 5.649)	Loss 4.8912e-01 (5.0572e-01)	Pearson  97.24 ( 96.91)	Spearman  96.43 ( 96.46)
+Epoch: [60][ 5/14]	Time  1.461 ( 7.190)	Data  0.000 ( 5.677)	Loss 4.8667e-01 (4.9831e-01)	Pearson  97.88 ( 97.25)	Spearman  97.95 ( 96.77)
+Epoch: [60][10/14]	Time  1.462 ( 4.328)	Data  0.000 ( 2.822)	Loss 4.7636e-01 (4.9617e-01)	Pearson  97.28 ( 97.07)	Spearman  96.91 ( 96.52)
+Epoch: [60][10/14]	Time  1.462 ( 4.285)	Data  0.000 ( 2.824)	Loss 4.8900e-01 (5.0504e-01)	Pearson  97.54 ( 97.01)	Spearman  97.63 ( 96.61)
+Epoch: [60][10/14]	Time  1.462 ( 4.326)	Data  0.000 ( 2.839)	Loss 5.0662e-01 (5.0039e-01)	Pearson  96.92 ( 97.19)	Spearman  95.91 ( 96.60)
+ * Time 31.396  Loss 0.707 Pearson 40.299 Spearman 39.896
+ * Time 31.467  Loss 0.707 Pearson 40.299 Spearman 39.896
+ * Time 31.432  Loss 0.707 Pearson 40.299 Spearman 39.896
+Epoch: [61][ 5/14]	Time  1.461 ( 7.214)	Data  0.000 ( 5.683)	Loss 4.9017e-01 (4.9755e-01)	Pearson  97.04 ( 97.12)	Spearman  96.44 ( 96.59)
+Epoch: [61][ 5/14]	Time  1.460 ( 7.120)	Data  0.000 ( 5.661)	Loss 5.1231e-01 (5.0751e-01)	Pearson  97.60 ( 97.41)	Spearman  96.79 ( 96.95)
+Epoch: [61][ 5/14]	Time  1.461 ( 7.199)	Data  0.000 ( 5.672)	Loss 4.9209e-01 (4.9791e-01)	Pearson  97.27 ( 97.45)	Spearman  96.20 ( 96.69)
+Epoch: [61][10/14]	Time  1.466 ( 4.338)	Data  0.000 ( 2.842)	Loss 5.0737e-01 (4.9511e-01)	Pearson  97.11 ( 97.18)	Spearman  96.27 ( 96.67)
+Epoch: [61][10/14]	Time  1.463 ( 4.330)	Data  0.000 ( 2.836)	Loss 4.7790e-01 (4.9938e-01)	Pearson  97.55 ( 97.34)	Spearman  97.04 ( 96.80)
+Epoch: [61][10/14]	Time  1.461 ( 4.292)	Data  0.000 ( 2.830)	Loss 4.7671e-01 (5.0388e-01)	Pearson  97.58 ( 97.21)	Spearman  96.28 ( 96.68)
+ * Time 31.421  Loss 0.709 Pearson 40.153 Spearman 39.764
+ * Time 31.447  Loss 0.709 Pearson 40.153 Spearman 39.764
+ * Time 31.430  Loss 0.709 Pearson 40.153 Spearman 39.764
+Epoch: [62][ 5/14]	Time  1.461 ( 7.212)	Data  0.000 ( 5.654)	Loss 4.8534e-01 (5.0193e-01)	Pearson  97.29 ( 96.93)	Spearman  96.82 ( 96.33)
+Epoch: [62][ 5/14]	Time  1.460 ( 7.214)	Data  0.000 ( 5.651)	Loss 4.7607e-01 (4.9238e-01)	Pearson  97.51 ( 97.30)	Spearman  97.08 ( 96.61)
+Epoch: [62][ 5/14]	Time  1.461 ( 7.130)	Data  0.000 ( 5.669)	Loss 5.0755e-01 (4.9793e-01)	Pearson  96.85 ( 97.06)	Spearman  96.55 ( 96.54)
+Epoch: [62][10/14]	Time  1.459 ( 4.337)	Data  0.000 ( 2.825)	Loss 5.1270e-01 (4.9290e-01)	Pearson  96.81 ( 97.27)	Spearman  96.53 ( 96.73)
+Epoch: [62][10/14]	Time  1.462 ( 4.337)	Data  0.000 ( 2.827)	Loss 5.1113e-01 (5.1063e-01)	Pearson  97.03 ( 96.90)	Spearman  96.66 ( 96.44)
+Epoch: [62][10/14]	Time  1.461 ( 4.295)	Data  0.000 ( 2.835)	Loss 5.2149e-01 (4.9873e-01)	Pearson  97.05 ( 97.11)	Spearman  96.33 ( 96.63)
+ * Time 31.571  Loss 0.697 Pearson 40.405 Spearman 39.707
+ * Time 31.644  Loss 0.697 Pearson 40.405 Spearman 39.707
+ * Time 31.678  Loss 0.697 Pearson 40.405 Spearman 39.707
+Epoch: [63][ 5/14]	Time  1.461 ( 7.157)	Data  0.000 ( 5.643)	Loss 5.0735e-01 (5.0840e-01)	Pearson  95.13 ( 96.52)	Spearman  94.90 ( 96.16)
+Epoch: [63][ 5/14]	Time  1.461 ( 7.088)	Data  0.000 ( 5.628)	Loss 4.9975e-01 (5.0108e-01)	Pearson  97.89 ( 97.35)	Spearman  97.52 ( 96.83)
+Epoch: [63][ 5/14]	Time  1.461 ( 7.158)	Data  0.000 ( 5.664)	Loss 5.0736e-01 (4.9304e-01)	Pearson  97.40 ( 97.40)	Spearman  96.74 ( 96.83)
+Epoch: [63][10/14]	Time  1.461 ( 4.275)	Data  0.000 ( 2.814)	Loss 5.1537e-01 (4.9685e-01)	Pearson  97.15 ( 97.38)	Spearman  96.56 ( 96.80)
+Epoch: [63][10/14]	Time  1.461 ( 4.309)	Data  0.000 ( 2.822)	Loss 5.0739e-01 (5.0676e-01)	Pearson  97.52 ( 96.85)	Spearman  96.78 ( 96.41)
+Epoch: [63][10/14]	Time  1.460 ( 4.310)	Data  0.000 ( 2.832)	Loss 4.8917e-01 (4.9045e-01)	Pearson  97.90 ( 97.47)	Spearman  97.79 ( 97.05)
+ * Time 31.422  Loss 0.723 Pearson 39.305 Spearman 39.362
+ * Time 31.460  Loss 0.723 Pearson 39.305 Spearman 39.362
+ * Time 31.600  Loss 0.723 Pearson 39.305 Spearman 39.362
+Epoch: [64][ 5/14]	Time  1.465 ( 7.165)	Data  0.000 ( 5.634)	Loss 5.1048e-01 (5.0230e-01)	Pearson  97.36 ( 97.08)	Spearman  96.98 ( 96.44)
+Epoch: [64][ 5/14]	Time  1.463 ( 7.064)	Data  0.000 ( 5.601)	Loss 5.1307e-01 (4.9481e-01)	Pearson  97.52 ( 97.39)	Spearman  97.27 ( 96.97)
+Epoch: [64][ 5/14]	Time  1.460 ( 7.159)	Data  0.001 ( 5.661)	Loss 5.1599e-01 (4.8727e-01)	Pearson  97.87 ( 97.67)	Spearman  97.39 ( 97.52)
+Epoch: [64][10/14]	Time  1.460 ( 4.309)	Data  0.000 ( 2.831)	Loss 5.1298e-01 (4.9547e-01)	Pearson  96.48 ( 97.41)	Spearman  96.41 ( 97.24)
+Epoch: [64][10/14]	Time  1.462 ( 4.313)	Data  0.000 ( 2.817)	Loss 4.9880e-01 (5.0247e-01)	Pearson  97.37 ( 97.05)	Spearman  97.09 ( 96.43)
+Epoch: [64][10/14]	Time  1.462 ( 4.262)	Data  0.000 ( 2.800)	Loss 4.7411e-01 (4.9905e-01)	Pearson  97.85 ( 96.95)	Spearman  97.09 ( 96.51)
+ * Time 31.554  Loss 0.707 Pearson 39.892 Spearman 39.467
+ * Time 31.558  Loss 0.707 Pearson 39.892 Spearman 39.467
+ * Time 31.639  Loss 0.707 Pearson 39.892 Spearman 39.467
+Epoch: [65][ 5/14]	Time  1.460 ( 7.161)	Data  0.000 ( 5.635)	Loss 5.1783e-01 (5.0733e-01)	Pearson  97.08 ( 96.91)	Spearman  96.63 ( 96.50)
+Epoch: [65][ 5/14]	Time  1.462 ( 7.155)	Data  0.000 ( 5.605)	Loss 4.8703e-01 (4.8432e-01)	Pearson  97.12 ( 97.47)	Spearman  96.89 ( 96.71)
+Epoch: [65][ 5/14]	Time  1.459 ( 7.070)	Data  0.000 ( 5.611)	Loss 4.9097e-01 (4.9372e-01)	Pearson  97.79 ( 97.72)	Spearman  97.75 ( 97.29)
+Epoch: [65][10/14]	Time  1.461 ( 4.311)	Data  0.000 ( 2.818)	Loss 5.0055e-01 (5.0639e-01)	Pearson  97.03 ( 97.01)	Spearman  96.75 ( 96.62)
+Epoch: [65][10/14]	Time  1.461 ( 4.308)	Data  0.000 ( 2.802)	Loss 4.7681e-01 (4.9535e-01)	Pearson  97.97 ( 97.14)	Spearman  97.71 ( 96.56)
+Epoch: [65][10/14]	Time  1.462 ( 4.266)	Data  0.000 ( 2.805)	Loss 5.0496e-01 (5.0447e-01)	Pearson  97.25 ( 97.43)	Spearman  96.33 ( 96.89)
+ * Time 31.428  Loss 0.702 Pearson 40.103 Spearman 39.382
+ * Time 31.531  Loss 0.702 Pearson 40.103 Spearman 39.382
+ * Time 31.598  Loss 0.702 Pearson 40.103 Spearman 39.382
+Epoch: [66][ 5/14]	Time  1.460 ( 7.180)	Data  0.000 ( 5.647)	Loss 5.2755e-01 (4.9914e-01)	Pearson  96.94 ( 97.43)	Spearman  96.98 ( 96.82)
+Epoch: [66][ 5/14]	Time  1.460 ( 7.159)	Data  0.000 ( 5.635)	Loss 4.9798e-01 (4.9628e-01)	Pearson  97.36 ( 97.38)	Spearman  97.42 ( 97.07)
+Epoch: [66][ 5/14]	Time  1.460 ( 7.085)	Data  0.000 ( 5.625)	Loss 4.8847e-01 (5.0375e-01)	Pearson  97.71 ( 97.02)	Spearman  96.92 ( 96.58)
+Epoch: [66][10/14]	Time  1.462 ( 4.320)	Data  0.000 ( 2.824)	Loss 5.1226e-01 (4.9683e-01)	Pearson  97.18 ( 97.42)	Spearman  97.13 ( 96.93)
+Epoch: [66][10/14]	Time  1.461 ( 4.273)	Data  0.000 ( 2.812)	Loss 5.0452e-01 (5.0722e-01)	Pearson  96.64 ( 96.93)	Spearman  95.01 ( 96.20)
+Epoch: [66][10/14]	Time  1.462 ( 4.311)	Data  0.000 ( 2.818)	Loss 5.4490e-01 (4.9803e-01)	Pearson  95.47 ( 97.19)	Spearman  95.50 ( 96.68)
+ * Time 31.340  Loss 0.720 Pearson 39.717 Spearman 39.801
+ * Time 31.469  Loss 0.720 Pearson 39.717 Spearman 39.801
+ * Time 31.425  Loss 0.720 Pearson 39.717 Spearman 39.801
+Epoch: [67][ 5/14]	Time  1.460 ( 7.177)	Data  0.000 ( 5.648)	Loss 4.9859e-01 (4.9837e-01)	Pearson  98.08 ( 97.17)	Spearman  97.65 ( 96.75)
+Epoch: [67][ 5/14]	Time  1.461 ( 7.178)	Data  0.000 ( 5.638)	Loss 4.9157e-01 (4.9449e-01)	Pearson  96.96 ( 97.49)	Spearman  97.06 ( 97.13)
+Epoch: [67][ 5/14]	Time  1.460 ( 7.101)	Data  0.000 ( 5.642)	Loss 5.0197e-01 (5.1178e-01)	Pearson  97.13 ( 96.81)	Spearman  96.85 ( 96.28)
+Epoch: [67][10/14]	Time  1.459 ( 4.282)	Data  0.000 ( 2.821)	Loss 4.9245e-01 (5.0921e-01)	Pearson  98.01 ( 96.86)	Spearman  97.77 ( 96.34)
+Epoch: [67][10/14]	Time  1.461 ( 4.320)	Data  0.000 ( 2.819)	Loss 4.8242e-01 (4.9352e-01)	Pearson  96.96 ( 97.57)	Spearman  96.86 ( 97.01)
+Epoch: [67][10/14]	Time  1.460 ( 4.320)	Data  0.000 ( 2.824)	Loss 4.9494e-01 (4.9668e-01)	Pearson  96.57 ( 97.23)	Spearman  95.64 ( 96.89)
+ * Time 31.257  Loss 0.702 Pearson 40.098 Spearman 39.519
+ * Time 31.406  Loss 0.702 Pearson 40.098 Spearman 39.519
+ * Time 31.453  Loss 0.702 Pearson 40.098 Spearman 39.519
+Epoch: [68][ 5/14]	Time  1.460 ( 7.146)	Data  0.000 ( 5.670)	Loss 4.8748e-01 (4.9367e-01)	Pearson  97.19 ( 97.41)	Spearman  96.54 ( 96.94)
+Epoch: [68][ 5/14]	Time  1.461 ( 7.174)	Data  0.000 ( 5.683)	Loss 4.8869e-01 (5.0007e-01)	Pearson  98.19 ( 97.64)	Spearman  98.01 ( 97.23)
+Epoch: [68][ 5/14]	Time  1.459 ( 7.069)	Data  0.000 ( 5.609)	Loss 4.5910e-01 (4.8412e-01)	Pearson  97.99 ( 97.61)	Spearman  97.84 ( 97.36)
+Epoch: [68][10/14]	Time  1.460 ( 4.304)	Data  0.000 ( 2.835)	Loss 5.0329e-01 (4.9339e-01)	Pearson  97.28 ( 97.40)	Spearman  96.76 ( 96.78)
+Epoch: [68][10/14]	Time  1.461 ( 4.318)	Data  0.000 ( 2.842)	Loss 5.3650e-01 (5.0837e-01)	Pearson  96.05 ( 97.35)	Spearman  95.66 ( 97.00)
+Epoch: [68][10/14]	Time  1.460 ( 4.266)	Data  0.000 ( 2.805)	Loss 5.2770e-01 (4.9925e-01)	Pearson  96.99 ( 97.39)	Spearman  97.35 ( 97.12)
+ * Time 31.324  Loss 0.700 Pearson 40.353 Spearman 39.772
+ * Time 31.456  Loss 0.700 Pearson 40.353 Spearman 39.772
+ * Time 31.458  Loss 0.700 Pearson 40.353 Spearman 39.772
+Epoch: [69][ 5/14]	Time  1.459 ( 7.150)	Data  0.000 ( 5.633)	Loss 4.7759e-01 (4.9104e-01)	Pearson  97.74 ( 97.41)	Spearman  97.83 ( 97.41)
+Epoch: [69][ 5/14]	Time  1.459 ( 7.152)	Data  0.000 ( 5.614)	Loss 5.2559e-01 (5.0461e-01)	Pearson  96.38 ( 97.00)	Spearman  96.18 ( 96.70)
+Epoch: [69][ 5/14]	Time  1.459 ( 7.087)	Data  0.000 ( 5.628)	Loss 4.6480e-01 (4.8829e-01)	Pearson  97.82 ( 97.48)	Spearman  97.81 ( 96.82)
+Epoch: [69][10/14]	Time  1.460 ( 4.305)	Data  0.000 ( 2.816)	Loss 5.1472e-01 (4.9904e-01)	Pearson  96.37 ( 97.29)	Spearman  95.72 ( 97.11)
+Epoch: [69][10/14]	Time  1.462 ( 4.307)	Data  0.000 ( 2.807)	Loss 5.1989e-01 (5.0184e-01)	Pearson  96.64 ( 97.15)	Spearman  96.75 ( 96.87)
+Epoch: [69][10/14]	Time  1.461 ( 4.274)	Data  0.000 ( 2.814)	Loss 4.9168e-01 (4.9423e-01)	Pearson  97.96 ( 97.34)	Spearman  97.42 ( 96.77)
+ * Time 31.402  Loss 0.706 Pearson 39.698 Spearman 39.258
+ * Time 31.510  Loss 0.706 Pearson 39.698 Spearman 39.258
+ * Time 31.502  Loss 0.706 Pearson 39.698 Spearman 39.258
+Epoch: [70][ 5/14]	Time  1.459 ( 7.178)	Data  0.000 ( 5.640)	Loss 4.8630e-01 (4.9774e-01)	Pearson  97.80 ( 97.67)	Spearman  97.84 ( 97.52)
+Epoch: [70][ 5/14]	Time  1.458 ( 7.101)	Data  0.000 ( 5.642)	Loss 4.9141e-01 (4.8912e-01)	Pearson  97.57 ( 97.53)	Spearman  97.18 ( 96.75)
+Epoch: [70][ 5/14]	Time  1.461 ( 7.187)	Data  0.000 ( 5.669)	Loss 4.6240e-01 (4.9681e-01)	Pearson  97.73 ( 96.88)	Spearman  97.21 ( 96.19)
+Epoch: [70][10/14]	Time  1.461 ( 4.319)	Data  0.000 ( 2.820)	Loss 5.0912e-01 (5.0076e-01)	Pearson  96.93 ( 97.53)	Spearman  96.97 ( 97.28)
+Epoch: [70][10/14]	Time  1.461 ( 4.280)	Data  0.000 ( 2.821)	Loss 4.8575e-01 (4.8785e-01)	Pearson  97.31 ( 97.56)	Spearman  96.76 ( 96.91)
+Epoch: [70][10/14]	Time  1.460 ( 4.324)	Data  0.000 ( 2.835)	Loss 5.0907e-01 (4.9229e-01)	Pearson  96.74 ( 97.28)	Spearman  96.61 ( 96.70)
+ * Time 31.412  Loss 0.701 Pearson 40.017 Spearman 39.454
+ * Time 31.364  Loss 0.701 Pearson 40.017 Spearman 39.454
+ * Time 31.457  Loss 0.701 Pearson 40.017 Spearman 39.454
+Epoch: [71][ 5/14]	Time  1.459 ( 7.070)	Data  0.000 ( 5.611)	Loss 4.7890e-01 (4.9770e-01)	Pearson  98.06 ( 97.66)	Spearman  97.66 ( 97.14)
+Epoch: [71][ 5/14]	Time  1.462 ( 7.150)	Data  0.000 ( 5.630)	Loss 4.9445e-01 (4.9765e-01)	Pearson  97.56 ( 97.64)	Spearman  96.59 ( 96.86)
+Epoch: [71][ 5/14]	Time  1.464 ( 7.151)	Data  0.000 ( 5.611)	Loss 4.9118e-01 (4.9038e-01)	Pearson  96.64 ( 97.31)	Spearman  96.09 ( 96.92)
+Epoch: [71][10/14]	Time  1.461 ( 4.265)	Data  0.000 ( 2.806)	Loss 4.7400e-01 (4.9089e-01)	Pearson  97.40 ( 97.59)	Spearman  97.05 ( 97.10)
+Epoch: [71][10/14]	Time  1.461 ( 4.306)	Data  0.000 ( 2.815)	Loss 4.8976e-01 (4.9823e-01)	Pearson  97.91 ( 97.68)	Spearman  97.43 ( 97.18)
+Epoch: [71][10/14]	Time  1.462 ( 4.306)	Data  0.000 ( 2.806)	Loss 5.2498e-01 (4.9710e-01)	Pearson  97.28 ( 97.30)	Spearman  96.71 ( 96.83)
+ * Time 31.545  Loss 0.716 Pearson 39.755 Spearman 39.375
+ * Time 31.585  Loss 0.716 Pearson 39.755 Spearman 39.375
+ * Time 31.588  Loss 0.716 Pearson 39.755 Spearman 39.375
+Epoch: [72][ 5/14]	Time  1.460 ( 7.205)	Data  0.000 ( 5.665)	Loss 5.1104e-01 (4.9814e-01)	Pearson  97.07 ( 97.35)	Spearman  96.78 ( 96.63)
+Epoch: [72][ 5/14]	Time  1.461 ( 7.210)	Data  0.000 ( 5.679)	Loss 4.8575e-01 (4.8275e-01)	Pearson  97.85 ( 97.89)	Spearman  97.83 ( 97.58)
+Epoch: [72][ 5/14]	Time  1.460 ( 7.124)	Data  0.000 ( 5.664)	Loss 4.7351e-01 (5.0162e-01)	Pearson  98.06 ( 97.62)	Spearman  97.57 ( 97.34)
+Epoch: [72][10/14]	Time  1.462 ( 4.333)	Data  0.000 ( 2.832)	Loss 5.0785e-01 (5.0263e-01)	Pearson  96.89 ( 97.18)	Spearman  95.65 ( 96.50)
+Epoch: [72][10/14]	Time  1.460 ( 4.292)	Data  0.000 ( 2.832)	Loss 5.1217e-01 (4.9956e-01)	Pearson  97.24 ( 97.65)	Spearman  96.39 ( 97.24)
+Epoch: [72][10/14]	Time  1.462 ( 4.336)	Data  0.000 ( 2.840)	Loss 5.1643e-01 (4.8987e-01)	Pearson  97.47 ( 97.72)	Spearman  96.89 ( 97.31)
+ * Time 31.326  Loss 0.708 Pearson 39.695 Spearman 38.870
+ * Time 31.420  Loss 0.708 Pearson 39.695 Spearman 38.870
+ * Time 31.432  Loss 0.708 Pearson 39.695 Spearman 38.870
+Epoch: [73][ 5/14]	Time  1.465 ( 7.203)	Data  0.000 ( 5.665)	Loss 4.7237e-01 (4.8913e-01)	Pearson  97.69 ( 97.91)	Spearman  97.36 ( 97.50)
+Epoch: [73][ 5/14]	Time  1.465 ( 7.218)	Data  0.000 ( 5.665)	Loss 4.9080e-01 (4.9814e-01)	Pearson  97.54 ( 97.37)	Spearman  97.49 ( 96.85)
+Epoch: [73][ 5/14]	Time  1.465 ( 7.131)	Data  0.000 ( 5.668)	Loss 5.1025e-01 (5.1952e-01)	Pearson  97.20 ( 96.98)	Spearman  96.32 ( 96.19)
+Epoch: [73][10/14]	Time  1.465 ( 4.334)	Data  0.000 ( 2.833)	Loss 4.9830e-01 (4.9480e-01)	Pearson  97.34 ( 97.69)	Spearman  97.21 ( 97.39)
+Epoch: [73][10/14]	Time  1.465 ( 4.341)	Data  0.000 ( 2.833)	Loss 5.1320e-01 (5.0047e-01)	Pearson  96.86 ( 97.42)	Spearman  96.76 ( 97.06)
+Epoch: [73][10/14]	Time  1.465 ( 4.298)	Data  0.000 ( 2.834)	Loss 5.0063e-01 (5.0901e-01)	Pearson  97.33 ( 97.30)	Spearman  97.44 ( 96.76)
+ * Time 31.410  Loss 0.710 Pearson 39.617 Spearman 39.230
+ * Time 31.452  Loss 0.710 Pearson 39.617 Spearman 39.230
+ * Time 31.557  Loss 0.710 Pearson 39.617 Spearman 39.230
+Epoch: [74][ 5/14]	Time  1.460 ( 7.167)	Data  0.000 ( 5.621)	Loss 4.3113e-01 (4.9383e-01)	Pearson  97.88 ( 97.67)	Spearman  97.63 ( 97.02)
+Epoch: [74][ 5/14]	Time  1.461 ( 7.164)	Data  0.000 ( 5.636)	Loss 4.9324e-01 (4.8867e-01)	Pearson  97.78 ( 97.76)	Spearman  97.57 ( 97.51)
+Epoch: [74][ 5/14]	Time  1.460 ( 7.082)	Data  0.000 ( 5.623)	Loss 4.9022e-01 (4.9046e-01)	Pearson  97.36 ( 97.70)	Spearman  97.11 ( 96.95)
+Epoch: [74][10/14]	Time  1.462 ( 4.314)	Data  0.000 ( 2.811)	Loss 4.8825e-01 (4.9967e-01)	Pearson  97.74 ( 97.54)	Spearman  97.60 ( 97.02)
+Epoch: [74][10/14]	Time  1.461 ( 4.271)	Data  0.000 ( 2.811)	Loss 4.8813e-01 (4.9391e-01)	Pearson  98.11 ( 97.65)	Spearman  97.45 ( 96.98)
+Epoch: [74][10/14]	Time  1.464 ( 4.313)	Data  0.000 ( 2.818)	Loss 4.8182e-01 (4.9326e-01)	Pearson  97.85 ( 97.83)	Spearman  97.81 ( 97.41)
+ * Time 31.389  Loss 0.713 Pearson 39.423 Spearman 39.152
+ * Time 31.466  Loss 0.713 Pearson 39.423 Spearman 39.152
+ * Time 31.482  Loss 0.713 Pearson 39.423 Spearman 39.152
+Epoch: [75][ 5/14]	Time  1.459 ( 7.131)	Data  0.000 ( 5.635)	Loss 4.7032e-01 (4.9724e-01)	Pearson  97.61 ( 97.67)	Spearman  97.49 ( 97.39)
+Epoch: [75][ 5/14]	Time  1.461 ( 7.144)	Data  0.000 ( 5.620)	Loss 4.9981e-01 (4.9602e-01)	Pearson  97.46 ( 97.27)	Spearman  96.37 ( 96.80)
+Epoch: [75][ 5/14]	Time  1.460 ( 7.056)	Data  0.000 ( 5.597)	Loss 4.9077e-01 (4.9563e-01)	Pearson  97.88 ( 97.76)	Spearman  97.77 ( 97.51)
+Epoch: [75][10/14]	Time  1.462 ( 4.296)	Data  0.000 ( 2.817)	Loss 5.1919e-01 (5.0185e-01)	Pearson  96.85 ( 97.34)	Spearman  96.61 ( 96.99)
+Epoch: [75][10/14]	Time  1.461 ( 4.258)	Data  0.000 ( 2.798)	Loss 4.9384e-01 (4.9631e-01)	Pearson  97.79 ( 97.67)	Spearman  97.41 ( 97.29)
+Epoch: [75][10/14]	Time  1.462 ( 4.303)	Data  0.000 ( 2.810)	Loss 5.1425e-01 (4.9904e-01)	Pearson  97.52 ( 97.52)	Spearman  97.46 ( 97.05)
+ * Time 31.451  Loss 0.707 Pearson 39.840 Spearman 39.006
+ * Time 31.433  Loss 0.707 Pearson 39.840 Spearman 39.006
+ * Time 31.414  Loss 0.707 Pearson 39.840 Spearman 39.006
+Epoch: [76][ 5/14]	Time  1.459 ( 7.173)	Data  0.000 ( 5.625)	Loss 5.0156e-01 (4.8827e-01)	Pearson  97.76 ( 97.91)	Spearman  97.80 ( 97.78)
+Epoch: [76][ 5/14]	Time  1.460 ( 7.170)	Data  0.000 ( 5.616)	Loss 5.0503e-01 (4.9967e-01)	Pearson  97.10 ( 97.35)	Spearman  96.93 ( 97.21)
+Epoch: [76][ 5/14]	Time  1.458 ( 7.091)	Data  0.000 ( 5.632)	Loss 4.9031e-01 (4.8779e-01)	Pearson  97.74 ( 97.57)	Spearman  96.63 ( 96.86)
+Epoch: [76][10/14]	Time  1.460 ( 4.316)	Data  0.000 ( 2.812)	Loss 5.1848e-01 (4.9643e-01)	Pearson  97.07 ( 97.64)	Spearman  96.47 ( 97.36)
+Epoch: [76][10/14]	Time  1.460 ( 4.276)	Data  0.000 ( 2.816)	Loss 5.0815e-01 (4.9318e-01)	Pearson  97.66 ( 97.63)	Spearman  97.10 ( 97.05)
+Epoch: [76][10/14]	Time  1.460 ( 4.315)	Data  0.000 ( 2.808)	Loss 5.2244e-01 (5.0367e-01)	Pearson  97.14 ( 97.32)	Spearman  97.05 ( 97.07)
+ * Time 31.405  Loss 0.705 Pearson 39.538 Spearman 39.020
+ * Time 31.549  Loss 0.705 Pearson 39.538 Spearman 39.020
+ * Time 31.558  Loss 0.705 Pearson 39.538 Spearman 39.020
+Epoch: [77][ 5/14]	Time  1.459 ( 7.194)	Data  0.000 ( 5.693)	Loss 5.2343e-01 (5.0122e-01)	Pearson  97.65 ( 97.65)	Spearman  96.99 ( 97.07)
+Epoch: [77][ 5/14]	Time  1.460 ( 7.226)	Data  0.000 ( 5.679)	Loss 5.2792e-01 (5.0319e-01)	Pearson  97.18 ( 97.68)	Spearman  97.32 ( 97.37)
+Epoch: [77][ 5/14]	Time  1.459 ( 7.118)	Data  0.000 ( 5.659)	Loss 4.9216e-01 (5.0706e-01)	Pearson  97.72 ( 97.32)	Spearman  97.45 ( 97.10)
+Epoch: [77][10/14]	Time  1.463 ( 4.328)	Data  0.000 ( 2.847)	Loss 4.8628e-01 (4.9618e-01)	Pearson  97.55 ( 97.82)	Spearman  97.53 ( 97.36)
+Epoch: [77][10/14]	Time  1.463 ( 4.290)	Data  0.000 ( 2.830)	Loss 5.1058e-01 (5.0168e-01)	Pearson  97.36 ( 97.56)	Spearman  96.64 ( 97.10)
+Epoch: [77][10/14]	Time  1.463 ( 4.345)	Data  0.000 ( 2.839)	Loss 4.8008e-01 (4.9088e-01)	Pearson  98.32 ( 97.92)	Spearman  98.38 ( 97.57)
+ * Time 31.557  Loss 0.719 Pearson 39.372 Spearman 39.202
+ * Time 31.591  Loss 0.719 Pearson 39.372 Spearman 39.202
+ * Time 31.581  Loss 0.719 Pearson 39.372 Spearman 39.202
+Epoch: [78][ 5/14]	Time  1.463 ( 7.135)	Data  0.000 ( 5.616)	Loss 4.9262e-01 (4.9524e-01)	Pearson  98.16 ( 97.97)	Spearman  97.93 ( 97.86)
+Epoch: [78][ 5/14]	Time  1.463 ( 7.138)	Data  0.000 ( 5.622)	Loss 5.3575e-01 (5.0104e-01)	Pearson  97.14 ( 97.83)	Spearman  97.23 ( 97.67)
+Epoch: [78][ 5/14]	Time  1.463 ( 7.057)	Data  0.000 ( 5.595)	Loss 5.0491e-01 (4.9677e-01)	Pearson  97.36 ( 97.56)	Spearman  97.05 ( 97.03)
+Epoch: [78][10/14]	Time  1.466 ( 4.300)	Data  0.000 ( 2.808)	Loss 4.9969e-01 (4.9313e-01)	Pearson  97.84 ( 97.98)	Spearman  97.10 ( 97.71)
+Epoch: [78][10/14]	Time  1.466 ( 4.302)	Data  0.000 ( 2.811)	Loss 5.0341e-01 (5.0173e-01)	Pearson  97.79 ( 97.70)	Spearman  97.30 ( 97.33)
+Epoch: [78][10/14]	Time  1.461 ( 4.261)	Data  0.000 ( 2.798)	Loss 5.0635e-01 (5.0464e-01)	Pearson  97.37 ( 97.33)	Spearman  97.28 ( 96.67)
+ * Time 31.491  Loss 0.703 Pearson 39.410 Spearman 38.579
+ * Time 31.433  Loss 0.703 Pearson 39.410 Spearman 38.579
+ * Time 31.433  Loss 0.703 Pearson 39.410 Spearman 38.579
+Epoch: [79][ 5/14]	Time  1.459 ( 7.164)	Data  0.000 ( 5.638)	Loss 4.7851e-01 (5.0328e-01)	Pearson  98.33 ( 97.61)	Spearman  98.44 ( 97.11)
+Epoch: [79][ 5/14]	Time  1.458 ( 7.167)	Data  0.000 ( 5.654)	Loss 4.7927e-01 (5.1764e-01)	Pearson  97.96 ( 97.19)	Spearman  97.98 ( 97.07)
+Epoch: [79][ 5/14]	Time  1.458 ( 7.091)	Data  0.000 ( 5.633)	Loss 4.6592e-01 (4.8343e-01)	Pearson  97.56 ( 97.67)	Spearman  96.92 ( 97.20)
+Epoch: [79][10/14]	Time  1.460 ( 4.312)	Data  0.000 ( 2.819)	Loss 4.6301e-01 (4.9353e-01)	Pearson  98.68 ( 97.81)	Spearman  98.64 ( 97.28)
+Epoch: [79][10/14]	Time  1.460 ( 4.276)	Data  0.000 ( 2.816)	Loss 4.9026e-01 (4.9117e-01)	Pearson  98.07 ( 97.67)	Spearman  96.88 ( 97.09)
+Epoch: [79][10/14]	Time  1.463 ( 4.314)	Data  0.000 ( 2.827)	Loss 4.8153e-01 (5.0584e-01)	Pearson  97.78 ( 97.60)	Spearman  97.09 ( 97.37)
+ * Time 31.411  Loss 0.711 Pearson 39.743 Spearman 39.185
+ * Time 31.470  Loss 0.711 Pearson 39.743 Spearman 39.185
+ * Time 31.479  Loss 0.711 Pearson 39.743 Spearman 39.185
+Epoch: [80][ 5/14]	Time  1.460 ( 7.191)	Data  0.000 ( 5.637)	Loss 5.2283e-01 (5.0796e-01)	Pearson  97.91 ( 97.44)	Spearman  97.29 ( 96.96)
+Epoch: [80][ 5/14]	Time  1.460 ( 7.196)	Data  0.000 ( 5.630)	Loss 5.0149e-01 (4.9113e-01)	Pearson  97.90 ( 97.89)	Spearman  97.86 ( 97.72)
+Epoch: [80][ 5/14]	Time  1.461 ( 7.123)	Data  0.000 ( 5.664)	Loss 4.9012e-01 (4.9453e-01)	Pearson  97.80 ( 97.75)	Spearman  97.71 ( 97.58)
+Epoch: [80][10/14]	Time  1.463 ( 4.328)	Data  0.000 ( 2.815)	Loss 4.9663e-01 (4.9254e-01)	Pearson  97.69 ( 97.84)	Spearman  97.12 ( 97.59)
+Epoch: [80][10/14]	Time  1.461 ( 4.292)	Data  0.000 ( 2.832)	Loss 5.2034e-01 (4.9364e-01)	Pearson  97.08 ( 97.77)	Spearman  96.75 ( 97.53)
+Epoch: [80][10/14]	Time  1.464 ( 4.327)	Data  0.000 ( 2.819)	Loss 4.9034e-01 (4.9967e-01)	Pearson  98.22 ( 97.55)	Spearman  98.18 ( 97.11)
+ * Time 31.523  Loss 0.714 Pearson 39.103 Spearman 38.878
+ * Time 31.529  Loss 0.714 Pearson 39.103 Spearman 38.878
+ * Time 31.768  Loss 0.714 Pearson 39.103 Spearman 38.878
+Epoch: [81][ 5/14]	Time  1.460 ( 7.181)	Data  0.000 ( 5.611)	Loss 4.9787e-01 (4.8919e-01)	Pearson  98.29 ( 98.02)	Spearman  98.02 ( 97.79)
+Epoch: [81][ 5/14]	Time  1.460 ( 7.182)	Data  0.000 ( 5.628)	Loss 4.9360e-01 (5.0475e-01)	Pearson  97.80 ( 97.54)	Spearman  97.52 ( 97.23)
+Epoch: [81][ 5/14]	Time  1.460 ( 7.091)	Data  0.000 ( 5.631)	Loss 4.9363e-01 (4.8969e-01)	Pearson  98.14 ( 97.78)	Spearman  97.31 ( 97.27)
+Epoch: [81][10/14]	Time  1.460 ( 4.321)	Data  0.000 ( 2.805)	Loss 5.1358e-01 (4.9815e-01)	Pearson  96.36 ( 97.64)	Spearman  95.86 ( 97.30)
+Epoch: [81][10/14]	Time  1.461 ( 4.276)	Data  0.000 ( 2.816)	Loss 5.0624e-01 (4.9417e-01)	Pearson  97.34 ( 97.84)	Spearman  96.57 ( 97.32)
+Epoch: [81][10/14]	Time  1.463 ( 4.322)	Data  0.000 ( 2.814)	Loss 4.8028e-01 (4.9938e-01)	Pearson  98.37 ( 97.58)	Spearman  98.13 ( 97.20)
+ * Time 31.471  Loss 0.716 Pearson 39.465 Spearman 39.135
+ * Time 31.555  Loss 0.716 Pearson 39.465 Spearman 39.135
+ * Time 31.630  Loss 0.716 Pearson 39.465 Spearman 39.135
+Epoch: [82][ 5/14]	Time  1.459 ( 7.264)	Data  0.000 ( 5.716)	Loss 5.1584e-01 (4.8466e-01)	Pearson  97.89 ( 97.75)	Spearman  97.64 ( 97.20)
+Epoch: [82][ 5/14]	Time  1.470 ( 7.256)	Data  0.000 ( 5.698)	Loss 4.8424e-01 (5.0071e-01)	Pearson  97.08 ( 97.71)	Spearman  97.02 ( 97.53)
+Epoch: [82][ 5/14]	Time  1.473 ( 7.192)	Data  0.000 ( 5.730)	Loss 5.0535e-01 (5.0097e-01)	Pearson  97.39 ( 97.44)	Spearman  96.70 ( 96.97)
+Epoch: [82][10/14]	Time  1.460 ( 4.364)	Data  0.000 ( 2.858)	Loss 5.1926e-01 (4.9201e-01)	Pearson  97.58 ( 97.70)	Spearman  96.79 ( 96.93)
+Epoch: [82][10/14]	Time  1.462 ( 4.359)	Data  0.000 ( 2.849)	Loss 4.9747e-01 (5.0300e-01)	Pearson  97.53 ( 97.66)	Spearman  97.46 ( 97.35)
+Epoch: [82][10/14]	Time  1.460 ( 4.326)	Data  0.000 ( 2.865)	Loss 5.0976e-01 (4.9783e-01)	Pearson  97.36 ( 97.60)	Spearman  96.33 ( 97.14)
+ * Time 31.503  Loss 0.713 Pearson 39.172 Spearman 38.854
+ * Time 31.536  Loss 0.713 Pearson 39.172 Spearman 38.854
+ * Time 31.630  Loss 0.713 Pearson 39.172 Spearman 38.854
+Epoch: [83][ 5/14]	Time  1.460 ( 7.164)	Data  0.000 ( 5.637)	Loss 4.9371e-01 (4.9095e-01)	Pearson  97.74 ( 98.11)	Spearman  97.39 ( 97.61)
+Epoch: [83][ 5/14]	Time  1.461 ( 7.176)	Data  0.000 ( 5.681)	Loss 5.0228e-01 (5.0184e-01)	Pearson  97.68 ( 97.78)	Spearman  97.16 ( 97.32)
+Epoch: [83][ 5/14]	Time  1.459 ( 7.095)	Data  0.000 ( 5.636)	Loss 4.8493e-01 (4.9326e-01)	Pearson  97.86 ( 98.02)	Spearman  96.63 ( 97.62)
+Epoch: [83][10/14]	Time  1.462 ( 4.312)	Data  0.000 ( 2.819)	Loss 4.8014e-01 (4.9013e-01)	Pearson  98.07 ( 98.05)	Spearman  97.61 ( 97.61)
+Epoch: [83][10/14]	Time  1.461 ( 4.278)	Data  0.000 ( 2.818)	Loss 4.9518e-01 (4.9328e-01)	Pearson  97.87 ( 97.89)	Spearman  97.06 ( 97.45)
+Epoch: [83][10/14]	Time  1.461 ( 4.318)	Data  0.000 ( 2.841)	Loss 4.8517e-01 (4.9889e-01)	Pearson  98.10 ( 97.81)	Spearman  97.34 ( 97.38)
+ * Time 31.624  Loss 0.712 Pearson 39.574 Spearman 39.093
+ * Time 31.796  Loss 0.712 Pearson 39.574 Spearman 39.093
+ * Time 31.834  Loss 0.712 Pearson 39.574 Spearman 39.093
+Epoch: [84][ 5/14]	Time  1.459 ( 7.162)	Data  0.000 ( 5.641)	Loss 4.9445e-01 (4.9220e-01)	Pearson  97.77 ( 97.95)	Spearman  97.23 ( 97.62)
+Epoch: [84][ 5/14]	Time  1.459 ( 7.099)	Data  0.000 ( 5.640)	Loss 4.7469e-01 (5.0158e-01)	Pearson  97.99 ( 97.76)	Spearman  97.93 ( 97.43)
+Epoch: [84][ 5/14]	Time  1.465 ( 7.160)	Data  0.000 ( 5.614)	Loss 4.8259e-01 (5.0252e-01)	Pearson  98.00 ( 97.76)	Spearman  97.53 ( 97.06)
+Epoch: [84][10/14]	Time  1.461 ( 4.313)	Data  0.000 ( 2.821)	Loss 4.9313e-01 (4.9437e-01)	Pearson  97.65 ( 97.82)	Spearman  96.86 ( 97.36)
+Epoch: [84][10/14]	Time  1.461 ( 4.281)	Data  0.000 ( 2.820)	Loss 4.8362e-01 (4.9606e-01)	Pearson  98.13 ( 97.91)	Spearman  97.76 ( 97.62)
+Epoch: [84][10/14]	Time  1.461 ( 4.312)	Data  0.000 ( 2.807)	Loss 4.7726e-01 (4.9349e-01)	Pearson  98.54 ( 97.99)	Spearman  98.34 ( 97.46)
+ * Time 31.548  Loss 0.715 Pearson 39.350 Spearman 38.894
+ * Time 31.545  Loss 0.715 Pearson 39.350 Spearman 38.894
+ * Time 31.643  Loss 0.715 Pearson 39.350 Spearman 38.894
+Epoch: [85][ 5/14]	Time  1.459 ( 7.196)	Data  0.000 ( 5.649)	Loss 4.8520e-01 (4.9390e-01)	Pearson  98.07 ( 97.72)	Spearman  96.93 ( 97.09)
+Epoch: [85][ 5/14]	Time  1.459 ( 7.119)	Data  0.000 ( 5.660)	Loss 5.1101e-01 (4.9994e-01)	Pearson  97.70 ( 97.87)	Spearman  96.85 ( 97.53)
+Epoch: [85][ 5/14]	Time  1.461 ( 7.195)	Data  0.000 ( 5.673)	Loss 4.9077e-01 (4.8134e-01)	Pearson  98.14 ( 98.29)	Spearman  97.76 ( 98.04)
+Epoch: [85][10/14]	Time  1.460 ( 4.328)	Data  0.000 ( 2.824)	Loss 5.1024e-01 (4.9515e-01)	Pearson  98.12 ( 97.92)	Spearman  97.71 ( 97.35)
+Epoch: [85][10/14]	Time  1.460 ( 4.289)	Data  0.000 ( 2.830)	Loss 4.8317e-01 (4.9952e-01)	Pearson  98.57 ( 97.76)	Spearman  98.30 ( 97.39)
+Epoch: [85][10/14]	Time  1.461 ( 4.328)	Data  0.000 ( 2.837)	Loss 5.3686e-01 (4.9062e-01)	Pearson  96.92 ( 97.96)	Spearman  96.64 ( 97.72)
+ * Time 31.475  Loss 0.710 Pearson 39.160 Spearman 38.637
+ * Time 31.610  Loss 0.710 Pearson 39.160 Spearman 38.637
+ * Time 31.538  Loss 0.710 Pearson 39.160 Spearman 38.637
+Epoch: [86][ 5/14]	Time  1.460 ( 7.194)	Data  0.000 ( 5.635)	Loss 4.9809e-01 (4.9849e-01)	Pearson  97.07 ( 97.81)	Spearman  96.67 ( 97.49)
+Epoch: [86][ 5/14]	Time  1.461 ( 7.194)	Data  0.000 ( 5.686)	Loss 4.7898e-01 (4.8389e-01)	Pearson  98.39 ( 98.07)	Spearman  98.25 ( 97.77)
+Epoch: [86][ 5/14]	Time  1.459 ( 7.110)	Data  0.000 ( 5.649)	Loss 5.1868e-01 (4.9795e-01)	Pearson  97.25 ( 97.78)	Spearman  96.98 ( 97.36)
+Epoch: [86][10/14]	Time  1.461 ( 4.327)	Data  0.000 ( 2.818)	Loss 4.9216e-01 (5.0114e-01)	Pearson  98.59 ( 97.81)	Spearman  98.27 ( 97.48)
+Epoch: [86][10/14]	Time  1.461 ( 4.327)	Data  0.000 ( 2.843)	Loss 5.0102e-01 (4.8869e-01)	Pearson  98.04 ( 98.07)	Spearman  97.86 ( 97.80)
+Epoch: [86][10/14]	Time  1.461 ( 4.285)	Data  0.000 ( 2.824)	Loss 4.8952e-01 (4.9800e-01)	Pearson  97.33 ( 97.63)	Spearman  96.79 ( 97.28)
+ * Time 31.496  Loss 0.712 Pearson 39.126 Spearman 38.543
+ * Time 31.548  Loss 0.712 Pearson 39.126 Spearman 38.543
+ * Time 31.429  Loss 0.712 Pearson 39.126 Spearman 38.543
+Epoch: [87][ 5/14]	Time  1.459 ( 7.180)	Data  0.000 ( 5.608)	Loss 4.9859e-01 (4.8947e-01)	Pearson  97.59 ( 97.88)	Spearman  96.70 ( 97.26)
+Epoch: [87][ 5/14]	Time  1.459 ( 7.188)	Data  0.000 ( 5.649)	Loss 4.9180e-01 (5.0523e-01)	Pearson  98.30 ( 97.93)	Spearman  97.95 ( 97.57)
+Epoch: [87][ 5/14]	Time  1.459 ( 7.105)	Data  0.000 ( 5.646)	Loss 5.0152e-01 (4.9548e-01)	Pearson  97.52 ( 97.85)	Spearman  97.53 ( 97.29)
+Epoch: [87][10/14]	Time  1.461 ( 4.320)	Data  0.000 ( 2.804)	Loss 4.8584e-01 (4.9547e-01)	Pearson  98.13 ( 97.90)	Spearman  97.93 ( 97.42)
+Epoch: [87][10/14]	Time  1.462 ( 4.282)	Data  0.000 ( 2.823)	Loss 4.4213e-01 (4.8764e-01)	Pearson  98.05 ( 97.80)	Spearman  97.41 ( 97.11)
+Epoch: [87][10/14]	Time  1.461 ( 4.324)	Data  0.000 ( 2.825)	Loss 5.0618e-01 (5.0028e-01)	Pearson  97.72 ( 97.98)	Spearman  97.36 ( 97.60)
+ * Time 31.385  Loss 0.720 Pearson 38.903 Spearman 38.347
+ * Time 31.498  Loss 0.720 Pearson 38.903 Spearman 38.347
+ * Time 31.455  Loss 0.720 Pearson 38.903 Spearman 38.347
+Epoch: [88][ 5/14]	Time  1.459 ( 7.205)	Data  0.000 ( 5.648)	Loss 4.9552e-01 (5.1003e-01)	Pearson  97.76 ( 97.75)	Spearman  97.61 ( 97.46)
+Epoch: [88][ 5/14]	Time  1.459 ( 7.203)	Data  0.000 ( 5.650)	Loss 4.9573e-01 (4.9217e-01)	Pearson  97.88 ( 97.86)	Spearman  97.66 ( 97.48)
+Epoch: [88][ 5/14]	Time  1.460 ( 7.136)	Data  0.000 ( 5.673)	Loss 4.7294e-01 (4.8984e-01)	Pearson  97.94 ( 98.01)	Spearman  97.56 ( 97.54)
+Epoch: [88][10/14]	Time  1.458 ( 4.332)	Data  0.000 ( 2.824)	Loss 4.8814e-01 (5.0394e-01)	Pearson  98.45 ( 97.93)	Spearman  97.95 ( 97.63)
+Epoch: [88][10/14]	Time  1.459 ( 4.298)	Data  0.000 ( 2.837)	Loss 5.1335e-01 (4.9318e-01)	Pearson  98.05 ( 97.87)	Spearman  97.85 ( 97.44)
+Epoch: [88][10/14]	Time  1.461 ( 4.332)	Data  0.000 ( 2.825)	Loss 4.9211e-01 (4.9338e-01)	Pearson  97.74 ( 97.79)	Spearman  97.24 ( 97.26)
+ * Time 31.565  Loss 0.714 Pearson 39.138 Spearman 38.377
+ * Time 31.596  Loss 0.714 Pearson 39.138 Spearman 38.377
+ * Time 31.640  Loss 0.714 Pearson 39.138 Spearman 38.377
+Epoch: [89][ 5/14]	Time  1.459 ( 7.184)	Data  0.000 ( 5.645)	Loss 5.1139e-01 (5.0584e-01)	Pearson  97.80 ( 97.73)	Spearman  97.58 ( 97.03)
+Epoch: [89][ 5/14]	Time  1.460 ( 7.191)	Data  0.000 ( 5.659)	Loss 4.9441e-01 (4.8876e-01)	Pearson  97.58 ( 98.00)	Spearman  97.49 ( 97.78)
+Epoch: [89][ 5/14]	Time  1.459 ( 7.109)	Data  0.000 ( 5.649)	Loss 5.0041e-01 (4.9587e-01)	Pearson  98.06 ( 98.07)	Spearman  97.25 ( 97.62)
+Epoch: [89][10/14]	Time  1.461 ( 4.322)	Data  0.000 ( 2.822)	Loss 4.8675e-01 (4.9506e-01)	Pearson  98.14 ( 97.90)	Spearman  97.69 ( 97.39)
+Epoch: [89][10/14]	Time  1.460 ( 4.285)	Data  0.000 ( 2.825)	Loss 4.7791e-01 (4.9377e-01)	Pearson  98.20 ( 98.11)	Spearman  97.58 ( 97.60)
+Epoch: [89][10/14]	Time  1.462 ( 4.326)	Data  0.000 ( 2.830)	Loss 4.9168e-01 (5.0149e-01)	Pearson  98.05 ( 97.84)	Spearman  97.49 ( 97.57)
+ * Time 31.359  Loss 0.712 Pearson 39.553 Spearman 38.757
+ * Time 31.453  Loss 0.712 Pearson 39.553 Spearman 38.757
+ * Time 31.475  Loss 0.712 Pearson 39.553 Spearman 38.757
+Epoch: [90][ 5/14]	Time  1.460 ( 7.183)	Data  0.000 ( 5.659)	Loss 4.8104e-01 (4.9299e-01)	Pearson  98.25 ( 98.02)	Spearman  98.21 ( 97.79)
+Epoch: [90][ 5/14]	Time  1.460 ( 7.188)	Data  0.000 ( 5.630)	Loss 5.1019e-01 (4.9726e-01)	Pearson  97.95 ( 97.65)	Spearman  97.78 ( 97.33)
+Epoch: [90][ 5/14]	Time  1.461 ( 7.110)	Data  0.000 ( 5.650)	Loss 4.9396e-01 (5.0139e-01)	Pearson  97.30 ( 97.60)	Spearman  95.67 ( 97.02)
+Epoch: [90][10/14]	Time  1.461 ( 4.322)	Data  0.000 ( 2.829)	Loss 4.7993e-01 (4.9275e-01)	Pearson  98.38 ( 98.13)	Spearman  98.08 ( 97.84)
+Epoch: [90][10/14]	Time  1.462 ( 4.324)	Data  0.000 ( 2.815)	Loss 4.8576e-01 (4.9879e-01)	Pearson  98.24 ( 97.73)	Spearman  97.69 ( 97.30)
+Epoch: [90][10/14]	Time  1.461 ( 4.285)	Data  0.000 ( 2.825)	Loss 5.1001e-01 (4.9742e-01)	Pearson  97.46 ( 97.75)	Spearman  96.40 ( 97.27)
+ * Time 31.397  Loss 0.716 Pearson 39.083 Spearman 38.419
+ * Time 31.425  Loss 0.716 Pearson 39.083 Spearman 38.419
+ * Time 31.469  Loss 0.716 Pearson 39.083 Spearman 38.419
+Epoch: [91][ 5/14]	Time  1.460 ( 7.192)	Data  0.000 ( 5.697)	Loss 5.0881e-01 (5.0309e-01)	Pearson  97.28 ( 97.75)	Spearman  96.80 ( 97.38)
+Epoch: [91][ 5/14]	Time  1.460 ( 7.203)	Data  0.000 ( 5.666)	Loss 5.0312e-01 (4.9356e-01)	Pearson  98.18 ( 97.91)	Spearman  97.76 ( 97.35)
+Epoch: [91][ 5/14]	Time  1.460 ( 7.119)	Data  0.000 ( 5.660)	Loss 5.1093e-01 (5.0157e-01)	Pearson  96.94 ( 97.34)	Spearman  96.31 ( 96.70)
+Epoch: [91][10/14]	Time  1.459 ( 4.326)	Data  0.000 ( 2.849)	Loss 4.3048e-01 (4.8895e-01)	Pearson  98.52 ( 98.03)	Spearman  98.15 ( 97.67)
+Epoch: [91][10/14]	Time  1.461 ( 4.332)	Data  0.000 ( 2.833)	Loss 4.6755e-01 (4.9861e-01)	Pearson  98.44 ( 97.88)	Spearman  98.23 ( 97.40)
+Epoch: [91][10/14]	Time  1.460 ( 4.289)	Data  0.000 ( 2.830)	Loss 4.6944e-01 (4.9470e-01)	Pearson  98.24 ( 97.62)	Spearman  98.05 ( 97.30)
+ * Time 31.410  Loss 0.723 Pearson 38.953 Spearman 38.621
+ * Time 31.536  Loss 0.723 Pearson 38.953 Spearman 38.621
+ * Time 31.525  Loss 0.723 Pearson 38.953 Spearman 38.621
+Epoch: [92][ 5/14]	Time  1.460 ( 7.197)	Data  0.000 ( 5.653)	Loss 5.1997e-01 (4.9949e-01)	Pearson  97.19 ( 97.93)	Spearman  97.23 ( 97.58)
+Epoch: [92][ 5/14]	Time  1.462 ( 7.180)	Data  0.000 ( 5.670)	Loss 5.1252e-01 (4.9984e-01)	Pearson  97.93 ( 98.03)	Spearman  97.69 ( 97.76)
+Epoch: [92][ 5/14]	Time  1.460 ( 7.105)	Data  0.000 ( 5.645)	Loss 4.8896e-01 (4.8178e-01)	Pearson  98.63 ( 98.13)	Spearman  98.53 ( 97.63)
+Epoch: [92][10/14]	Time  1.460 ( 4.330)	Data  0.000 ( 2.827)	Loss 5.1674e-01 (4.9729e-01)	Pearson  97.13 ( 97.88)	Spearman  96.28 ( 97.47)
+Epoch: [92][10/14]	Time  1.462 ( 4.321)	Data  0.000 ( 2.835)	Loss 4.9799e-01 (4.9522e-01)	Pearson  97.94 ( 97.96)	Spearman  98.07 ( 97.75)
+Epoch: [92][10/14]	Time  1.459 ( 4.284)	Data  0.000 ( 2.823)	Loss 4.8787e-01 (4.8529e-01)	Pearson  98.06 ( 98.11)	Spearman  97.11 ( 97.57)
+ * Time 31.334  Loss 0.712 Pearson 39.055 Spearman 38.288
+ * Time 31.343  Loss 0.712 Pearson 39.055 Spearman 38.288
+ * Time 31.440  Loss 0.712 Pearson 39.055 Spearman 38.288
+Epoch: [93][ 5/14]	Time  1.461 ( 7.197)	Data  0.000 ( 5.685)	Loss 4.9446e-01 (4.8219e-01)	Pearson  98.28 ( 98.37)	Spearman  97.46 ( 98.10)
+Epoch: [93][ 5/14]	Time  1.461 ( 7.193)	Data  0.000 ( 5.628)	Loss 4.7553e-01 (4.9583e-01)	Pearson  98.69 ( 98.15)	Spearman  98.46 ( 97.71)
+Epoch: [93][ 5/14]	Time  1.461 ( 7.119)	Data  0.000 ( 5.659)	Loss 4.8286e-01 (4.9282e-01)	Pearson  98.15 ( 98.09)	Spearman  97.63 ( 97.49)
+Epoch: [93][10/14]	Time  1.461 ( 4.329)	Data  0.000 ( 2.842)	Loss 4.9971e-01 (4.9273e-01)	Pearson  97.24 ( 98.04)	Spearman  97.31 ( 97.71)
+Epoch: [93][10/14]	Time  1.464 ( 4.328)	Data  0.000 ( 2.814)	Loss 4.8788e-01 (4.9294e-01)	Pearson  97.76 ( 97.98)	Spearman  97.69 ( 97.47)
+Epoch: [93][10/14]	Time  1.462 ( 4.290)	Data  0.000 ( 2.829)	Loss 5.0824e-01 (4.9676e-01)	Pearson  97.89 ( 97.98)	Spearman  97.30 ( 97.45)
+ * Time 31.458  Loss 0.719 Pearson 38.782 Spearman 38.170
+ * Time 31.457  Loss 0.719 Pearson 38.782 Spearman 38.170
+ * Time 31.577  Loss 0.719 Pearson 38.782 Spearman 38.170
+Epoch: [94][ 5/14]	Time  1.461 ( 7.170)	Data  0.000 ( 5.640)	Loss 4.7818e-01 (4.8776e-01)	Pearson  98.06 ( 98.05)	Spearman  97.39 ( 97.80)
+Epoch: [94][ 5/14]	Time  1.459 ( 7.079)	Data  0.000 ( 5.620)	Loss 5.1065e-01 (4.8516e-01)	Pearson  97.11 ( 98.10)	Spearman  95.80 ( 97.71)
+Epoch: [94][ 5/14]	Time  1.464 ( 7.170)	Data  0.000 ( 5.694)	Loss 5.2487e-01 (4.9979e-01)	Pearson  97.75 ( 98.19)	Spearman  97.32 ( 97.76)
+Epoch: [94][10/14]	Time  1.461 ( 4.270)	Data  0.000 ( 2.810)	Loss 4.9336e-01 (4.8806e-01)	Pearson  97.87 ( 98.10)	Spearman  97.74 ( 97.78)
+Epoch: [94][10/14]	Time  1.459 ( 4.315)	Data  0.000 ( 2.847)	Loss 4.9568e-01 (4.9701e-01)	Pearson  97.95 ( 98.02)	Spearman  97.63 ( 97.54)
+Epoch: [94][10/14]	Time  1.462 ( 4.316)	Data  0.000 ( 2.820)	Loss 5.0646e-01 (4.9894e-01)	Pearson  98.35 ( 98.03)	Spearman  97.51 ( 97.72)
+ * Time 31.335  Loss 0.723 Pearson 38.593 Spearman 38.187
+ * Time 31.373  Loss 0.723 Pearson 38.593 Spearman 38.187
+ * Time 31.469  Loss 0.723 Pearson 38.593 Spearman 38.187
+Epoch: [95][ 5/14]	Time  1.459 ( 7.213)	Data  0.000 ( 5.677)	Loss 4.6006e-01 (4.7927e-01)	Pearson  98.59 ( 98.17)	Spearman  97.98 ( 97.61)
+Epoch: [95][ 5/14]	Time  1.460 ( 7.134)	Data  0.000 ( 5.675)	Loss 4.4951e-01 (4.8916e-01)	Pearson  98.56 ( 98.04)	Spearman  98.26 ( 97.60)
+Epoch: [95][ 5/14]	Time  1.463 ( 7.215)	Data  0.000 ( 5.657)	Loss 5.0938e-01 (4.9141e-01)	Pearson  97.60 ( 98.31)	Spearman  96.65 ( 97.92)
+Epoch: [95][10/14]	Time  1.463 ( 4.299)	Data  0.000 ( 2.837)	Loss 4.9683e-01 (4.9202e-01)	Pearson  98.34 ( 98.03)	Spearman  98.13 ( 97.54)
+Epoch: [95][10/14]	Time  1.463 ( 4.338)	Data  0.000 ( 2.838)	Loss 5.0219e-01 (4.9170e-01)	Pearson  97.89 ( 98.13)	Spearman  97.07 ( 97.69)
+Epoch: [95][10/14]	Time  1.463 ( 4.339)	Data  0.000 ( 2.829)	Loss 5.2155e-01 (4.9480e-01)	Pearson  97.84 ( 98.14)	Spearman  97.49 ( 97.78)
+ * Time 31.394  Loss 0.716 Pearson 38.794 Spearman 38.158
+ * Time 31.485  Loss 0.716 Pearson 38.794 Spearman 38.158
+ * Time 31.493  Loss 0.716 Pearson 38.794 Spearman 38.158
+Epoch: [96][ 5/14]	Time  1.459 ( 7.174)	Data  0.000 ( 5.632)	Loss 4.7654e-01 (4.7532e-01)	Pearson  98.42 ( 98.32)	Spearman  98.11 ( 97.87)
+Epoch: [96][ 5/14]	Time  1.461 ( 7.180)	Data  0.000 ( 5.663)	Loss 4.7458e-01 (4.9301e-01)	Pearson  98.20 ( 98.21)	Spearman  97.82 ( 97.83)
+Epoch: [96][ 5/14]	Time  1.459 ( 7.095)	Data  0.000 ( 5.636)	Loss 4.8497e-01 (4.9793e-01)	Pearson  98.55 ( 98.33)	Spearman  98.11 ( 97.97)
+Epoch: [96][10/14]	Time  1.460 ( 4.317)	Data  0.000 ( 2.816)	Loss 5.0798e-01 (4.8290e-01)	Pearson  98.56 ( 98.37)	Spearman  97.96 ( 97.98)
+Epoch: [96][10/14]	Time  1.459 ( 4.278)	Data  0.000 ( 2.818)	Loss 4.5681e-01 (4.9116e-01)	Pearson  98.62 ( 98.29)	Spearman  98.53 ( 97.92)
+Epoch: [96][10/14]	Time  1.460 ( 4.321)	Data  0.000 ( 2.831)	Loss 5.2265e-01 (4.9406e-01)	Pearson  97.64 ( 98.13)	Spearman  97.31 ( 97.78)
+ * Time 31.378  Loss 0.718 Pearson 39.047 Spearman 38.388
+ * Time 31.455  Loss 0.718 Pearson 39.047 Spearman 38.388
+ * Time 31.430  Loss 0.718 Pearson 39.047 Spearman 38.388
+Epoch: [97][ 5/14]	Time  1.460 ( 7.163)	Data  0.000 ( 5.672)	Loss 4.9475e-01 (4.9394e-01)	Pearson  98.40 ( 97.93)	Spearman  97.88 ( 97.73)
+Epoch: [97][ 5/14]	Time  1.460 ( 7.173)	Data  0.000 ( 5.653)	Loss 5.0612e-01 (5.0210e-01)	Pearson  97.96 ( 97.96)	Spearman  97.65 ( 97.68)
+Epoch: [97][ 5/14]	Time  1.460 ( 7.082)	Data  0.000 ( 5.623)	Loss 4.9827e-01 (4.8931e-01)	Pearson  98.42 ( 98.36)	Spearman  98.08 ( 98.06)
+Epoch: [97][10/14]	Time  1.460 ( 4.311)	Data  0.000 ( 2.836)	Loss 5.0359e-01 (4.9845e-01)	Pearson  97.94 ( 97.89)	Spearman  97.45 ( 97.45)
+Epoch: [97][10/14]	Time  1.460 ( 4.271)	Data  0.000 ( 2.812)	Loss 5.0171e-01 (4.8605e-01)	Pearson  98.30 ( 98.33)	Spearman  98.25 ( 98.05)
+Epoch: [97][10/14]	Time  1.461 ( 4.317)	Data  0.000 ( 2.826)	Loss 4.9359e-01 (5.0047e-01)	Pearson  98.27 ( 97.83)	Spearman  97.63 ( 97.38)
+ * Time 31.266  Loss 0.718 Pearson 38.992 Spearman 38.478
+ * Time 31.366  Loss 0.718 Pearson 38.992 Spearman 38.478
+ * Time 31.270  Loss 0.718 Pearson 38.992 Spearman 38.478
+Epoch: [98][ 5/14]	Time  1.459 ( 7.182)	Data  0.000 ( 5.651)	Loss 5.0354e-01 (5.0511e-01)	Pearson  98.64 ( 98.20)	Spearman  98.44 ( 97.76)
+Epoch: [98][ 5/14]	Time  1.459 ( 7.189)	Data  0.000 ( 5.673)	Loss 5.0774e-01 (4.9526e-01)	Pearson  98.23 ( 98.04)	Spearman  97.89 ( 97.85)
+Epoch: [98][ 5/14]	Time  1.459 ( 7.108)	Data  0.000 ( 5.649)	Loss 5.0923e-01 (4.9120e-01)	Pearson  97.59 ( 98.00)	Spearman  97.62 ( 97.79)
+Epoch: [98][10/14]	Time  1.462 ( 4.321)	Data  0.000 ( 2.826)	Loss 4.8478e-01 (4.9893e-01)	Pearson  98.26 ( 98.08)	Spearman  98.09 ( 97.72)
+Epoch: [98][10/14]	Time  1.459 ( 4.284)	Data  0.000 ( 2.825)	Loss 4.8832e-01 (4.9280e-01)	Pearson  98.52 ( 98.05)	Spearman  98.23 ( 97.60)
+Epoch: [98][10/14]	Time  1.462 ( 4.325)	Data  0.000 ( 2.837)	Loss 4.8254e-01 (4.9598e-01)	Pearson  98.31 ( 98.09)	Spearman  97.93 ( 97.70)
+ * Time 31.404  Loss 0.715 Pearson 39.002 Spearman 38.390
+ * Time 31.516  Loss 0.715 Pearson 39.002 Spearman 38.390
+ * Time 31.527  Loss 0.715 Pearson 39.002 Spearman 38.390
+Epoch: [99][ 5/14]	Time  1.459 ( 7.156)	Data  0.000 ( 5.618)	Loss 4.8644e-01 (4.7724e-01)	Pearson  98.11 ( 98.26)	Spearman  97.90 ( 98.10)
+Epoch: [99][ 5/14]	Time  1.460 ( 7.149)	Data  0.000 ( 5.643)	Loss 5.0834e-01 (4.9863e-01)	Pearson  98.11 ( 98.13)	Spearman  98.05 ( 97.69)
+Epoch: [99][ 5/14]	Time  1.459 ( 7.075)	Data  0.000 ( 5.613)	Loss 5.2081e-01 (4.9873e-01)	Pearson  97.66 ( 98.16)	Spearman  96.97 ( 97.79)
+Epoch: [99][10/14]	Time  1.461 ( 4.308)	Data  0.000 ( 2.809)	Loss 4.8299e-01 (4.8954e-01)	Pearson  98.15 ( 97.99)	Spearman  96.69 ( 97.59)
+Epoch: [99][10/14]	Time  1.460 ( 4.305)	Data  0.000 ( 2.822)	Loss 4.8803e-01 (5.0149e-01)	Pearson  98.78 ( 98.15)	Spearman  98.66 ( 97.76)
+Epoch: [99][10/14]	Time  1.461 ( 4.268)	Data  0.000 ( 2.807)	Loss 4.9191e-01 (4.9177e-01)	Pearson  97.92 ( 98.19)	Spearman  97.56 ( 97.88)
+ * Time 31.358  Loss 0.723 Pearson 38.612 Spearman 37.905
+ * Time 31.504  Loss 0.723 Pearson 38.612 Spearman 37.905
+ * Time 31.414  Loss 0.723 Pearson 38.612 Spearman 37.905

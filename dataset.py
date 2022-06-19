@@ -19,8 +19,8 @@ class Mydataset(nn.Module):
         if task == 'pretrain':
             self.data = load_dataset('openwebtext', split='train')
             self.length = self.data.num_rows
-        if task == 'qqp':
-            self.data = load_dataset('glue', 'qqp', split=split)
+        else:
+            self.data = load_dataset('glue', self.task, split=split)
             self.length = self.data.num_rows
         print('load Done!')
 
@@ -51,24 +51,24 @@ class Mydataset(nn.Module):
 
         if self.task == 'qqp':
             data = self.tokenizer(self.data[item]["question1"], text_pair=self.data[item]["question2"],
-                                  truncation=True, max_length=self.max_length,
+                                  truncation=True, max_length=self.max_length, padding='max_length',
                                   return_tensors='pt', return_attention_mask=False,
                                   return_token_type_ids=False)['input_ids'].flatten()
             label = self.data[item]['label']
             return data, label
 
         
-        elif self.task in ['mrpc', 'rte']:
+        elif self.task in {'mrpc', 'rte', 'stsb'}:
             data = self.tokenizer(self.data[item]["sentence1"], text_pair=self.data[item]["sentence2"],
-                                   truncation=True, max_length=self.max_length,
+                                   truncation=True, max_length=self.max_length, padding='max_length',
                                    return_tensors='pt', return_attention_mask=False,
                                    return_token_type_ids=False)['input_ids'].flatten()
             label = self.data[item]['label']
             return data, label
 
-        elif self.task == 'sst2':
+        elif self.task in {'sst2', 'cola'}:
             data = self.tokenizer(self.data[item]["sentence"],
-                                   truncation=True, max_length=self.max_length,
+                                   truncation=True, max_length=self.max_length, padding='max_length',
                                    return_tensors='pt', return_attention_mask=False,
                                    return_token_type_ids=False)['input_ids'].flatten()
             label = self.data[item]['label']
@@ -76,7 +76,7 @@ class Mydataset(nn.Module):
 
         elif self.task == 'mnli':
             data = self.tokenizer(self.data[item]["premise"], text_pair=self.data[item]["hypothesis"],
-                                   truncation=True, max_length=self.max_length,
+                                   truncation=True, max_length=self.max_length, padding='max_length',
                                    return_tensors='pt', return_attention_mask=False,
                                    return_token_type_ids=False)['input_ids'].flatten()
             label = self.data[item]['label']
@@ -84,11 +84,13 @@ class Mydataset(nn.Module):
 
         elif self.task == 'qnli':
             data = self.tokenizer(self.data[item]["question"], text_pair=self.data[item]["sentence"],
-                                   truncation=True, max_length=self.max_length,
+                                   truncation=True, max_length=self.max_length, padding='max_length',
                                    return_tensors='pt', return_attention_mask=False,
                                    return_token_type_ids=False)['input_ids'].flatten()
             label = self.data[item]['label']
             return data, label
+
+
 
 class Mydataset_spm(nn.Module):
     def __init__(self, task='pretrain', vocab=None, max_length=512, split='train', seq_mask=False):
@@ -154,7 +156,7 @@ class Mydataset_spm(nn.Module):
             label = self.data[item]['label']
             return torch.LongTensor(data), label
 
-        elif self.task in ['mrpc', 'rte']:
+        elif self.task in {'mrpc', 'rte', 'stsb'}:
             data1 = self.tokenizer.encode_as_ids(self.data[item]["sentence1"])
             data2 = self.tokenizer.encode_as_ids(self.data[item]["sentence2"])
             data = data1 + [self.sep_ids] + data2
@@ -167,7 +169,7 @@ class Mydataset_spm(nn.Module):
             label = self.data[item]['label']
             return torch.LongTensor(data), label
 
-        elif self.task == 'sst2':
+        elif self.task in {'sst2', 'cola'}:
             data = self.tokenizer.encode_as_ids(self.data[item]["sentence"])
             if len(data) > self.max_length:
                 data = data[:self.max_length]
@@ -203,6 +205,7 @@ class Mydataset_spm(nn.Module):
 
             label = self.data[item]['label']
             return torch.LongTensor(data), label
+            
 
 
 if __name__=='__main__':
