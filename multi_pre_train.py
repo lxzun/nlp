@@ -67,7 +67,7 @@ parser.add_argument('--epochs', default=3, type=int, metavar='N',
                     help='number of total epochs to run')
 parser.add_argument('--start-epoch', default=0, type=int, metavar='N',
                     help='manual epoch number (useful on restarts)')
-parser.add_argument('-b', '--batch-size', default=110*3, type=int,
+parser.add_argument('-b', '--batch-size', default=24*3, type=int,
                     metavar='N',
                     help='mini-batch size (default: 256), this is the total '
                          'batch size of all GPUs on the current node when ' 
@@ -81,9 +81,9 @@ parser.add_argument('--drop_rate', type=float, default=0.1)
 parser.add_argument('--mode', type=int, default=1)
 parser.add_argument('--new_vocab', type=int, default=1)
 parser.add_argument('--embedding_size', type=int, default=128)
-parser.add_argument('--hidden_size', type=int, default=256)
-parser.add_argument('--m', type=int, default=8)
-parser.add_argument('--out_dim', type=int, default=8)
+parser.add_argument('--hidden_size', type=int, default=768)
+parser.add_argument('--m', type=int, default=12)
+parser.add_argument('--out_dim', type=int, default=24)
 parser.add_argument('--k', type=int, default=3)
 parser.add_argument('--n_layer', type=int, default=12)
 parser.add_argument('--attd_mode', type=int, default=2)
@@ -109,8 +109,11 @@ def main():
     args.log_dir = log_dir
 
     if args.attd_mode == 1:
-        log(f'model size: {((args.new_vocab*1000+6)*args.embedding_size+args.embedding_size*args.hidden_size+args.hidden_size+(args.k**2 * args.m * args.out_dim * 3 + args.out_dim * 3 + args.m * args.out_dim + args.m)*args.n_layer)/1000000:.2f} M', log_file)
+        log(f'model size: {((args.new_vocab*1000+6 if args.new_vocab else 30522)*args.embedding_size+args.embedding_size*args.hidden_size+args.hidden_size+(args.k**2 * args.m * args.out_dim * 3 + args.out_dim * 3 + args.m * args.out_dim + args.m)*args.n_layer)/1000000:.2f} M', log_file)
         log(f'flops: {(args.embedding_size*args.hidden_size+(args.n_layer*(args.out_dim*args.max_seq_length*args.hidden_size*args.k*args.k*3+args.max_seq_length*(args.hidden_size//args.m)*2+args.out_dim*args.max_seq_length*args.hidden_size)))/1000000000:.2f} B', log_file)
+    
+    if args.attd_mode == 2:
+        log(f'model size: {((args.new_vocab*1000+6 if args.new_vocab else 30522)*args.embedding_size+args.embedding_size*args.hidden_size+args.hidden_size+(args.k**2 * args.m * args.out_dim * 2 + args.out_dim * 2 + args.m * args.out_dim + args.m * args.out_dim + args.m)*args.n_layer)/1000000:.2f} M', log_file)
     
     if args.seed is not None:
         random.seed(args.seed)
@@ -315,18 +318,12 @@ def train(train_loader, model, criterion1, criterion2, optimizer, epoch, schedul
         # compute output
         if args.mode == 1:
             output = model(data)
-            if i%10 == 0 and i < -1:
-                loss = criterion1(torch.transpose(output, 1, 2).contiguous(), target)
-            else:
-                loss = criterion1(output[mask], target[mask])
+            loss = criterion1(output[mask], target[mask])
 
         elif args.mode ==2:
             output, output2, output3 = model(data, target)
-            if i%10 == 0:
-                loss = criterion1(torch.transpose(output, 1, 2).contiguous(), target)
-            else:
-                loss = criterion1(output[mask], target[mask])
-                loss += criterion2(output2[mask], output3[mask])
+            loss = criterion1(output[mask], target[mask])
+            loss += criterion2(output2[mask], output3[mask])
 
         # measure accuracy and record loss
         acc1 = accuracy(output, target, topk=(1,))

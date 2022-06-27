@@ -1,43 +1,29 @@
-import argparse
-from ast import arg
 import os
-import random
-import shutil
-import time
-import warnings
-from enum import Enum
 
 import torch
 import torch.nn as nn
-import torch.nn.parallel
 import torch.backends.cudnn as cudnn
-import torch.distributed as dist
-import torch.optim
-from torch.optim.lr_scheduler import CosineAnnealingLR
-import torch.multiprocessing as mp
 import torch.utils.data
-import torch.utils.data.distributed
 from dataset import Mydataset, Mydataset_spm
 from models.Mymodel import MymodelForSequenceClassification 
-from sklearn.metrics import f1_score, matthews_corrcoef
-from scipy.stats import pearsonr, spearmanr
-
-from torch.utils.data.sampler import SubsetRandomSampler
-from datetime import datetime
+import numpy as np
 
 path = './log'
 chp = 'model_best.pth.tar'
 # chp = 'checkpoint.pth.tar'
 cudnn.deterministic = True
 cudnn.benchmark = True
+ax_wnli = False
 
 with torch.no_grad():
     for root, dirs, files in os.walk(path):
         if dirs == []:
             task, args = root.split(os.path.sep)[2:4]
-            if task == 'pretrain':
+            if task in {'pretrain', 'cola', 'sst2', 'mrpc', 'qqp', 'stsb', 'qnli', 'rte'}:
                 continue
             attd_mode, new_vocab, max_seq_length, embedding_size, hidden_size, m, k, out_dim, n_layer = [int(i[1:]) for i in args.split('_')]
+            print(f'model size: {((new_vocab*1000+6 if new_vocab else 30522)*embedding_size+embedding_size*hidden_size+hidden_size+(k**2 * m * out_dim * 2 + out_dim * 2 + m*out_dim + m * out_dim + m )*n_layer)/1000000:.2f} M')
+            
             if new_vocab: 
                 if task == 'mnli':
                     testset = Mydataset_spm(task=task, vocab=f'vocab/vocab_{new_vocab}.model', max_length=max_seq_length, split='test_matched')
@@ -53,9 +39,9 @@ with torch.no_grad():
                 else:
                     testset = Mydataset(task=task, max_length=max_seq_length, seq_mask=True, split='test')
 
-            val_loader = torch.utils.data.DataLoader(testset, 1)
+            val_loader = torch.utils.data.DataLoader(testset, 1024)
             if task == 'mnli':
-                val_loader2 = torch.utils.data.DataLoader(testset2, 1)
+                val_loader2 = torch.utils.data.DataLoader(testset2, 1024)
             
 
             n_classes = 2
@@ -81,6 +67,8 @@ with torch.no_grad():
             else:
                 print("=> no checkpoint found at '{}'".format(chp))
 
+            if torch.cuda.is_available():
+                model = model.to('cuda:0')
             model.eval()
 
             if task == 'cola': file_name = os.path.join(root, 'CoLA.tsv')
@@ -94,42 +82,74 @@ with torch.no_grad():
 
             with open(file_name, 'w') as f:
                 f.write('id\tlabel\n')
-                for k, (data, target) in enumerate(val_loader, 0):
+                for k, (data, _, idx) in enumerate(val_loader, 0):
+                    if torch.cuda.is_available():
+                        data = data.to('cuda:0')
+
                     output = model(data)
                     if task in {'rte', 'qnli'}:
-                        label = 'entailment' if output.argmax().item() == 0 else 'not_entailment'
+                        label = np.asarray(output.argmax(-1).to('cpu').numpy(), dtype=str)
+                        label[label=='0'] = 'entailment'
+                        label[label=='1'] = 'not_entailment'
                     elif task in {'mnli', 'ax'}:
-                        if output.argmax().item() == 0:
-                            label = 'entailment'
-                        elif output.argmax().item() == 0:
-                            label = 'neutral'
-                        else:
-                            label = 'contradiction'
+                        label = np.asarray(output.argmax(-1).to('cpu').numpy(), dtype=str)
+                        label[label=='0'] = 'entailment'
+                        label[label=='1'] = 'neutral'
+                        label[label=='2'] = 'contradiction'
                     else:
-                        label = output.argmax().item()
-                    f.write(f'{k}\t{label}\n')
+                        label = np.asarray(output.argmax(-1).to('cpu').numpy(), dtype=str)
+                    
+                    for i in range(len(label)):
+                        f.write(f'{idx[i].item()}\t{label[i]}\n')
 
-                    if k % 100 == 0:
+                    if k % 5 == 0:
                         print(f'[{k}/{len(val_loader)}]')
 
             if task == 'mnli':
                 file_name = os.path.join(root, f'MNLI-mm.tsv')
                 with open(file_name, 'w') as f:
                     f.write('id\tlabel\n')
-                    for k, (data, target) in enumerate(val_loader2, 0):
+                    for k, (data, _, idx) in enumerate(val_loader2, 0):
+                        if torch.cuda.is_available():
+                            data = data.to('cuda:0')
+                        
                         output = model(data)
                         if task in {'rte', 'qnli'}:
-                            label = 'entailment' if output.argmax().item() == 0 else 'not_entailment'
+                            label = np.asarray(output.argmax(-1).to('cpu').numpy(), dtype=str)
+                            label[label=='0'] = 'entailment'
+                            label[label=='1'] = 'not_entailment'
                         elif task in {'mnli', 'ax'}:
-                            if output.argmax().item() == 0:
-                                label = 'entailment'
-                            elif output.argmax().item() == 0:
-                                label = 'neutral'
-                            else:
-                                label = 'contradiction'
+                            label = np.asarray(output.argmax(-1).to('cpu').numpy(), dtype=str)
+                            label[label=='0'] = 'entailment'
+                            label[label=='1'] = 'neutral'
+                            label[label=='2'] = 'contradiction'
                         else:
-                            label = output.argmax().item()
-                        f.write(f'{k}\t{label}\n')
+                            label = np.asarray(output.argmax(-1).to('cpu').numpy(), dtype=str)
+                        
+                        for i in range(len(label)):
+                            f.write(f'{idx[i].item()}\t{label[i]}\n')
 
-                        if k % 100 == 0:
+                        if k % 5 == 0:
                             print(f'[{k}/{len(val_loader)}]')
+
+    if ax_wnli:
+        for task in {'wnli', 'ax'}:
+            testset = Mydataset(task=task, max_length=512, seq_mask=True, split='test')
+
+            val_loader = torch.utils.data.DataLoader(testset, 128)
+
+            if task == 'wnli': file_name = 'WNLI.tsv'
+            if task == 'ax': file_name = 'AX.tsv'
+
+            with open(file_name, 'w') as f:
+                f.write('id\tlabel\n')
+                for k, (data, _, idx) in enumerate(val_loader, 0):
+                    label = np.asarray(torch.zeros_like(idx).numpy(), dtype=str)
+                    if task in {'mnli', 'ax'}:
+                        label[label=='0'] = 'entailment'
+                    
+                    for i in range(len(label)):
+                        f.write(f'{idx[i].item()}\t{label[i]}\n')
+
+                    if k % 5 == 0:
+                        print(f'[{k}/{len(val_loader)}]')

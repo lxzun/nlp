@@ -68,7 +68,7 @@ parser.add_argument('--epochs', default=30, type=int, metavar='N',
                     help='number of total epochs to run')
 parser.add_argument('--start-epoch', default=0, type=int, metavar='N',
                     help='manual epoch number (useful on restarts)')
-parser.add_argument('-b', '--batch-size', default=80*3, type=int,
+parser.add_argument('-b', '--batch-size', default=48*3, type=int,
                     metavar='N',
                     help='mini-batch size (default: 256), this is the total '
                          'batch size of all GPUs on the current node when ' 
@@ -79,7 +79,7 @@ parser.add_argument('-p', '--print-freq', default=5, type=int,
                     metavar='N', help='print frequency (default: 10)')
 parser.add_argument('--drop_rate', type=float, default=0.1)
 
-parser.add_argument('--new_vocab', type=int, default=0)
+parser.add_argument('--new_vocab', type=int, default=1)
 parser.add_argument('--embedding_size', type=int, default=128)
 parser.add_argument('--hidden_size', type=int, default=256)
 parser.add_argument('--m', type=int, default=8)
@@ -88,13 +88,13 @@ parser.add_argument('--k', type=int, default=3)
 parser.add_argument('--n_layer', type=int, default=12)
 parser.add_argument('--attd_mode', type=int, default=2)
 parser.add_argument('--max_seq_length', type=int, default=512)
-parser.add_argument('--task', type=str, default='rte') #['cola', 'sst2', 'mrpc', 'qqp', 'stsb', 'mnli', 'qnli', 'rte']
+parser.add_argument('--task', type=str, default='cola') #['cola', 'sst2', 'mrpc', 'qqp', 'stsb', 'mnli', 'qnli', 'rte']
 parser.add_argument('--freeze', type=bool, default=False)
 
 parser.add_argument('--use_cuda', type=str, default='cuda')
 parser.add_argument('--multi_gpu', type=bool, default=True)
 
-parser.add_argument('--pre_trained_model', default='/home/ubuntu/workdir/nlp/log/pretrain/A2_V0_S512_E128_H256_M8_K3_O8_L12/log_22-06-12_09-39-34/checkpoint.pth.tar', type=str, metavar='PATH',
+parser.add_argument('--pre_trained_model', default='/home/ubuntu/workdir/nlp/log/pretrain/A2_V1_S512_E128_H256_M8_K3_O8_L12/log_22-06-12_16-51-42/checkpoint.pth.tar', type=str, metavar='PATH',
                     help='path to pre-trained model checkpoint (default: none)')
 
 
@@ -111,8 +111,11 @@ def main():
     args.log_dir = log_dir
 
     if args.attd_mode == 1:
-        log(f'model size: {((args.new_vocab*1000+6)*args.embedding_size+args.embedding_size*args.hidden_size+args.hidden_size+(args.k**2 * args.m * args.out_dim * 3 + args.out_dim * 3 + args.m * args.out_dim + args.m)*args.n_layer)/1000000:.2f} M', log_file)
+        log(f'model size: {((args.new_vocab*1000+6 if args.new_vocab else 30522)*args.embedding_size+args.embedding_size*args.hidden_size+args.hidden_size+(args.k**2 * args.m * args.out_dim * 3 + args.out_dim * 3 + args.m * args.out_dim + args.m)*args.n_layer)/1000000:.2f} M', log_file)
         log(f'flops: {(args.embedding_size*args.hidden_size+(args.n_layer*(args.out_dim*args.max_seq_length*args.hidden_size*args.k*args.k*3+args.max_seq_length*(args.hidden_size//args.m)*2+args.out_dim*args.max_seq_length*args.hidden_size)))/1000000000:.2f} B', log_file)
+    
+    if args.attd_mode == 2:
+        log(f'model size: {((args.new_vocab*1000+6 if args.new_vocab else 30522)*args.embedding_size+args.embedding_size*args.hidden_size+args.hidden_size+(args.k**2 * args.m * args.out_dim * 2 + args.out_dim * 2 + args.m * args.out_dim + args.m * args.out_dim + args.m)*args.n_layer)/1000000:.2f} M', log_file)
     
     if args.seed is not None:
         random.seed(args.seed)
@@ -369,7 +372,7 @@ def train(train_loader, model, criterion1, optimizer, epoch, scheduler, args, va
     model.train()
 
     end = time.time()
-    for i, (data, target) in enumerate(train_loader, 1):
+    for i, (data, target, _) in enumerate(train_loader, 1):
         # measure data loading time
         data_time.update(time.time() - end)
 
@@ -502,7 +505,7 @@ def validate(val_loader, model, criterion, args, mnli_mm=False):
     model.eval()
     with torch.no_grad():
         end = time.time()
-        for i, (data, target) in enumerate(val_loader):
+        for i, (data, target, _) in enumerate(val_loader):
             if args.gpu is not None and not args.cpu:
                 data = data.cuda(args.gpu, non_blocking=True)
             if torch.cuda.is_available() and not args.cpu:

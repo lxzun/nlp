@@ -34,7 +34,7 @@ class Mydataset(nn.Module):
             label = data['input_ids'].flatten()
             data = label.clone()
             indices_a = list(range(len(data)))
-            k = int(len(data) * 0.15)
+            k = int(len(data) * 0.25)
             if self.seq_mask:
                 indices = set()
                 while len(indices) < k:
@@ -43,7 +43,7 @@ class Mydataset(nn.Module):
                     indices.update(list(range(s, s+i)))
 
             else: indices = rd.sample(indices_a, k=k)
-            indices = list(indices)[:k]
+            indices = list(indices)
             data[indices] = self.mask_ids
             mask = torch.zeros_like(data, dtype=torch.bool)
             mask[indices] = True
@@ -55,7 +55,7 @@ class Mydataset(nn.Module):
                                   return_tensors='pt', return_attention_mask=False,
                                   return_token_type_ids=False)['input_ids'].flatten()
             label = self.data[item]['label']
-            return data, label
+            return data, label, self.data[item]['idx']
 
         
         elif self.task in {'mrpc', 'rte', 'stsb'}:
@@ -64,7 +64,7 @@ class Mydataset(nn.Module):
                                    return_tensors='pt', return_attention_mask=False,
                                    return_token_type_ids=False)['input_ids'].flatten()
             label = self.data[item]['label']
-            return data, label
+            return data, label, self.data[item]['idx']
 
         elif self.task in {'sst2', 'cola'}:
             data = self.tokenizer(self.data[item]["sentence"],
@@ -72,7 +72,7 @@ class Mydataset(nn.Module):
                                    return_tensors='pt', return_attention_mask=False,
                                    return_token_type_ids=False)['input_ids'].flatten()
             label = self.data[item]['label']
-            return data, label
+            return data, label, self.data[item]['idx']
 
         elif self.task == 'mnli':
             data = self.tokenizer(self.data[item]["premise"], text_pair=self.data[item]["hypothesis"],
@@ -80,7 +80,7 @@ class Mydataset(nn.Module):
                                    return_tensors='pt', return_attention_mask=False,
                                    return_token_type_ids=False)['input_ids'].flatten()
             label = self.data[item]['label']
-            return data, label
+            return data, label, self.data[item]['idx']
 
         elif self.task == 'qnli':
             data = self.tokenizer(self.data[item]["question"], text_pair=self.data[item]["sentence"],
@@ -88,7 +88,23 @@ class Mydataset(nn.Module):
                                    return_tensors='pt', return_attention_mask=False,
                                    return_token_type_ids=False)['input_ids'].flatten()
             label = self.data[item]['label']
-            return data, label
+            return data, label, self.data[item]['idx']
+        
+        elif self.task == 'wnli':
+            data = self.tokenizer(self.data[item]["sentence1"], text_pair=self.data[item]["sentence2"],
+                                   truncation=True, max_length=self.max_length, padding='max_length',
+                                   return_tensors='pt', return_attention_mask=False,
+                                   return_token_type_ids=False)['input_ids'].flatten()
+            label = self.data[item]['label']
+            return data, label, self.data[item]['idx']
+
+        elif self.task == 'ax':
+            data = self.tokenizer(self.data[item]["premise"], text_pair=self.data[item]["hypothesis"],
+                                   truncation=True, max_length=self.max_length, padding='max_length',
+                                   return_tensors='pt', return_attention_mask=False,
+                                   return_token_type_ids=False)['input_ids'].flatten()
+            label = self.data[item]['label']
+            return data, label, self.data[item]['idx']
 
 
 
@@ -127,16 +143,16 @@ class Mydataset_spm(nn.Module):
             data = np.array(data, dtype=int)
             label = np.array(data, dtype=int)
             indices_a = list(range(len(data)))
-            k = int(len(data) * 0.15)
+            k = int(len(data) * 0.25)
             if self.seq_mask:
                 indices = set()
                 while len(indices) < k:
-                    i = np.random.randint(1, 4)
+                    i = np.random.randint(1, 5)
                     s = rd.sample(indices_a[:-i], k=1)[0]
                     indices.update(list(range(s, s+i)))
 
             else: indices = rd.sample(indices, k=k)
-            indices = list(indices)[:k]
+            indices = list(indices)
             data[indices] = self.mask_ids
             data = torch.LongTensor(data)
             mask = torch.zeros_like(data, dtype=torch.bool)
@@ -154,9 +170,9 @@ class Mydataset_spm(nn.Module):
             data = np.array(data, dtype=int)
 
             label = self.data[item]['label']
-            return torch.LongTensor(data), label
+            return torch.LongTensor(data), label, self.data[item]['idx']
 
-        elif self.task in {'mrpc', 'rte', 'stsb'}:
+        elif self.task in {'mrpc', 'rte', 'stsb', 'wnli'}:
             data1 = self.tokenizer.encode_as_ids(self.data[item]["sentence1"])
             data2 = self.tokenizer.encode_as_ids(self.data[item]["sentence2"])
             data = data1 + [self.sep_ids] + data2
@@ -167,7 +183,7 @@ class Mydataset_spm(nn.Module):
             data = np.array(data, dtype=int)
 
             label = self.data[item]['label']
-            return torch.LongTensor(data), label
+            return torch.LongTensor(data), label, self.data[item]['idx']
 
         elif self.task in {'sst2', 'cola'}:
             data = self.tokenizer.encode_as_ids(self.data[item]["sentence"])
@@ -178,9 +194,9 @@ class Mydataset_spm(nn.Module):
             data = np.array(data, dtype=int)
 
             label = self.data[item]['label']
-            return torch.LongTensor(data), label
+            return torch.LongTensor(data), label, self.data[item]['idx']
 
-        elif self.task == 'mnli':
+        elif self.task in {'mnli', 'ax'}:
             data1 = self.tokenizer.encode_as_ids(self.data[item]["premise"])
             data2 = self.tokenizer.encode_as_ids(self.data[item]["hypothesis"])
             data = data1 + [self.sep_ids] + data2
@@ -191,7 +207,7 @@ class Mydataset_spm(nn.Module):
             data = np.array(data, dtype=int)
 
             label = self.data[item]['label']
-            return torch.LongTensor(data), label
+            return torch.LongTensor(data), label, self.data[item]['idx']
 
         elif self.task == 'qnli':
             data1 = self.tokenizer.encode_as_ids(self.data[item]["question"])
@@ -204,7 +220,7 @@ class Mydataset_spm(nn.Module):
             data = np.array(data, dtype=int)
 
             label = self.data[item]['label']
-            return torch.LongTensor(data), label
+            return torch.LongTensor(data), label, self.data[item]['idx']
             
 
 
